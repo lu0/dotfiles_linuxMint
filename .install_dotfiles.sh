@@ -22,14 +22,25 @@ ln -s ~/dotfiles_LinuxMint/mylaunchers ~/.mylaunchers
 
 # Custom keys
 # ln -s ~/dotfiles_LinuxMint/xmodmap_edit.lst ~/.xmodmap_edit.lst
+
 rm -rf /usr/share/X11/xkb/types/complete
-ln -s ~/dotfiles_LinuxMint/keymappings/ /usr/share/X11/xkb/types/complete
+ln -s ~/dotfiles_LinuxMint/keymappings/complete /usr/share/X11/xkb/types/complete
 
 rm -rf /usr/share/X11/xkb/types/iso9995
-ln -s ~/dotfiles_LinuxMint/keymappings/ /usr/share/X11/xkb/types/complete
+ln -s ~/dotfiles_LinuxMint/keymappings/iso9995 /usr/share/X11/xkb/types/iso995
 
-rm -rf /usr/share/X11/xkb/types/complete
-ln -s ~/dotfiles_LinuxMint/keymappings/ /usr/share/X11/xkb/types/complete
+rm -rf /usr/share/X11/xkb/types/extra
+ln -s ~/dotfiles_LinuxMint/keymappings/extra /usr/share/X11/xkb/types/extra
+
+rm -rf /usr/share/X11/xkb/symbols/latin
+ln -s ~/dotfiles_LinuxMint/keymappings/latin /usr/share/X11/xkb/symbols/latin
+
+rm -rf /usr/share/X11/xkb/symbols/latam
+ln -s ~/dotfiles_LinuxMint/keymappings/latam /usr/share/X11/xkb/symbols/latam
+
+rm -rf /usr/share/X11/xkb/symbols/la
+ln -s ~/dotfiles_LinuxMint/keymappings/la /usr/share/X11/xkb/symbols/la
+
 
 # sudo ln -s ~/dotfiles_LinuxMint/config/90-custom-kbd.conf /usr/share/X11/xorg.conf.d/90-custom-kbd.conf
 
