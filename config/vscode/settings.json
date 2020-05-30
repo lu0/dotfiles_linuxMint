@@ -29,5 +29,7 @@
     "editor.wordWrap": "on",
     "workbench.editor.closeEmptyGroups": false,
     "zenMode.hideTabs": false,
-    "keyboard.dispatch": "keyCode"
+    "keyboard.dispatch": "keyCode",
+    "workbench.editor.enablePreviewFromQuickOpen": false
+    
 }
