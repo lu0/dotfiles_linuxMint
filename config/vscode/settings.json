@@ -1,0 +1,33 @@
+{
+    "terminal.integrated.experimentalRestore": true,
+    "editor.cursorStyle": "block",
+    "editor.fontFamily": "'Source Code Pro', 'monospace', monospace, 'Segoe UI'",
+    "editor.fontSize": 12,
+    "editor.minimap.maxColumn": 150,
+    "workbench.colorTheme": "Monokai",
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": false,
+    "window.menuBarVisibility": "toggle",
+    "breadcrumbs.enabled": true,
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": false,
+    "vim.cursorStylePerMode.insert": "block",
+    "vim.cursorStylePerMode.normal": "line",
+    "vim.cursorStylePerMode.visual": "underline",
+    "workbench.editor.showTabs": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"/home/lucero/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
+    "debug.console.fontSize": 12,
+    "terminal.integrated.fontSize": 12,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "launch": {
+    
+    },
+    "browser-preview.startUrl": "http://localhost:8100/login",
+    "workbench.activityBar.visible": false,
+    "editor.wordWrap": "on",
+    "workbench.editor.closeEmptyGroups": false,
+    "zenMode.hideTabs": false,
+    "keyboard.dispatch": "keyCode"
+}
