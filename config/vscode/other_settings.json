@@ -164,9 +164,9 @@
                                     "id": "openRecentWorkspace",
                                     "uri": {
                                         "$mid": 1,
-                                        "fsPath": "/home/lucero/git_lu0/CubingMtyApp_Workspace.code-workspace",
+                                        "fsPath": "~/git_lu0/CubingMtyApp_Workspace.code-workspace",
                                         "external": "file:///home/lucero/git_lu0/CubingMtyApp_Workspace.code-workspace",
-                                        "path": "/home/lucero/git_lu0/CubingMtyApp_Workspace.code-workspace",
+                                        "path": "~/git_lu0/CubingMtyApp_Workspace.code-workspace",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -176,7 +176,7 @@
                                     "id": "openRecentWorkspace",
                                     "uri": {
                                         "$mid": 1,
-                                        "path": "/home/lucero/git_lu0ear/CubingMtyApp.code-workspace",
+                                        "path": "~/git_lu0ear/CubingMtyApp.code-workspace",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -186,7 +186,7 @@
                                     "id": "openRecentWorkspace",
                                     "uri": {
                                         "$mid": 1,
-                                        "path": "/home/lucero/git_lu0ear/cubing-mty-ws/src/main/java/com/cubingmty/ws/service/CubingMtyApp.code-workspace",
+                                        "path": "~/git_lu0ear/cubing-mty-ws/src/main/java/com/cubingmty/ws/service/CubingMtyApp.code-workspace",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -197,7 +197,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/git_lu0ear/cubing-mty-ws",
-                                        "path": "/home/lucero/git_lu0ear/cubing-mty-ws",
+                                        "path": "~/git_lu0ear/cubing-mty-ws",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -219,7 +219,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/git_lu0ear/cubing-mty-app",
-                                        "path": "/home/lucero/git_lu0ear/cubing-mty-app",
+                                        "path": "~/git_lu0ear/cubing-mty-app",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -233,7 +233,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/.config/Code/languagepacks.json",
-                                        "path": "/home/lucero/.config/Code/languagepacks.json",
+                                        "path": "~/.config/Code/languagepacks.json",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -244,7 +244,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/.config/Code/rapid_render.json",
-                                        "path": "/home/lucero/.config/Code/rapid_render.json",
+                                        "path": "~/.config/Code/rapid_render.json",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -255,7 +255,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/.config/Code/storage.json",
-                                        "path": "/home/lucero/.config/Code/storage.json",
+                                        "path": "~/.config/Code/storage.json",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -266,7 +266,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/.config/Code/Backups/workspaces.json",
-                                        "path": "/home/lucero/.config/Code/Backups/workspaces.json",
+                                        "path": "~/.config/Code/Backups/workspaces.json",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -277,7 +277,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/.config/Code/User/settings.json",
-                                        "path": "/home/lucero/.config/Code/User/settings.json",
+                                        "path": "~/.config/Code/User/settings.json",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -288,7 +288,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/.config/Code/User/keybindings.json",
-                                        "path": "/home/lucero/.config/Code/User/keybindings.json",
+                                        "path": "~/.config/Code/User/keybindings.json",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -299,7 +299,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/dotfiles_LinuxMint/config/gtk-3.0/bookmarks",
-                                        "path": "/home/lucero/dotfiles_LinuxMint/config/gtk-3.0/bookmarks",
+                                        "path": "~/dotfiles_LinuxMint/config/gtk-3.0/bookmarks",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -310,7 +310,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/.config/gtk-3.0/bookmarks",
-                                        "path": "/home/lucero/.config/gtk-3.0/bookmarks",
+                                        "path": "~/.config/gtk-3.0/bookmarks",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -321,7 +321,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/.config/gtk-3.0/gtk.css",
-                                        "path": "/home/lucero/.config/gtk-3.0/gtk.css",
+                                        "path": "~/.config/gtk-3.0/gtk.css",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -332,7 +332,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/.config/nemo/desktop-metadata",
-                                        "path": "/home/lucero/.config/nemo/desktop-metadata",
+                                        "path": "~/.config/nemo/desktop-metadata",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -1720,7 +1720,7 @@
                 "id": "387bf1746df45f03d78a62c89cccf91a",
                 "configURIPath": "file:///home/lucero/git_lu0/CubingMtyApp_Workspace.code-workspace"
             },
-            "backupPath": "/home/lucero/.config/Code/Backups/387bf1746df45f03d78a62c89cccf91a",
+            "backupPath": "~/.config/Code/Backups/387bf1746df45f03d78a62c89cccf91a",
             "uiState": {
                 "mode": 1,
                 "x": 31,
@@ -1731,5 +1731,5 @@
         },
         "openedWindows": []
     },
-    "pickerWorkingDir": "/home/lucero/git_lu0"
+    "pickerWorkingDir": "~/git_lu0"
 }

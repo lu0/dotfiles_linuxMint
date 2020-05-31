@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/lucero/.startup_session.sh
+Exec=~/.startup_session.sh
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false

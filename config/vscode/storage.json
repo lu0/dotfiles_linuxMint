@@ -161,8 +161,7 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor",
-                                    "enabled": false
+                                    "label": "&&Reopen Closed Editor"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -171,9 +170,9 @@
                                     "id": "openRecentWorkspace",
                                     "uri": {
                                         "$mid": 1,
-                                        "fsPath": "/home/lucero/git_lu0/dotfilesMint_workspace.code-workspace",
+                                        "fsPath": "~/git_lu0/dotfilesMint_workspace.code-workspace",
                                         "external": "file:///home/lucero/git_lu0/dotfilesMint_workspace.code-workspace",
-                                        "path": "/home/lucero/git_lu0/dotfilesMint_workspace.code-workspace",
+                                        "path": "~/git_lu0/dotfilesMint_workspace.code-workspace",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -194,7 +193,7 @@
                                     "id": "openRecentWorkspace",
                                     "uri": {
                                         "$mid": 1,
-                                        "path": "/home/lucero/git_lu0/CubingMtyApp_Workspace.code-workspace",
+                                        "path": "~/git_lu0/CubingMtyApp_Workspace.code-workspace",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -205,7 +204,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/dotfiles_LinuxMint",
-                                        "path": "/home/lucero/dotfiles_LinuxMint",
+                                        "path": "~/dotfiles_LinuxMint",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -215,7 +214,7 @@
                                     "id": "openRecentWorkspace",
                                     "uri": {
                                         "$mid": 1,
-                                        "path": "/home/lucero/git_lu0ear/CubingMtyApp.code-workspace",
+                                        "path": "~/git_lu0ear/CubingMtyApp.code-workspace",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -225,7 +224,7 @@
                                     "id": "openRecentWorkspace",
                                     "uri": {
                                         "$mid": 1,
-                                        "path": "/home/lucero/git_lu0ear/cubing-mty-ws/src/main/java/com/cubingmty/ws/service/CubingMtyApp.code-workspace",
+                                        "path": "~/git_lu0ear/cubing-mty-ws/src/main/java/com/cubingmty/ws/service/CubingMtyApp.code-workspace",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -236,7 +235,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/git_lu0ear/cubing-mty-ws",
-                                        "path": "/home/lucero/git_lu0ear/cubing-mty-ws",
+                                        "path": "~/git_lu0ear/cubing-mty-ws",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -258,7 +257,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/git_lu0ear/cubing-mty-app",
-                                        "path": "/home/lucero/git_lu0ear/cubing-mty-app",
+                                        "path": "~/git_lu0ear/cubing-mty-app",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -272,7 +271,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/dotfiles_LinuxMint/keymappings/exportKeybindings.sh",
-                                        "path": "/home/lucero/dotfiles_LinuxMint/keymappings/exportKeybindings.sh",
+                                        "path": "~/dotfiles_LinuxMint/keymappings/exportKeybindings.sh",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -418,7 +417,8 @@
                     },
                     {
                         "id": "workbench.action.files.saveAll",
-                        "label": "Save A&&ll"
+                        "label": "Save A&&ll",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -688,7 +688,8 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "Show &&Side Bar"
+                                    "label": "Show &&Side Bar",
+                                    "checked": true
                                 },
                                 {
                                     "id": "workbench.action.toggleStatusbarVisibility",
@@ -1737,7 +1738,7 @@
                 "id": "0ae788f00485511688f25082dfc4cc53",
                 "configURIPath": "file:///home/lucero/git_lu0/dotfilesMint_workspace.code-workspace"
             },
-            "backupPath": "/home/lucero/.config/Code/Backups/0ae788f00485511688f25082dfc4cc53",
+            "backupPath": "~/.config/Code/Backups/0ae788f00485511688f25082dfc4cc53",
             "uiState": {
                 "mode": 0,
                 "x": 30,
