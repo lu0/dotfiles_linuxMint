@@ -47,13 +47,6 @@ ln -s ~/dotfiles_LinuxMint/keymappings/la /usr/share/X11/xkb/symbols/la
 # rm -rf ~/.config/nemo/accels
 # ln -s ~/dotfiles_LinuxMint/config/nemo/accels ~/.config/nemo/accels
 
-# System keybindings
-# Export current config with: 
-# dconf dump /org/cinnamon/desktop/keybindings/ > ~/dotfiles_LinuxMint/keymappings/myKeybindings.conf
-ln -s ~/dotfiles_LinuxMint/keymappings/myKeybindings.conf ~/.myKeybindings.conf
-dconf load /org/cinnamon/desktop/keybindings/ < ~/.myKeybindings.conf
-chmod +775 ~/dotfiles_LinuxMint/keymappings/exportKeybindings.sh
-
 # System config
 # Export current config with: 
 # dconf dump /  > ~/dotfiles_LinuxMint/config/dconf.conf

@@ -1741,10 +1741,10 @@
             "backupPath": "/home/lucero/.config/Code/Backups/0ae788f00485511688f25082dfc4cc53",
             "uiState": {
                 "mode": 0,
-                "x": 31,
-                "y": 58,
+                "x": 30,
+                "y": 30,
                 "width": 790,
-                "height": 709
+                "height": 738
             }
         },
         "openedWindows": []
