@@ -25,6 +25,8 @@
             "file:///home/lucero/git_lu0ear/cubing-mty-app"
         ],
         "files2": [
+            "file:///home/lucero/dotfiles_LinuxMint/keymappings/exportKeybindings.sh",
+            "file:///usr/share/X11/xkb/symbols/latam",
             "file:///usr/share/X11/xkb/types/default",
             "file:///usr/share/X11/XErrorDB",
             "file:///usr/share/X11/rgb.txt",
@@ -35,7 +37,6 @@
             "file:///usr/share/X11/xkb/types/basic",
             "file:///usr/share/X11/xkb/types/complete",
             "file:///usr/share/X11/xkb/symbols/la",
-            "file:///usr/share/X11/xkb/symbols/latam",
             "file:///usr/share/X11/xkb/symbols/latin",
             "file:///usr/share/X11/xkb/symbols/us",
             "file:///usr/share/X11/xkb/symbols/sy",
@@ -123,8 +124,7 @@
             "file:///home/lucero/git_lu0/mint_dotfiles/.startup_bash.sh",
             "file:///home/lucero/%24",
             "file:///home/lucero/sleep",
-            "file:///home/lucero/.startup_bash.sh",
-            "file:///home/lucero/git_lu0/courses/CS_programming_w_purpose/HelloGoodbye.java"
+            "file:///home/lucero/.startup_bash.sh"
         ]
     },
     "lastKnownMenubarData": {
@@ -271,6 +271,28 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
+                                        "external": "file:///home/lucero/dotfiles_LinuxMint/keymappings/exportKeybindings.sh",
+                                        "path": "/home/lucero/dotfiles_LinuxMint/keymappings/exportKeybindings.sh",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/dotfiles_LinuxMint/keymappings/exportKeybindings.sh"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///usr/share/X11/xkb/symbols/latam",
+                                        "path": "/usr/share/X11/xkb/symbols/latam",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/usr/share/X11/xkb/symbols/latam"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
                                         "external": "file:///usr/share/X11/xkb/types/default",
                                         "path": "/usr/share/X11/xkb/types/default",
                                         "scheme": "file"
@@ -356,28 +378,6 @@
                                     "label": "/usr/share/X11/xkb/types/basic"
                                 },
                                 {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/types/complete",
-                                        "path": "/usr/share/X11/xkb/types/complete",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/share/X11/xkb/types/complete"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/symbols/la",
-                                        "path": "/usr/share/X11/xkb/symbols/la",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/share/X11/xkb/symbols/la"
-                                },
-                                {
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
@@ -418,8 +418,7 @@
                     },
                     {
                         "id": "workbench.action.files.saveAll",
-                        "label": "Save A&&ll",
-                        "enabled": false
+                        "label": "Save A&&ll"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1740,8 +1739,8 @@
             },
             "backupPath": "/home/lucero/.config/Code/Backups/0ae788f00485511688f25082dfc4cc53",
             "uiState": {
-                "mode": 1,
-                "x": 31,
+                "mode": 0,
+                "x": 30,
                 "y": 58,
                 "width": 790,
                 "height": 709
