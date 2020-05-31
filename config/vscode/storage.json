@@ -25,6 +25,7 @@
             "file:///home/lucero/git_lu0ear/cubing-mty-app"
         ],
         "files2": [
+            "file:///home/lucero/.startup_session.sh",
             "file:///home/lucero/dotfiles_LinuxMint/keymappings/exportKeybindings.sh",
             "file:///usr/share/X11/xkb/symbols/latam",
             "file:///usr/share/X11/xkb/types/default",
@@ -123,8 +124,7 @@
             "file:///home/lucero/onedrive/configure",
             "file:///home/lucero/git_lu0/mint_dotfiles/.startup_bash.sh",
             "file:///home/lucero/%24",
-            "file:///home/lucero/sleep",
-            "file:///home/lucero/.startup_bash.sh"
+            "file:///home/lucero/sleep"
         ]
     },
     "lastKnownMenubarData": {
@@ -170,9 +170,9 @@
                                     "id": "openRecentWorkspace",
                                     "uri": {
                                         "$mid": 1,
-                                        "fsPath": "~/git_lu0/dotfilesMint_workspace.code-workspace",
+                                        "fsPath": "/home/lucero/git_lu0/dotfilesMint_workspace.code-workspace",
                                         "external": "file:///home/lucero/git_lu0/dotfilesMint_workspace.code-workspace",
-                                        "path": "~/git_lu0/dotfilesMint_workspace.code-workspace",
+                                        "path": "/home/lucero/git_lu0/dotfilesMint_workspace.code-workspace",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -193,7 +193,7 @@
                                     "id": "openRecentWorkspace",
                                     "uri": {
                                         "$mid": 1,
-                                        "path": "~/git_lu0/CubingMtyApp_Workspace.code-workspace",
+                                        "path": "/home/lucero/git_lu0/CubingMtyApp_Workspace.code-workspace",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -204,7 +204,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/dotfiles_LinuxMint",
-                                        "path": "~/dotfiles_LinuxMint",
+                                        "path": "/home/lucero/dotfiles_LinuxMint",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -214,7 +214,7 @@
                                     "id": "openRecentWorkspace",
                                     "uri": {
                                         "$mid": 1,
-                                        "path": "~/git_lu0ear/CubingMtyApp.code-workspace",
+                                        "path": "/home/lucero/git_lu0ear/CubingMtyApp.code-workspace",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -224,7 +224,7 @@
                                     "id": "openRecentWorkspace",
                                     "uri": {
                                         "$mid": 1,
-                                        "path": "~/git_lu0ear/cubing-mty-ws/src/main/java/com/cubingmty/ws/service/CubingMtyApp.code-workspace",
+                                        "path": "/home/lucero/git_lu0ear/cubing-mty-ws/src/main/java/com/cubingmty/ws/service/CubingMtyApp.code-workspace",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -235,7 +235,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/git_lu0ear/cubing-mty-ws",
-                                        "path": "~/git_lu0ear/cubing-mty-ws",
+                                        "path": "/home/lucero/git_lu0ear/cubing-mty-ws",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -257,7 +257,7 @@
                                     "uri": {
                                         "$mid": 1,
                                         "external": "file:///home/lucero/git_lu0ear/cubing-mty-app",
-                                        "path": "~/git_lu0ear/cubing-mty-app",
+                                        "path": "/home/lucero/git_lu0ear/cubing-mty-app",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -270,8 +270,19 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
+                                        "external": "file:///home/lucero/.startup_session.sh",
+                                        "path": "/home/lucero/.startup_session.sh",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.startup_session.sh"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
                                         "external": "file:///home/lucero/dotfiles_LinuxMint/keymappings/exportKeybindings.sh",
-                                        "path": "~/dotfiles_LinuxMint/keymappings/exportKeybindings.sh",
+                                        "path": "/home/lucero/dotfiles_LinuxMint/keymappings/exportKeybindings.sh",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
@@ -364,17 +375,6 @@
                                     },
                                     "enabled": true,
                                     "label": "/usr/share/X11/xkb/types/README"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/types/basic",
-                                        "path": "/usr/share/X11/xkb/types/basic",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/share/X11/xkb/types/basic"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -1738,10 +1738,10 @@
                 "id": "0ae788f00485511688f25082dfc4cc53",
                 "configURIPath": "file:///home/lucero/git_lu0/dotfilesMint_workspace.code-workspace"
             },
-            "backupPath": "~/.config/Code/Backups/0ae788f00485511688f25082dfc4cc53",
+            "backupPath": "/home/lucero/.config/Code/Backups/0ae788f00485511688f25082dfc4cc53",
             "uiState": {
                 "mode": 0,
-                "x": 30,
+                "x": 31,
                 "y": 58,
                 "width": 790,
                 "height": 709
@@ -1749,5 +1749,5 @@
         },
         "openedWindows": []
     },
-    "pickerWorkingDir": "/usr/share/X11"
+    "pickerWorkingDir": "/home/lucero/git_lu0"
 }
