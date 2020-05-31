@@ -2,11 +2,11 @@
     "telemetry.machineId": "640530b46b0717314ae161b11388f2067486ed0d152c338a6bbf1f278fedc2aa",
     "openedPathsList": {
         "workspaces3": [
-            "file:///usr/share/X11/xkb",
             {
                 "id": "0ae788f00485511688f25082dfc4cc53",
                 "configURIPath": "file:///home/lucero/git_lu0/dotfilesMint_workspace.code-workspace"
             },
+            "file:///usr/share/X11/xkb",
             {
                 "id": "387bf1746df45f03d78a62c89cccf91a",
                 "configURIPath": "file:///home/lucero/git_lu0/CubingMtyApp_Workspace.code-workspace"
@@ -25,21 +25,28 @@
             "file:///home/lucero/git_lu0ear/cubing-mty-app"
         ],
         "files2": [
+            "file:///usr/share/X11/xkb/types/default",
+            "file:///usr/share/X11/XErrorDB",
+            "file:///usr/share/X11/rgb.txt",
+            "file:///usr/share/X11/xkb/types/extra",
+            "file:///usr/share/X11/xkb/types/iso9995",
+            "file:///usr/share/X11/xkb/types/pc",
+            "file:///usr/share/X11/xkb/types/README",
+            "file:///usr/share/X11/xkb/types/basic",
+            "file:///usr/share/X11/xkb/types/complete",
+            "file:///usr/share/X11/xkb/symbols/la",
+            "file:///usr/share/X11/xkb/symbols/latam",
+            "file:///usr/share/X11/xkb/symbols/latin",
+            "file:///usr/share/X11/xkb/symbols/us",
+            "file:///usr/share/X11/xkb/symbols/sy",
             "file:///usr/share/X11/xkb/symbols/sk",
             "file:///usr/share/X11/xkb/symbols/si",
             "file:///usr/share/X11/xkb/symbols/sn",
             "file:///usr/share/X11/xkb/symbols/pt",
             "file:///usr/share/X11/xkb/symbols/pc",
             "file:///usr/share/X11/xkb/symbols/level3",
-            "file:///usr/share/X11/xkb/types/extra",
-            "file:///usr/share/X11/xkb/types/default",
-            "file:///usr/share/X11/xkb/types/complete",
             "file:///usr/share/X11/xkb/types/cancel",
-            "file:///usr/share/X11/xkb/types/basic",
             "file:///usr/share/X11/xkb/types/level5",
-            "file:///usr/share/X11/xkb/types/iso9995",
-            "file:///usr/share/X11/xkb/types/README",
-            "file:///usr/share/X11/xkb/types/pc",
             "file:///usr/share/X11/xkb/types/numpad",
             "file:///usr/share/X11/xkb/types/nokia",
             "file:///usr/share/X11/xkb/types/mousekeys",
@@ -117,14 +124,7 @@
             "file:///home/lucero/%24",
             "file:///home/lucero/sleep",
             "file:///home/lucero/.startup_bash.sh",
-            "file:///home/lucero/git_lu0/courses/CS_programming_w_purpose/HelloGoodbye.java",
-            "file:///home/lucero/git_lu0/courses/CS_programming_w_purpose/HelloWorld.java",
-            "file:///home/lucero/git_lu0/courses/CS_programming_w_purpose/RightTriangle.class",
-            "file:///home/lucero/git_lu0/courses/CS_programming_w_purpose/RightTriangle.java",
-            "file:///home/lucero/git_lu0/courses/CS_programming_w_purpose/GreatCircle.java",
-            "file:///home/lucero/git_lu0/courses/CS_programming_w_purpose/CMYKtoRGB.java",
-            "file:///usr/share/cinnamon/applets/menu%40cinnamon.org/settings-schema.json",
-            "file:///usr/share/cinnamon/applets/menu%40cinnamon.org/settings-override.json"
+            "file:///home/lucero/git_lu0/courses/CS_programming_w_purpose/HelloGoodbye.java"
         ]
     },
     "lastKnownMenubarData": {
@@ -161,7 +161,8 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor"
+                                    "label": "&&Reopen Closed Editor",
+                                    "enabled": false
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -270,67 +271,34 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/symbols/sk",
-                                        "path": "/usr/share/X11/xkb/symbols/sk",
+                                        "external": "file:///usr/share/X11/xkb/types/default",
+                                        "path": "/usr/share/X11/xkb/types/default",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "/usr/share/X11/xkb/symbols/sk"
+                                    "label": "/usr/share/X11/xkb/types/default"
                                 },
                                 {
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/symbols/si",
-                                        "path": "/usr/share/X11/xkb/symbols/si",
+                                        "external": "file:///usr/share/X11/XErrorDB",
+                                        "path": "/usr/share/X11/XErrorDB",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "/usr/share/X11/xkb/symbols/si"
+                                    "label": "/usr/share/X11/XErrorDB"
                                 },
                                 {
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/symbols/sn",
-                                        "path": "/usr/share/X11/xkb/symbols/sn",
+                                        "external": "file:///usr/share/X11/rgb.txt",
+                                        "path": "/usr/share/X11/rgb.txt",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "/usr/share/X11/xkb/symbols/sn"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/symbols/pt",
-                                        "path": "/usr/share/X11/xkb/symbols/pt",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/share/X11/xkb/symbols/pt"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/symbols/pc",
-                                        "path": "/usr/share/X11/xkb/symbols/pc",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/share/X11/xkb/symbols/pc"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/symbols/level3",
-                                        "path": "/usr/share/X11/xkb/symbols/level3",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/share/X11/xkb/symbols/level3"
+                                    "label": "/usr/share/X11/rgb.txt"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -347,12 +315,45 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/types/default",
-                                        "path": "/usr/share/X11/xkb/types/default",
+                                        "external": "file:///usr/share/X11/xkb/types/iso9995",
+                                        "path": "/usr/share/X11/xkb/types/iso9995",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "/usr/share/X11/xkb/types/default"
+                                    "label": "/usr/share/X11/xkb/types/iso9995"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///usr/share/X11/xkb/types/pc",
+                                        "path": "/usr/share/X11/xkb/types/pc",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/usr/share/X11/xkb/types/pc"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///usr/share/X11/xkb/types/README",
+                                        "path": "/usr/share/X11/xkb/types/README",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/usr/share/X11/xkb/types/README"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///usr/share/X11/xkb/types/basic",
+                                        "path": "/usr/share/X11/xkb/types/basic",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/usr/share/X11/xkb/types/basic"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -369,12 +370,12 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/types/cancel",
-                                        "path": "/usr/share/X11/xkb/types/cancel",
+                                        "external": "file:///usr/share/X11/xkb/symbols/la",
+                                        "path": "/usr/share/X11/xkb/symbols/la",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "/usr/share/X11/xkb/types/cancel"
+                                    "label": "/usr/share/X11/xkb/symbols/la"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -688,8 +689,7 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "Show &&Side Bar",
-                                    "checked": true
+                                    "label": "Show &&Side Bar"
                                 },
                                 {
                                     "id": "workbench.action.toggleStatusbarVisibility",
@@ -1740,8 +1740,8 @@
             },
             "backupPath": "/home/lucero/.config/Code/Backups/0ae788f00485511688f25082dfc4cc53",
             "uiState": {
-                "mode": 0,
-                "x": 32,
+                "mode": 1,
+                "x": 31,
                 "y": 58,
                 "width": 790,
                 "height": 709
