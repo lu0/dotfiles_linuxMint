@@ -4,7 +4,7 @@
 # Linux Mint Cinnamon (Ubuntu edition) installation.
 # 
 # Author: Lucero Alvarado
-# Repository: https://github.com/lu0/mint_dotfiles
+# Repository: https://github.com/lu0/dotfiles_linuxMint
 
 
 # Autostart applications
@@ -27,7 +27,7 @@ rm -rf /usr/share/X11/xkb/types/complete
 ln -s ~/dotfiles_LinuxMint/keymappings/complete /usr/share/X11/xkb/types/complete
 
 rm -rf /usr/share/X11/xkb/types/iso9995
-ln -s ~/dotfiles_LinuxMint/keymappings/iso9995 /usr/share/X11/xkb/types/iso995
+ln -s ~/dotfiles_LinuxMint/keymappings/iso9995 /usr/share/X11/xkb/types/iso9995
 
 rm -rf /usr/share/X11/xkb/types/extra
 ln -s ~/dotfiles_LinuxMint/keymappings/extra /usr/share/X11/xkb/types/extra
