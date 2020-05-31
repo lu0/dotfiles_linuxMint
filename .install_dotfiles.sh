@@ -47,8 +47,12 @@ ln -s ~/dotfiles_LinuxMint/keymappings/la /usr/share/X11/xkb/symbols/la
 # rm -rf ~/.config/nemo/accels
 # ln -s ~/dotfiles_LinuxMint/config/nemo/accels ~/.config/nemo/accels
 
-rm -rf ~/.config/gtk-3.0/bookmarks
-ln -s ~/dotfiles_LinuxMint/config/gtk-3.0/bookmarks ~/.config/gtk-3.0/
+# System keybindings
+# Export current config with: 
+# dconf dump /org/cinnamon/desktop/keybindings/ > ~/dotfiles_LinuxMint/keymappings/myKeybindings.conf
+ln -s ~/dotfiles_LinuxMint/keymappings/myKeybindings.conf ~/.myKeybindings.conf
+dconf load /org/cinnamon/desktop/keybindings/ < ~/.myKeybindings.conf
+chmod +775 ~/dotfiles_LinuxMint/keymappings/exportKeybindings.conf 
 
 # VS code --------------------------------------------------------------------------------------
 rm -rf ~/.config/Code/User/settings.json
