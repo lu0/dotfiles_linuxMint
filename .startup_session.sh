@@ -4,7 +4,7 @@
 #
 # Run at startup with Mint's "Startup apps" or
 # map it to a shortcut (ex. ctrl-super-alt-home) from:
-#     /home/lucero/git_lu0/mint_dotfiles/.startup_bash.sh
+#     ~/git_lu0/mint_dotfiles/.startup_bash.sh
 # 
 # Author: Lucero Alvarado
 # Repository: https://github.com/lu0/mint_dotfiles
@@ -121,7 +121,7 @@ systemctl --user start onedrive
 # ------- Play sound when ready --------------------------------------------
 # cpuLoad=`mpstat 2 1 | awk 'END{print 100-$NF}'`
 sleep 1
-play /home/lucero/git_lu0/mint_dotfiles/mySystemSounds/login_oot.wav
+play ~/git_lu0/mint_dotfiles/mySystemSounds/login_oot.wav
 
 
 # ------- Enable notifications ---------------------------------------------

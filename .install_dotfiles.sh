@@ -52,7 +52,7 @@ ln -s ~/dotfiles_LinuxMint/keymappings/la /usr/share/X11/xkb/symbols/la
 # dconf dump /org/cinnamon/desktop/keybindings/ > ~/dotfiles_LinuxMint/keymappings/myKeybindings.conf
 ln -s ~/dotfiles_LinuxMint/keymappings/myKeybindings.conf ~/.myKeybindings.conf
 dconf load /org/cinnamon/desktop/keybindings/ < ~/.myKeybindings.conf
-chmod +775 ~/dotfiles_LinuxMint/keymappings/exportKeybindings.conf 
+chmod +775 ~/dotfiles_LinuxMint/keymappings/exportKeybindings.sh
 
 # VS code --------------------------------------------------------------------------------------
 rm -rf ~/.config/Code/User/settings.json
