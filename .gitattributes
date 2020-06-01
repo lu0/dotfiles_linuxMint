@@ -1,2 +1,1 @@
- special-vendored-path/* linguist-vendored
- *.scm linguist-language=Shell
+
