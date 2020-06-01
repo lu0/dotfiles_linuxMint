@@ -1,2 +1,2 @@
  special-vendored-path/* linguist-vendored
- *.* linguist-language=Shell
+ *. linguist-language=Shell
