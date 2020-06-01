@@ -25,6 +25,7 @@
             "file:///home/lucero/git_lu0ear/cubing-mty-app"
         ],
         "files2": [
+            "file:///home/lucero/.bashrc",
             "file:///home/lucero/.config/Code/User/settings.json",
             "file:///home/lucero/dotfiles_LinuxMint/config/vscode/install_extensions.sh",
             "file:///home/lucero/.dconf.conf",
@@ -112,7 +113,6 @@
             "file:///home/lucero/.gtkrc-2.0",
             "file:///home/lucero/.gitconfig",
             "file:///home/lucero/.dmrc",
-            "file:///home/lucero/.bashrc",
             "file:///home/lucero/dotfiles_LinuxMint/.fancy-bash-promt.sh",
             "file:///home/lucero/dotfiles_LinuxMint/.install_dotfiles.sh",
             "file:///home/lucero/dotfiles_LinuxMint/.startup_session.sh",
@@ -161,8 +161,7 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor",
-                                    "enabled": false
+                                    "label": "&&Reopen Closed Editor"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -271,6 +270,17 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
+                                        "external": "file:///home/lucero/.bashrc",
+                                        "path": "/home/lucero/.bashrc",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.bashrc"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
                                         "external": "file:///home/lucero/.config/Code/User/settings.json",
                                         "path": "/home/lucero/.config/Code/User/settings.json",
                                         "scheme": "file"
@@ -365,17 +375,6 @@
                                     },
                                     "enabled": true,
                                     "label": "/usr/share/X11/XErrorDB"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///usr/share/X11/rgb.txt",
-                                        "path": "/usr/share/X11/rgb.txt",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/share/X11/rgb.txt"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -689,7 +688,8 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "Show &&Side Bar"
+                                    "label": "Show &&Side Bar",
+                                    "checked": true
                                 },
                                 {
                                     "id": "workbench.action.toggleStatusbarVisibility",

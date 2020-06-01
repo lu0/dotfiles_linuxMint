@@ -14,6 +14,9 @@ ln -s ~/dotfiles_LinuxMint/config/autostart ~/.config/autostart
 # Bash style
 ln -s ~/dotfiles_LinuxMint/.fancy-bash-promt.sh ~/.fancy-bash-promt.sh
 
+rm -rf ~/.bashrc
+ln -s ~/dotfiles_LinuxMint/config/.bashrc ~/.bashrc
+
 # Startup script (open fave apps)
 ln -s ~/dotfiles_LinuxMint/.startup_session.sh ~/.startup_session.sh
 
@@ -21,7 +24,7 @@ ln -s ~/dotfiles_LinuxMint/.startup_session.sh ~/.startup_session.sh
 ln -s ~/dotfiles_LinuxMint/mylaunchers ~/.mylaunchers
 
 # Custom keys
-# ln -s ~/dotfiles_LinuxMint/xmodmap_edit.lst ~/.xmodmap_edit.lst
+# ln -s ~/dotfiles_LinuxMint/config/xmodmap_edit.lst ~/.xmodmap_edit.lst
 
 rm -rf /usr/share/X11/xkb/types/complete
 ln -s ~/dotfiles_LinuxMint/keymappings/complete /usr/share/X11/xkb/types/complete
