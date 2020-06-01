@@ -24,12 +24,10 @@
     "launch": {
     
     },
-    "browser-preview.startUrl": "http://localhost:8100/login",
     "workbench.activityBar.visible": false,
     "editor.wordWrap": "on",
     "workbench.editor.closeEmptyGroups": false,
     "zenMode.hideTabs": false,
     "keyboard.dispatch": "keyCode",
     "workbench.editor.enablePreviewFromQuickOpen": false
-    
 }

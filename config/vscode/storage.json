@@ -25,6 +25,10 @@
             "file:///home/lucero/git_lu0ear/cubing-mty-app"
         ],
         "files2": [
+            "file:///home/lucero/.config/Code/User/settings.json",
+            "file:///home/lucero/dotfiles_LinuxMint/config/vscode/install_extensions.sh",
+            "file:///home/lucero/.dconf.conf",
+            "file:///home/lucero/dotfiles_LinuxMint/config/dconf.conf",
             "file:///home/lucero/.startup_session.sh",
             "file:///home/lucero/dotfiles_LinuxMint/keymappings/exportKeybindings.sh",
             "file:///usr/share/X11/xkb/symbols/latam",
@@ -67,7 +71,6 @@
             "file:///home/lucero/dotfiles_LinuxMint/config/vscode/settings.json",
             "file:///home/lucero/.config/Code/CachedExtensions/user",
             "file:///home/lucero/dotfiles_LinuxMint/config/vscode/keybindings%20%28copy%29.json",
-            "file:///home/lucero/.config/Code/User/settings.json",
             "file:///home/lucero/.LinuxMint_MyConfig/02_Dconf/.my_keybindings",
             "file:///home/lucero/.LinuxMint_MyConfig/02_Dconf/.my_dconf",
             "file:///home/lucero/.linuxmint/mintMenu/applications.list",
@@ -121,10 +124,7 @@
             "file:///home/lucero/onedrive/configure.ac",
             "file:///home/lucero/onedrive/config",
             "file:///home/lucero/onedrive/src/config.d",
-            "file:///home/lucero/onedrive/configure",
-            "file:///home/lucero/git_lu0/mint_dotfiles/.startup_bash.sh",
-            "file:///home/lucero/%24",
-            "file:///home/lucero/sleep"
+            "file:///home/lucero/onedrive/configure"
         ]
     },
     "lastKnownMenubarData": {
@@ -161,7 +161,8 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor"
+                                    "label": "&&Reopen Closed Editor",
+                                    "enabled": false
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -270,6 +271,50 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
+                                        "external": "file:///home/lucero/.config/Code/User/settings.json",
+                                        "path": "/home/lucero/.config/Code/User/settings.json",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.config/Code/User/settings.json"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/lucero/dotfiles_LinuxMint/config/vscode/install_extensions.sh",
+                                        "path": "/home/lucero/dotfiles_LinuxMint/config/vscode/install_extensions.sh",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/dotfiles_LinuxMint/config/vscode/install_extensions.sh"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/lucero/.dconf.conf",
+                                        "path": "/home/lucero/.dconf.conf",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.dconf.conf"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/lucero/dotfiles_LinuxMint/config/dconf.conf",
+                                        "path": "/home/lucero/dotfiles_LinuxMint/config/dconf.conf",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/dotfiles_LinuxMint/config/dconf.conf"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
                                         "external": "file:///home/lucero/.startup_session.sh",
                                         "path": "/home/lucero/.startup_session.sh",
                                         "scheme": "file"
@@ -331,50 +376,6 @@
                                     },
                                     "enabled": true,
                                     "label": "/usr/share/X11/rgb.txt"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/types/extra",
-                                        "path": "/usr/share/X11/xkb/types/extra",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/share/X11/xkb/types/extra"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/types/iso9995",
-                                        "path": "/usr/share/X11/xkb/types/iso9995",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/share/X11/xkb/types/iso9995"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/types/pc",
-                                        "path": "/usr/share/X11/xkb/types/pc",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/share/X11/xkb/types/pc"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/types/README",
-                                        "path": "/usr/share/X11/xkb/types/README",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/share/X11/xkb/types/README"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -688,8 +689,7 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "Show &&Side Bar",
-                                    "checked": true
+                                    "label": "Show &&Side Bar"
                                 },
                                 {
                                     "id": "workbench.action.toggleStatusbarVisibility",
@@ -1353,10 +1353,6 @@
                 "label": "Ctrl+Shift+Space",
                 "userSettingsLabel": "ctrl+shift+space"
             },
-            "workbench.action.openRecent": {
-                "label": "Super+R",
-                "userSettingsLabel": "meta+r"
-            },
             "workbench.action.files.save": {
                 "label": "Ctrl+S",
                 "userSettingsLabel": "ctrl+s"
@@ -1370,26 +1366,8 @@
                 "userSettingsLabel": "ctrl+meta+s"
             },
             "workbench.action.openSettings": {
-                "label": "Super+S",
-                "userSettingsLabel": "meta+s"
-            },
-            "workbench.view.extensions": {
-                "label": "Ctrl+Shift+X",
-                "userSettingsLabel": "ctrl+shift+x"
-            },
-            "workbench.action.openGlobalKeybindings": {
-                "label": "Super+K",
-                "userSettingsLabel": "meta+k"
-            },
-            "workbench.extensions.action.showRecommendedKeymapExtensions": {
-                "label": "Ctrl+K Ctrl+M",
-                "isNative": false,
-                "userSettingsLabel": "ctrl+k ctrl+m"
-            },
-            "workbench.action.selectTheme": {
-                "label": "Ctrl+K Ctrl+T",
-                "isNative": false,
-                "userSettingsLabel": "ctrl+k ctrl+t"
+                "label": "Ctrl+,",
+                "userSettingsLabel": "ctrl+,"
             },
             "workbench.action.closeActiveEditor": {
                 "label": "Ctrl+Space",
@@ -1399,14 +1377,6 @@
                 "label": "Ctrl+O Ctrl+Space",
                 "isNative": false,
                 "userSettingsLabel": "ctrl+o ctrl+space"
-            },
-            "workbench.action.closeWindow": {
-                "label": "Ctrl+W",
-                "userSettingsLabel": "ctrl+w"
-            },
-            "workbench.action.quit": {
-                "label": "Ctrl+Q",
-                "userSettingsLabel": "ctrl+q"
             },
             "undo": {
                 "label": "Ctrl+Z",
@@ -1432,14 +1402,6 @@
                 "label": "Ctrl+F",
                 "userSettingsLabel": "ctrl+f"
             },
-            "editor.action.commentLine": {
-                "label": "Super+C",
-                "userSettingsLabel": "meta+c"
-            },
-            "editor.action.blockComment": {
-                "label": "Ctrl+Shift+A",
-                "userSettingsLabel": "ctrl+shift+a"
-            },
             "editor.emmet.action.expandAbbreviation": {
                 "label": "Tab",
                 "userSettingsLabel": "tab"
@@ -1451,10 +1413,6 @@
             "editor.action.smartSelect.expand": {
                 "label": "Shift+Alt+Right",
                 "userSettingsLabel": "shift+alt+right"
-            },
-            "editor.action.smartSelect.shrink": {
-                "label": "Shift+Alt+Left",
-                "userSettingsLabel": "shift+alt+left"
             },
             "editor.action.copyLinesUpAction": {
                 "label": "Ctrl+Alt+Up",
@@ -1473,121 +1431,37 @@
                 "userSettingsLabel": "ctrl+meta+down"
             },
             "editor.action.insertCursorAbove": {
-                "label": "Shift+Alt+Up",
-                "userSettingsLabel": "shift+alt+up"
+                "label": "Ctrl+Shift+Up",
+                "userSettingsLabel": "ctrl+shift+up"
             },
             "editor.action.insertCursorBelow": {
-                "label": "Shift+Alt+Down",
-                "userSettingsLabel": "shift+alt+down"
-            },
-            "editor.action.insertCursorAtEndOfEachLineSelected": {
-                "label": "Shift+Alt+I",
-                "userSettingsLabel": "shift+alt+i"
-            },
-            "editor.action.addSelectionToNextFindMatch": {
-                "label": "Ctrl+D",
-                "userSettingsLabel": "ctrl+d"
-            },
-            "workbench.action.showCommands": {
-                "label": "Ctrl+Shift+P",
-                "userSettingsLabel": "ctrl+shift+p"
-            },
-            "workbench.action.toggleZenMode": {
-                "label": "Ctrl+K Z",
-                "isNative": false,
-                "userSettingsLabel": "ctrl+k z"
-            },
-            "workbench.action.toggleSidebarVisibility": {
-                "label": "Super+A",
-                "userSettingsLabel": "meta+a"
-            },
-            "workbench.action.toggleActivityBarVisibility": {
-                "label": "Super+CapsLock",
-                "userSettingsLabel": "meta+capslock"
+                "label": "Ctrl+Shift+Down",
+                "userSettingsLabel": "ctrl+shift+down"
             },
             "workbench.action.zoomIn": {
-                "label": "Ctrl+Shift+0",
-                "userSettingsLabel": "ctrl+shift+0"
+                "label": "Ctrl+=",
+                "userSettingsLabel": "ctrl+="
             },
             "workbench.action.zoomOut": {
-                "label": "Ctrl+-",
-                "userSettingsLabel": "ctrl+-"
+                "label": "Ctrl+[",
+                "userSettingsLabel": "ctrl+["
             },
             "workbench.action.zoomReset": {
-                "label": "Ctrl+NumPad0",
+                "label": "Ctrl+0",
+                "userSettingsLabel": "ctrl+0"
+            },
+            "workbench.action.terminal.toggleTerminal": {
+                "label": "Ctrl+` Ctrl+`",
                 "isNative": false,
-                "userSettingsLabel": "ctrl+numpad0"
-            },
-            "workbench.action.toggleEditorGroupLayout": {
-                "label": "Shift+Alt+0",
-                "userSettingsLabel": "shift+alt+0"
-            },
-            "workbench.view.explorer": {
-                "label": "Ctrl+Shift+E",
-                "userSettingsLabel": "ctrl+shift+e"
-            },
-            "workbench.view.search": {
-                "label": "Ctrl+Shift+F",
-                "userSettingsLabel": "ctrl+shift+f"
-            },
-            "workbench.view.scm": {
-                "label": "Ctrl+Shift+G",
-                "userSettingsLabel": "ctrl+shift+g"
-            },
-            "workbench.view.debug": {
-                "label": "Ctrl+Shift+D",
-                "userSettingsLabel": "ctrl+shift+d"
-            },
-            "workbench.action.output.toggleOutput": {
-                "label": "Ctrl+K Ctrl+H",
-                "isNative": false,
-                "userSettingsLabel": "ctrl+k ctrl+h"
-            },
-            "workbench.debug.action.toggleRepl": {
-                "label": "Ctrl+Shift+Y",
-                "userSettingsLabel": "ctrl+shift+y"
-            },
-            "workbench.actions.view.problems": {
-                "label": "Ctrl+Shift+M",
-                "userSettingsLabel": "ctrl+shift+m"
-            },
-            "editor.action.toggleWordWrap": {
-                "label": "Super+W",
-                "userSettingsLabel": "meta+w"
-            },
-            "workbench.action.navigateBack": {
-                "label": "Ctrl+Alt+-",
-                "userSettingsLabel": "ctrl+alt+-"
-            },
-            "workbench.action.navigateForward": {
-                "label": "Ctrl+Shift+-",
-                "userSettingsLabel": "ctrl+shift+-"
-            },
-            "workbench.action.navigateToLastEditLocation": {
-                "label": "Ctrl+K Ctrl+Q",
-                "isNative": false,
-                "userSettingsLabel": "ctrl+k ctrl+q"
-            },
-            "workbench.action.nextEditor": {
-                "label": "Ctrl+PageDown",
-                "userSettingsLabel": "ctrl+pagedown"
-            },
-            "workbench.action.previousEditor": {
-                "label": "Ctrl+PageUp",
-                "userSettingsLabel": "ctrl+pageup"
+                "userSettingsLabel": "ctrl+` ctrl+`"
             },
             "workbench.action.nextEditorInGroup": {
                 "label": "Ctrl+Alt+X",
                 "userSettingsLabel": "ctrl+alt+x"
             },
             "workbench.action.previousEditorInGroup": {
-                "label": "Alt+G Ctrl+Alt+Z",
-                "isNative": false,
-                "userSettingsLabel": "alt+g ctrl+alt+z"
-            },
-            "workbench.action.focusFirstEditorGroup": {
-                "label": "Ctrl+1",
-                "userSettingsLabel": "ctrl+1"
+                "label": "Ctrl+Alt+Z",
+                "userSettingsLabel": "ctrl+alt+z"
             },
             "workbench.action.focusSecondEditorGroup": {
                 "label": "Ctrl+2",
@@ -1613,116 +1487,22 @@
                 "label": "Ctrl+Alt+S",
                 "userSettingsLabel": "ctrl+alt+s"
             },
-            "workbench.action.focusAboveGroup": {
-                "label": "Ctrl+K Ctrl+UpArrow",
-                "isNative": false,
-                "userSettingsLabel": "ctrl+k ctrl+up"
-            },
-            "workbench.action.focusBelowGroup": {
-                "label": "Ctrl+K Ctrl+DownArrow",
-                "isNative": false,
-                "userSettingsLabel": "ctrl+k ctrl+down"
-            },
-            "workbench.action.quickOpen": {
-                "label": "Super+F",
-                "userSettingsLabel": "meta+f"
-            },
-            "workbench.action.showAllSymbols": {
-                "label": "Ctrl+T",
-                "userSettingsLabel": "ctrl+t"
-            },
-            "workbench.action.gotoSymbol": {
-                "label": "Ctrl+Shift+O",
-                "userSettingsLabel": "ctrl+shift+o"
-            },
-            "editor.action.revealDefinition": {
-                "label": "F12",
-                "userSettingsLabel": "f12"
-            },
-            "editor.action.goToImplementation": {
-                "label": "Ctrl+F12",
-                "userSettingsLabel": "ctrl+f12"
-            },
-            "editor.action.goToReferences": {
-                "label": "Shift+F12",
-                "userSettingsLabel": "shift+f12"
-            },
-            "workbench.action.gotoLine": {
-                "label": "Super+OEM_102",
-                "userSettingsLabel": "meta+oem_102"
-            },
-            "editor.action.jumpToBracket": {
-                "label": "Ctrl+`",
-                "userSettingsLabel": "ctrl+`"
-            },
-            "editor.action.marker.nextInFiles": {
-                "label": "F8",
-                "userSettingsLabel": "f8"
-            },
-            "editor.action.marker.prevInFiles": {
-                "label": "Shift+F8",
-                "userSettingsLabel": "shift+f8"
-            },
-            "editor.action.dirtydiff.next": {
-                "label": "Alt+F3",
-                "userSettingsLabel": "alt+f3"
-            },
-            "editor.action.dirtydiff.previous": {
-                "label": "Shift+Alt+F3",
-                "userSettingsLabel": "shift+alt+f3"
-            },
-            "workbench.action.debug.run": {
-                "label": "Ctrl+F5",
-                "userSettingsLabel": "ctrl+f5"
-            },
-            "workbench.action.debug.stop": {
-                "label": "Shift+F5",
-                "userSettingsLabel": "shift+f5"
-            },
-            "workbench.action.debug.restart": {
-                "label": "Ctrl+Shift+F5",
-                "userSettingsLabel": "ctrl+shift+f5"
-            },
-            "workbench.action.debug.stepOver": {
-                "label": "F10",
-                "userSettingsLabel": "f10"
-            },
-            "workbench.action.debug.stepInto": {
-                "label": "F11",
-                "userSettingsLabel": "f11"
-            },
-            "workbench.action.debug.stepOut": {
-                "label": "Shift+F11",
-                "userSettingsLabel": "shift+f11"
-            },
-            "workbench.action.debug.continue": {
-                "label": "F5",
-                "userSettingsLabel": "f5"
-            },
             "editor.debug.action.toggleBreakpoint": {
                 "label": "F9",
                 "userSettingsLabel": "f9"
             },
-            "editor.debug.action.toggleInlineBreakpoint": {
-                "label": "Shift+F9",
-                "userSettingsLabel": "shift+f9"
-            },
             "workbench.action.terminal.new": {
-                "label": "Ctrl+Shift+`",
-                "userSettingsLabel": "ctrl+shift+`"
+                "label": "Ctrl+Alt+T",
+                "userSettingsLabel": "ctrl+alt+t"
             },
             "workbench.action.terminal.split": {
-                "label": "Super+T",
-                "userSettingsLabel": "meta+t"
-            },
-            "workbench.action.tasks.build": {
-                "label": "Ctrl+Shift+B",
-                "userSettingsLabel": "ctrl+shift+b"
+                "label": "Ctrl+Shift+Space",
+                "userSettingsLabel": "ctrl+shift+space"
             },
             "workbench.action.keybindingsReference": {
-                "label": "Ctrl+K K",
+                "label": "Ctrl+` K",
                 "isNative": false,
-                "userSettingsLabel": "ctrl+k k"
+                "userSettingsLabel": "ctrl+` k"
             },
             "workbench.action.toggleDevTools": {
                 "label": "Ctrl+Shift+I",
@@ -1741,10 +1521,10 @@
             "backupPath": "/home/lucero/.config/Code/Backups/0ae788f00485511688f25082dfc4cc53",
             "uiState": {
                 "mode": 0,
-                "x": 30,
-                "y": 30,
-                "width": 790,
-                "height": 738
+                "x": 697,
+                "y": 58,
+                "width": 668,
+                "height": 709
             }
         },
         "openedWindows": []
