@@ -25,6 +25,8 @@
             "file:///home/lucero/git_lu0ear/cubing-mty-app"
         ],
         "files2": [
+            "file:///home/lucero/dotfiles_LinuxMint/config/nemo/accels",
+            "file:///home/lucero/dotfiles_LinuxMint/.git/.gitattributes",
             "file:///home/lucero/.bashrc",
             "file:///home/lucero/.config/Code/User/settings.json",
             "file:///home/lucero/dotfiles_LinuxMint/config/vscode/install_extensions.sh",
@@ -122,9 +124,7 @@
             "file:///home/lucero/onedrive/.travis-ci.sh",
             "file:///home/lucero/onedrive/version",
             "file:///home/lucero/onedrive/configure.ac",
-            "file:///home/lucero/onedrive/config",
-            "file:///home/lucero/onedrive/src/config.d",
-            "file:///home/lucero/onedrive/configure"
+            "file:///home/lucero/onedrive/config"
         ]
     },
     "lastKnownMenubarData": {
@@ -270,6 +270,28 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
+                                        "external": "file:///home/lucero/dotfiles_LinuxMint/config/nemo/accels",
+                                        "path": "/home/lucero/dotfiles_LinuxMint/config/nemo/accels",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/dotfiles_LinuxMint/config/nemo/accels"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/lucero/dotfiles_LinuxMint/.git/.gitattributes",
+                                        "path": "/home/lucero/dotfiles_LinuxMint/.git/.gitattributes",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/dotfiles_LinuxMint/.git/.gitattributes"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
                                         "external": "file:///home/lucero/.bashrc",
                                         "path": "/home/lucero/.bashrc",
                                         "scheme": "file"
@@ -353,28 +375,6 @@
                                     },
                                     "enabled": true,
                                     "label": "/usr/share/X11/xkb/symbols/latam"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///usr/share/X11/xkb/types/default",
-                                        "path": "/usr/share/X11/xkb/types/default",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/share/X11/xkb/types/default"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///usr/share/X11/XErrorDB",
-                                        "path": "/usr/share/X11/XErrorDB",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/share/X11/XErrorDB"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -891,7 +891,8 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location"
+                        "label": "&&Last Edit Location",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
