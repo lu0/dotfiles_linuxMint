@@ -80,3 +80,6 @@ ln -s ~/dotfiles_LinuxMint/config/-snap-code-29-meta-gui-com.visualstudio.code.p
 # Nemo keybindings
 rm -rf ~/.gnome2
 ln -s ~/dotfiles_LinuxMint/gnome2 ~/.gnome2
+
+# Install VSCode extensions
+~/dotfiles_LinuxMint/config/vscode/install_extensions.sh
