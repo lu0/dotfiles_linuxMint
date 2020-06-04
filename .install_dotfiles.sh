@@ -59,10 +59,12 @@ chmod +775 ~/dotfiles_LinuxMint/config/export_dconf.sh
 
 # VS code --------------------------------------------------------------------------------------
 rm -rf ~/.config/Code/User/settings.json
-ln -s ~/dotfiles_LinuxMint/config/vscode/settings.json ~/.config/Code/User/settings.json
+ln -s ~/dotfiles_linuxMint/config/vscode/settings_FHD.json ~/.config/Code/User/settings.json
+# ln -s ~/dotfiles_linuxMint/config/vscode/settings_HD.json ~/.config/Code/User/settings.json
+
 
 rm -rf ~/.config/Code/User/keybindings.json
-ln -s ~/dotfiles_LinuxMint/config/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+ln -s ~/dotfiles_linuxMint/config/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 
 rm -rf ~/.config/Code/storage.json
 ln -s ~/dotfiles_LinuxMint/config/vscode/storage.json ~/.config/Code/storage.json
