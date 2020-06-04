@@ -11,10 +11,10 @@
 ! --------------------------------------------------------------------------------
 
 ! Fn + Tools (F9) key as Previous Track
-keycode 179 = XF86AudioPrev XF86AudioPrev XF86AudioPrev XF86AudioPrev
+!keycode 179 = XF86AudioPrev XF86AudioPrev XF86AudioPrev XF86AudioPrev
 
 ! Fn + Favorites (F12) key as Next Track
-keycode 164 = XF86AudioNext XF86AudioNext XF86AudioNext XF86AudioNext
+!keycode 164 = XF86AudioNext XF86AudioNext XF86AudioNext XF86AudioNext
 
 ! Fn + P as Play/Pause 
 keycode 127 = XF86AudioPlay XF86AudioPause XF86AudioPlay XF86AudioPause
