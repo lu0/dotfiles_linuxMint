@@ -1,0 +1,20 @@
+! --------------------------------------------------------------------------------
+!  Media keys for ThinkPad X1Y3
+!
+! Backup previous config with:
+!   xmodmap -pke > ~/dotfiles_linuxMint/keymappings/xmodmap_current_X1Y3.lst
+!
+! Usage: xmodmap ~/dotfiles_linuxMint/keymappings/mediaKeys_ThinkPadX1Y3.lst
+!
+! Reset using backup file or:
+!   setxkbmap -option
+! --------------------------------------------------------------------------------
+
+! Fn + Tools (F9) key as Previous Track
+keycode 179 = XF86AudioPrev XF86AudioPrev XF86AudioPrev XF86AudioPrev
+
+! Fn + Favorites (F12) key as Next Track
+keycode 164 = XF86AudioNext XF86AudioNext XF86AudioNext XF86AudioNext
+
+! Fn + P as Play/Pause 
+keycode 127 = XF86AudioPlay XF86AudioPause XF86AudioPlay XF86AudioPause

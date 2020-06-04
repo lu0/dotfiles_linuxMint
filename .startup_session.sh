@@ -50,6 +50,9 @@ else
 fi
 sleep 0.5
 
+# Custom media keys for ThinkPad X1Y3
+xmodmap ~/dotfiles_linuxMint/keymappings/mediaKeys_ThinkPadX1Y3.lst
+
 
 # ---------Start applications -----------------------------------------------
 
