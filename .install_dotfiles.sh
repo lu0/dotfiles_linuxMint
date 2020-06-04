@@ -28,6 +28,7 @@ unzip /usr/share/themes/MintY_RedVariation.zip -d /usr/share/themes
 unzip /usr/share/icons/papirus.zip -d /usr/share/icons/
 unzip /usr/share/icons/papirus_redvariation.zip -d /usr/share/icons/
 
+rm -rf /usr/share/themes/MintY_RedVariation.zip
 rm -rf /usr/share/icons/papirus.zip
 rm -rf /usr/share/icons/papirus_redvariation.zip
 
