@@ -15,7 +15,20 @@ ln -s ~/dotfiles_LinuxMint/config/autostart ~/.config/autostart
 ln -s ~/dotfiles_LinuxMint/.fancy-bash-promt.sh ~/.fancy-bash-promt.sh
 
 rm -rf ~/.bashrc
-ln -s ~/dotfiles_LinuxMint/config/.bashrc ~/.bashrc
+ln -s ~/dotfiles_linuxMint/config/.bashrc ~/.bashrc
+
+# Theme and icons
+ln -s ~/dotfiles_linuxMint/cinnamon/appearance/themes/MintY_RedVariation /usr/share/themes/MintY_RedVariation
+
+cp ~/dotfiles_linuxMint/cinnamon/appearance/icons/papirus.zip /usr/share/icons/papirus.zip
+cp ~/dotfiles_linuxMint/cinnamon/appearance/icons/papirus_redvariation.zip /usr/share/icons/papirus_redvariation.zip
+
+unzip /usr/share/icons/papirus.zip -d /usr/share/icons/
+unzip /usr/share/icons/papirus_redvariation.zip -d /usr/share/icons/
+
+rm -rf /usr/share/icons/papirus.zip
+rm -rf /usr/share/icons/papirus_redvariation.zip
+
 
 # Startup script (open fave apps)
 ln -s ~/dotfiles_LinuxMint/.startup_session.sh ~/.startup_session.sh
