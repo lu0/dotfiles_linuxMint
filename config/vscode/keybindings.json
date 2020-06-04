@@ -205,11 +205,11 @@
                 "command": "workbench.action.reopenClosedEditor"
         },
         {
-                "key": "ctrl+Alt+X",
+                "key": "shift+Alt+S",
                 "command": "workbench.action.nextEditorInGroup"
         },
         {
-                "key": "ctrl+Alt+Z",
+                "key": "shift+Alt+A",
                 "command": "workbench.action.previousEditorInGroup"
         },
         {
@@ -225,7 +225,7 @@
                 "command": "workbench.action.gotoLine"
         },
         {
-                "key": "ctrl+[Backquote] ctrlñ+B",
+                "key": "ctrl+[Backquote] ctrl+B",
                 "command": "editor.action.jumpToBracket"
         },
         {
@@ -247,37 +247,49 @@
                 "when": "terminalFocus"
         },
         {
-                "key": "ctrl+alt+X",
+                "key": "shift+alt+S",
                 "command": "workbench.action.terminal.focusNextPane",
                 "when": "terminalFocus"
         },
         {
-                "key": "ctrl+alt+Z",
+                "key": "shift+alt+A",
                 "command": "workbench.action.terminal.focusPreviousPane",
                 "when": "terminalFocus"
         },
         {
-                "key": "ctrl+alt+A",
-                "command": "workbench.action.focusLeftGroup"
+                "key": "shift+alt+Z",
+                "command": "workbench.action.terminal.focusPrevious",
+                "when": "terminalFocus"
         },
         {
-                "key": "ctrl+alt+S",
-                "command": "workbench.action.focusRightGroup"
+                "key": "shift+alt+X",
+                "command": "workbench.action.terminal.focusNext",
+                "when": "terminalFocus"
         },
         {
-                "key": "ctrl+shift+left",
+                "key": "shift+alt+Z",
+                "command": "workbench.action.focusLeftGroup",
+                "when": "editorFocus"
+        },
+        {
+                "key": "shift+alt+X",
+                "command": "workbench.action.focusRightGroup",
+                "when": "editorFocus"
+        },
+        {
+                "key": "shift+meta+A",
                 "command": "workbench.action.moveEditorLeftInGroup"
         },
         {
-                "key": "ctrl+shift+right",
+                "key": "shift+meta+S",
                 "command": "workbench.action.moveEditorRightInGroup"
         },
         {
-                "key": "ctrl+[Backquote] ctrl+Z",
+                "key": "alt+shift+Q",
                 "command": "workbench.action.focusActiveEditorGroup"
         },
         {
-                "key": "ctrl+[Backquote] ctrl+X",
+                "key": "alt+shift+W",
                 "command": "workbench.action.terminal.focus"
         },
         {
