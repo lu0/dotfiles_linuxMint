@@ -1,6 +1,5 @@
 audacity	install
 cheese	install
-code	install
 dconf-editor	install
 docker	install
 docker.io	install
@@ -20,11 +19,11 @@ openjdk-8-jdk	install
 papirus-icon-theme	install
 python3-numpy	install
 python-software-properties	install
-softmaker-freeoffice-2018	install
 soundconverter	install
-spotify-client	install
 ttf-unifont	install
 vim	install
 virtualbox-6.1	install
 vivaldi-stable	install
 xdotool	install
+blueman	install
+inkscape	install
