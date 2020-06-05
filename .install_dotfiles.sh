@@ -105,3 +105,8 @@ ln -s ~/dotfiles_linuxMint/gnome2 ~/.gnome2
 
 # Install VSCode extensions
 ~/dotfiles_linuxMint/config/vscode/install_extensions.sh
+
+# Fan control (thinkpad x1y3)
+sudo cp ~/dotfiles_linuxMint/fan-control/thinkfan_acpi.conf /etc/modprobe.d/
+modprobe -r thinkpad_acpi && modprobe thinkpad_acpi
+systemctl enable thinkfan
