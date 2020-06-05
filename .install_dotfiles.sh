@@ -61,6 +61,8 @@ ln -s ~/dotfiles_linuxMint/keymappings/latam /usr/share/X11/xkb/symbols/latam
 rm -rf /usr/share/X11/xkb/symbols/la
 ln -s ~/dotfiles_linuxMint/keymappings/la /usr/share/X11/xkb/symbols/la
 
+# Backups 
+ln -s ~/dotfiles_linuxMint/mint-gui-backups ~/Documents/Backups
 
 # sudo ln -s ~/dotfiles_linuxMint/config/90-custom-kbd.conf /usr/share/X11/xorg.conf.d/90-custom-kbd.conf
 
