@@ -82,45 +82,14 @@ ln -s ~/dotfiles_linuxMint/config/dconf.conf ~/.dconf.conf
 dconf load / < ~/.dconf.conf
 chmod +775 ~/dotfiles_linuxMint/config/export_dconf.sh
 
-# VS code --------------------------------------------------------------------------------------
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-sudo apt-get install apt-transport-https
-sudo apt-get update
-sudo apt-get install code # or code-insiders
-
-
-rm -rf ~/.config/Code/User/settings.json
-ln -s ~/dotfiles_linuxMint/config/vscode/settings_FHD.json ~/.config/Code/User/settings.json
-# ln -s ~/dotfiles_linuxMint/config/vscode/settings_HD.json ~/.config/Code/User/settings.json
-
-
-rm -rf ~/.config/Code/User/keybindings.json
-ln -s ~/dotfiles_linuxMint/config/vscode/keybindings.json ~/.config/Code/User/keybindings.json
-
-rm -rf ~/.config/Code/storage.json
-ln -s ~/dotfiles_linuxMint/config/vscode/storage.json ~/.config/Code/storage.json
-
-rm -rf ~/.config/Code/rapid_render.json
-ln -s ~/dotfiles_linuxMint/config/vscode/rapid_render.json ~/.config/Code/rapid_render.json
-
-rm -rf ~/.config/Code/rapid_render.json
-ln -s ~/dotfiles_linuxMint/config/vscode/rapid_render.json ~/.config/Code/rapid_render.json
 # ----------------------------------------------------------------------------------------------
 
 rm -rf ~/.config/onedrive/config
 ln -s ~/dotfiles_linuxMint/config/onedrive/config ~/.config/onedrive/config
 
-rm -rf ~/.config/mintmenu/-snap-code-29-meta-gui-com.visualstudio.code.png
-ln -s ~/dotfiles_linuxMint/config/-snap-code-29-meta-gui-com.visualstudio.code.png ~/.config/mintmenu/-snap-code-29-meta-gui-com.visualstudio.code.png
-
 # Nemo keybindings
 rm -rf ~/.gnome2
 ln -s ~/dotfiles_linuxMint/gnome2 ~/.gnome2
-
-# Install VSCode extensions
-~/dotfiles_linuxMint/config/vscode/install_extensions.sh
 
 # Fan control (thinkpad x1y3)
 sudo cp ~/dotfiles_linuxMint/fan-control/thinkfan_acpi.conf /etc/modprobe.d/

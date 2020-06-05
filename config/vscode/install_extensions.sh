@@ -2,9 +2,7 @@
 
 # Extensions for vscode
 
-code --install-extension Arjun.swagger-viewer
 code --install-extension auchenberg.vscode-browser-preview
-code --install-extension cssho.vscode-svgviewer
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension esbenp.prettier-vscode
 code --install-extension fivethree.vscode-ionic-snippets
@@ -26,9 +24,13 @@ code --install-extension vscjava.vscode-java-debug
 code --install-extension vscjava.vscode-java-dependency
 code --install-extension vscjava.vscode-java-pack
 code --install-extension vscjava.vscode-java-test
-code --install-extension vscjava.vscode-maven
+# code --install-extension vscjava.vscode-maven
 code --install-extension vscjava.vscode-spring-boot-dashboard
 code --install-extension vscjava.vscode-spring-initializr
 code --install-extension vscodevim.vim
+
+#code --disable-extension vscodevim.vim
+#code --disable-extension tht13.html-preview-vscode
+#code --disable-extension auchenberg.vscode-browser-preview
 
 notify-send "VS extensions installed!"
