@@ -18,7 +18,7 @@ rm -rf ~/.bashrc
 ln -s ~/dotfiles_linuxMint/config/.bashrc ~/.bashrc
 
 # Theme and icons
-cp ~/dotfiles_linuxMint/cinnamon/appearance/themes/MintY_RedVariation.zip /usr/share/themes/MintY_RedVariation.zip
+cp ~/dotfiles_linuxMint/cinnamon/appearance/themes/MintY_RedVariation/MintY_RedVariation.zip /usr/share/themes/MintY_RedVariation.zip
 cp ~/dotfiles_linuxMint/cinnamon/appearance/icons/papirus.zip /usr/share/icons/papirus.zip
 cp ~/dotfiles_linuxMint/cinnamon/appearance/icons/papirus_redvariation.zip /usr/share/icons/papirus_redvariation.zip
 
@@ -30,6 +30,14 @@ rm -rf /usr/share/themes/MintY_RedVariation.zip
 rm -rf /usr/share/icons/papirus.zip
 rm -rf /usr/share/icons/papirus_redvariation.zip
 
+rm /usr/share/themes/MintY_RedVariation/cinnamon/cinnamon.css
+ln -s ~/dotfiles_linuxMint/cinnamon/appearance/themes/MintY_RedVariation/cinnamon.css /usr/share/themes/MintY_RedVariation/cinnamon/cinnamon.css
+
+rm /usr/share/themes/MintY_RedVariation/gtk-3.0/gtk.css
+ln -s ~/dotfiles_linuxMint/cinnamon/appearance/themes/MintY_RedVariation/gtk.css /usr/share/themes/MintY_RedVariation/gtk-3.0/gtk.css
+
+rm /usr/share/themes/MintY_RedVariation/metacity-1/metacity-theme-2.xml
+ln -s ~/dotfiles_linuxMint/cinnamon/appearance/themes/MintY_RedVariation/metacity-theme-2.xml /usr/share/themes/MintY_RedVariation/metacity-1/metacity-theme-2.xml
 
 # Startup script (open fave apps)
 ln -s ~/dotfiles_linuxMint/.startup_session.sh ~/.startup_session.sh
