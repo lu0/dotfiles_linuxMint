@@ -32,26 +32,26 @@ sleep 0.5 & setxkbmap latam             # latin-american
 
 # --------- Remap keys (at startup) -----------------------------------------
 # xmodmap ~/.xmodmap_edit.lst 
-notConnected=`lsusb -v 2>/dev/null | egrep '(^Bus|Keyboard)' | grep -B1 Keyboard `
-if [ $? -eq 0 ]
-then
-   # Remap keys to match Logitech Wireless keyboard
-    xmodmap -e "keycode 110 = Home"
-    xmodmap -e "keycode 115 = End"
-    xmodmap -e "keycode 112 = Prior"
-    xmodmap -e "keycode 117 = Next"
-    # echo "External keyboard"
-else
-  # Remap keys to match Dell 5437 keyboard
-    xmodmap -e "keycode 112 = End"
-    xmodmap -e "keycode 117 = Prior"
-    xmodmap -e "keycode 115 = Next"
-    # echo "Dell keyboard"
-fi
+# notConnected=`lsusb -v 2>/dev/null | egrep '(^Bus|Keyboard)' | grep -B1 Keyboard `
+# if [ $? -eq 0 ]
+# then
+#    # Remap keys to match Logitech Wireless keyboard
+#     xmodmap -e "keycode 110 = Home"
+#     xmodmap -e "keycode 115 = End"
+#     xmodmap -e "keycode 112 = Prior"
+#     xmodmap -e "keycode 117 = Next"
+#     # echo "External keyboard"
+# else
+#   # Remap keys to match Dell 5437 keyboard
+#     xmodmap -e "keycode 112 = End"
+#     xmodmap -e "keycode 117 = Prior"
+#     xmodmap -e "keycode 115 = Next"
+#     # echo "Dell keyboard"
+# fi
 sleep 0.5
 
 # Custom media keys for ThinkPad X1Y3
-xmodmap ~/dotfiles_linuxMint/keymappings/mediaKeys_ThinkPadX1Y3.lst
+xmodmap keymappings/mediaKeys_ThinkPadX1Y3.lst
 
 
 # ---------Start applications -----------------------------------------------
