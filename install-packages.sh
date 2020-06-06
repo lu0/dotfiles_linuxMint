@@ -103,3 +103,25 @@ sudo apt-get install hardinfo -y
 
 # bluetooth manager
 sudo apt-get install blueman -y
+
+# Other //////////////////////////////////////////////////////////////////////////////////////////////////
+
+sudo apt-get install maximus -y         # Maximize and hide window decorations
+
+sudo apt-get install wmctrl -y          # window managment
+
+# TLP battery managment
+# (https://linrunner.de/tlp/settings/battery.html)
+# check thresholds with 'sudo tlp-stat -b'
+# use 'sudo tlp fullcharge' when need to temporarily charge battery up to 100%
+sudo add-apt-repository ppa:linrunner/tlp
+sudo apt update
+sudo apt install tlp tlp-rdw -y
+sudo apt-get install acpi-call-dkms -y
+sudo tlp start
+rm -rf /etc/tlp.conf
+cp config/tlp-battery.conf /etc/tlp.conf
+sudo tlp start
+
+
+
