@@ -56,11 +56,13 @@ sudo apt-get install apt-transport-https -y
 sudo apt-get update && sudo apt-get install code -y
 
 # Setup vscode:
-chmod +x ~/dotfiles_linuxMint/config/vscode/install_extensions.sh
-~/dotfiles_linuxMint/config/vscode/install_extensions.sh
-rm -rf ~/.config/Code/User/keybindings.json && ln -s ~/dotfiles_linuxMint/config/vscode/keybindings.json ~/.config/Code/User/keybindings.json
-rm -rf ~/.config/Code/User/settings.json && ln -s ~/dotfiles_linuxMint/config/vscode/settings_FHD.json ~/.config/Code/User/settings.json
-# rm -rf ~/.config/Code/User/settings.json && ln -s ~/dotfiles_linuxMint/config/vscode/settings_HD.json ~/.config/Code/User/settings.json
+cd vscode-settings
+chmod +x setup-symlinks.sh
+./setup-symlinks.sh                 # Symlinks to config files
+chmod +x install_extensions.sh
+./install_extensions.sh             # Extension list
+
+cd 
 
 # SOUND & VIDEO /////////////////////////////////////////////////////////////////////////////////////////
 VSCo
