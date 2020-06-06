@@ -2,12 +2,12 @@
 <metacity_theme>
 <info>
 	<name>MintY Red Variation</name>
-	<author>horst3180</author>
-	<copyright>horst3180</copyright>
+	<author>lu0</author>
+	<copyright>lu0</copyright>
 	<date>2019</date>
-	<description>RedVariation of MintY (lu0) Metacity theme</description>
+	<description>RedVariation of MintY Metacity theme</description>
 </info>
-Arc
+
 <!-- meaningfull constants -->
 
 <constant name="C_title_focused" value="rgba(225,225,225,1.0)" />

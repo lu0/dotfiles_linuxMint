@@ -36,8 +36,8 @@ ln -s ~/dotfiles_linuxMint/cinnamon/appearance/themes/MintY_RedVariation/cinnamo
 rm /usr/share/themes/MintY_RedVariation/gtk-3.0/gtk.css
 ln -s ~/dotfiles_linuxMint/cinnamon/appearance/themes/MintY_RedVariation/gtk.css /usr/share/themes/MintY_RedVariation/gtk-3.0/gtk.css
 
-rm /usr/share/themes/MintY_RedVariation/metacity-1/metacity-theme-2.xml
-ln -s ~/dotfiles_linuxMint/cinnamon/appearance/themes/MintY_RedVariation/metacity-theme-2.xml /usr/share/themes/MintY_RedVariation/metacity-1/metacity-theme-2.xml
+rm /usr/share/themes/MintY_RedVariation/metacity-1/metacity-theme-3.xml
+ln -s ~/dotfiles_linuxMint/cinnamon/appearance/themes/MintY_RedVariation/metacity-theme-3.xml /usr/share/themes/MintY_RedVariation/metacity-1/metacity-theme-3.xml
 
 # Startup script (open fave apps)
 ln -s ~/dotfiles_linuxMint/.startup_session.sh ~/.startup_session.sh
