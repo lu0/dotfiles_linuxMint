@@ -17,6 +17,9 @@ ln -s ~/dotfiles_linuxMint/.fancy-bash-promt.sh ~/.fancy-bash-promt.sh
 rm -rf ~/.bashrc
 ln -s ~/dotfiles_linuxMint/config/.bashrc ~/.bashrc
 
+rm -rf /etc/inputrc
+ln -s ~/dotfiles_linuxMint/config/inputrc /etc/inputrc
+
 # Fonts
 sudo cp -r fonts/source-code-pro/OTF /usr/share/fonts/opentype/source-code-pro
 sudo cp -r fonts/karla /usr/share/fonts/opentype/karla
