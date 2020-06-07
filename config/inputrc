@@ -41,12 +41,6 @@ $if mode=emacs
 # "\e[5~": history-search-backward
 # "\e[6~": history-search-forward
 
-# Key bindings, up/down arrow searches through history
-"\e[A": history-search-backward
-"\e[B": history-search-forward
-"\eOA": history-search-backward
-"\eOB": history-search-forward
-
 # mappings for Ctrl-left-arrow and Ctrl-right-arrow for word moving
 "\e[1;5C": forward-word
 "\e[1;5D": backward-word
@@ -71,3 +65,18 @@ $endif
 # "\e[F": end-of-line
 
 $endif
+
+# Key bindings, up/down arrow searches through history
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\eOA": history-search-backward
+"\eOB": history-search-forward
+
+# Ctrl-Delete to delete next word
+# "\e[3;5~": kill-word
+
+# Ctrl-Delete to delete whole line
+"\e[3;5~": kill-whole-line
+
+# Ctrl+Backspace to delete previous word
+"\C-H": backward-kill-word
