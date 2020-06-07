@@ -115,13 +115,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-source ~/.fancy-bash-promt.sh
-source ~/.fancy-bash-promt.sh
-source ~/.fancy-bash-promt.sh
-source ~/.fancy-bash-promt.sh
-source ~/.fancy-bash-promt.sh
-source ~/.fancy-bash-promt.sh
-source ~/.fancy-bash-promt.sh
+
 source ~/.fancy-bash-promt.sh
 
 export NVM_DIR="$HOME/.nvm"
