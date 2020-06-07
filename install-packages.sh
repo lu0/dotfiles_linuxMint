@@ -105,8 +105,8 @@ sudo apt-get install blueman -y
 # Other //////////////////////////////////////////////////////////////////////////////////////////////////
 
 sudo apt-get install maximus -y         # Maximize and hide window decorations
-
 sudo apt-get install wmctrl -y          # window managment
+sudo apt-get install sox -y             # play sounds from terminal
 
 # TLP battery managment
 # (https://linrunner.de/tlp/settings/battery.html)

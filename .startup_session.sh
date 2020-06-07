@@ -124,7 +124,7 @@ systemctl --user start onedrive
 # ------- Play sound when ready --------------------------------------------
 # cpuLoad=`mpstat 2 1 | awk 'END{print 100-$NF}'`
 sleep 1
-play ~/git_lu0/mint_dotfiles/mySystemSounds/login_oot.wav
+play /usr/share/sounds/freedesktop/stereo/service-login.oga
 
 
 # ------- Enable notifications ---------------------------------------------
