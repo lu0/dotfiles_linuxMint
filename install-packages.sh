@@ -38,6 +38,7 @@ gpg --import linux_signing_key.pub
 sudo apt-get install vivaldi-stable -y
 cd vivaldi-setup                                        # Setup from submodule: github.com/lu0/vivaldi-setup
 mkdir -p ~/.config/vivaldi && cp -r Default "$_"
+cd ..
 
 # OFFICE /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,12 +63,11 @@ chmod +x setup-symlinks.sh
 chmod +x install_extensions.sh
 ./install_extensions.sh             # Extension list
 
-cd 
+cd ..
 
 # SOUND & VIDEO /////////////////////////////////////////////////////////////////////////////////////////
-VSCo
-sudo apt-get install audacity -y
 
+sudo apt-get install audacity -y
 sudo apt-get install soundconverter -y
 
 # Spotify 
@@ -86,9 +86,7 @@ sudo apt-get update && sudo apt-get install kdenlive -y
 # ADMINISTRATION ////////////////////////////////////////////////////////////////////////////////////////
 
 sudo apt-get install gparted -y
-
-# System configuration tool
-sudo apt-get install dconf-editor -y
+sudo apt-get install dconf-editor -y # System configuration tool
 
 # Virtual box (ubuntu > 19.04)
 # wget https://download.virtualbox.org/virtualbox/6.1.10/virtualbox-6.1_6.1.10-138449~Ubuntu~eoan_amd64.deb -O ~/Downloads/virtual-box_u19.deb
@@ -122,6 +120,3 @@ sudo tlp start
 rm -rf /etc/tlp.conf
 cp config/tlp-battery.conf /etc/tlp.conf
 sudo tlp start
-
-
-
