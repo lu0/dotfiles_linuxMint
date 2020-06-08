@@ -115,9 +115,9 @@ sleep 0.5 & nmcli networking on
 
 
 # ------ Initialize Onedrive -----------------------------------------------
-sleep 3
-systemctl --user enable onedrive
-systemctl --user start onedrive
+# sleep 3
+# systemctl --user enable onedrive
+# systemctl --user start onedrive
 # onedrive --monitor
 
 
