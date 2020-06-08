@@ -100,6 +100,7 @@ sudo gdebi --non-interactive ~/Downloads/virtual-box_u18.deb
 sudo apt-get install hardinfo -y
 
 # bluetooth manager
+mkdir -p ~/Downloads/Bluetooth
 sudo apt-get install blueman -y
 
 # Other //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -107,6 +108,7 @@ sudo apt-get install blueman -y
 sudo apt-get install maximus -y         # Maximize and hide window decorations
 sudo apt-get install wmctrl -y          # window managment
 sudo apt-get install sox -y             # play sounds from terminal
+sudo apt-get install rofi -y
 
 # TLP battery managment
 # (https://linrunner.de/tlp/settings/battery.html)
