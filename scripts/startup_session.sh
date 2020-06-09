@@ -84,8 +84,8 @@ wmctrl -r "OnedriveUANL Journal" -b remove,maximized_horz,maximized_vert
 wmctrl -r "OnedriveUANL Journal" -e 0,830,0,540,768 & sleep 0.5
 
 # General purpose terminal
-wmctrl -r lucero:~ -b remove,maximized_horz,maximized_vert & sleep 0.5
-wmctrl -r lucero:~ -e 0,0,0,790,768 & sleep 0.5
+wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert & sleep 0.5
+wmctrl -r "(home)" -e 0,0,0,790,768 & sleep 0.5
 
 wmctrl -r "Visual Studio Code" -b remove,maximized_horz,maximized_vert
 wmctrl -r "Visual Studio Code" -e 0,0,0,790,768 & sleep 0.5
@@ -100,7 +100,7 @@ wmctrl -r Vivaldi -t 0                    # General purpose Web Browser
 wmctrl -r Home -t 1                       # Nemo file browser
 wmctrl -r "Visual Studio Code" -t 2
 wmctrl -r "localhost" -t 2                # App dev Web Browser
-wmctrl -r lucero:~ -t 3                   # General purpose terminal
+wmctrl -r "(home)" -t 3                   # General purpose terminal
 wmctrl -r "OnedriveUANL Journal" -t 3     
 wmctrl -r "messenger" -t 4                # Social Media Web Browser
 wmctrl -r Spotify Premium -t 5 

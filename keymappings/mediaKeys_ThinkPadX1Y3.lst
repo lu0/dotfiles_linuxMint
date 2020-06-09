@@ -4,7 +4,8 @@
 ! Backup previous config with:
 !   xmodmap -pke > ~/dotfiles_linuxMint/keymappings/xmodmap_current_X1Y3.lst
 !
-! Usage: xmodmap ~/dotfiles_linuxMint/keymappings/mediaKeys_ThinkPadX1Y3.lst
+! Usage: ln -sr keymappings/mediaKeys_ThinkPadX1Y3.lst ~/.mediaKeys_ThinkPadX1Y3.lst
+!        xmodmap ~/.mediaKeys_ThinkPadX1Y3.lst
 !
 ! Reset using backup file or:
 !   setxkbmap -option
