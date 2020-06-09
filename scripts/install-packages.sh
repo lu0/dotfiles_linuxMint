@@ -10,15 +10,15 @@
 
 # ACCESORIES /////////////////////////////////////////////////////////////////////////////////////////////////
 
-sudo apt-get install font-manager
+sudo apt-get install font-manager -y
 
 # GRAPHICS ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 # Krita (scketch w/stylus)
 add-apt-repository ppa:kritalime/ppa -y
-sudo apt-update && sudo apt install krita -y
+sudo apt update && sudo apt-get install krita -y
 
-sudo apt-get install inkscape
+sudo apt-get install inkscape -y
 
 sudo apt-get install gimp -y
 
@@ -33,19 +33,19 @@ sudo gdebi --non-interactive ~/Downloads/steam.deb
 
 # Vivaldi Browser 
 # (help.vivaldi.com/article/obtaining-official-builds/)
-wget https://repo.vivaldi.com/stable/linux_signing_key.pub
-gpg --import linux_signing_key.pub
-sudo apt-get install vivaldi-stable -y
-cd vivaldi-setup                                        # Setup from submodule: github.com/lu0/vivaldi-setup
+wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | sudo apt-key add -
+sudo add-apt-repository 'deb https://repo.vivaldi.com/archive/deb/ stable main'
+sudo apt update && sudo apt install vivaldi-stable -y
+cd ../vivaldi-setup                                        # Setup from submodule: github.com/lu0/vivaldi-setup
 mkdir -p ~/.config/vivaldi && cp -r Default "$_"
-cd ..
+cd ../scripts
 
 # OFFICE /////////////////////////////////////////////////////////////////////////////////////////////////
 
 # Freeoffice Suite
 sudo apt purge --autoremove libreoffice-common -y
 wget https://www.softmaker.net/down/softmaker-freeoffice-2018_976-01_amd64.deb -O ~/Downloads/freeoffice.deb
-sudo gdebi ~/Downloads/freeoffice.deb
+sudo gdebi --non-interactive ~/Downloads/freeoffice.deb
 
 # DEV TOOLS //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -57,13 +57,12 @@ sudo apt-get install apt-transport-https -y
 sudo apt-get update && sudo apt-get install code -y
 
 # Setup vscode:
-cd vscode-settings
+cd ../vscode-settings
 chmod +x setup-symlinks.sh
 ./setup-symlinks.sh                 # Symlinks to config files
 chmod +x install_extensions.sh
 ./install_extensions.sh             # Extension list
-
-cd ..
+cd ../scripts
 
 # SOUND & VIDEO /////////////////////////////////////////////////////////////////////////////////////////
 
