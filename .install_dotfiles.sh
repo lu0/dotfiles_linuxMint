@@ -12,10 +12,10 @@ sudo rm -rf ~/.config/autostart
 ln -s ~/dotfiles_linuxMint/config/autostart ~/.config/autostart
 
 # Bash style
-ln -s ~/dotfiles_linuxMint/.fancy-bash-promt.sh ~/.fancy-bash-promt.sh
+ln -s ~/dotfiles_linuxMint/scripts/fancy-bash.sh ~/.fancy-bash.sh
 
 rm -rf ~/.bashrc
-ln -s ~/dotfiles_linuxMint/config/.bashrc ~/.bashrc
+ln -s ~/dotfiles_linuxMint/config/bashrc ~/.bashrc
 
 rm -rf /etc/inputrc
 ln -s ~/dotfiles_linuxMint/config/inputrc /etc/inputrc
@@ -47,7 +47,7 @@ rm /usr/share/themes/MintY_RedVariation/metacity-1/metacity-theme-3.xml
 ln -s ~/dotfiles_linuxMint/cinnamon/appearance/themes/MintY_RedVariation/metacity-theme-3.xml /usr/share/themes/MintY_RedVariation/metacity-1/metacity-theme-3.xml
 
 # Startup script (open fave apps)
-ln -s ~/dotfiles_linuxMint/.startup_session.sh ~/.startup_session.sh
+ln -s ~/dotfiles_linuxMint/scripts/startup_session.sh ~/.startup_session.sh
 
 # Custom launchers (for keybindings)
 ln -s ~/dotfiles_linuxMint/mylaunchers ~/.mylaunchers
@@ -85,10 +85,14 @@ ln -s ~/dotfiles_linuxMint/mint-gui-backups ~/Documents/Backups
 # System config
 # Export current config with: 
 # dconf dump /  > ~/dotfiles_linuxMint/config/dconf.conf
-ln -s ~/dotfiles_linuxMint/config/dconf.conf ~/.dconf.conf
+ln -s ~/dotfiles_linuxMint/dconf-files/dconf.conf ~/.dconf.conf
 dconf load / < ~/.dconf.conf
-chmod +775 ~/dotfiles_linuxMint/config/export_dconf.sh
+chmod +x ~/dotfiles_linuxMint/dconf-files/export_dconf.sh
 
+# Github script
+ln -s ~/dotfiles_linuxMint/scripts/git-create-repo.sh ~/.git-create-repo.sh
+chmod +x ~/.git-create-repo.sh
+ 
 # ----------------------------------------------------------------------------------------------
 
 rm -rf ~/.config/onedrive/config

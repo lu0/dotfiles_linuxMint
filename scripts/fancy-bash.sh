@@ -33,9 +33,9 @@
 ##
 ##
 ##	INSTALLATION:
-##	Copy this script to your home folder and rename it to ".fancy-bash-promt.sh"
+##	Copy this script to your home folder and rename it to ".fancy-bash.sh"
 ##	Run this command from any terminal: 
-##		echo "source ~/.fancy-bash-promt.sh" >> ~/.bashrc
+##		echo "source ~/.fancy-bash.sh" >> ~/.bashrc
 ##
 ##	Alternatively, copy the content of this file into your .bashrc file
 ##
