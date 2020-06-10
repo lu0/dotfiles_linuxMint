@@ -21,6 +21,7 @@ sudo ln -sr config/inputrc /etc/inputrc
 # Fonts
 sudo cp -r fonts/source-code-pro/OTF /usr/share/fonts/opentype/source-code-pro
 sudo cp -r fonts/karla /usr/share/fonts/opentype/karla
+sudo cp -r fonts/webly-sleek /usr/share/fonts/truetype/webly-sleek-ui
 
 # Theme and icons
 cd cinnamon/appearance/
