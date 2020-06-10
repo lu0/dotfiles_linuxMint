@@ -1,8 +1,0 @@
-{
-    "max-instances": "1",
-    "description": "Displays CPU load",
-    "name": "CPU Load",
-    "version": "0.4",
-    "uuid": "cpuload@kimse",
-    "last-edited": 1575483286
-}

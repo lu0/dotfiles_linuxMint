@@ -1,8 +1,0 @@
-{
-    "max-instances": "10",
-    "description": "Displays the usage of a filesystem or RAM.",
-    "name": "Disk Space",
-    "version": "1.7",
-    "uuid": "diskspace@schorschii",
-    "last-edited": 1584983612
-}
