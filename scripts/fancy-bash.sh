@@ -86,18 +86,15 @@
 ##	https://wiki.chakralinux.org/index.php?title=Color_Bash_Prompt#Wolfman.27s
 ##
 bash_prompt_command() {
-	# How many characters of the $PWD should be kept
-	local pwdmaxlen=25
-
 	# Indicate that there has been dir truncation
 	local trunc_symbol=".."
 
 	# Store local dir
 	local dir=${PWD##*/}
 
-	# Which length to use
-	#pwdmaxlen=$(( ( pwdmaxlen < ${#dir} ) ? ${#dir} : pwdmaxlen ))
-	pwdmaxlen=$(( ( 10 < ${#dir} ) ? ${#dir} : pwdmaxlen ))
+	# How many characters of the $PWD should be kept
+	# Edit: keep only last folder in current path
+	pwdmaxlen=${#dir}
 
 	NEW_PWD=${PWD/#$HOME/\~}
 	
@@ -225,10 +222,6 @@ bash_prompt() {
 	local FONT_COLOR_2=$D_GRAY
 	local BACKGROUND_2=$L_GRAY
 	local TEXTEFFECT_2=$REGUL
-	
-	# local FONT_COLOR_3=$L_RED
-	# local BACKGROUND_3=$WHITE
-	# local TEXTEFFECT_3=$REGUL
 
 	local FONT_COLOR_3=$L_RED
 	local BACKGROUND_3=$L_GRAY
@@ -257,12 +250,6 @@ bash_prompt() {
 		FONT_COLOR_3=$WHITE; BACKGROUND_3=$RED; TEXTEFFECT_3=$BOLD
 		PROMT_FORMAT=$RED_BOLD
 	fi
-	
-	## CONFIGURATION: RED-BLACK
-	#FONT_COLOR_1=$WHITE; BACKGROUND_1=$RED; TEXTEFFECT_1=$BOLD
-	#FONT_COLOR_2=$WHITE; BACKGROUND_2=$D_GRAY; TEXTEFFECT_2=$BOLD
-	#FONT_COLOR_3=$WHITE; BACKGROUND_3=$BLACK; TEXTEFFECT_3=$BOLD
-	#PROMT_FORMAT=$RED_BOLD
 
 	## CONFIGURATION: CYAN-BLUE
 	if [ "$HOSTNAME" = sharkoon ]; then
