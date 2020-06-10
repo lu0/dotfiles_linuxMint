@@ -76,11 +76,9 @@ ln -sr mint-gui-backups ~/Documents/Backups
 # dconf dump /  > ~/dotfiles_linuxMint/config/dconf.conf
 ln -sr dconf-files/dconf.conf ~/.dconf.conf
 dconf load / < ~/.dconf.conf
-chmod +x dconf-files/export_dconf.sh
 
 # Github script
 ln -sr scripts/git-create-repo.sh ~/.git-create-repo.sh
-chmod +x ~/.git-create-repo.sh
  
 # ----------------------------------------------------------------------------------------------
 

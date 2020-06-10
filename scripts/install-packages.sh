@@ -58,9 +58,7 @@ sudo apt-get update && sudo apt-get install code -y
 
 # Setup vscode:
 cd ../vscode-settings
-chmod +x setup-symlinks.sh
 ./setup-symlinks.sh                 # Symlinks to config files
-chmod +x install_extensions.sh
 ./install_extensions.sh             # Extension list
 cd ../scripts
 
