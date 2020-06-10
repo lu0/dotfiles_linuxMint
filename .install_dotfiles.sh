@@ -7,16 +7,16 @@
 # Repository: https://github.com/lu0/dotfiles_linuxMint
 
 
-# Autostart applications
+# Startup apps
 rm -rf ~/.config/autostart
 ln -sr config/autostart ~/.config/autostart
 
 # Bash style, aliases and keymappings
-ln -sr scripts/fancy-bash.sh ~/.fancy-bash.sh
+ln -sr bash/fancy-bash.sh ~/.fancy-bash.sh
 rm -rf ~/.bashrc
-ln -sr config/bashrc ~/.bashrc
+ln -sr bash/bashrc ~/.bashrc
 sudo rm -rf /etc/inputrc
-sudo ln -sr config/inputrc /etc/inputrc
+sudo ln -sr bash/inputrc /etc/inputrc
 
 # Fonts
 sudo cp -r fonts/source-code-pro/OTF /usr/share/fonts/opentype/source-code-pro
@@ -40,13 +40,13 @@ sudo ln -sr themes/MintY_RedVariation/metacity-theme-3.xml /usr/share/themes/Min
 cd ../../
 
 # Startup script (open fave apps)
-ln -sr scripts/startup_session.sh ~/.startup_session.sh
+ln -sr homedir/startup_session.sh ~/.startup_session.sh
 
 # Custom launchers (for keybindings)
-ln -sr mylaunchers ~/.mylaunchers
+ln -sr homedir/mylaunchers ~/.mylaunchers
 
 # Custom media keys
-ln -sr keymappings/mediaKeys_ThinkPadX1Y3.lst ~/.mediaKeys_ThinkPadX1Y3.lst
+ln -sr homedir/mediaKeys_ThinkPadX1Y3.lst ~/.mediaKeys_ThinkPadX1Y3.lst
 # ln -sr config/xmodmap_edit.lst ~/.xmodmap_edit.lst
 # xmodmap ~/.xmodmap_edit.lst
 
@@ -69,9 +69,6 @@ ln -sr keymappings/mediaKeys_ThinkPadX1Y3.lst ~/.mediaKeys_ThinkPadX1Y3.lst
 # ln -sr keymappings/la /usr/share/X11/xkb/symbols/la
 # sudo ln -sr config/90-custom-kbd.conf /usr/share/X11/xorg.conf.d/90-custom-kbd.conf
 
-# Backups 
-ln -sr mint-gui-backups ~/Documents/Backups
-
 # System config
 # Export current config with: 
 # dconf dump /  > ~/dotfiles_linuxMint/config/dconf.conf
@@ -79,7 +76,7 @@ ln -sr dconf-files/dconf.conf ~/.dconf.conf
 dconf load / < ~/.dconf.conf
 
 # Github script
-ln -sr scripts/git-create-repo.sh ~/.git-create-repo.sh
+ln -sr homedir/git-create-repo.sh ~/.git-create-repo.sh
  
 # ----------------------------------------------------------------------------------------------
 
@@ -88,7 +85,7 @@ ln -sr scripts/git-create-repo.sh ~/.git-create-repo.sh
 
 # Nemo keybindings
 rm -rf ~/.gnome2
-ln -sr gnome2 ~/.gnome2
+ln -sr homedir/gnome2 ~/.gnome2
 
 # Fan control (thinkpad x1y3)
 # sudo cp -r fan-control/thinkfan_acpi.conf /etc/modprobe.d/

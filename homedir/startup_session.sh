@@ -51,7 +51,7 @@ sleep 0.5 & setxkbmap latam             # latin-american
 sleep 0.5
 
 # Custom media keys for ThinkPad X1Y3
-xmodmap keymappings/mediaKeys_ThinkPadX1Y3.lst
+xmodmap ~/.mediaKeys_ThinkPadX1Y3.lst
 
 
 # ---------Start applications -----------------------------------------------
