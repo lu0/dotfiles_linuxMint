@@ -116,6 +116,6 @@ sudo apt update
 sudo apt install tlp tlp-rdw -y
 sudo apt-get install acpi-call-dkms -y
 sudo tlp start
-rm -rf /etc/tlp.conf
-cp config/tlp-battery.conf /etc/tlp.conf
+rm /etc/tlp.conf
+ln -sr config/tlp-battery.conf /etc/tlp.conf
 sudo tlp start
