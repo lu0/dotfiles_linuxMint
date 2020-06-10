@@ -1,0 +1,15 @@
+docker	install
+docker.io	install
+fonts-powerline	install
+fonts-symbola	install
+git	install
+k3b	install
+maven	install
+mint-meta-codecs	install
+nodejs	install
+openjdk-8-jdk	install
+python3-numpy	install
+python-software-properties	install
+ttf-unifont	install
+vim	install
+xdotool	install
