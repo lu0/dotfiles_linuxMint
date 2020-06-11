@@ -47,6 +47,11 @@ ln -sr homedir/mylaunchers ~/.mylaunchers
 
 # Custom media keys
 ln -sr homedir/mediaKeys_ThinkPadX1Y3.lst ~/.mediaKeys_ThinkPadX1Y3.lst
+
+# Get rid of shadows in window borders
+sudo rm /etc/environment
+sudo ln -sr config/environment /etc/environment
+
 # ln -sr config/xmodmap_edit.lst ~/.xmodmap_edit.lst
 # xmodmap ~/.xmodmap_edit.lst
 
