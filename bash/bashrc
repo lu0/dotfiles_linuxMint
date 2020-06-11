@@ -127,7 +127,10 @@ export NVM_DIR="$HOME/.nvm"
 
 alias battery="sudo tlp-stat -b"
 alias github="~/.git-create-repo.sh"
-alias gitlog="git log --graph --decorate --oneline -10"
+
+function gitlog() {
+  git log --graph --decorate --oneline -$*
+}
 
 function commit() {
   git commit -m "$*"
