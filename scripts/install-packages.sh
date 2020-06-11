@@ -105,6 +105,7 @@ sudo apt-get install blueman -y
 sudo apt-get install maximus -y         # Maximize and hide window decorations
 sudo apt-get install wmctrl -y          # window managment
 sudo apt-get install sox -y             # play sounds from terminal
+sudo apt-get install xdotool -y
 sudo apt-get install rofi -y
 
 # TLP battery managment
