@@ -40,6 +40,10 @@ cd ../vivaldi-setup                                        # Setup from submodul
 mkdir -p ~/.config/vivaldi && cp -r Default "$_"
 cd ../scripts
 
+# Team viewer
+wget -4 https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O ~/Downloads/team-viewer.deb
+sudo gdebi --non-interactive ~/Downloads/team-viewer.deb
+
 # OFFICE /////////////////////////////////////////////////////////////////////////////////////////////////
 
 # Freeoffice Suite
