@@ -111,7 +111,7 @@
             }
         ],
         "default_category": "Linux Mint",
-        "value": "/usr/share/icons/hicolor/scalable/apps/linuxmint-logo-badge-symbolic.svg"
+        "value": "linuxmint-logo-filled-ring"
     },
     "menu-label": {
         "type": "entry",
@@ -132,7 +132,7 @@
         "dependency": "favbox-show",
         "description": "Minimum height of the favorites section",
         "tooltip": "The minimum size allocated for the favorites section (this has an impact on the overall height of the menu).",
-        "value": 330.0
+        "value": 300
     },
     "show-category-icons": {
         "type": "switch",

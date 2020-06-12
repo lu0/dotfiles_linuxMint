@@ -1,46 +1,33 @@
 {
     "section1": {
         "type": "section",
-        "description": "Menu"
+        "description" : "Menu"
     },
     "playerControl": {
         "type": "switch",
         "default": true,
-        "description": "Control Players",
-        "value": true
+        "description": "Control Players"
     },
     "extendedPlayerControl": {
         "type": "switch",
         "default": false,
         "description": "Show Loop and Shuffle controls",
         "dependency": "playerControl",
-        "indent": true,
-        "value": false
+        "indent": true
     },
     "_knownPlayers": {
         "type": "generic",
-        "default": [
-            "banshee",
-            "vlc",
-            "rhythmbox"
-        ],
-        "value": [
-            "banshee",
-            "vlc",
-            "rhythmbox",
-            "spotify"
-        ]
+        "default": ["banshee", "vlc", "rhythmbox"]
     },
     "section2": {
         "type": "section",
-        "description": "Panel"
+        "description" : "Panel"
     },
     "showtrack": {
         "type": "switch",
         "default": false,
         "description": "Show song information on the panel",
-        "dependency": "playerControl",
-        "value": false
+        "dependency": "playerControl"
     },
     "truncatetext": {
         "type": "spinbutton",
@@ -51,8 +38,7 @@
         "step": 1,
         "description": "Limit song information to",
         "dependency": "showtrack",
-        "indent": true,
-        "value": 30
+        "indent": true
     },
     "middleClickAction": {
         "type": "combobox",
@@ -63,35 +49,29 @@
             "Toggle Mute input": "in_mute",
             "Toggle Play / Pause": "player"
         },
-        "description": "Action on middle click",
-        "value": "mute"
+        "description": "Action on middle click"
     },
     "horizontalScroll": {
         "type": "switch",
         "default": false,
         "description": "Use horizontal scrolling to move between tracks",
-        "dependency": "playerControl",
-        "value": false
+        "dependency": "playerControl"
     },
     "showalbum": {
         "type": "switch",
         "default": false,
         "description": "Show album art as icon",
-        "dependency": "playerControl",
-        "value": false
+        "dependency": "playerControl"
     },
     "keepAlbumAspectRatio": {
         "type": "switch",
         "default": true,
         "description": "Keep album art aspect ratio",
-        "dependency": "playerControl",
-        "value": false
+        "dependency": "playerControl"
     },
-    "hideSystray": {
-        "type": "switch",
-        "description": "Hide system tray icons for compatible players",
-        "default": true,
-        "value": false
-    },
-    "__md5__": "cd4c072c97ce55f6107a61403597ba54"
+    "hideSystray" : {
+        "type" : "switch",
+        "description" : "Hide system tray icons for compatible players",
+        "default": true
+    }
 }
