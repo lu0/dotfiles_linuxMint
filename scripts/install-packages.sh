@@ -112,6 +112,11 @@ sudo apt-get install xdotool -y         # get window info
 sudo apt-get install sox -y             # play sounds from terminal
 sudo apt-get install rofi -y
 
+sudo apt-get install devilspie2 -y          # window managment trough scripts
+mkdir -p ~/.config/devilspie2
+ln -sr cinnamon/appearance/devilspie2 ~/.config/devilspie2
+devilspie2 --folder=$HOME/.config/devilspie2
+
 # TLP battery managment
 # (https://linrunner.de/tlp/settings/battery.html)
 # check thresholds with 'sudo tlp-stat -b'
