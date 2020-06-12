@@ -132,6 +132,10 @@ function gitlog() {
   git log --graph --decorate --oneline -$*
 }
 
+function gitfollow() {
+  git log --follow --graph --decorate --oneline -5 -- $*
+}
+
 function commit() {
   git commit -m "$*"
 }
