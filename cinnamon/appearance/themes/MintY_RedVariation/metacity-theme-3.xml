@@ -18,11 +18,6 @@
 
 <constant name="C_wm_border" value="rgba(255,255,255,1)" />
 
-<!--<constant name="C_wm_highlight" value="rgba(226, 82, 82,0.15)" />-->
-
-<!--<constant name="M_red" value="rgba(226, 82, 82, 1)" />
-<constant name="M_gray" value="rgba(60, 60, 60, 1)" />-->
-
 <constant name="W_border_focused" value="rgba(226, 82, 82, 0.50)" />
 <constant name="W_border_unfocused" value="rgba(60, 60, 60, 0.50)" />
 <constant name="B_wdth" value="1" />
@@ -126,7 +121,6 @@
 </frame_geometry>
 
 <!-- drawing operations -->
-
 
     <!-- frame around windows-->
 <draw_ops name="draw_frame_focused">

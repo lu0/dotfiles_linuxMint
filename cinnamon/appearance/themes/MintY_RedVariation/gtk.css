@@ -15,18 +15,9 @@
     -gtk-outline-radius: 2px;
 }
 
-
-/*.window-frame { 
-    transition: none; 
-    border-radius: 2px 2px 0 0; 
-    box-shadow: 0 6px 8px -4px rgba(0, 0, 0, 0.16), 0 10px 6px rgba(0, 0, 0, 0.2); 
-    margin: 8px; }*/
-
 .background {
     color: @theme_fg_color;
     background-color: @inside_bg_color;
-    /*rgba(56, 56, 56, 0.999); */
-    /*rgba(56, 56, 56, 0.999);*/
 }
 
 *:disabled {
@@ -35,14 +26,11 @@
 
 .gtkstyle-fallback {
     background-color: @theme_bg_color;
-    /*@theme_bg_color;*/
     color: @theme_fg_color;
 }
 
 .gtkstyle-fallback:hover {
     background-color: @theme_thing_hovered;
-    /*#525252;*/
-    /*green*/
     color: @theme_fg_color;
 }
 
@@ -242,7 +230,6 @@ entry:focus {
     border-color: @borders;
     background-color: @theme_base_color;
     box-shadow: none;
-    /*box-shadow:  inset 1px 0 @theme_selected_bg_color, inset -1px 0 @theme_selected_bg_color, inset 0 1px @theme_selected_bg_color, inset 0 -1px @theme_selected_bg_color;*/
 }
 
 entry:disabled {
@@ -1236,13 +1223,11 @@ spinbutton:not(.vertical)>button+button,
 spinbutton:not(.vertical)>button:hover:not(:active),
 spinbutton:not(.vertical)>button:hover+button {
     box-shadow: none;
-    /*box-shadow: inset 1px 0 @borders; */
 }
 
 spinbutton:not(.vertical)>button:disabled+button:not(:disabled):not(:active):not(:checked):not(:hover),
 spinbutton:not(.vertical)>button:not(:disabled):not(:active):not(:checked):not(:hover)+button:disabled {
     box-shadow: none;
-    /*box-shadow: inset 1px 0 rgba(41, 41, 41, 0.5);*/
 }
 
 spinbutton:not(.vertical)>button:first-child:hover:not(:active),
@@ -1262,7 +1247,6 @@ spinbutton:not(.vertical)>entry:drop(active)+button {
 .osd spinbutton:not(.vertical)>button:hover:not(:active),
 .osd spinbutton:not(.vertical)>button:hover+button {
     box-shadow: none;
-    /*box-shadow: inset 1px 0 rgba(22, 22, 22, 0.4); */
 }
 
 .osd spinbutton:not(.vertical)>button:first-child:hover:not(:active),
@@ -1437,7 +1421,6 @@ headerbar,
     color: #ded6d6;
     background-color: @wm_bg;
     box-shadow: none;
-    /*inset 0 1px #373737;*/
 }
 
 .csd headerbar,
@@ -2388,7 +2371,6 @@ treeview.view.separator {
 }
 
 treeview.view:drop(active) {
-    /*background-color: rgba(240, 240, 240, 0.2);*/
     border-style: solid none;
     border-width: 2px;
     border-color: rgba(240, 240, 240, 0.2);
@@ -2499,7 +2481,6 @@ treeview.view header.button.dnd:active {
     transition: none;
     color: @theme_selected_bg_color;
     box-shadow: none;
-    /*inset 1px 1px 0 1px @theme_selected_bg_color, inset -1px 0 0 1px @theme_selected_bg_color, inset 1px 1px @theme_base_color, inset -1px 0 @theme_base_color; */
 }
 
 menubar,
@@ -2679,7 +2660,6 @@ popover.background {
     background-clip: border-box;
     background-color: @theme_bg_color;
     box-shadow: none;
-    /*0 2px 6px 1px rgba(0, 0, 0, 0.35); */
 }
 
 .csd popover,
@@ -2770,7 +2750,6 @@ notebook>stack:not(:only-child) {
 notebook>header {
     padding: 2px;
     background-color: @theme_bg_color;
-    /* button in headers */
 }
 
 notebook>header.top {
@@ -2935,19 +2914,15 @@ notebook>header.right>tabs>tab:hover:not(:checked) {
 
 notebook>header>tabs>tab {
     color: rgba(255, 255, 255, 0.5);
-    /*background-color: rgba(64, 64, 64, 0);*/
     background-color: rgba(15, 15, 15, 1);
-    /*border-top: 1px solid rgba(60, 60, 60, 1);*/
 }
 
 
-/* Nemo, texteditor and terminal tabs :0 lu0*/
+/* Nemo, texteditor and terminal tabs :0 EDIT HERE*/
 
 notebook>header>tabs>tab:hover:not(:checked) {
     color: rgba(255, 255, 255, 1);
-    /*background-color: rgba(64, 64, 64, 0.5);*/
     background-color: rgba(240, 240, 240, 0.06);
-    /*border-color: @borders;*/
     transition-duration: 100;
 }
 
@@ -3926,7 +3901,6 @@ row.activatable:selected:hover {
     padding: 10px;
     color: #dbdbdb;
     background-color: @wm_bg;
-    /*modified lateral_bg*/
     background-clip: border-box;
     border-radius: 0 0 2px 2px;
     border-width: 0 1px 1px 1px;
@@ -4718,16 +4692,15 @@ decoration {
     border-radius: 3px 3px 0 0;
     border-width: 0px;
     box-shadow: none;
-    /*0 0 1px 1px #1d1d1d, 0 8px 8px 0 rgba(0, 0, 0, 0.35)*/
     /*box-shadow: none;*/
     margin: 10px;
     box-shadow: 0 0 0 1px rgba(226, 82, 82, 0.5), 0 8px 8px 0 transparent, 0 5px 5px 0 rgba(0, 0, 0, 0.35);
-    /*lu0 border focused #e25252*/
+    /*HERE: border focused*/
 }
 
 decoration:backdrop {
     box-shadow: 0 0 0 1px rgba(60, 60, 60, 0.5), 0 8px 8px 0 transparent, 0 5px 5px 0 rgba(0, 0, 0, 0.35);
-    /*lu0 border unfocused #e25252*/
+    /*HERE border unfocused */
     /*box-shadow: none;*/
 }
 
@@ -4744,7 +4717,6 @@ decoration:backdrop {
 .ssd decoration {
     border-radius: 3px 3px 0 0;
     box-shadow: none;
-    /*0 0 0 1px rgba(0, 0, 0, 0.65); */
 }
 
 .ssd decoration.maximized {
@@ -4754,13 +4726,11 @@ decoration:backdrop {
 .csd.popup decoration {
     border-radius: 2px;
     box-shadow: none;
-    /*0 3px 6px rgba(0, 0, 0, 0.45), 0 0 0 1px @theme_thing_selected; */
 }
 
 tooltip.csd decoration {
     border-radius: 2px;
     box-shadow: none;
-    /*0 1px 3px 1px rgba(0, 0, 0, 0.55); */
 }
 
 message-dialog.csd decoration {
@@ -5089,7 +5059,6 @@ PantheonTerminalPantheonTerminalWindow .notebook tab.top:active,
 PantheonTerminalPantheonTerminalWindow .notebook tab.top.active-page,
 PantheonTerminalPantheonTerminalWindow .notebook tab.top.active-page:hover {
     box-shadow: none;
-    /*inset 0 1px @borders, inset 0 -1px @borders, inset 1px 0 @borders, inset -1px 0 @borders; */
 }
 
 TerminalWindow .notebook tab.reorderable-page.top,
@@ -5103,7 +5072,6 @@ PantheonTerminalPantheonTerminalWindow .notebook tab.top {
 TerminalWindow .notebook.header.top,
 PantheonTerminalPantheonTerminalWindow .notebook.header.top {
     box-shadow: none;
-    /*inset 0 1px #252525, inset 0 -1px @borders; */
 }
 
 GtkHTML {
@@ -5170,7 +5138,6 @@ vte-terminal {
 .nemo-desktop.nemo-canvas-item {
     color: #ffffff;
     text-shadow: none;
-    /*1px 1px rgba(0, 0, 0, 0.6); */
 }
 
 .nautilus-desktop.nautilus-canvas-item:active,
@@ -5369,7 +5336,6 @@ NautilusListView iconview {
     border-color: @borders;
     background-color: @theme_base_color;
     box-shadow: none;
-    /*inset 1px 0 @theme_selected_bg_color, inset -1px 0 @theme_selected_bg_color, inset 0 1px @theme_selected_bg_color, inset 0 -1px @theme_selected_bg_color; */
 }
 
 .nemo-window .nemo-inactive-pane .view,
@@ -6267,10 +6233,10 @@ filechooser placessidebar.sidebar list scrollbar trough,
 }
 
 #panel_window {
+    /* Here */
     background-color: @borders;
     color: @theme_fg_color;
     font-weight: normal;
-    /*bold*/
     box-shadow: inset 0 -1px #171717;
 }
 
@@ -6514,10 +6480,7 @@ window.background.lightdm .lightdm-combo {
     background-color: transparent;
 }
 
-@define-color borders rgba(0,
-0,
-0,
-0.01);
+@define-color borders rgba(0,0,0,0.01);
 @define-color unfocused_borders #000000;
 @define-color wm_bg #0f0f0f;
 
@@ -6528,10 +6491,7 @@ window.background.lightdm .lightdm-combo {
 
 /*lateral orange*/
 
-@define-color outline_color_lu rgba(226,
-82,
-82,
-0.3);
+@define-color outline_color_lu rgba(226,82,82,0.3);
 @define-color inside_bg_color #171717;
 
 /*sky*/
@@ -6575,8 +6535,7 @@ window.background.lightdm .lightdm-combo {
 @define-color selected_bg_color #e25252;
 @define-color selected_fg_color #ffffff;
 @define-color insensitive_bg_color @theme_idk;
-@define-color insensitive_fg_color alpha(@theme_fg_color,
-0.5);
+@define-color insensitive_fg_color alpha(@theme_fg_color,0.5);
 @define-color insensitive_base_color @theme_base_color;
 @define-color theme_unfocused_fg_color @theme_fg_color;
 @define-color theme_unfocused_text_color @theme_fg_color;
@@ -6590,12 +6549,10 @@ window.background.lightdm .lightdm-combo {
 @define-color placeholder_text_color #A8A8A8;
 @define-color content_view_bg @theme_base_color;
 @define-color wm_title @theme_fg_color;
-@define-color wm_unfocused_title alpha(#ded6d6,
-0.5);
+@define-color wm_unfocused_title alpha(#ded6d6,0.5);
 @define-color wm_bg_unfocused #333333;
 @define-color wm_highlight #373737;
-@define-color wm_shadow alpha(black,
-0.35);
+@define-color wm_shadow alpha(black,0.35);
 @define-color wm_button_close_bg #cc575d;
 @define-color wm_button_close_hover_bg #d7787d;
 @define-color wm_button_close_active_bg #be3841;
