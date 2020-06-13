@@ -32,9 +32,9 @@ sleep 0.5 & xmodmap ~/.mediaKeys_ThinkPadX1Y3.lst
 # Empty Web window (restore last session is disabled in my settings)
 vivaldi & sleep 1
 
-nemo & sleep 0.5                       # File explorer
+nemo & sleep 1                       # File explorer
 
-code & sleep 0.5                        # Visual Studio Code (add -n if empty window is desired)
+code & sleep 1                       # Visual Studio Code (add -n if empty window is desired)
 
 # Web window for App under development (https://github.com/orlando26/cubing-mty-app)
 vivaldi --new-window "http://localhost:8100" "https:/localhost:8080/swagger-ui.html" "github.com/orlando26/cubing-mty-app" "github.com/orlando26/cubing-mty-app" & sleep 1
@@ -43,14 +43,17 @@ vivaldi --new-window "http://localhost:8100" "https:/localhost:8080/swagger-ui.h
 vivaldi --new-window "www.messenger.com/t/lu0ear" "web.whatsapp.com" "app.slack.com/client/T011D2D3RQF/C011D2D3SBZ" "mail.google.com/mail/u/0/#inbox" "outlook.office.com/mail/inbox" "mail.google.com/mail/u/1/#inbox" "trello.com/lu0ear/boards" & sleep 1
 
 # General purpose terminal and Onedrive journal terminal (For Workspace 3)
-gnome-terminal --profile OnedriveStatus -e "journalctl --user-unit onedrive -f" & sleep 0.5
-gnome-terminal & sleep 3
+gnome-terminal --profile OnedriveStatus -e "journalctl --user-unit onedrive -f" & sleep 1
+gnome-terminal & sleep 1
 
 # Spotify (for Workspace 5)
 spotify & sleep 3
 
 
 # ----------- Resize windows -----------------------------------------------
+
+wmctrl -r "Start Page" -e 0,46,46,1864,1024 & sleep 1
+wmctrl -r Home -e 0,46,46,1864,1024 & sleep 0.5
 
 wmctrl -r "Terminal" -N "OnedriveUANL Journal" & sleep 0.5   # Rename Onedrive terminal
 wmctrl -r "OnedriveUANL Journal" -b remove,maximized_horz,maximized_vert
@@ -61,12 +64,14 @@ wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert & sleep 0.5
 wmctrl -r "(home)" -e 0,46,46,1127,1024 & sleep 0.5
 
 wmctrl -r "Visual Studio Code" -b remove,maximized_horz,maximized_vert
-wmctrl -r "Visual Studio Code" -e 0,46,46,1127,1024 & sleep 0.5
+wmctrl -r "Visual Studio Code" -e 0,46,46,1127,1024 & sleep 1
 
 # Vivaldi window for App dev.
 wmctrl -r "localhost" -b remove,maximized_horz,maximized_vert
 wmctrl -r "localhost" -e 0,1183,46,727,1024 & sleep 0.5
 
+wmctrl -r "messenger" -e 0,46,46,1864,1024 & sleep 0.5
+wmctrl -r Spotify Premium -e 0,46,46,1864,1024 & sleep 0.5
 
 # ----------- Move windows to desired workspaces ---------------------------
 wmctrl -r Vivaldi -t 0                    # General purpose Web Browser

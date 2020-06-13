@@ -6,4 +6,4 @@ NoDisplay=false
 Hidden=false
 Name[en_US]=Startup apps
 Comment[en_US]=No description
-X-GNOME-Autostart-Delay=2
+X-GNOME-Autostart-Delay=1
