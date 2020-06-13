@@ -1,6 +1,6 @@
 stage {
-    font-family: "Noto Sans";
-    font-size: 1em;
+    font-family: "WeblySleek UI Normal";
+    font-size: 1.3em;
     color: #f0f0f0;
     font-weight: normal;
 }
@@ -246,7 +246,7 @@ StScrollBar StButton#vhandle:hover {
     background-gradient-start: rgba(15, 15, 15, 1);
     background-gradient-direction: vertical;
     color: #fff;
-    font-size: 0.8em;
+    font-size: 0.85em;
     font-weight: normal;
     text-align: center;
 }
@@ -404,7 +404,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 #LookingGlassDialog .lg-inspector-title {
-    font-family: "Noto Sans Medium";
+    font-family: "WeblySleek UI Semibold";
     font-weight: normal;
     padding-bottom: 8px;
 }
@@ -466,7 +466,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .lg-extension-name {
-    font-family: "Noto Sans Medium";
+    font-family: "WeblySleek UI Semibold";
     font-weight: normal;
 }
 
@@ -980,7 +980,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .calendar-month-label {
-    font-family: "Noto Sans Medium";
+    font-family: "WeblySleek UI Semibold";
     font-weight: normal;
     color: #ffffff;
     padding-bottom: 5px;
@@ -1047,7 +1047,7 @@ StScrollBar StButton#vhandle:hover {
 
 .datemenu-date-label {
     padding: .4em 1.75em;
-    font-family: "Noto Sans";
+    font-family: "WeblySleek UI Normal";
     font-weight: normal;
     font-size: 1.2em;
     text-align: center;
@@ -1086,7 +1086,7 @@ StScrollBar StButton#vhandle:hover {
 .calendar-nonwork-day {
     color: #f0f0f0;
     background-color: transparent;
-    font-family: "Noto Sans Medium";
+    font-family: "WeblySleek UI Semibold";
     font-weight: normal;
 }
 
@@ -1094,7 +1094,7 @@ StScrollBar StButton#vhandle:hover {
 .calendar-today:active,
 .calendar-today:focus,
 .calendar-today:hover {
-    font-family: "Noto Sans";
+    font-family: "WeblySleek UI Normal";
     font-weight: bold;
     color: #ffffff;
     background-color: #e25252;
@@ -1556,7 +1556,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .menu-application-button:highlighted {
-    font-family: "Noto Sans Medium";
+    font-family: "WeblySleek UI Semibold";
     font-weight: normal;
 }
 
@@ -1570,7 +1570,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .menu-application-button-selected:highlighted {
-    font-family: "Noto Sans Medium";
+    font-family: "WeblySleek UI Semibold";
     font-weight: normal;
 }
 
@@ -1630,7 +1630,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .menu-selected-app-title {
-    font-family: "Noto Sans";
+    font-family: "WeblySleek UI Normal";
     font-weight: normal;
 }
 
@@ -1678,7 +1678,7 @@ StScrollBar StButton#vhandle:hover {
 
 .osd-window {
     text-align: center;
-    font-family: "Noto Sans Medium";
+    font-family: "WeblySleek UI Semibold";
     font-weight: normal;
     spacing: 1em;
     padding: 20px;
@@ -1716,7 +1716,7 @@ StScrollBar StButton#vhandle:hover {
 
 .window-list-item-label {
     /* Here */
-    /* font-family: "Noto Sans Medium";
+    /* font-family: "WeblySleek UI Semibold";
     font-weight: normal;
     width: 10em;
     min-width: 5px;*/
@@ -1728,7 +1728,7 @@ StScrollBar StButton#vhandle:hover {
     /* Here */
     width: 160px;
     text-align: left;
-    font-family: "Noto Sans Medium";
+    font-family: "WeblySleek UI Semibold";
     font-size: 0.95em;
     font-weight: normal;
     color: rgba(255, 255, 255, 0.5);
@@ -1817,7 +1817,7 @@ StScrollBar StButton#vhandle:hover {
 
 .grouped-window-list-item-label {
     /* Here */
-    /*font-family: "Noto Sans Medium";
+    /*font-family: "WeblySleek UI Semibold";
   font-weight: normal;
   width: 10em;
   min-width: 5px;*/
@@ -1828,7 +1828,7 @@ StScrollBar StButton#vhandle:hover {
     /* Here */
     width: 130px;
     text-align: left;
-    font-family: "Noto Sans Medium";
+    font-family: "WeblySleek UI Semibold";
     font-size: 0.95em;
     font-weight: normal;
     color: rgba(255, 255, 255, 0.5);
@@ -2332,7 +2332,7 @@ StScrollBar StButton#vhandle:hover {
 
 .applet-label {
     margin-top: 0px;
-    font-family: "Noto Sans Medium";
+    font-family: "WeblySleek UI Semibold";
     font-size: 0.87em;
     font-weight: normal;
     color: rgba(255, 255, 255, 1);
@@ -2370,7 +2370,7 @@ StScrollBar StButton#vhandle:hover {
 .user-label {
     color: #f0f0f0;
     font-size: 0.87em;
-    font-family: "Noto Sans Medium";
+    font-family: "WeblySleek UI Semibold";
     font-weight: normal;
     margin: 0px;
 }

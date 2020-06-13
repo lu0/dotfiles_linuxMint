@@ -1437,7 +1437,7 @@ headerbar:backdrop,
 
 headerbar .title,
 .titlebar:not(headerbar) .title {
-    font-family: 'Noto Sans Medium';
+    font-family: 'WeblySleek UI Semibold';
     font-weight: normal;
     padding-left: 12px;
     padding-right: 12px;
@@ -2442,7 +2442,7 @@ treeview.view.trough:selected:focus {
 
 treeview.view header button {
     padding: 3px 6px;
-    font-family: 'Noto Sans Medium';
+    font-family: 'WeblySleek UI Semibold';
     font-weight: normal;
     color: #ffffff;
     background-color: @lateral_bg;
@@ -6415,7 +6415,7 @@ filechooser placessidebar.sidebar list scrollbar trough,
 
 #greeter_infobar {
     border-bottom-width: 0;
-    font-family: 'Segoe UI Semibold';
+    font-family: 'WeblySleek UI Semibold';
     font-weight: semibold;
 }
 

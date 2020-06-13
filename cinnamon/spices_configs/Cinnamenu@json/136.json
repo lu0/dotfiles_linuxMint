@@ -305,7 +305,7 @@
         "units": "pixels",
         "description": "Category icon size",
         "tooltip": "Category icon size",
-        "value": 26.0
+        "value": 24.0
     },
     "show-application-icons": {
         "type": "switch",
@@ -338,7 +338,7 @@
         "units": "pixels",
         "description": "Applications grid icon size",
         "tooltip": "Applications grid icon size",
-        "value": 80.0
+        "value": 60.0
     },
     "__md5__": "3d6522e527e1034fff131c10a4d951cf"
 }
