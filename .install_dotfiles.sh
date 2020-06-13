@@ -26,17 +26,24 @@ sudo cp -r fonts/webly-sleek /usr/share/fonts/truetype/webly-sleek-ui
 # Theme and icons
 cd cinnamon/appearance/
 sudo unzip themes/MintY_RedVariation/MintY_RedVariation.zip -d /usr/share/themes
+sudo unzip themes/Minimal_RedAccents/Minimal_RedAccents.zip -d /usr/share/themes
 sudo unzip icons/papirus.zip -d /usr/share/icons/
 sudo unzip icons/papirus_redvariation.zip -d /usr/share/icons/
 
 sudo rm /usr/share/themes/MintY_RedVariation/cinnamon/cinnamon.css
-sudo ln -sr themes/MintY_RedVariation/cinnamon.css /usr/share/themes/MintY_RedVariation/cinnamon/cinnamon.css
-
 sudo rm /usr/share/themes/MintY_RedVariation/gtk-3.0/gtk.css
-sudo ln -sr themes/MintY_RedVariation/gtk.css /usr/share/themes/MintY_RedVariation/gtk-3.0/gtk.css
-
 sudo rm /usr/share/themes/MintY_RedVariation/metacity-1/metacity-theme-3.xml
+sudo ln -sr themes/MintY_RedVariation/cinnamon.css /usr/share/themes/MintY_RedVariation/cinnamon/cinnamon.css
+sudo ln -sr themes/MintY_RedVariation/gtk.css /usr/share/themes/MintY_RedVariation/gtk-3.0/gtk.css
 sudo ln -sr themes/MintY_RedVariation/metacity-theme-3.xml /usr/share/themes/MintY_RedVariation/metacity-1/metacity-theme-3.xml
+
+sudo rm /usr/share/themes/Minimal_RedAccents/cinnamon/cinnamon.css
+sudo rm /usr/share/themes/Minimal_RedAccents/gtk-3.0/gtk.css
+sudo rm /usr/share/themes/Minimal_RedAccents/metacity-1/metacity-theme-3.xml
+sudo ln -sr themes/Minimal_RedAccents/cinnamon.css /usr/share/themes/Minimal_RedAccents/cinnamon/cinnamon.css
+sudo ln -sr themes/Minimal_RedAccents/gtk.css /usr/share/themes/Minimal_RedAccents/gtk-3.0/gtk.css
+sudo ln -sr themes/Minimal_RedAccents/metacity-theme-3.xml /usr/share/themes/Minimal_RedAccents/metacity-1/metacity-theme-3.xml
+
 cd ../../
 
 # Startup script (open fave apps)
