@@ -1,2 +1,2 @@
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-MUFFIN_NO_SHADOWS=1
+# MUFFIN_NO_SHADOWS=1

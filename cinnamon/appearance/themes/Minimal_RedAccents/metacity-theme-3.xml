@@ -18,8 +18,10 @@
 
 <constant name="C_wm_border" value="rgba(255,255,255,1)" />
 
-<constant name="W_border_focused" value="rgba(226, 82, 82, 0.50)" />
-<constant name="W_border_unfocused" value="rgba(60, 60, 60, 0.50)" />
+<!-- <constant name="W_border_focused" value="rgba(79, 83, 89, 1.0)" /> -->
+<constant name="W_border_focused" value="rgba(253, 90, 86, 1.0)" />
+<constant name="W_border_unfocused" value="rgba(38, 41, 43, 1.0)" />
+<!-- <constant name="W_border_unfocused" value="rgba(49, 53, 56, 1.0)" /> -->
 <constant name="B_wdth" value="0" />
 
 <!--B_wdth-->
@@ -46,20 +48,20 @@
 
 <!-- geometries -->
 
-<frame_geometry name="normal" has_title="false" rounded_top_left="1" rounded_top_right="1">
+<frame_geometry name="normal" has_title="false" rounded_top_left="0" rounded_top_right="0">
 	<distance name="left_width" value="B_wdth" />
 	<distance name="right_width" value="B_wdth" />
 	<distance name="bottom_height" value="B_wdth" />
 	<distance name="left_titlebar_edge" value="1"/>
 	<distance name="right_titlebar_edge" value="1"/>
-	<distance name="title_vertical_pad" value="0"/>
+	<distance name="title_vertical_pad" value="B_wdth"/>
 	<border name="title_border" left="0" right="0" top="0" bottom="0"/>
 	<border name="button_border" left="0" right="0" top="0" bottom="0"/>
   <distance name="button_width" value="0"/>
   <distance name="button_height" value="0"/>
 </frame_geometry>
 
-<frame_geometry name="normal_unfocused" has_title="false" rounded_top_left="1" rounded_top_right="1" parent="normal">
+<frame_geometry name="normal_unfocused" has_title="false" rounded_top_left="0" rounded_top_right="0" parent="normal">
 </frame_geometry>
 
 <frame_geometry name="max" has_title="false" parent="normal" rounded_top_left="false" rounded_top_right="false">
@@ -214,8 +216,6 @@
 
 <draw_ops name="border_max">
     <!-- THIS THING IS WHAT CAUSED A DIAGONAL LINE WHEN TILED UP OR TILED BOTOTM-->
-	<!--<line x1="1" y1="height-1" x2="width" y2="height-1" color="rgba(226, 82, 82, 0.7)" />-->
-    <!--<line x1="0" y1="0" x2="width-1" y2="height-1" color="#ffffff" />-->
 </draw_ops>
 
 
