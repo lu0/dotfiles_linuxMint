@@ -6,4 +6,4 @@
 # Map this script to your preferred keybinding
 
 wmctrl -r :ACTIVE: -b remove,maximized_horz,maximized_vert
-wmctrl -r :ACTIVE: -e 0,46,46,1864,507
+wmctrl -r :ACTIVE: -e 0,46,10,1864,525
