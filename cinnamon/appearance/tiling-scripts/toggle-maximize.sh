@@ -10,8 +10,6 @@ dimensions=$(wmctrl -lpG | while read -a a; do w=${a[0]}; if (($((16#${w:2}))==i
 
 set -- $dimensions  ## $1=X $1=Y
 if [[ "$1" -lt 1850 || "$2" -lt 1010 ]]; then
-    wmctrl -r :ACTIVE: -e 0,46,46,1864,1024
-elif [[ "$1" -gt 1865 && "$2" -gt 1025 ]]; then
     wmctrl -r :ACTIVE: -b remove,maximized_horz,maximized_vert
     wmctrl -r :ACTIVE: -e 0,46,46,1864,1024
 else
