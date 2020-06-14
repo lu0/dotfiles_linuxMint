@@ -1817,27 +1817,18 @@ StScrollBar StButton#vhandle:hover {
 
 .grouped-window-list-item-label {
     /* Here */
-    /*font-family: "WeblySleek UI Semibold";
-  font-weight: normal;
-  width: 10em;
-  min-width: 5px;*/
-    padding-left: 7px;
 }
 
 .grouped-window-list-item-box {
     /* Here */
-    width: 130px;
+    height: 36px;
+    background-image: none;
+    transition-duration: 100;
     text-align: left;
     font-family: "WeblySleek UI Semibold";
     font-size: 0.95em;
     font-weight: normal;
-    color: rgba(255, 255, 255, 0.5);
-    background-image: none;
-    /*padding-top: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 0px;*/
-    transition-duration: 100;
+    color: none;
 }
 
 .grouped-window-list-item-box.top,
@@ -1848,7 +1839,7 @@ StScrollBar StButton#vhandle:hover {
 
 .grouped-window-list-item-box.top StLabel,
 .grouped-window-list-item-box.bottom StLabel {
-    padding-right: 4px;
+    padding-right: 0px;
 }
 
 .grouped-window-list-item-box.right {
@@ -1874,26 +1865,20 @@ StScrollBar StButton#vhandle:hover {
 .grouped-window-list-item-box:hover {
     /* Here */
     color: rgba(255, 255, 255, 1);
-    background-color: rgba(240, 240, 240, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 2px 0 rgba(60, 60, 60, 1);
     transition-duration: 100;
 }
 
 .grouped-window-list-item-box:active {
     /* Here */
-    border-color: rgba(60, 60, 60, 1);
-    border-top-width: 1px;
-    box-shadow: none;
-    /*inset 0 1px rgba(60, 60, 60,1); */
 }
 
 .grouped-window-list-item-box:focus {
     /* Here */
-    border-color: #e25252;
-    border-top-width: 2px;
-    box-shadow: none;
-    /*inset 0 2px #e25252; */
+    box-shadow: inset 2px 0 #e25252;
     color: #ffffff;
-    background-color: rgba(240, 240, 240, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .grouped-window-list-item-box:checked {
@@ -2142,8 +2127,6 @@ StScrollBar StButton#vhandle:hover {
 /* Controls the styling when using the "Simple buttons" option */
 
 .workspace-switcher {
-    padding-left: 5px;
-    padding-right: 5px;
 }
 
 .panel-left .workspace-switcher,
@@ -2159,39 +2142,31 @@ StScrollBar StButton#vhandle:hover {
     padding: 3px;
     padding-top: 4px;
     transition-duration: 100;
-    font-size: 0.95em;
+    font-size: 1em;
 }
 
 .workspace-button.vertical {
-    height: 32px;
-    width: 20px;
+    height: 36px;
     padding: 0;
     padding-top: 0px;
     padding-bottom: 0px;
-    padding-left: 1px;
-    /* spacing: 3px; */
+    padding-left: 0px;
 }
 
 .workspace-button:outlined {
     border-left-width: 2px;
     border-color: #e25252;
     padding-right: 2px;
-    /* box-shadow: 2px solid #e25252; */
-    background-color: rgba(240, 240, 240, 0.2);
-    /*rgba(60, 60, 60, 1); panel_hover_bg*/
-    /*background-color: rgba(240, 240, 240, 0.2); /*#e25252; lu00*/
+    background-color: none;
     color: #ffffff;
 }
 
 .workspace-button:outlined:hover {
-    /*background-color: rgba(193, 91, 88, 0.7);*/
-    background-color: rgba(240, 240, 240, 0.2);
-    /*rgba(60, 60, 60, 1); panel_hover_bg*/
+    background-color: none;
     color: #ffffff;
 }
 
 .workspace-button:hover {
-    background-color: rgba(240, 240, 240, 0.2);
     color: #ffffff;
 }
 
