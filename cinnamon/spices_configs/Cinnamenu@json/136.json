@@ -278,7 +278,7 @@
         "tooltip": "Select an icon to show in the panel.",
         "dependency": "menu-icon-custom",
         "indent": "true",
-        "value": "linuxmint-logo-badge-symbolic"
+        "value": "cinnamon-symbolic"
     },
     "menu-label": {
         "type": "entry",

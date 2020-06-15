@@ -1,6 +1,6 @@
 stage {
     font-family: "WeblySleek UI Normal";
-    font-size: 1.3em;
+    font-size: 1.25em;
     color: #f0f0f0;
     font-weight: normal;
 }
@@ -142,11 +142,12 @@ stage {
     selection-background-color: rgba(0, 0, 0, 0.45);
     selected-color: #ffffff;
     transition-duration: 300ms;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     color: #D3D3D3;
-    background-color: rgba(240, 240, 240, 0.45);
+    /* background-color: rgba(240, 240, 240, 0.45); */
     border: none;
-    box-shadow: inset 0 0px 0px rgba(20, 20, 20, 0.1);
+    box-shadow: none;
+    /* box-shadow: inset 0 0px 0px rgba(20, 20, 20, 0.1); */
 }
 
 .popup-menu #notification StEntry:focus,
@@ -154,17 +155,20 @@ stage {
 .popup-menu #notification StEntry:hover,
 #menu-search-entry:hover {
     color: #f0f0f0;
-    background-color: rgba(20, 20, 20, 0.1);
-    border: 0px solid rgba(0, 0, 0, 0.45);
-    box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.45);
+    /* background-color: rgba(20, 20, 20, 0.1); */
+    background-color: none;
+    /* border: 0px solid rgba(0, 0, 0, 0.45); */
+    border: none;
+    /* box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.45); */
+    box-shadow: none;
     transition-duration: 150;
 }
 
 .popup-menu #notification StEntry:insensitive,
 #menu-search-entry:insensitive {
     color: rgba(240, 240, 240, 0.45);
-    background-color: rgba(0, 0, 0, 0.45);
-    border-color: 1px solid #383838;
+    /* background-color: rgba(0, 0, 0, 0.45); */
+    /* border-color: 1px solid #383838; */
     box-shadow: none;
 }
 
@@ -222,30 +226,27 @@ StScrollBar StBin#trough {
 }
 
 StScrollBar StButton#vhandle {
-    background-color: rgba(70, 70, 70, 1);
-    border: 0px solid rgba(70, 70, 70, 1);
-    border-radius: 2px;
+    background-color: #43464d;
+    border: none;
 }
 
 StScrollBar StButton#hhandle {
-    background-color: rgba(23, 23, 23, 1);
-    border: 1px solid rgba(23, 23, 23, 1);
-    border-radius: 4px;
+    background-color: #4f5359;
+    border: none;
 }
 
 StScrollBar StButton#hhandle:hover,
 StScrollBar StButton#vhandle:hover {
-    background-color: rgba(226, 82, 82, 1);
+    background-color: #e25252;
 }
 
 #Tooltip {
     border: none;
-    border-radius: 5px;
+    border-radius: 0px;
     padding: 5px 18px;
-    background-gradient-end: rgba(15, 15, 15, 1);
-    background-gradient-start: rgba(15, 15, 15, 1);
-    background-gradient-direction: vertical;
-    color: #fff;
+    background-color: #2A2A2A;
+    box-shadow: 1px 1px 1px 1px #212121;
+    color: #FFFFFF;
     font-size: 0.85em;
     font-weight: normal;
     text-align: center;
@@ -311,7 +312,7 @@ StScrollBar StButton#vhandle:hover {
 
 .radiobutton StLabel {
     padding-top: 4px;
-    font-size: 0.9em;
+    font-size: 0.6em;
     box-shadow: none;
 }
 
@@ -483,18 +484,16 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .menu {
-    font-size: 0.87em;
+    font-size: 0.9em;
     color: #ffffff;
     min-width: 80px;
     min-height: 80px;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-right: 0;
-    padding-left: 0;
+    margin-left: 5px;
+    margin-top: 5px;
     /*Here: */
-    border: 0.7px rgba(226, 82, 82, .5);
-    border-radius: 5px;
-    background-color: rgba(15, 15, 15, 1);
+    border: none;
+    border-radius: none;
+    background-color: #2A2A2A;
 }
 
 .menu.top {
@@ -506,7 +505,8 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .menu.left {
-    border-radius: 5px 5px 5px 5px;
+    border-radius: none;
+    box-shadow: 1px 1px 1px 1px #212121;
 }
 
 .menu.right {
@@ -549,7 +549,7 @@ StScrollBar StButton#vhandle:hover {
 
 .popup-menu-item:active {
     color: #ffffff;
-    background-color: rgba(240, 240, 240, 0.2)
+    background-color: #323232;
 }
 
 .popup-menu-item:insensitive {
@@ -646,7 +646,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 
-/*Don't know what this does*/
+/* Don't know what this does */
 
 .popup-combo-menu {
     background-color: rgba(0, 0, 0, 0.4);
@@ -690,16 +690,16 @@ StScrollBar StButton#vhandle:hover {
  * ===================================================================*/
 
 #panel {
-    color: #4d1414;
-    background-color: rgba(15, 15, 15, 1);
-    outline: 0px rgba(15, 15, 15, 1);
+    color: #4F5359;
+    background-color: #212121;
+    outline: none;
     font-size: 1em;
     font-weight: normal;
-    height: 40px;
+    height: 36px;
 }
 
 #panel:highlight {
-    background-color: #e25252;
+    background-color: rgba(0, 0, 0, 1);
 }
 
 #panelLeft,
@@ -839,31 +839,32 @@ StScrollBar StButton#vhandle:hover {
 
 #overview {
     spacing: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .window-caption {
-    background-color: rgba(240, 240, 240, 0.2);
-    border: 1px solid rgba(240, 240, 240, 0.2);
-    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+    color: #cccccc;
     spacing: 25px;
     border-radius: 0px;
-    font-size: 9pt;
+    font-size: 0.9em;
     padding: 5px 8px;
     -cinnamon-caption-spacing: 8px;
 }
 
 .window-caption:focus {
-    background-color: #e25252;
+    font-family: "WeblySleek UI Semibold";
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
     color: #ffffff;
-    border: 1px solid #e25252;
+    transition-duration: 100;
 }
 
 .window-border {
     /* Here */
     border: none;
-    border-radius: 0px;
-    background-color: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 0 0px #e25252 inset;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .overview-empty-placeholder {
@@ -873,42 +874,40 @@ StScrollBar StButton#vhandle:hover {
 
 .expo-workspaces-name-entry,
 .expo-workspaces-name-entry#selected {
-    height: 1.5em;
-    border-radius: 2px;
-    font-size: 1em;
-    padding: 5px 8px;
-    -cinnamon-caption-spacing: 0px;
-    color: #c3c3c3;
-    background-color: rgba(100, 100, 100, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
     border: none;
-    box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.05);
+    color: #cccccc;
+    spacing: 25px;
+    height: 25px;
+    border-radius: 0px;
+    font-size: 0.9em;
+    padding: 5px 8px;
+    -cinnamon-caption-spacing: 8px;
 }
 
 .expo-workspaces-name-entry:focus,
 .expo-workspaces-name-entry#selected:focus {
-    border: 1px solid #e25252;
-    background-color: #e25252;
+    font-family: "WeblySleek UI Semibold";
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
     color: #ffffff;
-    font-style: italic;
     transition-duration: 100;
-    selection-background-color: #ffffff;
-    selected-color: #e25252;
 }
 
 .expo-workspace-thumbnail-frame {
-    border: 1px solid rgba(255, 255, 255, 0);
+    border: none;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 2px;
 }
 
 .expo-workspace-thumbnail-frame#active {
-    border: 3px solid #e25252;
+    border: none;
     background-color: black;
     border-radius: 2px;
 }
 
 .expo-background {
-    background-color: rgba(15, 15, 15, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .workspace-thumbnails {
@@ -928,12 +927,12 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .workspace-add-button:hover {
-    background-color: rgba(100, 100, 100, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
     transition-duration: 100;
 }
 
 .workspace-add-button:active {
-    background-color: rgba(226, 86, 86, 1);
+    background-color: rgba(255, 255, 255, 0.2);
     transition-duration: 100;
 }
 
@@ -1060,19 +1059,20 @@ StScrollBar StButton#vhandle:hover {
     text-align: center;
     width: 2.2em;
     height: 2.2em;
-    padding: 0.1em;
+    padding: 0.25em;
     border-radius: 999px;
 }
 
 .calendar-day-heading {
-    color: rgba(240, 240, 240, 0.85);
+    color: #ffffff;
     margin-top: 1em;
+    font-family: "WeblySleek UI Semibold";
     font-size: 1.05em;
 }
 
 .calendar-day {
     border-width: 0;
-    color: rgba(240, 240, 240, 1);
+    color: #f0f0f0;
 }
 
 .calendar-day-top {
@@ -1084,7 +1084,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .calendar-nonwork-day {
-    color: #f0f0f0;
+    color: #cccccc;
     background-color: transparent;
     font-family: "WeblySleek UI Semibold";
     font-weight: normal;
@@ -1094,21 +1094,21 @@ StScrollBar StButton#vhandle:hover {
 .calendar-today:active,
 .calendar-today:focus,
 .calendar-today:hover {
-    font-family: "WeblySleek UI Normal";
-    font-weight: bold;
+    font-family: "WeblySleek UI Semibold";
     color: #ffffff;
     background-color: #e25252;
     border-width: 0;
+    font-size: 1.2em;
 }
 
 .calendar-other-month-day {
-    font-size: 1em;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9em;
+    color: #cccccc;
     opacity: 1;
 }
 
 .calendar-week-number {
-    color: rgba(240, 240, 240, 0.85);
+    color: #cccccc;
     font-size: 0.8em;
     margin-top: 0.8em;
 }
@@ -1185,10 +1185,9 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .switcher-list {
-    color: #f0f0f0;
-    border: 0px solid rgba(15, 15, 15, 1);
-    background-color: rgba(15, 15, 15, 1);
-    border-radius: 1px;
+    color: #ffffff;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
 
@@ -1217,7 +1216,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .switcher-list .thumbnail {
-    width: 256px;
+    width: 400px;
 }
 
 .switcher-list .thumbnail-box {
@@ -1330,7 +1329,7 @@ StScrollBar StButton#vhandle:hover {
 .run-dialog-completion-box {
     padding-top: 5px;
     padding-left: 15px;
-    font-size: 10px;
+    font-size: 1em;
 }
 
 .run-dialog-entry {
@@ -1508,11 +1507,12 @@ StScrollBar StButton#vhandle:hover {
 
 .menu-favorites-box {
     /* Here: */
-    padding: 0.75em;
+    padding: 2em;
     transition-duration: 50;
-    /*background-color: rgba(0, 0, 0, 0.7); */
+    /* background-color: rgba(0, 0, 0, 1); */
     border: none;
     border-radius: 2px
+    
 }
 
 .menu-favorites-button {
@@ -1524,7 +1524,6 @@ StScrollBar StButton#vhandle:hover {
 .menu-favorites-button:hover {
     /* Here: */
     /*transition-duration: 100;*/
-    background-color: rgba(240, 240, 240, 0.2);
 }
 
 .menu-places-box {
@@ -1552,7 +1551,7 @@ StScrollBar StButton#vhandle:hover {
     /* Here */
     padding: 7px;
     border: 1px solid transparent;
-    color: rgba(255, 255, 255, 0.75);
+    color: #afafaf;
 }
 
 .menu-application-button:highlighted {
@@ -1565,8 +1564,8 @@ StScrollBar StButton#vhandle:hover {
     border-radius: 2px;
     padding: 7px;
     color: #ffffff;
-    background-color: rgba(240, 240, 240, 0.2);
-    border: 1px transparent rgba(240, 240, 240, 0.002);
+    background-color: #3A3A3A; /*  #3E3F40; */
+    border: 1px transparent #3A3A3A;
 }
 
 .menu-application-button-selected:highlighted {
@@ -1583,7 +1582,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .menu-category-button {
-    color: rgba(255, 255, 255, 0.75);
+    color: #afafaf;
     padding: 7px;
     border: 1px solid transparent;
 }
@@ -1594,13 +1593,12 @@ StScrollBar StButton#vhandle:hover {
     padding: 7px;
     color: #ffffff;
     border-radius: 2px;
-    background-color: rgba(240, 240, 240, 0.2);
-    border: 1px solid rgba(240, 240, 240, 0.002);
+    background-color: #3A3A3A;
+    border: 1px transparent #3A3A3A;
 }
 
 .menu-category-button-hover {
-    background-color: red;
-    border-radius: 2px;
+    border-radius: 1px;
 }
 
 .menu-category-button-greyed {
@@ -1630,8 +1628,8 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .menu-selected-app-title {
-    font-family: "WeblySleek UI Normal";
-    font-weight: normal;
+    /* font-family: "WeblySleek UI Normal"; */
+    /* font-weight: normal; */
 }
 
 .menu-selected-app-description {
@@ -1649,9 +1647,7 @@ StScrollBar StButton#vhandle:hover {
 #menu-search-entry {
     /* Here */
     width: 120;
-    /*min-height: 16px;*/
     font: 0.9em;
-    border-image: url("search-entry.png") 6 6 6 6 stretch;
     selected-color: #e25252;
     caret-color: #e25252;
     caret-size: 1px;
@@ -1864,9 +1860,7 @@ StScrollBar StButton#vhandle:hover {
 
 .grouped-window-list-item-box:hover {
     /* Here */
-    color: rgba(255, 255, 255, 1);
-    background-color: rgba(0, 0, 0, 0.1);
-    box-shadow: inset 2px 0 rgba(60, 60, 60, 1);
+    background-color: #303030;
     transition-duration: 100;
 }
 
@@ -1878,7 +1872,7 @@ StScrollBar StButton#vhandle:hover {
     /* Here */
     box-shadow: inset 2px 0 #e25252;
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #3A3A3A;
 }
 
 .grouped-window-list-item-box:checked {
@@ -2126,8 +2120,7 @@ StScrollBar StButton#vhandle:hover {
 
 /* Controls the styling when using the "Simple buttons" option */
 
-.workspace-switcher {
-}
+.workspace-switcher {}
 
 .panel-left .workspace-switcher,
 .panel-right .workspace-switcher {
@@ -2138,7 +2131,7 @@ StScrollBar StButton#vhandle:hover {
     /* Here */
     width: 30px;
     height: 14px;
-    color: rgba(255, 255, 255, 0.5);
+    color: #8d9194;
     padding: 3px;
     padding-top: 4px;
     transition-duration: 100;
@@ -2156,8 +2149,8 @@ StScrollBar StButton#vhandle:hover {
 .workspace-button:outlined {
     border-left-width: 2px;
     border-color: #e25252;
-    padding-right: 2px;
-    background-color: none;
+    padding-right: 1px;
+    background-color: #323232;
     color: #ffffff;
 }
 
@@ -2266,7 +2259,7 @@ StScrollBar StButton#vhandle:hover {
     padding-left: 0px;
     padding-right: 0px;
     spacing: 0px;
-    color: rgba(255, 255, 255, 0.5);
+    color: #8d9194;
     text-shadow: none;
     transition-duration: 100;
     text-align: center;
@@ -2274,24 +2267,33 @@ StScrollBar StButton#vhandle:hover {
 
 .applet-box StLabel {
     padding-top: 0px;
-    color: rgba(255, 255, 255, 1);
+    color: #afafaf;
+}
+
+.applet-box StLabel:hover {
+    padding-top: 0px;
+    color: #ffffff;
 }
 
 .applet-box.vertical {
     padding-left: 0px;
     padding-right: 0px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 .applet-box.vertical StLabel {
     padding-top: 0;
 }
 
-.applet-box:hover,
+.applet-box:hover {
+    color: #ffffff;
+    background-color: #303030;
+}
+
 .applet-box:checked {
     color: #ffffff;
-    background-color: rgba(240, 240, 240, 0.2);
+    background-color: #3A3A3A;
 }
 
 .applet-box:hover-label,
@@ -2307,8 +2309,8 @@ StScrollBar StButton#vhandle:hover {
 
 .applet-label {
     margin-top: 0px;
-    font-family: "WeblySleek UI Semibold";
-    font-size: 0.87em;
+    font-family: "Source Code Pro Semibold";
+    font-size: 0.78em;
     font-weight: normal;
     color: rgba(255, 255, 255, 1);
 }
@@ -2323,7 +2325,6 @@ StScrollBar StButton#vhandle:hover {
 
 .applet-icon {
     color: rgba(255, 255, 255, 0.5);
-    icon-size: 20px;
 }
 
 .applet-icon:hover,
@@ -2416,18 +2417,19 @@ StScrollBar StButton#vhandle:hover {
 /*FIXME*/
 
 .workspace-osd {
-    color: #c3c3c3;
-    text-shadow: black 0px 0px 0px;
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: none;
+    font-family: "WeblySleek UI Semibold";
     font-weight: bold;
-    font-size: 48pt;
+    font-size: 3em;
 }
 
 .notification-applet-padding {
-    padding: .5em 1em;
+    padding: 0;
 }
 
 .notification-applet-container {
-    max-height: 100px;
+    max-height: 30px;
 }
 
 .tile-preview {
