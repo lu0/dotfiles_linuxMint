@@ -3727,7 +3727,7 @@ scrolledwindow viewport.frame {
   border-style: none;
 }
 
-scrolledwindow overshoot.top {
+/* scrolledwindow overshoot.top {
   background-image: -gtk-gradient(radial, center top, 0, center top, 0.6, from(rgba(179, 90, 87, 0.2)), to(rgba(179, 90, 87, 0)));
   background-size: 100% 60%;
   background-repeat: no-repeat;
@@ -3735,7 +3735,7 @@ scrolledwindow overshoot.top {
   background-color: transparent;
   border: none;
   box-shadow: none;
-}
+} 
 
 scrolledwindow overshoot.bottom {
   background-image: -gtk-gradient(radial, center bottom, 0, center bottom, 0.6, from(rgba(179, 90, 87, 0.2)), to(rgba(179, 90, 87, 0)));
@@ -3805,7 +3805,7 @@ scrolledwindow undershoot.right {
   background-repeat: repeat-y;
   background-origin: content-box;
   background-position: right center;
-}
+}*/
 
 scrolledwindow junction {
   border-color: transparent;
@@ -5332,7 +5332,7 @@ NautilusListView iconview {
 .nemo-window .sidebar iconview.cell:selected,
 .nemo-window .sidebar row.cell:selected {
   background-color: @option_select;
-  color: @my_accent;
+  color: #ffffff;
 }
 
 .nemo-window .sidebar .view.expander,
@@ -6159,10 +6159,14 @@ filechooser placessidebar.sidebar list scrollbar trough,
   background-color: transparent;
 }
 
-.nemo-window .view, .nemo-window .nemo-inactive-pane .view {
+.nemo-window .view {
   /* New style */
-  color: @disabled_text;
+  color: #AAAAAA;
 }
+
+.nemo-window .nemo-inactive-pane .view {
+  color: #686868;
+} 
 
 .nemo-window .view:selected, .nemo-window .view:hover {
   /* lu0 */
