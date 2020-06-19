@@ -19,10 +19,10 @@
 <constant name="C_wm_border" value="rgba(255,255,255,1)" />
 
 <!-- <constant name="W_border_focused" value="rgba(79, 83, 89, 1.0)" /> -->
-<constant name="W_border_focused" value="rgba(253, 90, 86, 1.0)" />
-<constant name="W_border_unfocused" value="rgba(38, 41, 43, 1.0)" />
+<constant name="W_border_focused" value="rgba(42, 42, 42, 1.0)" />
+<constant name="W_border_unfocused" value="rgba(42, 42, 42, 1.0)" />
 <!-- <constant name="W_border_unfocused" value="rgba(49, 53, 56, 1.0)" /> -->
-<constant name="B_wdth" value="0" />
+<constant name="B_wdth" value="1" />
 
 <!--B_wdth-->
 

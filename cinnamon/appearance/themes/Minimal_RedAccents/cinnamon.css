@@ -638,7 +638,7 @@ StScrollBar StButton#vhandle:hover {
     /*Here: */
     -arrow-border-radius: 3px;
     -arrow-background-color: #2f2f2f;
-    -arrow-border-width: 1px;
+    -arrow-border-width: 0px;
     -arrow-border-color: #202020;
     -arrow-base: 21px;
     -arrow-rise: 9px;
