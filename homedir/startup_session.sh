@@ -52,26 +52,26 @@ spotify & sleep 3
 
 # ----------- Resize windows -----------------------------------------------
 
-wmctrl -r "Start Page" -e 0,46,46,1864,1024 & sleep 1
-wmctrl -r Home -e 0,46,46,1864,1024 & sleep 0.5
+wmctrl -r "Start Page" -e 0,46,10,1864,1060 & sleep 1
+wmctrl -r Home -e 0,46,10,1864,1060 & sleep 0.5
 
 wmctrl -r "Terminal" -N "OnedriveUANL Journal" & sleep 0.5   # Rename Onedrive terminal
 wmctrl -r "OnedriveUANL Journal" -b remove,maximized_horz,maximized_vert
-wmctrl -r "OnedriveUANL Journal" -e 0,1183,46,727,1024 & sleep 0.5
+wmctrl -r "OnedriveUANL Journal" -e 0,1183,10,727,1060 & sleep 0.5
 
 # General purpose terminal
 wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert & sleep 0.5
-wmctrl -r "(home)" -e 0,46,46,1127,1024 & sleep 0.5
+wmctrl -r "(home)" -e 0,46,10,1127,1060 & sleep 0.5
 
 wmctrl -r "Visual Studio Code" -b remove,maximized_horz,maximized_vert
-wmctrl -r "Visual Studio Code" -e 0,46,46,1127,1024 & sleep 1
+wmctrl -r "Visual Studio Code" -e 0,46,10,1127,1060 & sleep 1
 
 # Vivaldi window for App dev.
 wmctrl -r "localhost" -b remove,maximized_horz,maximized_vert
-wmctrl -r "localhost" -e 0,1183,46,727,1024 & sleep 0.5
+wmctrl -r "localhost" -e 0,1183,10,727,1060 & sleep 0.5
 
-wmctrl -r "messenger" -e 0,46,46,1864,1024 & sleep 0.5
-wmctrl -r Spotify Premium -e 0,46,46,1864,1024 & sleep 0.5
+wmctrl -r "messenger" -e 0,46,10,1864,1060 & sleep 0.5
+wmctrl -r Spotify Premium -e 0,46,10,1864,1060 & sleep 0.5
 
 # ----------- Move windows to desired workspaces ---------------------------
 wmctrl -r Vivaldi -t 0                    # General purpose Web Browser
