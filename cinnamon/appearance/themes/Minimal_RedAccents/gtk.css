@@ -255,7 +255,7 @@ entry.warning selection:focus {
 
 entry.error {
     color: white;
-    background-color: #b1413b;
+    background-color: @destructive_bg;
 }
 
 entry.error image {
@@ -263,6 +263,7 @@ entry.error image {
 }
 
 entry.error:focus {
+    font-family: "WeblySleek UI Semibold";
     color: white;
     background-color: @destructive_label;
     box-shadow: none;
@@ -270,13 +271,14 @@ entry.error:focus {
 
 entry.error selection,
 entry.error selection:focus {
+    font-family: "WeblySleek UI Semibold";
     background-color: white;
     color: @destructive_label;
 }
 
 entry.search-missing {
     color: white;
-    background-color: #b1413b;
+    background-color: @destructive_bg;
 }
 
 entry.search-missing image {
@@ -658,8 +660,9 @@ button.suggested-action:disabled label {
 }
 
 button.destructive-action {
+    font-family: "WeblySleek UI Semibold";
     background-clip: border-box;
-    color: @destructive_label;
+    color: #ffffff;
 }
 
 button.destructive-action.flat,
@@ -1355,7 +1358,7 @@ toolbar:not(.inline-toolbar) .linked>entry,
     box-shadow: none;
     border-width: 0 0 1px 0;
     border-style: transparent;
-    border-image: linear-gradient(to bottom, #2f2f2f, #101010) 1 0 1 0;
+    /* border-image: linear-gradient(to bottom, #2f2f2f, #101010) 1 0 1 0; */
 }
 
 .inline-toolbar {
@@ -1597,7 +1600,7 @@ window.csd>.titlebar:not(headerbar):backdrop {
 }
 
 .titlebar:not(headerbar)>separator {
-    background-image: linear-gradient(to bottom, #252525, #252525);
+    /* background-image: linear-gradient(to bottom, #252525, #252525); */
 }
 
 .primary-toolbar toolbar separator,
@@ -1689,7 +1692,7 @@ headerbar entry.warning selection:focus {
 headerbar entry.error {
     color: white;
     border-color: rgba(16, 16, 16, 0.4);
-    background-color: #aa3a34;
+    background-color: @destructive_bg;
 }
 
 .primary-toolbar entry.error:focus,
@@ -2912,19 +2915,19 @@ scrollbar {
 }
 
 scrollbar.top {
-    border-bottom: 1px transparent #292929;
+    /* border-bottom: 1px transparent #292929; */
 }
 
 scrollbar.bottom {
-    border-top: 1px transparent #292929;
+    /* border-top: 1px transparent #292929; */
 }
 
 scrollbar.left {
-    border-right: 1px transparent #292929;
+    /* border-right: 1px transparent #292929; */
 }
 
 scrollbar.right {
-    border-left: 1px transparent #292929;
+    /* border-left: 6px transparent #292929; */
 }
 
 scrollbar button {
@@ -2932,20 +2935,20 @@ scrollbar button {
 }
 
 scrollbar slider {
-    min-width: 6px;
+    min-width: 12px;
     min-height: 6px;
-    margin: -1px;
+    margin: 0px;
     border-radius: 0px;
-    background-clip: padding-box;
+    /* background-clip: padding-box; */
     background-color: #3E3F40;
 }
 
 scrollbar slider:hover {
-    background-color: #4b4b4b;
+    background-color: #43464d;
 }
 
-scrollbar slider:hover:active {
-    background-color: #e25252;
+scrollbar slider:active {
+    background-color: @my_accent;
 }
 
 scrollbar slider:disabled {
@@ -3746,7 +3749,7 @@ scrolledwindow undershoot.right {
 
 scrolledwindow junction {
     border-color: transparent;
-    border-image: linear-gradient(to bottom, #292929 1px, transparent 1px) 0 0 0 1/0 1px stretch;
+    /* border-image: linear-gradient(to bottom, #292929 1px, transparent 1px) 0 0 0 1/0 1px stretch; */
     background-color: #3d3d3d;
 }
 
@@ -4019,14 +4022,14 @@ stacksidebar row>label {
 }
 
 stacksidebar row.needs-attention {
-    background-image: radial-gradient(circle closest-side at 5% 25%, @destructive_bg 0%, @destructive_bg 100%, transparent 100%);
+    /* background-image: radial-gradient(circle closest-side at 5% 25%, @destructive_bg 0%, @destructive_bg 100%, transparent 100%); */
     background-size: 70px;
     background-position: 4px;
     background-repeat: no-repeat;
 }
 
 stacksidebar row.activatable:selected.needs-attention {
-    background-image: radial-gradient(circle closest-side at 5% 25%, #ffffff 0%, #ffffff 100%, transparent 100%);
+    /* background-image: radial-gradient(circle closest-side at 5% 25%, #ffffff 0%, #ffffff 100%, transparent 100%); */
     background-size: 70px;
     background-position: 4px;
     background-repeat: no-repeat;
@@ -4078,7 +4081,7 @@ button.sidebar-button:not(:hover):not(:active)>image {
 placessidebar row.sidebar-placeholder-row {
     padding: 0 8px;
     min-height: 2px;
-    background-image: linear-gradient(to bottom, #f08437, #f08437);
+    /* background-image: linear-gradient(to bottom, #f08437, #f08437); */
     background-clip: content-box;
 }
 
@@ -6033,8 +6036,8 @@ filechooser placessidebar.sidebar list scrollbar,
 }
 
 .nemo-window .sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
-    background-color: @my_accent;
-    border: none;
+    /* background-color: @my_accent; */
+    /* border: none; */
 }
 
 .nautilus-window placessidebar.sidebar list scrollbar slider,
@@ -6046,7 +6049,7 @@ filechooser placessidebar.sidebar list scrollbar slider,
 .nautilus-window placessidebar.sidebar list scrollbar slider:hover,
 filechooser placessidebar.sidebar list scrollbar slider:hover,
 .nemo-window .sidebar scrollbar slider:hover {
-  background-color: @my_accent;
+  background-color: #4b4b4b;
 }
 
 .nautilus-window placessidebar.sidebar list scrollbar slider:hover:active,
@@ -6138,7 +6141,7 @@ filechooser placessidebar.sidebar list scrollbar trough,
     font-weight: normal;
     border-style: none;
     background-color: transparent;
-    color: #DADADA;
+    color: #ff00ff;
 }
 
 #content_frame {
@@ -6279,58 +6282,59 @@ filechooser placessidebar.sidebar list scrollbar trough,
 }
 
 #greeter_infobar {
-    border-bottom-width: 0;
-    font-weight: bold;
+    border-bottom-width: 10;
+    font-weight: normal;
+    box-shadow: none;
 }
 
 window.background.lightdm menubar>menuitem {
-    padding: 0 5px 0 5px;
+    padding: 0 10px 0 10px;
 }
 
 window.background.lightdm button.flat.option-button,
 window.background.lightdm button.option-button.sidebar-button {
     background-color: transparent;
-    color: #dadada;
+    color: #00ff00;
 }
 
 window.background.lightdm button.flat.option-button:hover,
 window.background.lightdm button.option-button.sidebar-button:hover {
-    border-color: rgba(41, 41, 41, 0.2);
-    background-color: rgba(0, 0, 0, 0.5);
+    border-color: transparent;
+    background-color: #0000ff;
 }
 
 window.background.lightdm button.flat.option-button:active,
 window.background.lightdm button.option-button.sidebar-button:active {
-    background-color: @my_accent2;
-    color: #ffffff;
+    background-color: #ff6600;
+    color: #ffff00;
 }
 
 window.background.lightdm button,
 window.background.lightdm button.toggle-button {
     border-color: transparent;
     background-color: transparent;
-    color: #dadada;
+    color: #ff00ff;
 }
 
 window.background.lightdm button:hover,
 window.background.lightdm button.toggle-button:hover {
-    border-color: rgba(41, 41, 41, 0.2);
-    background-color: rgba(0, 0, 0, 0.5);
+    border-color: transparent;
+    background-color: #ffffff
 }
 
 window.background.lightdm button:active,
 window.background.lightdm button.selected,
 window.background.lightdm button.toggle-button:active,
 window.background.lightdm button.toggle-button.selected {
-    border-color: rgba(41, 41, 41, 0.2);
+    border-color: transparent;
     background-color: @my_accent2;
-    color: #ffffff;
+    color: #ff00ff;
 }
 
 window.background.lightdm entry,
 window.background.lightdm .lightdm-combo entry {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: #ff000f;
+    color: orange;
 }
 
 window.background.lightdm entry:active {
@@ -6396,9 +6400,9 @@ window.background.lightdm .lightdm-combo {
 @define-color header_color #212121;
 @define-color selector_button #323334;
 @define-color bg_picked #323334;
-@define-color my_accent #e34f5c;
-@define-color my_accent2 @my_accent;
 @define-color option_select #3A3A3A;
 @define-color disabled_text #888888;
 @define-color destructive_bg #F04A50;
-@define-color destructive_label #FC4138;
+@define-color destructive_label @my_accent;
+@define-color my_accent #FD5A56;
+@define-color my_accent2 @my_accent;

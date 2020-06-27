@@ -87,6 +87,12 @@ sudo ln -sr config/environment /etc/environment
 ln -sr dconf-files/dconf.conf ~/.dconf.conf
 dconf load / < ~/.dconf.conf
 
+# Opacify windows
+mkdir -p ~/.local/bin
+ln -sr cinnamon/misc_scripts/.local/bin/opacify_windows.sh ~/.local/bin
+ln -sr cinnamon/misc_scripts/.config/autostart/opacify_windows.desktop ~/.config/autostart
+# apt install xdotool wmctrl
+
 # Github script
 ln -sr homedir/git-create-repo.sh ~/.git-create-repo.sh
  

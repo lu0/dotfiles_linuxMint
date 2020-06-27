@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Exec=/bin/sh -c '$HOME/.startup_session.sh'
-X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-enabled=false
 NoDisplay=false
 Hidden=false
 Name[en_US]=Startup apps
