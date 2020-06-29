@@ -45,9 +45,11 @@ sudo ln -sr themes/Minimal_RedAccents/gtk.css /usr/share/themes/Minimal_RedAccen
 sudo ln -sr themes/Minimal_RedAccents/metacity-theme-3.xml /usr/share/themes/Minimal_RedAccents/metacity-1/metacity-theme-3.xml
 
 # Blur wallpaper
-cd ../blur-wallpaper/
-feh --bg-fill "../wallpaper.jpg"
-./feh-blur --blur 15 --darken 0 -d
+cd .. 
+sudo ln -sr wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
+feh --bg-fill "/usr/share/backgrounds/wallpaper.jpg"
+cd blur-wallpaper
+./feh-blur --blur 7 --lighten 5 -d
 cd ../../
 
 # Startup script (open fave apps)
