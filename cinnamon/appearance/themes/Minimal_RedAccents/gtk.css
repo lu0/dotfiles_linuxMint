@@ -6151,7 +6151,7 @@ filechooser placessidebar.sidebar list scrollbar trough,
     font-weight: normal;
     border-style: none;
     background-color: transparent;
-    color: #ff00ff;
+    color: #ffffff;
 }
 
 #content_frame {
@@ -6338,7 +6338,7 @@ window.background.lightdm button.toggle-button:active,
 window.background.lightdm button.toggle-button.selected {
     border-color: transparent;
     background-color: @my_accent2;
-    color: #ff00ff;
+    color: #ffffff;
 }
 
 window.background.lightdm entry,
