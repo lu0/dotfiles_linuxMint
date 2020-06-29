@@ -112,10 +112,21 @@ sudo apt-get install xdotool -y         # get window info
 sudo apt-get install sox -y             # play sounds from terminal
 sudo apt-get install rofi -y
 sudo apt-get install wmctrl graphicsmagick feh -y   # blur wallpaper
-sudo apt-get install lightdm-gtk-greeter lightdm-gtk-greeter-settings -y   # replace default greeter
-sudo apt purge --autoremove slick-greeter lightdm-settings -y
+
+# Display managers --------------------------
+sudo apt purge --autoremove slick-greeter lightdm-settings -y   # delete default greeter
+
+sudo apt-get install lightdm-gtk-greeter lightdm-gtk-greeter-settings -y   
 sudo rm /etc/lightdm/lightdm-gtk-greeter.conf
 sudo ln -sr dconf-files/lightdm-gtk-greeter.conf /etc/lightdm/
+
+sudo apt-get install sddm -y            # Plasma-like dm
+sudo mkdir ‑p /usr/share/sddm/themes
+sudo ln -sr cinnamon/sddm-theme /usr/share/sddm/themes/sddm-theme
+sudo dpkg-reconfigure sddm
+# sddm-greeter --test-mode --theme /usr/share/sddm/themes/breeze
+
+# --------------------------------------------------
 
 sudo apt-get install devilspie2 -y          # window managment trough scripts
 mkdir -p ~/.config/devilspie2
