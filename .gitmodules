@@ -7,6 +7,6 @@
 [submodule "fonts/source-code-pro"]
 	path = fonts/source-code-pro
 	url = https://github.com/adobe-fonts/source-code-pro
-[submodule "cinnamon/misc_scripts"]
-	path = cinnamon/misc_scripts
-	url = https://github.com/smurphos/nemo_actions_and_cinnamon_scripts
+[submodule "cinnamon/blur-wallpaper"]
+	path = cinnamon/blur-wallpaper
+	url = https://github.com/ngynLk/feh-blur-wallpaper

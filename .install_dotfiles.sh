@@ -44,6 +44,10 @@ sudo ln -sr themes/Minimal_RedAccents/cinnamon.css /usr/share/themes/Minimal_Red
 sudo ln -sr themes/Minimal_RedAccents/gtk.css /usr/share/themes/Minimal_RedAccents/gtk-3.0/gtk.css
 sudo ln -sr themes/Minimal_RedAccents/metacity-theme-3.xml /usr/share/themes/Minimal_RedAccents/metacity-1/metacity-theme-3.xml
 
+# Blur wallpaper
+cd ../blur-wallpaper/
+feh --bg-fill "../wallpaper.jpg"
+./feh-blur --blur 15 --darken 0 -d
 cd ../../
 
 # Startup script (open fave apps)
@@ -89,9 +93,7 @@ dconf load / < ~/.dconf.conf
 
 # Opacify windows
 mkdir -p ~/.local/bin
-cp -r cinnamon/misc_scripts/.local/bin/opacify_windows.sh cinnamon/opacify_windows_sub.sh
-cp -r cinnamon/misc_scripts/.config/autostart/opacify_windows.desktop config/autostart/opacify_windows_sub.desktop
-ln -sr cinnamon/opacify_windows_sub.sh ~/.local/bin
+ln -sr cinnamon/opacify_windows.sh ~/.local/bin
 # apt install xdotool wmctrl
 
 # Github script
