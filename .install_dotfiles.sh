@@ -47,9 +47,12 @@ sudo ln -sr themes/Minimal_RedAccents/metacity-theme-3.xml /usr/share/themes/Min
 # Blur wallpaper
 cd .. 
 sudo ln -sr wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
+sudo ln -sr wallpaper-blur.png /usr/share/backgrounds/wallpaper-blur.png
+sudo ln -sr mintLogo_alt.png ~/.face.icon
 feh --bg-fill "/usr/share/backgrounds/wallpaper.jpg"
-cd blur-wallpaper
-./feh-blur --blur 7 --lighten 5 -d
+ln -sr blur-wallpaper/feh-blur ~/.feh-blur
+# cd blur-wallpaper
+# ./feh-blur --blur 18 --darken 20 -d
 cd ../../
 
 # Startup script (open fave apps)
