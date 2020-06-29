@@ -115,16 +115,16 @@ popover.background label.separator {
 }
 
 assistant .sidebar {
-    background-color: #00ff00;
-    border-top: 1px transparent #292929;
+    background-color: @bg_picked;
+    border-top: 1px transparent @borders;
 }
 
 assistant .sidebar:dir(ltr) {
-    border-right: 1px transparent #292929;
+    border-right: 1px transparent @borders;
 }
 
 assistant .sidebar:dir(rtl) {
-    border-left: 1px transparent #292929;
+    border-left: 1px transparent @borders;
 }
 
 assistant.csd .sidebar {
@@ -614,7 +614,7 @@ button.suggested-action {
     background-clip: border-box;
     color: #ffffff;
     outline-color: rgba(255, 255, 255, 0.3);
-    background-color: #6db442;
+    background-color: @my_accent;
 }
 
 button.suggested-action.flat,
@@ -622,7 +622,7 @@ button.suggested-action.sidebar-button {
     border-color: transparent;
     background-color: transparent;
     background-image: none;
-    color: #6db442;
+    color: @my_accent;
     outline-color: rgba(109, 180, 66, 0.3);
 }
 
@@ -1197,7 +1197,7 @@ spinbutton:not(.vertical)>button+button {
 spinbutton:not(.vertical)>button+button,
 spinbutton:not(.vertical)>button:hover:not(:active),
 spinbutton:not(.vertical)>button:hover+button {
-    box-shadow: inset 1px 0 #292929;
+    box-shadow: inset 1px 0 @borders;
 }
 
 spinbutton:not(.vertical)>button:disabled+button:not(:disabled):not(:active):not(:checked):not(:hover),
@@ -1212,7 +1212,7 @@ spinbutton:not(.vertical)>entry+button:not(:active):hover {
 }
 
 spinbutton:not(.vertical)>entry:focus+button {
-    border-left-color: #292929;
+    border-left-color: @borders;
 }
 
 spinbutton:not(.vertical)>entry:drop(active)+button {
@@ -1246,7 +1246,7 @@ spinbutton.vertical button.up {
 }
 
 spinbutton.vertical>entry:focus+button {
-    border-top-color: #292929;
+    border-top-color: @borders;
 }
 
 spinbutton.vertical>entry:drop(active)+button {
@@ -1378,7 +1378,7 @@ searchbar {
 
 actionbar {
     padding: 6px;
-    border-top: 1px transparent #292929;
+    border-top: 1px transparent @borders;
     background-color: #303030;
 }
 
@@ -1950,7 +1950,7 @@ headerbar button.suggested-action {
     background-clip: border-box;
     color: #ffffff;
     outline-color: rgba(255, 255, 255, 0.3);
-    background-color: #6db442;
+    background-color: @my_accent;
 }
 
 .primary-toolbar button.suggested-action.flat,
@@ -1960,7 +1960,7 @@ headerbar button.suggested-action.sidebar-button {
     border-color: transparent;
     background-color: transparent;
     background-image: none;
-    color: #6db442;
+    color: @my_accent;
     outline-color: rgba(109, 180, 66, 0.3);
 }
 
@@ -2709,19 +2709,19 @@ notebook>header {
 }
 
 notebook>header.top {
-    box-shadow: inset 0 -1px #292929;
+    box-shadow: inset 0 -1px @borders;
 }
 
 notebook>header.bottom {
-    box-shadow: inset 0 1px #292929;
+    box-shadow: inset 0 1px @borders;
 }
 
 notebook>header.right {
-    box-shadow: inset 1px 0 #292929;
+    box-shadow: inset 1px 0 @borders;
 }
 
 notebook>header.left {
-    box-shadow: inset -1px 0 #292929;
+    box-shadow: inset -1px 0 @borders;
 }
 
 notebook>header.top {
@@ -2849,19 +2849,19 @@ notebook>header>tabs>arrow:disabled {
 }
 
 notebook>header.top>tabs>tab:hover:not(:checked) {
-    box-shadow: inset 0 -1px #292929;
+    box-shadow: inset 0 -1px @borders;
 }
 
 notebook>header.bottom>tabs>tab:hover:not(:checked) {
-    box-shadow: inset 0 1px #292929;
+    box-shadow: inset 0 1px @borders;
 }
 
 notebook>header.left>tabs>tab:hover:not(:checked) {
-    box-shadow: inset -1px 0 #292929;
+    box-shadow: inset -1px 0 @borders;
 }
 
 notebook>header.right>tabs>tab:hover:not(:checked) {
-    box-shadow: inset 1px 0 #292929;
+    box-shadow: inset 1px 0 @borders;
 }
 
 notebook>header>tabs>tab {
@@ -2915,19 +2915,19 @@ scrollbar {
 }
 
 scrollbar.top {
-    /* border-bottom: 1px transparent #292929; */
+    /* border-bottom: 1px transparent @borders; */
 }
 
 scrollbar.bottom {
-    /* border-top: 1px transparent #292929; */
+    /* border-top: 1px transparent @borders; */
 }
 
 scrollbar.left {
-    /* border-right: 1px transparent #292929; */
+    /* border-right: 1px transparent @borders; */
 }
 
 scrollbar.right {
-    /* border-left: 6px transparent #292929; */
+    /* border-left: 6px transparent @borders; */
 }
 
 scrollbar button {
@@ -3749,7 +3749,7 @@ scrolledwindow undershoot.right {
 
 scrolledwindow junction {
     border-color: transparent;
-    /* border-image: linear-gradient(to bottom, #292929 1px, transparent 1px) 0 0 0 1/0 1px stretch; */
+    /* border-image: linear-gradient(to bottom, @borders 1px, transparent 1px) 0 0 0 1/0 1px stretch; */
     background-color: #3d3d3d;
 }
 
@@ -3960,7 +3960,7 @@ calendar.highlight {
 
 filechooser #pathbarbox {
     background-color: @toolbar_picked;
-    border-bottom: 1px transparent #292929;
+    border-bottom: 1px transparent @borders;
 }
 
 filechooser .search-bar {
@@ -3987,7 +3987,7 @@ stacksidebar.sidebar.left:dir(rtl) list,
 .sidebar:dir(ltr),
 .sidebar.left,
 .sidebar.left:dir(rtl) {
-    border-right: 1px transparent #292929;
+    border-right: 1px transparent @borders;
     border-left-style: none;
 }
 
@@ -3995,7 +3995,7 @@ stacksidebar.sidebar:dir(rtl) list,
 stacksidebar.sidebar.right list,
 .sidebar:dir(rtl),
 .sidebar.right {
-    border-left: 1px transparent #292929;
+    border-left: 1px transparent @borders;
     border-right-style: none;
 }
 
@@ -4131,7 +4131,7 @@ paned>separator {
     -gtk-icon-source: none;
     border-style: none;
     background-color: transparent;
-    background-image: linear-gradient(to bottom, #292929, #292929);
+    background-image: linear-gradient(to bottom, @borders, @borders);
     background-size: 1px 1px;
 }
 
@@ -4585,11 +4585,9 @@ button.circular-button label,
 }
 
 decoration {
-  border-radius: 0px 3px 0 0;
-    border-width: 0px;
-    box-shadow: none;
-    /* box-shadow: 0 0 1px 1px #1d1d1d, 0 8px 8px 0 rgba(0, 0, 0, 0.35); */
-    margin: 10px;
+    border: 2px solid @header_color;
+    /* box-shadow: 0 0 1px 1px #1d1d1d;  */
+    /* border-style: outset; */
 }
 
 decoration:backdrop {
@@ -4901,7 +4899,7 @@ filechooser placessidebar.sidebar list row.sidebar-row:disabled:active:hover,
 .caja-navigation-window .view .cell:disabled:selected,
 .caja-navigation-window iconview .cell:disabled:selected,
 .caja-navigation-window iconview .cell:disabled:selected:focus {
-    color: #00ff00;
+    color: @disabled_text;
 }
 
 GeditNotebook.notebook tab.reorderable-page.top:active,
@@ -4940,7 +4938,7 @@ PantheonTerminalPantheonTerminalWindow .notebook tab.reorderable-page.top.active
 PantheonTerminalPantheonTerminalWindow .notebook tab.top:active,
 PantheonTerminalPantheonTerminalWindow .notebook tab.top.active-page,
 PantheonTerminalPantheonTerminalWindow .notebook tab.top.active-page:hover {
-    box-shadow: inset 0 1px #292929, inset 0 -1px #292929, inset 1px 0 #292929, inset -1px 0 #292929;
+    box-shadow: inset 0 1px @borders, inset 0 -1px @borders, inset 1px 0 @borders, inset -1px 0 @borders;
 }
 
 TerminalWindow .notebook tab.reorderable-page.top,
@@ -4953,7 +4951,7 @@ PantheonTerminalPantheonTerminalWindow .notebook tab.top {
 
 TerminalWindow .notebook.header.top,
 PantheonTerminalPantheonTerminalWindow .notebook.header.top {
-    box-shadow: inset 0 1px #252525, inset 0 -1px #292929;
+    box-shadow: inset 0 1px #252525, inset 0 -1px @borders;
 }
 
 GtkHTML {
@@ -5199,7 +5197,7 @@ headerbar button.nautilus-circular-button.button.titlebutton,
 
 NautilusListView .view,
 NautilusListView iconview {
-    border-bottom: 1px transparent #292929;
+    border-bottom: 1px transparent @borders;
 }
 
 .nemo-window {
@@ -5313,7 +5311,7 @@ headerbar .nemo-window widget .toolbar button.titlebutton,
 }
 
 .gedit-bottom-panel-paned>separator {
-    background-image: linear-gradient(to bottom, #292929, #292929);
+    background-image: linear-gradient(to bottom, @borders, @borders);
 }
 
 .open-document-selector-treeview.view,
@@ -5421,7 +5419,7 @@ iconview.open-document-selector-treeview:hover:selected {
 }
 
 .gedit-side-panel-paned statusbar {
-    border-top: 1px transparent #292929;
+    border-top: 1px transparent @borders;
     background-color: @content_picked;
 }
 
@@ -5499,7 +5497,7 @@ layout {
 }
 
 eggsearchbar box.search-bar {
-    border-bottom: 1px transparent #292929;
+    border-bottom: 1px transparent @borders;
 }
 
 pillbox {
@@ -5515,7 +5513,7 @@ pillbox:disabled label {
 docktabstrip {
     padding: 0 6px;
     background-color: @content_picked;
-    border-bottom: 1px transparent #292929;
+    border-bottom: 1px transparent @borders;
 }
 
 docktabstrip docktab {
@@ -5589,8 +5587,8 @@ popover.popover-selector list row image {
 
 entry.search.preferences-search {
     border: none;
-    border-right: 1px transparent #292929;
-    border-bottom: 1px transparent #292929;
+    border-right: 1px transparent @borders;
+    border-bottom: 1px transparent @borders;
     border-radius: 0;
 }
 
@@ -5737,14 +5735,14 @@ SynapseGuiViewVirgilio *:selected {
 .gnome-panel-menu-bar,
 .mate-panel-menu-bar {
     color: #DADADA;
-    background-color: #292929;
+    background-color: @borders;
 }
 
 .gnome-panel-menu-bar,
 .gnome-panel-menu-bar menubar,
 .mate-panel-menu-bar,
 .mate-panel-menu-bar menubar {
-    background-color: #292929;
+    background-color: @borders;
 }
 
 .gnome-panel-menu-bar menubar,
@@ -5992,7 +5990,7 @@ SwitchboardCategoryView iconview:selected:focus {
 .cs-header {
     padding: 6px;
     background-color: @sidebar_picked;
-    border-bottom: 1px transparent #292929;
+    border-bottom: 1px transparent @borders;
 }
 
 .xed-window .xed-panel.side notebook tab.top {
@@ -6109,7 +6107,7 @@ filechooser placessidebar.sidebar list scrollbar trough,
 }
 
 #panel_window {
-    background-color: #292929;
+    background-color: @borders;
     color: #DADADA;
     font-weight: bold;
     box-shadow: none;
@@ -6263,7 +6261,7 @@ filechooser placessidebar.sidebar list scrollbar trough,
     background-clip: border-box;
     color: #ffffff;
     outline-color: rgba(255, 255, 255, 0.3);
-    background-color: #6db442;
+    background-color: @my_accent;
 }
 
 #restart_button.button:hover {
@@ -6313,7 +6311,7 @@ window.background.lightdm button,
 window.background.lightdm button.toggle-button {
     border-color: transparent;
     background-color: transparent;
-    color: #ff00ff;
+    color: #ffffff;
 }
 
 window.background.lightdm button:hover,
@@ -6367,7 +6365,7 @@ window.background.lightdm .lightdm-combo {
 @define-color theme_unfocused_bg_color @content_picked;
 @define-color theme_unfocused_base_color @bg_picked;
 @define-color borders #292929;
-@define-color unfocused_borders #292929;
+@define-color unfocused_borders @borders;
 @define-color warning_color #f27835;
 @define-color error_color @destructive_label;
 @define-color success_color #73d216;

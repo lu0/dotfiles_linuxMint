@@ -19,7 +19,7 @@
 
 <!-- <constant name="W_border_focused" value="rgba(79, 83, 89, 1.0)p" /> -->
 <constant name="W_border_focused" value="#212121" />
-<constant name="W_border_unfocused" value="#2A2A2A" />
+<constant name="W_border_unfocused" value="#212121" />
 <!-- <constant name="W_border_unfocused" value="rgba(49, 53, 56, 1.0)" /> -->
 <constant name="B_wdth" value="2" />
 
