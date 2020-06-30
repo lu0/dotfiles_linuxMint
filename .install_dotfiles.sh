@@ -17,6 +17,7 @@ rm -rf ~/.bashrc
 ln -sr bash/bashrc ~/.bashrc
 sudo rm -rf /etc/inputrc
 sudo ln -sr bash/inputrc /etc/inputrc
+ln -sr keymappings/keymappings-X1Y3.sh ~/.keymappings-X1Y3.sh
 
 # Fonts
 sudo cp -r fonts/source-code-pro/OTF /usr/share/fonts/opentype/source-code-pro
@@ -26,17 +27,33 @@ sudo cp -r fonts/webly-sleek /usr/share/fonts/truetype/webly-sleek-ui
 # Theme and icons
 cd cinnamon/appearance/
 sudo unzip themes/MintY_RedVariation/MintY_RedVariation.zip -d /usr/share/themes
+sudo unzip themes/Minimal_RedAccents/Minimal_RedAccents.zip -d /usr/share/themes
 sudo unzip icons/papirus.zip -d /usr/share/icons/
 sudo unzip icons/papirus_redvariation.zip -d /usr/share/icons/
 
 sudo rm /usr/share/themes/MintY_RedVariation/cinnamon/cinnamon.css
-sudo ln -sr themes/MintY_RedVariation/cinnamon.css /usr/share/themes/MintY_RedVariation/cinnamon/cinnamon.css
-
 sudo rm /usr/share/themes/MintY_RedVariation/gtk-3.0/gtk.css
-sudo ln -sr themes/MintY_RedVariation/gtk.css /usr/share/themes/MintY_RedVariation/gtk-3.0/gtk.css
-
 sudo rm /usr/share/themes/MintY_RedVariation/metacity-1/metacity-theme-3.xml
+sudo ln -sr themes/MintY_RedVariation/cinnamon.css /usr/share/themes/MintY_RedVariation/cinnamon/cinnamon.css
+sudo ln -sr themes/MintY_RedVariation/gtk.css /usr/share/themes/MintY_RedVariation/gtk-3.0/gtk.css
 sudo ln -sr themes/MintY_RedVariation/metacity-theme-3.xml /usr/share/themes/MintY_RedVariation/metacity-1/metacity-theme-3.xml
+
+sudo rm /usr/share/themes/Minimal_RedAccents/cinnamon/cinnamon.css
+sudo rm /usr/share/themes/Minimal_RedAccents/gtk-3.0/gtk.css
+sudo rm /usr/share/themes/Minimal_RedAccents/metacity-1/metacity-theme-3.xml
+sudo ln -sr themes/Minimal_RedAccents/cinnamon.css /usr/share/themes/Minimal_RedAccents/cinnamon/cinnamon.css
+sudo ln -sr themes/Minimal_RedAccents/gtk.css /usr/share/themes/Minimal_RedAccents/gtk-3.0/gtk.css
+sudo ln -sr themes/Minimal_RedAccents/metacity-theme-3.xml /usr/share/themes/Minimal_RedAccents/metacity-1/metacity-theme-3.xml
+
+# Blur wallpaper
+cd .. 
+sudo ln -sr wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
+sudo ln -sr wallpaper-blur.png /usr/share/backgrounds/wallpaper-blur.png
+sudo ln -sr mintLogo_alt.png ~/.face.icon
+feh --bg-fill "/usr/share/backgrounds/wallpaper.jpg"
+ln -sr blur-wallpaper/feh-blur ~/.feh-blur
+# cd blur-wallpaper
+# ./feh-blur --blur 18 --darken 20 -d
 cd ../../
 
 # Startup script (open fave apps)
@@ -79,6 +96,11 @@ sudo ln -sr config/environment /etc/environment
 # dconf dump /  > ~/dotfiles_linuxMint/config/dconf.conf
 ln -sr dconf-files/dconf.conf ~/.dconf.conf
 dconf load / < ~/.dconf.conf
+
+# Opacify windows
+mkdir -p ~/.local/bin
+ln -sr cinnamon/opacify_windows.sh ~/.local/bin
+# apt install xdotool wmctrl
 
 # Github script
 ln -sr homedir/git-create-repo.sh ~/.git-create-repo.sh

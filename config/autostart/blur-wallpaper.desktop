@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/bin/sh -c '$HOME/.feh-blur --blur 15 --darken 20 -d'
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[en_US]=Blur Wallpaper
+Comment[en_US]=No description
+X-GNOME-Autostart-Delay=3

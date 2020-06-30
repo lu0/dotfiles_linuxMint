@@ -1,0 +1,13 @@
+{
+    "width": {
+        "type": "scale",
+        "default": 10,
+        "min": 2,
+        "max": 400,
+        "step": 1,
+        "description": "Amount of space in pixels",
+        "tooltip": "Adjust this to increase or decrease the width of this spacer",
+        "value": 2.0
+    },
+    "__md5__": "ce7d0d70f40859fec53e8c70cde93a17"
+}

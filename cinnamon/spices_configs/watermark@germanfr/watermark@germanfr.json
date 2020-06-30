@@ -1,0 +1,121 @@
+{
+    "section0": {
+        "type": "section",
+        "description": "Appearance"
+    },
+    "icon": {
+        "type": "combobox",
+        "description": "Watermark logo",
+        "default": "cinnamon",
+        "options": {
+            "Cinnamon": "cinnamon",
+            "Antergos": "antergos",
+            "Arch": "arch",
+            "Debian": "debian",
+            "Linux": "linux",
+            "Linux Mint": "linuxmint",
+            "Manjaro": "manjaro",
+            "Manjaro (with text)": "manjaro-text",
+            "Custom...": "other"
+        },
+        "value": "other"
+    },
+    "custom-icon": {
+        "type": "iconfilechooser",
+        "description": "Custom icon or image",
+        "default": "start-here-symbolic",
+        "dependency": "icon=other",
+        "value": "cinnamon"
+    },
+    "alpha": {
+        "type": "scale",
+        "description": "Opacity (%)",
+        "default": 40,
+        "min": 5,
+        "max": 100,
+        "step": 1,
+        "value": 50.0
+    },
+    "invert": {
+        "type": "switch",
+        "description": "Invert colors",
+        "default": false,
+        "tooltip": "This completely inverts the image colors. Useful on light backgrounds.",
+        "value": false
+    },
+    "section1": {
+        "type": "section",
+        "description": "Position"
+    },
+    "position-x": {
+        "type": "combobox",
+        "description": "Horizontal align",
+        "default": 50,
+        "options": {
+            "Left": 0,
+            "Center": 50,
+            "Right": 100
+        },
+        "value": 100
+    },
+    "margin-x": {
+        "type": "spinbutton",
+        "description": "Horizontal margin",
+        "default": 64,
+        "min": 0,
+        "max": 512,
+        "step": 1,
+        "units": "px",
+        "dependency": "position-x!=50",
+        "value": 36.0
+    },
+    "position-y": {
+        "type": "combobox",
+        "description": "Vertical align",
+        "default": 50,
+        "options": {
+            "Top": 0,
+            "Center": 50,
+            "Bottom": 100
+        },
+        "value": 100
+    },
+    "margin-y": {
+        "type": "spinbutton",
+        "description": "Vertical margin",
+        "default": 64,
+        "min": 0,
+        "max": 512,
+        "step": 1,
+        "units": "px",
+        "dependency": "position-y!=50",
+        "value": 36.0
+    },
+    "section2": {
+        "type": "section",
+        "description": "Size"
+    },
+    "use-custom-size": {
+        "type": "switch",
+        "description": "Use a custom size",
+        "default": false,
+        "value": true
+    },
+    "size": {
+        "type": "spinbutton",
+        "description": "Size",
+        "default": 128,
+        "min": 16,
+        "max": 512,
+        "step": 1,
+        "units": "px",
+        "dependency": "use-custom-size",
+        "value": 100.0
+    },
+    "first-launch": {
+        "type": "generic",
+        "default": true,
+        "value": false
+    },
+    "__md5__": "41fcb4e31fbe69ac7c3eb3945354a8bf"
+}

@@ -26,6 +26,21 @@
         "dependency": "show-unit",
         "value": false
     },
+    "show-label-prefix": {
+        "type": "switch",
+        "default": false,
+        "description": "Show label prefix",
+        "tooltip": "Whether or not to add a label before the temperature value.",
+        "value": false
+    },
+    "label-prefix": {
+        "type": "entry",
+        "default": "\ud83c\udf21",
+        "description": "Label prefix",
+        "tooltip": "The label to be shown before the temperature value.",
+        "dependency": "show-label-prefix",
+        "value": ""
+    },
     "interval": {
         "type": "spinbutton",
         "default": 5000,
@@ -34,7 +49,7 @@
         "step": 100,
         "units": "ms",
         "description": "Update interval",
-        "value": 10000.0
+        "value": 2000.0
     },
     "change-color": {
         "type": "switch",
@@ -51,5 +66,5 @@
         "tooltip": "Select this option to not display text alerts in horizontal panels.\n(No text alert is ever displayed on vertical panels.)",
         "value": false
     },
-    "__md5__": "ae6d748777046dd1ded5c5dd734d037a"
+    "__md5__": "cc1a1e23c9dac8fa5a1585a92ca01330"
 }

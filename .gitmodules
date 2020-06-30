@@ -7,3 +7,6 @@
 [submodule "fonts/source-code-pro"]
 	path = fonts/source-code-pro
 	url = https://github.com/adobe-fonts/source-code-pro
+[submodule "cinnamon/blur-wallpaper"]
+	path = cinnamon/blur-wallpaper
+	url = https://github.com/ngynLk/feh-blur-wallpaper

@@ -9,32 +9,19 @@
 # Author: Lucero Alvarado
 # Repository: https://github.com/lu0/mint_dotfiles
 
-# ------- Disable networking (faster loading on web windows) ----------------
-sleep 0.5 & gsettings set org.cinnamon.desktop.notifications display-notifications false
-sleep 0.5 & nmcli networking off
+# ------- Disable networking and notifications (faster loading of web windows) ----------------
+gsettings set org.cinnamon.desktop.notifications display-notifications false && nmcli networking off
 
 
 # ----------- Create workspaces ---------------------------------------------
 # I use 6 workspaces, if they don't exist use:
 # wmctrl -n 6
 
-
-# ---------- Keyboard layout ------------------------------------------------
-sleep 0.5 & setxkbmap latam             # latin-american
-# sleep 0.5 & setxkbmap us set-keymap us  # english(us)
-
-# Custom media keys for ThinkPad X1Y3
-sleep 0.5 & xmodmap ~/.mediaKeys_ThinkPadX1Y3.lst
-
-
 # ---------Start applications -----------------------------------------------
 
-# Empty Web window (restore last session is disabled in my settings)
-vivaldi & sleep 1
-
-nemo & sleep 0.5                       # File explorer
-
-code & sleep 0.5                        # Visual Studio Code (add -n if empty window is desired)
+vivaldi & sleep 1                    # Blank Window ("restore last session" is disabled in my vivaldi settings)
+nemo & sleep 1                       # File explorer
+code & sleep 1                       # Visual Studio Code (add -n if empty window is desired)
 
 # Web window for App under development (https://github.com/orlando26/cubing-mty-app)
 vivaldi --new-window "http://localhost:8100" "https:/localhost:8080/swagger-ui.html" "github.com/orlando26/cubing-mty-app" "github.com/orlando26/cubing-mty-app" & sleep 1
@@ -43,8 +30,8 @@ vivaldi --new-window "http://localhost:8100" "https:/localhost:8080/swagger-ui.h
 vivaldi --new-window "www.messenger.com/t/lu0ear" "web.whatsapp.com" "app.slack.com/client/T011D2D3RQF/C011D2D3SBZ" "mail.google.com/mail/u/0/#inbox" "outlook.office.com/mail/inbox" "mail.google.com/mail/u/1/#inbox" "trello.com/lu0ear/boards" & sleep 1
 
 # General purpose terminal and Onedrive journal terminal (For Workspace 3)
-gnome-terminal --profile OnedriveStatus -e "journalctl --user-unit onedrive -f" & sleep 0.5
-gnome-terminal & sleep 3
+gnome-terminal --profile OnedriveStatus -e "journalctl --user-unit onedrive -f" & sleep 1
+gnome-terminal & sleep 1
 
 # Spotify (for Workspace 5)
 spotify & sleep 3
@@ -52,20 +39,19 @@ spotify & sleep 3
 
 # ----------- Resize windows -----------------------------------------------
 
-wmctrl -r "Terminal" -N "OnedriveUANL Journal" & sleep 0.5   # Rename Onedrive terminal
-wmctrl -r "OnedriveUANL Journal" -b remove,maximized_horz,maximized_vert
-wmctrl -r "OnedriveUANL Journal" -e 0,1183,46,727,1024 & sleep 0.5
+wmctrl -r "Start Page" -e 0,46,10,1864,1060 && wmctrl -r Home -e 0,46,10,1864,1060 & sleep 0.5
 
-# General purpose terminal
-wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert & sleep 0.5
-wmctrl -r "(home)" -e 0,46,46,1127,1024 & sleep 0.5
+wmctrl -r "Terminal" -N "OnedriveUANL Journal" && wmctrl -r "OnedriveUANL Journal" -b remove,maximized_horz,maximized_vert      # Rename Onedrive terminal
+wmctrl -r "OnedriveUANL Journal" -e 0,1183,10,727,1060 & sleep 0.5                     # General purpose terminal
 
-wmctrl -r "Visual Studio Code" -b remove,maximized_horz,maximized_vert
-wmctrl -r "Visual Studio Code" -e 0,46,46,1127,1024 & sleep 0.5
+wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert && wmctrl -r "(home)" -e 0,46,10,1127,1060 & sleep 0.5
+
+wmctrl -r "Visual Studio Code" -b remove,maximized_horz,maximized_vert && wmctrl -r "Visual Studio Code" -e 0,46,10,1127,1060 & sleep 1
 
 # Vivaldi window for App dev.
-wmctrl -r "localhost" -b remove,maximized_horz,maximized_vert
-wmctrl -r "localhost" -e 0,1183,46,727,1024 & sleep 0.5
+wmctrl -r "localhost" -b remove,maximized_horz,maximized_vert && wmctrl -r "localhost" -e 0,1183,10,727,1060 & sleep 0.5
+
+wmctrl -r "messenger" -e 0,46,10,1864,1060 && wmctrl -r Spotify Premium -e 0,46,10,1864,1060 & sleep 0.5
 
 
 # ----------- Move windows to desired workspaces ---------------------------
@@ -101,4 +87,4 @@ play /usr/share/sounds/freedesktop/stereo/service-login.oga
 
 
 # ------- Enable notifications ---------------------------------------------
-sleep 10 & gsettings set org.cinnamon.desktop.notifications display-notifications true
+sleep 10 && gsettings set org.cinnamon.desktop.notifications display-notifications true
