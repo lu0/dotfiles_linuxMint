@@ -125,8 +125,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # Aliases, functions and commands I defined ------------------------------------------------------------
 
+alias cp="cp -iv"                       # verbose
 alias battery="sudo tlp-stat -b"
 alias github="~/.git-create-repo.sh"
+alias status="git status"
 
 function gitlog() {
   git log --graph --decorate --oneline -$*
