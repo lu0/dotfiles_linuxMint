@@ -40,7 +40,7 @@ MyApplet.prototype = {
 	
 			this.gtop = new GTop.glibtop_cpu();
 	
-			this._applet_label.set_style('min-width: 1em; text-align: left; font-size: 0.85em');
+			this._applet_label.set_style('min-width: 0.5em; text-align: left; font-size: 0.75em');
 	
 			this.current = 0;
 			this.last = 0;
@@ -71,16 +71,6 @@ MyApplet.prototype = {
 		this._runSysMon();
 	},
 
-	_pad: function(percent) {
-		let str = "";
-		let str_length = this.max_percentage.toString().length;
-		
-		while(str.length < str_length) {
-			str = " " + str;
-		}
-		return (percent.toString());
-	},
-
 	_update: function() {
 		GTop.glibtop_get_cpu(this.gtop);
 		this.current = this.gtop.idle;
@@ -94,7 +84,7 @@ MyApplet.prototype = {
 
 		this.last_total = this.gtop.total;
 		let percent = Math.round(this.max_percentage - this.usage);
-		this.set_applet_label(this.cpu_label + " " + this._pad(percent) + "%");
+		this.set_applet_label(percent.toString() + "%");
 	},
 
 	_updateLoop: function () {

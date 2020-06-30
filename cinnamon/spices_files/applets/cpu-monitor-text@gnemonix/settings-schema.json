@@ -3,7 +3,7 @@
 	"type" : "entry",
 	"default" : "cpu:",
 	"description" : "Text:",
-	"tooltip" : "Enter custom text to show in the panel."
+	"tooltip" : "Disabled (lu0)"
  },
  "max-percentage" : {
     "type": "spinbutton",
@@ -18,7 +18,7 @@
  "update-interval" : {
 	"type" : "spinbutton",
 	"default" : 2000,
-	"min" : 0,
+	"min" : 1,
 	"max" : 60000,
 	"step" : 100,
 	"units" : "milliseconds",
