@@ -17,6 +17,7 @@ rm -rf ~/.bashrc
 ln -sr bash/bashrc ~/.bashrc
 sudo rm -rf /etc/inputrc
 sudo ln -sr bash/inputrc /etc/inputrc
+ln -sr keymappings/keymappings-X1Y3.sh ~/.keymappings-X1Y3.sh
 
 # Fonts
 sudo cp -r fonts/source-code-pro/OTF /usr/share/fonts/opentype/source-code-pro

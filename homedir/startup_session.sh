@@ -18,15 +18,6 @@ sleep 0.5 & nmcli networking off
 # I use 6 workspaces, if they don't exist use:
 # wmctrl -n 6
 
-
-# ---------- Keyboard layout ------------------------------------------------
-sleep 0.5 & setxkbmap latam             # latin-american
-# sleep 0.5 & setxkbmap us set-keymap us  # english(us)
-
-# Custom media keys for ThinkPad X1Y3
-sleep 0.5 & xmodmap ~/.mediaKeys_ThinkPadX1Y3.lst
-
-
 # ---------Start applications -----------------------------------------------
 
 # Empty Web window (restore last session is disabled in my settings)
