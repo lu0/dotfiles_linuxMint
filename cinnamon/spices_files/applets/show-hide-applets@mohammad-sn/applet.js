@@ -29,7 +29,7 @@ MyApplet.prototype = {
 
         try {
             Gtk.IconTheme.get_default().append_search_path(metadata.path);
-            this.set_applet_icon_symbolic_name("1");
+            this.set_applet_icon_symbolic_name("4");
 
             this.settings = new Settings.AppletSettings(this, "show-hide-applets@mohammad-sn", this.instance_id);
             this.settings.bindProperty(Settings.BindingDirection.IN, "autohide", "auto_hide", Lang.bind(this, function(){
@@ -41,6 +41,7 @@ MyApplet.prototype = {
                         this.autodo(true);
                 }), null);
             this.settings.bindProperty(Settings.BindingDirection.IN, "disablestarttimeautohide", "disable_starttime_autohide", function(){}, null);
+			this.settings.bindProperty(Settings.BindingDirection.IN, "keybinding-test", "keybinding", this.on_keybinding_changed, null);
             this.settings.bindProperty(Settings.BindingDirection.IN, "hoveractivates", "hover_activates", function(){}, null);
             this.settings.bindProperty(Settings.BindingDirection.IN, "hoveractivateshide", "hover_activates_hide", function(){}, null);
             this.settings.bindProperty(Settings.BindingDirection.IN, "hidetime", "hide_time", function(){}, null);
@@ -54,8 +55,8 @@ MyApplet.prototype = {
                 }), null);
             this.settings.bindProperty(Settings.BindingDirection.IN, "autohiderstime", "autohide_rs_time", function(){}, null);
 
-
-
+            this.on_keybinding_changed();
+            
             let editMode = global.settings.get_boolean("panel-edit-mode");
             this.panelEditMode = new PopupMenu.PopupSwitchMenuItem(_("Panel Edit mode"), editMode);
             this.panelEditMode.connect('toggled', function(item) {
@@ -131,6 +132,14 @@ MyApplet.prototype = {
         this.doAction(true);
     },
 
+    on_keybinding_changed: function() {
+        Main.keybindingManager.addHotKey("must-be-unique-id", this.keybinding, Lang.bind(this, this.on_hotkey_triggered));
+     },
+
+     on_hotkey_triggered: function() {
+        this.on_applet_clicked();
+    },
+
     _onEntered: function(event) {
         if(!this.actor.hover && this.hover_activates && !global.settings.get_boolean("panel-edit-mode"))
             this._showTimeoutId = Mainloop.timeout_add(this.hover_time, Lang.bind(this,function () {
@@ -149,7 +158,7 @@ MyApplet.prototype = {
         if(this.h){
             if (updalreadyH)
                 this.alreadyH=[];
-            this.set_applet_icon_symbolic_name("2");
+            this.set_applet_icon_symbolic_name("3");
             for(let i = p - 1; i > -1; i--){
                 if(!_children[i].visible && updalreadyH)
                     this.alreadyH.push(_children[i]);
@@ -175,7 +184,7 @@ MyApplet.prototype = {
             }
         }
         else{
-            this.set_applet_icon_symbolic_name("1");
+            this.set_applet_icon_symbolic_name("4");
             for(let i = 0; i < p; i++){
                 if(this.alreadyH.indexOf(_children[i])<0)
                     _children[i].show();

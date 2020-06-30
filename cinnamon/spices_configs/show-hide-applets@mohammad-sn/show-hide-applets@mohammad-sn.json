@@ -19,15 +19,21 @@
     },
     "hidetime": {
         "type": "spinbutton",
-        "default": 2,
-        "min": 0.25,
-        "max": 10,
+        "default": 10,
+        "min": 1,
+        "max": 60,
         "step": 0.25,
         "units": "seconds",
         "dependency": "autohide",
         "description": "Autohide after ",
         "tooltip": "",
-        "value": 1.0
+        "value": 10.0
+    },
+    "keybinding-test": {
+        "type": "keybinding",
+        "description": "Keybinding, which toggles showing/hiding applets",
+        "default": "<Primary><Alt>h",
+        "value": "<Primary><Alt>h::"
     },
     "hoveractivates": {
         "type": "checkbox",
