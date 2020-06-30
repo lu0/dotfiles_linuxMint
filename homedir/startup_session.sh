@@ -9,9 +9,8 @@
 # Author: Lucero Alvarado
 # Repository: https://github.com/lu0/mint_dotfiles
 
-# ------- Disable networking (faster loading on web windows) ----------------
-sleep 0.5 & gsettings set org.cinnamon.desktop.notifications display-notifications false
-sleep 0.5 & nmcli networking off
+# ------- Disable networking and notifications (faster loading of web windows) ----------------
+gsettings set org.cinnamon.desktop.notifications display-notifications false && nmcli networking off
 
 
 # ----------- Create workspaces ---------------------------------------------
@@ -20,11 +19,8 @@ sleep 0.5 & nmcli networking off
 
 # ---------Start applications -----------------------------------------------
 
-# Empty Web window (restore last session is disabled in my settings)
-vivaldi & sleep 1
-
+vivaldi & sleep 1                    # Blank Window ("restore last session" is disabled in my vivaldi settings)
 nemo & sleep 1                       # File explorer
-
 code & sleep 1                       # Visual Studio Code (add -n if empty window is desired)
 
 # Web window for App under development (https://github.com/orlando26/cubing-mty-app)
@@ -43,26 +39,20 @@ spotify & sleep 3
 
 # ----------- Resize windows -----------------------------------------------
 
-wmctrl -r "Start Page" -e 0,46,10,1864,1060 & sleep 1
-wmctrl -r Home -e 0,46,10,1864,1060 & sleep 0.5
+wmctrl -r "Start Page" -e 0,46,10,1864,1060 && wmctrl -r Home -e 0,46,10,1864,1060 & sleep 0.5
 
-wmctrl -r "Terminal" -N "OnedriveUANL Journal" & sleep 0.5   # Rename Onedrive terminal
-wmctrl -r "OnedriveUANL Journal" -b remove,maximized_horz,maximized_vert
-wmctrl -r "OnedriveUANL Journal" -e 0,1183,10,727,1060 & sleep 0.5
+wmctrl -r "Terminal" -N "OnedriveUANL Journal" && wmctrl -r "OnedriveUANL Journal" -b remove,maximized_horz,maximized_vert      # Rename Onedrive terminal
+wmctrl -r "OnedriveUANL Journal" -e 0,1183,10,727,1060 & sleep 0.5                     # General purpose terminal
 
-# General purpose terminal
-wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert & sleep 0.5
-wmctrl -r "(home)" -e 0,46,10,1127,1060 & sleep 0.5
+wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert && wmctrl -r "(home)" -e 0,46,10,1127,1060 & sleep 0.5
 
-wmctrl -r "Visual Studio Code" -b remove,maximized_horz,maximized_vert
-wmctrl -r "Visual Studio Code" -e 0,46,10,1127,1060 & sleep 1
+wmctrl -r "Visual Studio Code" -b remove,maximized_horz,maximized_vert && wmctrl -r "Visual Studio Code" -e 0,46,10,1127,1060 & sleep 1
 
 # Vivaldi window for App dev.
-wmctrl -r "localhost" -b remove,maximized_horz,maximized_vert
-wmctrl -r "localhost" -e 0,1183,10,727,1060 & sleep 0.5
+wmctrl -r "localhost" -b remove,maximized_horz,maximized_vert && wmctrl -r "localhost" -e 0,1183,10,727,1060 & sleep 0.5
 
-wmctrl -r "messenger" -e 0,46,10,1864,1060 & sleep 0.5
-wmctrl -r Spotify Premium -e 0,46,10,1864,1060 & sleep 0.5
+wmctrl -r "messenger" -e 0,46,10,1864,1060 && wmctrl -r Spotify Premium -e 0,46,10,1864,1060 & sleep 0.5
+
 
 # ----------- Move windows to desired workspaces ---------------------------
 wmctrl -r Vivaldi -t 0                    # General purpose Web Browser
@@ -97,4 +87,4 @@ play /usr/share/sounds/freedesktop/stereo/service-login.oga
 
 
 # ------- Enable notifications ---------------------------------------------
-sleep 10 & gsettings set org.cinnamon.desktop.notifications display-notifications true
+sleep 10 && gsettings set org.cinnamon.desktop.notifications display-notifications true
