@@ -719,7 +719,7 @@ class UI {
     }
     ;
     unitToUnicode(unit) {
-        return unit == "fahrenheit" ? '\u2109' : '\u2103';
+        return unit == "fahrenheit" ? '\uA730' : '\u030A' + '\u0063';
     }
     _onSeparatorAreaRepaint(area) {
         let cr = area.get_context();
