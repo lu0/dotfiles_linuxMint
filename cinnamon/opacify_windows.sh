@@ -15,7 +15,7 @@ TILED_OPACITY=100             # Tiled focused windows
 MAXIMISED_OPACITY=100         # Maximised focused windows
 DEMANDS_ATTENTION_OPACITY=100 # Any window demanding attention
 FOCUS_OPACITY=100             # Focused non-maximised application
-GROUP_OPACITY=50              # Unfocussed applications that share a PID with the focussed application
+GROUP_OPACITY=60              # Unfocussed applications that share a PID with the focussed application
 DEFAULT_OPACITY=50            # Any others - e.g unfocused applications.
 
 # Any window types to exclude. See https://standards.freedesktop.org/wm-spec/latest/ar01s05.html

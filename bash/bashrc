@@ -129,6 +129,7 @@ alias cp="cp -iv"                       # verbose
 alias battery="sudo tlp-stat -b"
 alias github="~/.git-create-repo.sh"
 alias status="git status"
+alias clean="git clean -i"
 
 function gitlog() {
   git log --graph --decorate --oneline -$*
