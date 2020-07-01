@@ -113,19 +113,16 @@ sudo apt-get install sox -y             # play sounds from terminal
 sudo apt-get install rofi -y
 sudo apt-get install wmctrl graphicsmagick feh -y   # blur wallpaper
 
-# Display managers --------------------------
-sudo apt purge --autoremove slick-greeter lightdm-settings -y   # delete default greeter
-
-sudo apt-get install lightdm-gtk-greeter lightdm-gtk-greeter-settings -y   
-sudo rm /etc/lightdm/lightdm-gtk-greeter.conf
-sudo ln -sr dconf-files/lightdm-gtk-greeter.conf /etc/lightdm/
-
-sudo apt-get install sddm -y            # Plasma-like dm
-sudo ln -sr cinnamon/sddm-themes /usr/share/sddm/themes
-sudo dpkg-reconfigure sddm
+# Change display managers ---------------------------------------------------------------
+sudo apt-get install sddm -y            			# Plasma-like login-window
+sudo ln -sr cinnamon/sddm-themes/sddm-chili/ /usr/share/sddm/themes/
+sudo ln -sr cinnamon/sddm-themes/sddm.conf /etc/		# config file
+sudo apt-get install qml-module-qtquick-layouts -y
+sudo apt-get install qml-module-qtquick-controls -y
+# sudo dpkg-reconfigure sddm
 # sddm-greeter --test-mode --theme /usr/share/sddm/themes/sddm-chili
 
-# --------------------------------------------------
+# ---------------------------------------------------------------------------------------
 
 sudo apt-get install devilspie2 -y          # window managment trough scripts
 mkdir -p ~/.config/devilspie2
