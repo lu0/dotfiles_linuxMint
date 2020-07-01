@@ -222,13 +222,14 @@ class SimpleButton extends WorkspaceButton {
 
         // Hardcode icons instead of numbers for each workspace
         // Use icons of (previously installed) Papirus theme: 
-        // ~/.local/share/icons/Papirus-Red-Dark/symbolic
+        // /usr/share/icons/Papirus/symbolic
         var icon_names = [ 'google-chrome-symbolic',            // Web browser
                            'folder-symbolic',                   // File Explorer
-                           'applications-science-symbolic',     // Lab, coding, production, etc.
+                           'my-caffeine-on-symbolic',           // Lab
                            'utilities-terminal-symbolic',       // Terminal
-                           'mail-message-new-symbolic',         // Social media
-                           'emblem-music-symbolic']             // Music 
+                           'mail-message-new-symbolic',         // Messaging
+                           'emblem-music-symbolic',             // Music 
+                           'applications-games-symbolic']       // Gaming
 
         let label = new St.Icon({icon_name: icon_names[index],
                                  style_class: 'system-status-icon'});
