@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # 
-# Packages I use
-# Same order as mint menu
+# Packages and programs I use
 #
 # github.com/lu0/dotfiles_linuxMint
 # 
@@ -18,9 +17,13 @@ sudo apt-get install font-manager -y
 add-apt-repository ppa:kritalime/ppa -y
 sudo apt update && sudo apt-get install krita -y
 
+# playonlinux (then install illustrator)
+sudo apt-get install playonlinux -y
+
 sudo apt-get install inkscape -y
 
 sudo apt-get install gimp -y
+
 
 # GAMES //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,10 +65,12 @@ sudo apt-get install apt-transport-https -y
 sudo apt-get update && sudo apt-get install code -y
 
 # Setup vscode:
-cd vscode-settings
+cd ../vscode-settings
 ./setup-symlinks.sh                 # Symlinks to config files
 ./install_extensions.sh             # Extension list
 cd ..
+
+sudo apt-get install neovim -y
 
 # SOUND & VIDEO /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -91,12 +96,8 @@ sudo apt-get install gparted -y
 sudo apt-get install dconf-editor -y # System configuration tool
 
 # Virtual box (ubuntu > 19.04)
-# wget https://download.virtualbox.org/virtualbox/6.1.10/virtualbox-6.1_6.1.10-138449~Ubuntu~eoan_amd64.deb -O ~/Downloads/virtual-box_u19.deb
-# sudo gdebi --non-interactive ~/Downloads/virtual-box_u19.deb
-
-# Virtual box (ubuntu 18.04)
-wget https://download.virtualbox.org/virtualbox/6.1.10/virtualbox-6.1_6.1.10-138449~Ubuntu~bionic_amd64.deb -O ~/Downloads/virtual-box_u18.deb
-sudo gdebi --non-interactive ~/Downloads/virtual-box_u18.deb
+wget https://download.virtualbox.org/virtualbox/6.1.10/virtualbox-6.1_6.1.10-138449~Ubuntu~eoan_amd64.deb -O ~/Downloads/virtual-box_u19.deb
+sudo gdebi --non-interactive ~/Downloads/virtual-box_u19.deb
 
 # System profiler and benchmark
 sudo apt-get install hardinfo -y
@@ -126,17 +127,17 @@ sudo apt-get install qml-module-qtquick-controls -y
 
 sudo apt-get install devilspie2 -y          # window managment trough scripts
 ln -sr cinnamon/appearance/devilspie2 ~/.config/devilspie2
-devilspie2 --folder=$HOME/.config/devilspie2
+# devilspie2 --folder=$HOME/.config/devilspie2
 
 # TLP battery managment
 # (https://linrunner.de/tlp/settings/battery.html)
 # check thresholds with 'sudo tlp-stat -b'
 # use 'sudo tlp fullcharge' when need to temporarily charge battery up to 100%
-sudo add-apt-repository ppa:linrunner/tlp
-sudo apt update
-sudo apt install tlp tlp-rdw -y
-sudo apt-get install acpi-call-dkms -y
-sudo tlp start
-rm /etc/tlp.conf
-ln -sr config/tlp-battery.conf /etc/tlp.conf
-sudo tlp start
+# sudo add-apt-repository ppa:linrunner/tlp
+# sudo apt update
+# sudo apt install tlp tlp-rdw -y
+# sudo apt-get install acpi-call-dkms -y
+# sudo tlp start
+# rm /etc/tlp.conf
+# ln -sr config/tlp-battery.conf /etc/tlp.conf
+# sudo tlp start
