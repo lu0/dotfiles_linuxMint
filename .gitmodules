@@ -10,3 +10,6 @@
 [submodule "cinnamon/blur-wallpaper"]
 	path = cinnamon/blur-wallpaper
 	url = https://github.com/ngynLk/feh-blur-wallpaper
+[submodule "cinnamon/sddm-themes/sddm-chili"]
+	path = cinnamon/sddm-themes/sddm-chili
+	url = https://github.com/lu0/sddm-chili

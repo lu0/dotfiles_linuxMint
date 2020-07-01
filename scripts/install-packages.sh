@@ -121,10 +121,9 @@ sudo rm /etc/lightdm/lightdm-gtk-greeter.conf
 sudo ln -sr dconf-files/lightdm-gtk-greeter.conf /etc/lightdm/
 
 sudo apt-get install sddm -y            # Plasma-like dm
-sudo mkdir ‑p /usr/share/sddm/themes
-sudo ln -sr cinnamon/sddm-theme /usr/share/sddm/themes/sddm-theme
+sudo ln -sr cinnamon/sddm-themes /usr/share/sddm/themes
 sudo dpkg-reconfigure sddm
-# sddm-greeter --test-mode --theme /usr/share/sddm/themes/breeze
+# sddm-greeter --test-mode --theme /usr/share/sddm/themes/sddm-chili
 
 # --------------------------------------------------
 
