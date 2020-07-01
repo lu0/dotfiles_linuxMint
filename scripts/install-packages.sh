@@ -37,8 +37,9 @@ wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | sudo apt-key 
 sudo add-apt-repository 'deb https://repo.vivaldi.com/archive/deb/ stable main'
 sudo apt update && sudo apt install vivaldi-stable -y
 cd ../vivaldi-setup                                        # Setup from submodule: github.com/lu0/vivaldi-setup
-mkdir -p ~/.config/vivaldi && cp -r Default "$_"
-cd ../scripts
+mkdir -p ~/.config/vivaldi
+cp -r Default ~/.config/vivaldi
+cd ..
 
 # Team viewer
 wget -4 https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O ~/Downloads/team-viewer.deb
@@ -46,10 +47,10 @@ sudo gdebi --non-interactive ~/Downloads/team-viewer.deb
 
 # OFFICE /////////////////////////////////////////////////////////////////////////////////////////////////
 
-# Freeoffice Suite
-sudo apt purge --autoremove libreoffice-common -y
-wget https://www.softmaker.net/down/softmaker-freeoffice-2018_976-01_amd64.deb -O ~/Downloads/freeoffice.deb
-sudo gdebi --non-interactive ~/Downloads/freeoffice.deb
+# Open source office suite compatible with msoffice
+sudo apt purge --autoremove libreoffice-common -y           # bye
+wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb -O ~/Downloads/onlyOffice.deb
+sudo gdebi --non-interactive ~/Downloads/onlyOffice.deb
 
 # DEV TOOLS //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -61,10 +62,10 @@ sudo apt-get install apt-transport-https -y
 sudo apt-get update && sudo apt-get install code -y
 
 # Setup vscode:
-cd ../vscode-settings
+cd vscode-settings
 ./setup-symlinks.sh                 # Symlinks to config files
 ./install_extensions.sh             # Extension list
-cd ../scripts
+cd ..
 
 # SOUND & VIDEO /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -106,7 +107,6 @@ sudo apt-get install blueman -y
 
 # Other //////////////////////////////////////////////////////////////////////////////////////////////////
 
-sudo apt-get install maximus -y         # Maximize and hide window decorations
 sudo apt-get install wmctrl -y          # window managment
 sudo apt-get install xdotool -y         # get window info
 sudo apt-get install sox -y             # play sounds from terminal
@@ -125,7 +125,6 @@ sudo apt-get install qml-module-qtquick-controls -y
 # ---------------------------------------------------------------------------------------
 
 sudo apt-get install devilspie2 -y          # window managment trough scripts
-mkdir -p ~/.config/devilspie2
 ln -sr cinnamon/appearance/devilspie2 ~/.config/devilspie2
 devilspie2 --folder=$HOME/.config/devilspie2
 

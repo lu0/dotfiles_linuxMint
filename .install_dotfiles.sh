@@ -53,7 +53,8 @@ sudo ln -sr mintLogo_alt.png ~/.face.icon
 feh --bg-fill "/usr/share/backgrounds/wallpaper.jpg"
 ln -sr blur-wallpaper/feh-blur ~/.feh-blur
 # cd blur-wallpaper
-# ./feh-blur --blur 18 --darken 20 -d
+~/.feh-blur --blur 10 --darken 10 -d
+
 cd ../../
 
 # Startup script (open fave apps)
@@ -94,8 +95,14 @@ sudo ln -sr config/environment /etc/environment
 # System config
 # Export current config with: 
 # dconf dump /  > ~/dotfiles_linuxMint/config/dconf.conf
-ln -sr dconf-files/dconf.conf ~/.dconf.conf
-dconf load / < ~/.dconf.conf
+# ln -sr dconf-files/dconf.conf ~/.dconf.conf
+# dconf load / < ~/.dconf.conf
+./cinnamon/install-spices.sh
+dconf load / < ~/dotfiles_linuxMint/dconf-files/desktop-keybindings.conf
+dconf load /org/gnome/terminal/ < ~/dotfiles_linuxMint/dconf-files/gnome-terminal.conf
+dconf load / < ~/dotfiles_linuxMint/dconf-files/miscellaneous.conf
+dconf load / < ~/dotfiles_linuxMint/dconf-files/nemo-fileman.conf
+dconf load /org/cinnamon/ < ~/dotfiles_linuxMint/dconf-files/system-sounds.conf
 
 # Opacify windows
 mkdir -p ~/.local/bin
