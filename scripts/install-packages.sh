@@ -116,7 +116,7 @@ sudo apt-get install wmctrl graphicsmagick feh -y   # blur wallpaper
 # Change display managers ---------------------------------------------------------------
 sudo apt-get install sddm -y            			# Plasma-like login-window
 sudo ln -sr cinnamon/sddm-themes/sddm-chili/ /usr/share/sddm/themes/
-sudo ln -sr cinnamon/sddm-themes/sddm.conf /etc/		# config file
+sudo ln -sr cinnamon/sddm-themes/sddm.conf /etc/
 sudo apt-get install qml-module-qtquick-layouts -y
 sudo apt-get install qml-module-qtquick-controls -y
 # sudo dpkg-reconfigure sddm
