@@ -66,6 +66,12 @@ sudo cp -r fonts/source-code-pro/OTF /usr/share/fonts/opentype/source-code-pro
 sudo cp -r fonts/karla /usr/share/fonts/opentype/karla
 sudo cp -r fonts/webly-sleek /usr/share/fonts/truetype/webly-sleek-ui
 
+# Rofi powermenu
+cd rofi-blurry-powermenu
+sudo cp -r fonts/* /usr/share/fonts 
+mkdir -p ~/.config/rofi
+ln -sr fullscreen_powermenu.rasi powermenu.sh ~/.config/rofi
+
 # Applets and extensions
 ./cinnamon/install-spices.sh
 

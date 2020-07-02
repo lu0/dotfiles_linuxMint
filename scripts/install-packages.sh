@@ -108,11 +108,11 @@ sudo apt-get install blueman -y
 
 # Other //////////////////////////////////////////////////////////////////////////////////////////////////
 
-sudo apt-get install wmctrl -y          # window managment
-sudo apt-get install xdotool -y         # get window info
-sudo apt-get install sox -y             # play sounds from terminal
-sudo apt-get install rofi -y
-sudo apt-get install wmctrl graphicsmagick feh -y   # blur wallpaper
+sudo apt-get install wmctrl -y                      # window managment
+sudo apt-get install xdotool -y                     # get window info
+sudo apt-get install sox -y                         # play sounds from terminal
+sudo apt-get install rofi imagemagick -y            # for Rofi powermenu              
+sudo apt-get install wmctrl graphicsmagick feh -y   # blur wallpaper when busy
 
 # Change display managers ---------------------------------------------------------------
 sudo apt-get install sddm -y            			# Plasma-like login-window

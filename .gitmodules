@@ -13,3 +13,6 @@
 [submodule "cinnamon/sddm-themes/sddm-chili"]
 	path = cinnamon/sddm-themes/sddm-chili
 	url = https://github.com/lu0/sddm-chili
+[submodule "rofi-blurry-powermenu"]
+	path = rofi-blurry-powermenu
+	url = https://github.com/lu0/rofi-blurry-powermenu
