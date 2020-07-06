@@ -16,3 +16,6 @@
 [submodule "rofi-blurry-powermenu"]
 	path = rofi-blurry-powermenu
 	url = https://github.com/lu0/rofi-blurry-powermenu
+[submodule "cinnamon/spices-applets"]
+	path = cinnamon/spices-applets
+	url = https://github.com/lu0/cinnamon-spices-applets
