@@ -137,6 +137,26 @@
         "tooltip": "Choose where application descriptions will be placed, or select \"None\" to disable.",
         "value": 3
     },
+    "powergroup-placement": {
+        "type": "combobox",
+        "default": 1,
+        "description": "Session buttons location",
+        "options": {
+            "Top": 0,
+            "Bottom": 1,
+            "Left": 2,
+            "Right": 3
+        },
+        "tooltip": "Choose where to show the session (quit, logout, etc.) buttons.",
+        "value": 1
+    },
+    "add-favorites": {
+        "type": "switch",
+        "default": false,
+        "description": "Add favorites to session buttons.",
+        "tooltip": "Show your favorite app icons next to the session buttons.",
+        "value": false
+    },
     "enable-custom-menu-height": {
         "type": "switch",
         "default": false,
@@ -338,7 +358,7 @@
         "units": "pixels",
         "description": "Applications grid icon size",
         "tooltip": "Applications grid icon size",
-        "value": 60.0
+        "value": 60
     },
-    "__md5__": "3d6522e527e1034fff131c10a4d951cf"
+    "__md5__": "78c46e2f918f3e5500f5011fb1a5bb0c"
 }

@@ -20,4 +20,4 @@ rm -rf ~/.local/share/cinnamon/extensions
 ln -sr $RUN_DIR/spices_files/extensions ~/.local/share/cinnamon/extensions
 
 rm -rf ~/.cinnamon/configs
-ln -sr $RUN_DIR/spices_configs ~/.cinnamon/configs
+ln -sr $RUN_DIR/spices-configs ~/.cinnamon/configs
