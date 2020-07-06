@@ -17,7 +17,7 @@ rm -rf ~/.local/share/cinnamon/applets
 ln -sr $RUN_DIR/spices-applets/ ~/.local/share/cinnamon/applets
 
 rm -rf ~/.local/share/cinnamon/extensions
-ln -sr $RUN_DIR/spices_files/extensions ~/.local/share/cinnamon/extensions
+ln -sr $RUN_DIR/spices-extensions ~/.local/share/cinnamon/extensions
 
 rm -rf ~/.cinnamon/configs
 ln -sr $RUN_DIR/spices-configs ~/.cinnamon/configs
