@@ -139,11 +139,11 @@ stage {
 #menu-search-entry {
     padding: 7px;
     caret-size: 1px;
-    selection-background-color: rgba(0, 0, 0, 0.45);
+    selection-background-color: #FD5A56;
     selected-color: #ffffff;
     transition-duration: 300ms;
     /* border-radius: 5px; */
-    color: #D3D3D3;
+    color: #FFFFFF;
     /* background-color: rgba(240, 240, 240, 0.45); */
     border: none;
     box-shadow: none;
@@ -245,7 +245,8 @@ StScrollBar StButton#vhandle:hover {
     border-radius: 0px;
     padding: 5px 18px;
     background-color: #2A2A2A;
-    box-shadow: 1px 1px 1px 1px #212121;
+    /* box-shadow: 1px 1px 1px 1px #212121; */
+    box-shadow: 0px 0px 5px 2px rgba(15, 15, 15, 0.7);
     color: #FFFFFF;
     font-size: 0.8em;
     font-weight: normal;
@@ -490,10 +491,9 @@ StScrollBar StButton#vhandle:hover {
     min-height: 80px;
     margin-left: 5px;
     margin-top: 5px;
-    /*Here: */
     border: none;
     border-radius: none;
-    background-color: #2A2A2A;
+    background-color: #2A2A2A;    
 }
 
 .menu.top {
@@ -506,7 +506,9 @@ StScrollBar StButton#vhandle:hover {
 
 .menu.left {
     border-radius: none;
-    box-shadow: 1px 1px 1px 1px #212121;
+    /* box-shadow: 1px 1px 1px 1px #212121; */
+    box-shadow: 0px 0px 5px 2px rgba(15, 15, 15, 0.7);
+
 }
 
 .menu.right {
@@ -1505,53 +1507,61 @@ StScrollBar StButton#vhandle:hover {
     -boxpointer-gap: 5px;
 }
 
+.menu-context-menu {
+    background-color: #2A2A2A;
+    border-color: #212121;
+    border-right: 2px;
+    border-bottom: 2px;
+}
+
 .menu-favorites-box {
     /* Here: */
-    padding: 2em;
-    transition-duration: 50;
-    /* background-color: rgba(0, 0, 0, 1); */
+    padding-left: 0px;
     border: none;
-    border-radius: 2px
-    
+    border-radius: 0px
 }
 
 .menu-favorites-button {
-    padding: 0.75em 0.75em;
+    padding: 10px 10px;
     border: none;
-    border-radius: 2px;
+    border-radius: 0px;
 }
 
 .menu-favorites-button:hover {
     /* Here: */
     /*transition-duration: 100;*/
+    background-color: #323232;
 }
 
 .menu-places-box {
-    padding: 10px;
+    padding: 0px;
     border: 0px solid #666;
 }
 
 .menu-places-button {
-    padding: 10px;
+    padding: 0px;
 }
 
 .menu-categories-box {
-    padding: 10px 15px 0px 13px;
+    padding: 22.5px 20px 0px 0px;
 }
 
 .menu-applications-inner-box {
-    padding: 10px 10px 0 0px;
+    padding: 20px 20px 20px 0px;
 }
 
 .menu-applications-outer-box {
-    padding: 0px 10px 0 10px;
+    padding: 5px 5px 5px 25px;
 }
 
 .menu-application-button {
     /* Here */
-    padding: 7px;
-    border: 1px solid transparent;
     color: #afafaf;
+    background-color: #323232;
+    border-radius: 0px;
+    border-color: #2A2A2A;
+    border: 2.5px;
+    
 }
 
 .menu-application-button:highlighted {
@@ -1560,12 +1570,12 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .menu-application-button-selected {
-    transition-duration: 100;
-    border-radius: 2px;
-    padding: 7px;
+    transition-duration: 50;
     color: #ffffff;
-    background-color: #3A3A3A; /*  #3E3F40; */
-    border: 1px transparent #3A3A3A;
+    background-color: #FD5A56; /*  #3E3F40; */
+    border-radius: 0px;
+    border-color: #2A2A2A;
+    border: 2.5px;
 }
 
 .menu-application-button-selected:highlighted {
@@ -1573,58 +1583,45 @@ StScrollBar StButton#vhandle:hover {
     font-weight: normal;
 }
 
-.menu-application-button-label:ltr {
-    padding-left: 5px;
-}
-
-.menu-application-button-label:rtl {
-    padding-right: 5px;
-}
-
 .menu-category-button {
-    color: #afafaf;
-    padding: 7px;
-    border: 1px solid transparent;
+    color: #9f9f9f;
+    padding: 7px;    
+    border: 0px solid transparent;
+    border-left: 2px;
 }
 
 .menu-category-button-selected {
-    /* Here */
-    /*transition-duration: 100;*/
     padding: 7px;
     color: #ffffff;
-    border-radius: 2px;
-    background-color: #3A3A3A;
-    border: 1px transparent #3A3A3A;
+    border: 0px solid #FD5A56;
+    border-left: 2px;
 }
 
 .menu-category-button-hover {
-    border-radius: 1px;
+    border-radius: 0px;
 }
 
 .menu-category-button-greyed {
-    padding: 7px;
+    padding: 8px;
     color: rgba(240, 240, 240, 0.45);
     border: 1px solid transparent;
 }
 
 .menu-category-button-label:ltr {
-    padding-left: 5px;
+    padding-left: 8px;
 }
 
 .menu-category-button-label:rtl {
-    padding-right: 5px;
+    padding-right: 0px;
 }
 
 .menu-selected-app-box {
-    padding-right: 30px;
-    padding-left: 95px;
-    text-align: right;
-    height: 30px;
+    padding-right: 0px;
+    padding-left: 5px;
+    text-align: center;
 }
 
 .menu-selected-app-box:rtl {
-    padding-top: 10px;
-    height: 30px;
 }
 
 .menu-selected-app-title {
@@ -1637,7 +1634,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .menu-search-box:ltr {
-    padding-left: 13px;
+    padding-left: 30px;
 }
 
 .menu-search-box-rtl {
@@ -1649,7 +1646,7 @@ StScrollBar StButton#vhandle:hover {
     width: 50;
     font: 0.85em;
     caret-color: #FD5A56;
-    caret-size: 1px;
+    caret-size: 2px;
 }
 
 .menu-search-entry-icon {
@@ -1912,11 +1909,8 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .grouped-window-list-thumbnail-menu {
-    /* Here */
     color: #f0f0f0;
-    /*border: none; /*1px solid #202020;*/
-    background-color: rgba(0, 0, 0, 0.45);
-    border-radius: 1px;
+    background-color: #2A2A2A;
     padding: 0px;
 }
 

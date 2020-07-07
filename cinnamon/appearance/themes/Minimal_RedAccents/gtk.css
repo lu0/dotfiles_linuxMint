@@ -4393,7 +4393,7 @@ tooltip.background,
     border-right: 2px solid @header_color;
     border-bottom: 2px solid @header_color;
     font-size: 0.85em;
-    background-clip: padding-box;
+    /* background-clip: padding-box; */
 }
 
 tooltip.background label,
@@ -4585,13 +4585,14 @@ button.circular-button label,
 }
 
 decoration {
-    border: 2px solid @header_color;
+    border: 2px solid @unfocused_borders;
     /* box-shadow: 0 0 1px 1px #1d1d1d;  */
     /* border-style: outset; */
 }
 
 decoration:backdrop {
     box-shadow: none;
+    border: 2px solid @focused_borders;
     /* box-shadow: 0 0 0 1px rgba(29, 29, 29, 0.9), 0 8px 8px 0 transparent, 0 5px 5px 0 rgba(0, 0, 0, 0.35); */
 }
 
@@ -6377,7 +6378,8 @@ window.background.lightdm .lightdm-combo {
 @define-color theme_unfocused_bg_color @content_picked;
 @define-color theme_unfocused_base_color @bg_picked;
 @define-color borders #292929;
-@define-color unfocused_borders @borders;
+@define-color unfocused_borders #616161;
+@define-color focused_borders #212121;
 @define-color warning_color #f27835;
 @define-color error_color @destructive_label;
 @define-color success_color #73d216;
