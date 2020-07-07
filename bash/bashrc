@@ -130,6 +130,8 @@ alias battery="sudo tlp-stat -b"
 alias github="~/.git-create-repo.sh"
 alias status="git status"
 alias clean="git clean -i"
+alias apatch="git add --patch $*"
+alias copatch="git checkout --patch $*"
 
 function gitlog() {
   git log --graph --decorate --oneline -$*
