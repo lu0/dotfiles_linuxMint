@@ -1,6 +1,6 @@
 stage {
     font-family: "WeblySleek UI Normal";
-    font-size: 1.25em;
+    font-size: 1em;
     color: #f0f0f0;
     font-weight: normal;
 }
@@ -247,7 +247,7 @@ StScrollBar StButton#vhandle:hover {
     background-color: #2A2A2A;
     box-shadow: 1px 1px 1px 1px #212121;
     color: #FFFFFF;
-    font-size: 0.85em;
+    font-size: 0.8em;
     font-weight: normal;
     text-align: center;
 }
@@ -484,7 +484,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .menu {
-    font-size: 0.9em;
+    font-size: 1em;
     color: #ffffff;
     min-width: 80px;
     min-height: 80px;
@@ -1646,9 +1646,8 @@ StScrollBar StButton#vhandle:hover {
 
 #menu-search-entry {
     /* Here */
-    width: 120;
-    font: 0.9em;
-    selected-color: #FD5A56;
+    width: 50;
+    font: 0.85em;
     caret-color: #FD5A56;
     caret-size: 1px;
 }
