@@ -47,11 +47,12 @@ cd ../../
 mkdir -p ~/.local/bin
 ln -sr cinnamon/opacify_windows.sh ~/.local/bin
 
-# GTK, Metacity and Desktop Theme
+# Icons and Themes
 cd cinnamon/appearance/
+./icons/install-papirus.sh 
+papirus-folders --color yaru --theme Papirus-Dark
+
 sudo unzip themes/Minimal_RedAccents/Minimal_RedAccents.zip -d /usr/share/themes
-sudo unzip icons/papirus.zip -d /usr/share/icons/
-sudo unzip icons/papirus_redvariation.zip -d /usr/share/icons/
 
 sudo rm /usr/share/themes/Minimal_RedAccents/cinnamon/cinnamon.css
 sudo rm /usr/share/themes/Minimal_RedAccents/gtk-3.0/gtk.css
