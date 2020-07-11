@@ -71,7 +71,7 @@ sudo cp -r fonts/webly-sleek /usr/share/fonts/truetype/webly-sleek-ui
 cd rofi-blurry-powermenu
 sudo cp -r fonts/* /usr/share/fonts 
 mkdir -p ~/.config/rofi
-ln -sr fullscreen_powermenu.rasi powermenu.sh ~/.config/rofi
+ln -sr powermenu_theme.rasi powermenu.sh ~/.config/rofi
 
 # Applets and extensions
 ./cinnamon/install-spices.sh
