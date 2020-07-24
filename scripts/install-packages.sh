@@ -9,124 +9,124 @@
 
 # ACCESORIES /////////////////////////////////////////////////////////////////////////////////////////////////
 
-sudo apt-get install font-manager -y
+# sudo apt-get install font-manager -y
 
 # GRAPHICS ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-# Krita (scketch w/stylus)
-add-apt-repository ppa:kritalime/ppa -y
-sudo apt update && sudo apt-get install krita -y
+# # Krita (scketch w/stylus)
+# add-apt-repository ppa:kritalime/ppa -y
+# sudo apt update && sudo apt-get install krita -y
 
-# playonlinux (then install illustrator)
-sudo apt-get install playonlinux -y
+# # playonlinux (then install illustrator)
+# sudo apt-get install playonlinux -y
 
-sudo apt-get install inkscape -y
+# sudo apt-get install inkscape -y
 
-sudo apt-get install gimp -y
-
-
-# GAMES //////////////////////////////////////////////////////////////////////////////////////////////////////
-
-# Steam (ipv4) 
-wget -4 https://repo.steampowered.com/steam/archive/precise/steam_latest.deb -O ~/Downloads/steam.deb
-sudo gdebi --non-interactive ~/Downloads/steam.deb
+# sudo apt-get install gimp -y
 
 
-# INTERNET ////////////////////////////////////////////////////////////////////////////////////////////////
+# # GAMES //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-# Vivaldi Browser 
-# (help.vivaldi.com/article/obtaining-official-builds/)
-wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | sudo apt-key add -
-sudo add-apt-repository 'deb https://repo.vivaldi.com/archive/deb/ stable main'
-sudo apt update && sudo apt install vivaldi-stable -y
-cd ../vivaldi-setup                                        # Setup from submodule: github.com/lu0/vivaldi-setup
-mkdir -p ~/.config/vivaldi
-cp -r Default ~/.config/vivaldi
-cd ..
+# # Steam (ipv4) 
+# wget -4 https://repo.steampowered.com/steam/archive/precise/steam_latest.deb -O ~/Downloads/steam.deb
+# sudo gdebi --non-interactive ~/Downloads/steam.deb
 
-# Team viewer
-wget -4 https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O ~/Downloads/team-viewer.deb
-sudo gdebi --non-interactive ~/Downloads/team-viewer.deb
 
-# OFFICE /////////////////////////////////////////////////////////////////////////////////////////////////
+# # INTERNET ////////////////////////////////////////////////////////////////////////////////////////////////
 
-# Open source office suite compatible with msoffice
-sudo apt purge --autoremove libreoffice-common -y           # bye
-wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb -O ~/Downloads/onlyOffice.deb
-sudo gdebi --non-interactive ~/Downloads/onlyOffice.deb
+# # Vivaldi Browser 
+# # (help.vivaldi.com/article/obtaining-official-builds/)
+# wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | sudo apt-key add -
+# sudo add-apt-repository 'deb https://repo.vivaldi.com/archive/deb/ stable main'
+# sudo apt update && sudo apt install vivaldi-stable -y
+# cd ../vivaldi-setup                                        # Setup from submodule: github.com/lu0/vivaldi-setup
+# mkdir -p ~/.config/vivaldi
+# cp -r Default ~/.config/vivaldi
+# cd ..
 
-# DEV TOOLS //////////////////////////////////////////////////////////////////////////////////////////////
+# # Team viewer
+# wget -4 https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O ~/Downloads/team-viewer.deb
+# sudo gdebi --non-interactive ~/Downloads/team-viewer.deb
 
-# VSCode
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-sudo apt-get install apt-transport-https -y
-sudo apt-get update && sudo apt-get install code -y
+# # OFFICE /////////////////////////////////////////////////////////////////////////////////////////////////
 
-# Setup vscode:
-cd ../vscode-settings
-./setup-symlinks.sh                 # Symlinks to config files
-./install_extensions.sh             # Extension list
-cd ..
+# # Open source office suite compatible with msoffice
+# sudo apt purge --autoremove libreoffice-common -y           # bye
+# wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb -O ~/Downloads/onlyOffice.deb
+# sudo gdebi --non-interactive ~/Downloads/onlyOffice.deb
 
-sudo apt-get install neovim -y
+# # DEV TOOLS //////////////////////////////////////////////////////////////////////////////////////////////
 
-# SOUND & VIDEO /////////////////////////////////////////////////////////////////////////////////////////
+# # VSCode
+# curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+# sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+# sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+# sudo apt-get install apt-transport-https -y
+# sudo apt-get update && sudo apt-get install code -y
 
-sudo apt-get install audacity -y
-sudo apt-get install soundconverter -y
+# # Setup vscode:
+# cd ../vscode-settings
+# ./setup-symlinks.sh                 # Symlinks to config files
+# ./install_extensions.sh             # Extension list
+# cd ..
 
-# Spotify 
-# (https://www.spotify.com/mx/download/linux/)
-curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update && sudo apt-get install spotify-client -y
+# sudo apt-get install neovim -y
 
-# Camera
-sudo apt-get install cheese -y
+# # SOUND & VIDEO /////////////////////////////////////////////////////////////////////////////////////////
 
-# Video editor
-sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
-sudo apt-get update && sudo apt-get install kdenlive -y
+# sudo apt-get install audacity -y
+# sudo apt-get install soundconverter -y
 
-# ADMINISTRATION ////////////////////////////////////////////////////////////////////////////////////////
+# # Spotify 
+# # (https://www.spotify.com/mx/download/linux/)
+# curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
+# echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+# sudo apt-get update && sudo apt-get install spotify-client -y
 
-sudo apt-get install gparted -y
-sudo apt-get install dconf-editor -y # System configuration tool
+# # Camera
+# sudo apt-get install cheese -y
 
-# Virtual box (ubuntu > 19.04)
-wget https://download.virtualbox.org/virtualbox/6.1.10/virtualbox-6.1_6.1.10-138449~Ubuntu~eoan_amd64.deb -O ~/Downloads/virtual-box_u19.deb
-sudo gdebi --non-interactive ~/Downloads/virtual-box_u19.deb
+# # Video editor
+# sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
+# sudo apt-get update && sudo apt-get install kdenlive -y
 
-# System profiler and benchmark
-sudo apt-get install hardinfo -y
+# # ADMINISTRATION ////////////////////////////////////////////////////////////////////////////////////////
 
-# bluetooth manager
-mkdir -p ~/Downloads/Bluetooth
-sudo apt-get install blueman -y
+# sudo apt-get install gparted -y
+# # sudo apt-get install dconf-editor -y # System configuration tool
+
+# # Virtual box (ubuntu > 19.04)
+# wget https://download.virtualbox.org/virtualbox/6.1.10/virtualbox-6.1_6.1.10-138449~Ubuntu~eoan_amd64.deb -O ~/Downloads/virtual-box_u19.deb
+# sudo gdebi --non-interactive ~/Downloads/virtual-box_u19.deb
+
+# # System profiler and benchmark
+# sudo apt-get install hardinfo -y
+
+# # bluetooth manager
+# mkdir -p ~/Downloads/Bluetooth
+# sudo apt-get install blueman -y
 
 # Other //////////////////////////////////////////////////////////////////////////////////////////////////
 
-sudo apt-get install wmctrl -y                      # window managment
-sudo apt-get install xdotool -y                     # get window info
-sudo apt-get install sox -y                         # play sounds from terminal
-sudo apt-get install rofi imagemagick -y            # for Rofi powermenu              
-sudo apt-get install wmctrl graphicsmagick feh -y   # blur wallpaper when busy
+# sudo apt-get install wmctrl -y                      # window managment
+# sudo apt-get install xdotool -y                     # get window info
+# sudo apt-get install sox -y                         # play sounds from terminal
+# sudo apt-get install rofi imagemagick -y            # for Rofi powermenu              
+# sudo apt-get install wmctrl graphicsmagick feh -y   # blur wallpaper when busy
 
 # Change display managers ---------------------------------------------------------------
-sudo apt-get install sddm -y            			# Plasma-like login-window
-sudo ln -sr cinnamon/sddm-themes/sddm-chili/ /usr/share/sddm/themes/
-sudo ln -sr cinnamon/sddm-themes/sddm.conf /etc/
-sudo apt-get install qml-module-qtquick-layouts -y
-sudo apt-get install qml-module-qtquick-controls -y
+# sudo apt-get install sddm -y            			# Plasma-like login-window
+# sudo ln -sr cinnamon/sddm-themes/sddm-chili/ /usr/share/sddm/themes/
+# sudo ln -sr cinnamon/sddm-themes/sddm.conf /etc/
+# sudo apt-get install qml-module-qtquick-layouts -y
+# sudo apt-get install qml-module-qtquick-controls -y
 # sudo dpkg-reconfigure sddm
 # sddm-greeter --test-mode --theme /usr/share/sddm/themes/sddm-chili
 
 # ---------------------------------------------------------------------------------------
 
-sudo apt-get install devilspie2 -y          # window managment trough scripts
-ln -sr cinnamon/appearance/devilspie2 ~/.config/devilspie2
+# sudo apt-get install devilspie2 -y          # window managment trough scripts
+# ln -sr cinnamon/appearance/devilspie2 ~/.config/devilspie2
 # devilspie2 --folder=$HOME/.config/devilspie2
 
 # TLP battery managment
@@ -141,3 +141,4 @@ ln -sr cinnamon/appearance/devilspie2 ~/.config/devilspie2
 # rm /etc/tlp.conf
 # ln -sr config/tlp-battery.conf /etc/tlp.conf
 # sudo tlp start
+
