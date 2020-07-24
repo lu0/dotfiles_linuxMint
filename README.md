@@ -1,6 +1,5 @@
 # dotfiles_linuxMint
 My Linux Mint (cinnamon) post-installation setup.
-![Preview while on desktop](preview.png)
 NOT READY YET! D:
 
 ## Clone repo
@@ -68,6 +67,8 @@ Reboot to apply.
 
 ## Custom Cinnamon Appearance
 Themes and tweaks I use for the Cinnamon DE.
+![Preview while on desktop](cinnamon/custom-cinnamon.png)
+
 
 ### Disable shadows in window borders
 ```zsh
@@ -157,7 +158,7 @@ dconf load / < dconf-files/panel.conf
 ```
 
 ### Custom Powermenu
-![Preview while on desktop](preview.png)
+![Preview while on desktop](https://github.com/lu0/rofi-blurry-powermenu/blob/master/preview.png)
 Run custom powermenu with ```Super``` + ```Home```.
 ```zsh
 # Install dependencies
@@ -215,7 +216,7 @@ dconf load / < dconf-files/miscellaneous.conf
 ## Additional setup for Thinkpad X1Y3
 
 ### Keymappings
-Media keys and HJKL as arrow keys
+Media keys 
 ```zsh 
 ln -sr keymappings/mediaKeys_ThinkPadX1Y3.lst ~/.mediaKeys_ThinkPadX1Y3.lst
 ln -sr keymappings/keymappings-X1Y3.sh ~/.keymappings-X1Y3.sh
