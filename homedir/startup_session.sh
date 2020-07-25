@@ -56,13 +56,13 @@ wmctrl -r "messenger" -e 0,46,10,1864,1060 && wmctrl -r Spotify Premium -e 0,46,
 
 # ----------- Move windows to desired workspaces ---------------------------
 wmctrl -r Vivaldi -t 0                    # General purpose Web Browser
-wmctrl -r Home -t 1                       # Nemo file browser
 wmctrl -r "Visual Studio Code" -t 2
 wmctrl -r "localhost" -t 2                # App dev Web Browser
-wmctrl -r "(home)" -t 3                   # General purpose terminal
-wmctrl -r "OnedriveUANL Journal" -t 3     
-wmctrl -r "messenger" -t 4                # Social Media Web Browser
-wmctrl -r Spotify Premium -t 5 
+wmctrl -r Home -t 3                       # Nemo file browser
+wmctrl -r "(home)" -t 4                   # General purpose terminal
+wmctrl -r "OnedriveUANL Journal" -t 4     
+wmctrl -r "messenger" -t 5                # Social Media Web Browser
+wmctrl -r Spotify Premium -t 7 
 
 
 # ------ Focus on 2nd workspace (production) -------------------------------
