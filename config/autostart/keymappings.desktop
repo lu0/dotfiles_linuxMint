@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/bin/sh -c '$HOME/.keymappings-X1Y3.sh'
+Exec=/bin/sh -c '$HOME/.apply-keymappings.sh'
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false

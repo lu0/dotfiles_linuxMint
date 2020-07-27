@@ -1,0 +1,43 @@
+! --------------------------------------------------------------------------------
+!  Xmodmap config I use for media and vim keys on the Thinkpad X1Y3
+!
+! Save default config for reference:
+!   xmodmap -pke > ~/dotfiles_linuxMint/keymappings/xmodmap_current_X1Y3.lst
+!
+! See current keycodes with xev
+!
+! Usage: 
+!  ln -sr homedir/customkeys-config.lst ~/.customkeys-config.lst
+!   xmodmap ~/.customkeys-config.lst
+!
+! Restore default config with:
+!   setxkbmap -option
+! --------------------------------------------------------------------------------
+
+! Media keys ---------------------------------------------------------------------
+keysym Up = XF86AudioPlay XF86AudioPause XF86AudioPlay XF86AudioPause
+keysym Prior = XF86AudioPrev XF86AudioPrev XF86AudioPrev XF86AudioPrev
+keysym Next = XF86AudioNext XF86AudioNext XF86AudioNext XF86AudioNext
+
+! Vim keys -----------------------------------------------------------------------
+
+! Use AltGr as the modifier key  
+! Use AltGr + Caps_Lock as regular AltGr
+keycode 108 = Mode_switch NoSymbol ISO_Level3_Shift ISO_Level3_Shift
+
+! Caps lock as Mode_switch (later mapped to escape)
+! Shift + Caps lock as Caps lock
+keysym Caps_Lock = Mode_switch Caps_Lock Mode_switch
+
+keysym h = h H Left Left Left
+keysym l = l L Right Right Right
+keysym k = k K Up Up Up
+keysym j = j J Down Down Down 
+keysym i = i I Home Home Home
+keysym o = o O End End End
+! keysym u = u U Prior Prior Prior
+! keysym p = p P Next Next Next
+
+! Disable other arrow keys
+keysym Left = NoSymbol NoSymbol NoSymbol
+keysym Down = NoSymbol NoSymbol NoSymbol

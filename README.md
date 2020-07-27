@@ -215,21 +215,23 @@ dconf load / < dconf-files/miscellaneous.conf
 
 ## Additional setup for Thinkpad X1Y3
 
-### Keymappings
-Media keys 
+### Vim and media keys
+I use ```AltGr``` + ```H```,```J```,```K```,```L``` as arrow keys and ```U```,```I``` as Prior and Next keys; ```CapsLock``` is mapped to ```Escape``` and ```Shift```+```CapsLock``` to ```CapsLock```. Additionally, the Thinkpad X1Y3 does not have media keys, so I map ```Prior```, ```Next``` and ```↑``` to Previous track, Next track and Play/Pause.
 ```zsh 
-ln -sr keymappings/mediaKeys_ThinkPadX1Y3.lst ~/.mediaKeys_ThinkPadX1Y3.lst
-ln -sr keymappings/keymappings-X1Y3.sh ~/.keymappings-X1Y3.sh
+sudo apt-get install xcape -y
+ln -sr keymappings/customkeys-config.lst ~/.customkeys-config.lst
 ```
 
 ### Battery Managment
 Change battery thresholds.
 ```zsh
-# Install TLP managment
+# Install TLP managment and dependencies
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt update
 sudo apt install tlp tlp-rdw -y
 sudo apt-get install acpi-call-dkms -y
+
+# I keep charge between 50%-60%
 sudo tlp start
 sudo rm /etc/tlp.conf
 sudo ln -sr config/tlp-battery.conf /etc/tlp.conf
