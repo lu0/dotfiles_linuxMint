@@ -39,5 +39,6 @@ keysym o = o O End End End
 ! keysym p = p P Next Next Next
 
 ! Disable other arrow keys
-keysym Left = NoSymbol NoSymbol NoSymbol
-keysym Down = NoSymbol NoSymbol NoSymbol
+keycode 113 = Mode_switch NoSymbol
+keycode 114 = Mode_switch NoSymbol
+keycode 116 = Mode_switch NoSymbol
