@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# This scripts opens my favorite apps in several workspaces
+# This scripts opens my favorite apps in their workspaces
 #
 # Run at startup with Mint's "Startup apps" or
 # map it to a shortcut (ex. ctrl-super-alt-home) from:
-#     ~/git_lu0/mint_dotfiles/.startup_bash.sh
+#     ~/dotfiles_linuxMint/scripts/startup_session.sh
 # 
 # Author: Lucero Alvarado
-# Repository: https://github.com/lu0/mint_dotfiles
+# Repository: https://github.com/lu0/dotfiles_linuxMint
 
 # ------- Disable networking and notifications (faster loading of web windows) ----------------
 gsettings set org.cinnamon.desktop.notifications display-notifications false && nmcli networking off
