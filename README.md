@@ -67,7 +67,7 @@ Reboot to apply.
 
 
 ## Custom Cinnamon Appearance
-Themes and tweaks I use for the Cinnamon DE.
+Themes and tweaks I use for the Cinnamon DE. Reboot after configuration.
 ![Preview while on desktop](cinnamon/custom-cinnamon.png)
 
 
@@ -84,7 +84,7 @@ You might need to logout and login to session after this.
 sudo apt-get install xdotool wmctrl -y
 
 mkdir -p ~/.local/bin
-ln -sr cinnamon/opacify_windows.sh ~/.local/bin
+ln -sr cinnamon/opacify_windows.sh ~/.local/bin/
 
 # Create startup entry
 mkdir -p ~/.config/autostart
@@ -107,6 +107,7 @@ sudo rm /usr/share/themes/Minimal_RedAccents/metacity-1/metacity-theme-3.xml
 sudo ln -sr themes/Minimal_RedAccents/cinnamon.css /usr/share/themes/Minimal_RedAccents/cinnamon/cinnamon.css
 sudo ln -sr themes/Minimal_RedAccents/gtk.css /usr/share/themes/Minimal_RedAccents/gtk-3.0/gtk.css
 sudo ln -sr themes/Minimal_RedAccents/metacity-theme-3.xml /usr/share/themes/Minimal_RedAccents/metacity-1/metacity-theme-3.xml
+cd ../../
 
 # Fonts
 sudo cp -r fonts/source-code-pro/OTF /usr/share/fonts/opentype/source-code-pro

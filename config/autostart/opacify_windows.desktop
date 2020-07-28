@@ -6,4 +6,4 @@ NoDisplay=false
 Hidden=false
 Name=opacify_windows.desktop
 Comment=Manage windows opacity
-X-GNOME-Autostart-Delay=0
+X-GNOME-Autostart-Delay=1

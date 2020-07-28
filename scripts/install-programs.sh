@@ -60,7 +60,7 @@ sudo apt-get install apt-transport-https -y
 sudo apt-get update && sudo apt-get install code -y
 
 # Setup vscode:
-cd ../vscode-settings
+cd vscode-settings
 ./setup-symlinks.sh                 # Symlinks to config files
 ./install_extensions.sh             # Extension list
 cd ..
