@@ -12,5 +12,5 @@ setxkbmap latam
 # Media and vim keys
 xmodmap ~/.customkeys-config.lst
 
-# Modifier as scape
+# Modifier as escape
 xcape -e 'Mode_switch=Escape'
