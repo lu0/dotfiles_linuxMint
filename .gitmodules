@@ -19,3 +19,6 @@
 [submodule "cinnamon/spices-applets"]
 	path = cinnamon/spices-applets
 	url = https://github.com/lu0/cinnamon-spices-applets
+[submodule "cinnamon/feh-blur-wallpaper"]
+	path = cinnamon/feh-blur-wallpaper
+	url = https://github.com/rstacruz/feh-blur-wallpaper

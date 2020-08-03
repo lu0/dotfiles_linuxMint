@@ -131,7 +131,7 @@ sudo ln -sr cinnamon/wallpaper-blur.png /usr/share/backgrounds/wallpaper-blur.pn
 # Apply blur
 sudo apt-get install wmctrl graphicsmagick feh -y   # blur wallpaper when busy
 feh --bg-fill "/usr/share/backgrounds/wallpaper.jpg"
-ln -sr cinnamon/blur-wallpaper/feh-blur ~/.feh-blur
+ln -sr cinnamon/feh-blur-wallpaper/feh-blur ~/.feh-blur
 ~/.feh-blur --blur 10 --darken 10 -d
 ```
 
