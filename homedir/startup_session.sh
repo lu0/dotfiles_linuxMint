@@ -23,15 +23,16 @@ vivaldi & sleep 1                    # Blank Window ("restore last session" is d
 nemo & sleep 1                       # File explorer
 code & sleep 1                       # Visual Studio Code (add -n if empty window is desired)
 
+# General purpose terminal and Syncthing window (For Workspace 3)
+gnome-terminal & sleep 1
+syncthing -no-browser & sleep 1                                 # Start syncthing, don't use current vivaldi window.
+vivaldi --new-window "http://127.0.0.1:8384" & sleep 1          # Open syncthing on new window
+
 # Web window for App under development (https://github.com/orlando26/cubing-mty-app)
 vivaldi --new-window "http://localhost:8100" "https:/localhost:8080/swagger-ui.html" "github.com/orlando26/cubing-mty-app" "github.com/orlando26/cubing-mty-app" & sleep 1
 
 # Web window for Social media and Mail
 vivaldi --new-window "www.messenger.com/t/lu0ear" "web.whatsapp.com" "app.slack.com/client/T011D2D3RQF/C011D2D3SBZ" "mail.google.com/mail/u/0/#inbox" "outlook.office.com/mail/inbox" "mail.google.com/mail/u/1/#inbox" "trello.com/lu0ear/boards" & sleep 1
-
-# General purpose terminal and Onedrive journal terminal (For Workspace 3)
-gnome-terminal --profile OnedriveStatus -e "journalctl --user-unit onedrive -f" & sleep 1
-gnome-terminal & sleep 1
 
 # Spotify (for Workspace 5)
 spotify & sleep 3
@@ -41,10 +42,8 @@ spotify & sleep 3
 
 wmctrl -r "Start Page" -e 0,46,10,1864,1060 && wmctrl -r Home -e 0,46,10,1864,1060 & sleep 0.5
 
-wmctrl -r "Terminal" -N "OnedriveUANL Journal" && wmctrl -r "OnedriveUANL Journal" -b remove,maximized_horz,maximized_vert      # Rename Onedrive terminal
-wmctrl -r "OnedriveUANL Journal" -e 0,1183,10,727,1060 & sleep 0.5                     # General purpose terminal
-
 wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert && wmctrl -r "(home)" -e 0,46,10,1127,1060 & sleep 0.5
+wmctrl -r "Syncthing" -b remove,maximized_horz,maximized_vert && wmctrl -r "Syncthing" -e 0,1183,10,727,1060 & sleep 0.5
 
 wmctrl -r "Visual Studio Code" -b remove,maximized_horz,maximized_vert && wmctrl -r "Visual Studio Code" -e 0,46,10,1127,1060 & sleep 1
 
@@ -60,7 +59,7 @@ wmctrl -r "Visual Studio Code" -t 2
 wmctrl -r "localhost" -t 2                # App dev Web Browser
 wmctrl -r Home -t 3                       # Nemo file browser
 wmctrl -r "(home)" -t 4                   # General purpose terminal
-wmctrl -r "OnedriveUANL Journal" -t 4     
+wmctrl -r "Syncthing" -t 4     
 wmctrl -r "messenger" -t 5                # Social Media Web Browser
 wmctrl -r Spotify Premium -t 7 
 
@@ -71,13 +70,6 @@ sleep 0.5 & wmctrl -s 2
 
 # ------- Enable networking (faster loading on web windows) ----------------
 sleep 0.5 & nmcli networking on
-
-
-# ------ Initialize Onedrive -----------------------------------------------
-# sleep 3
-# systemctl --user enable onedrive
-# systemctl --user start onedrive
-# onedrive --monitor
 
 
 # ------- Play sound when ready --------------------------------------------
