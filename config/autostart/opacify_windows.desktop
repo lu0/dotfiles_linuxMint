@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=opacify_windows.sh
+Exec=opacify-windows
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false

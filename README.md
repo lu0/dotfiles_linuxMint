@@ -84,7 +84,7 @@ You might need to logout and login to session after this.
 sudo apt-get install xdotool wmctrl -y
 
 mkdir -p ~/.local/bin
-ln -sr cinnamon/opacify_windows.sh ~/.local/bin/
+ln -sr cinnamon/opacify_windows.sh ~/.local/bin/opacify-windows
 
 # Create startup entry
 mkdir -p ~/.config/autostart
