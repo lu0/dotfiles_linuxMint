@@ -1543,11 +1543,11 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .menu-categories-box {
-    padding: 22.5px 20px 0px 0px;
+    padding: 15px 0px 0px 0px;
 }
 
 .menu-applications-inner-box {
-    padding: 20px 20px 20px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 .menu-applications-outer-box {
@@ -1560,7 +1560,7 @@ StScrollBar StButton#vhandle:hover {
     background-color: #323232;
     border-radius: 0px;
     border-color: #2A2A2A;
-    border: 2.5px;
+    border: 2px;
     
 }
 
@@ -1575,7 +1575,7 @@ StScrollBar StButton#vhandle:hover {
     background-color: #FD5A56; /*  #3E3F40; */
     border-radius: 0px;
     border-color: #2A2A2A;
-    border: 2.5px;
+    border: 2px;
 }
 
 .menu-application-button-selected:highlighted {
@@ -1585,13 +1585,13 @@ StScrollBar StButton#vhandle:hover {
 
 .menu-category-button {
     color: #9f9f9f;
-    padding: 7px;    
+    padding: 6px;    
     border: 0px solid transparent;
     border-left: 2px;
 }
 
 .menu-category-button-selected {
-    padding: 7px;
+    padding: 6px;
     color: #ffffff;
     border: 0px solid #FD5A56;
     border-left: 2px;
@@ -1813,7 +1813,7 @@ StScrollBar StButton#vhandle:hover {
 
 .grouped-window-list-item-box {
     /* Here */
-    height: 36px;
+    height: 30px;
     background-image: none;
     transition-duration: 100;
     text-align: left;
@@ -2124,7 +2124,7 @@ StScrollBar StButton#vhandle:hover {
 .workspace-button {
     /* Here */
     width: 30px;
-    height: 14px;
+    height: 30px;
     color: #8d9194;
     padding: 3px;
     padding-top: 4px;
@@ -2133,11 +2133,11 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .workspace-button.vertical {
-    height: 36px;
+    height: 30px;
     padding: 0;
     padding-top: 0px;
     padding-bottom: 0px;
-    padding-left: 0px;
+    padding-left: 1px;
 }
 
 .workspace-button:outlined {

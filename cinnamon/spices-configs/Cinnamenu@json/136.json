@@ -162,7 +162,7 @@
         "default": false,
         "description": "Use a custom menu height",
         "tooltip": "Use a custom menu height",
-        "value": false
+        "value": true
     },
     "custom-menu-height": {
         "type": "spinbutton",
@@ -174,7 +174,7 @@
         "description": "Custom menu height",
         "tooltip": "Custom menu height",
         "dependency": "enable-custom-menu-height",
-        "value": 700.0
+        "value": 440.0
     },
     "apps-grid-column-count": {
         "type": "spinbutton",
@@ -325,7 +325,7 @@
         "units": "pixels",
         "description": "Category icon size",
         "tooltip": "Category icon size",
-        "value": 28.0
+        "value": 19.0
     },
     "show-application-icons": {
         "type": "switch",
@@ -358,7 +358,7 @@
         "units": "pixels",
         "description": "Applications grid icon size",
         "tooltip": "Applications grid icon size",
-        "value": 55.0
+        "value": 47.0
     },
     "__md5__": "78c46e2f918f3e5500f5011fb1a5bb0c"
 }
