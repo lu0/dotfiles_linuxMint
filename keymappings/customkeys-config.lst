@@ -17,13 +17,9 @@
 ! Media keys ---------------------------------------------------------------------
 
 ! Music
-keysym Up = XF86AudioPlay uparrow
-keysym Prior = XF86AudioPrev Prior
-keysym Next = XF86AudioNext Next
-
-! Screenshots
-! PrintScr as context menu, Use Super to activate PrintScr (in desktop-keybindings.conf)
-keysym Print = Menu NoSymbol Menu
+keysym Down = XF86AudioPlay downarrow
+keysym Left = XF86AudioPrev leftarrow
+keysym Right = XF86AudioNext rightarrow
 
 ! Vim keys -----------------------------------------------------------------------
 
@@ -52,6 +48,4 @@ keysym u = u U Prior Prior Prior
 keysym p = p P Next Next Next
 
 ! Disable other arrow keys
-keysym Left = Mode_switch leftarrow
-keysym Right = Mode_switch rightarrow
-keysym Down = Mode_switch downarrow
+keysym Up = Mode_switch uparrow

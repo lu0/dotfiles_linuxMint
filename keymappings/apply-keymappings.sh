@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Keymappings for thinkpad X1Y3
+# Keymappings for thinkpad Dell 5437
 
 # Restore default configuration
 setxkbmap -option
