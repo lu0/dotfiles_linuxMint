@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/bin/sh -c '$HOME/.feh-blur --blur 10 --darken 10 -d'
+Exec=feh-blur --blur 10 --darken 10 -d
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false
