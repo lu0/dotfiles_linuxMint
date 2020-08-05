@@ -7,4 +7,4 @@
 
 wmctrl -r :ACTIVE: -b remove,maximized_horz,maximized_vert
 wmctrl -r :ACTIVE: -e 0,500,500,500,500    # dummy dimensions to avoid bugs
-wmctrl -r :ACTIVE: -e 0,44,8,1864,524
+wmctrl -r :ACTIVE: -e 0,33,6,1323,373
