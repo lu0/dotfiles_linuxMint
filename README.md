@@ -45,7 +45,7 @@ rm -rf ~/.bashrc
 ln -sr bash/bashrc ~/.bashrc
 
 # Script to create new Github repo and push from current directory
-ln -sr homedir/git-create-repo.sh ~/.git-create-repo.sh
+ln -sr homedir/git-create-repo.sh ~/.local/bin/github
 
 sudo rm -rf /etc/inputrc
 sudo ln -sr bash/inputrc /etc/inputrc
