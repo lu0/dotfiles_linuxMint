@@ -45,7 +45,7 @@ rm -rf ~/.bashrc
 ln -sr bash/bashrc ~/.bashrc
 
 # Script to create new Github repo and push from current directory
-ln -sr homedir/git-create-repo.sh ~/.git-create-repo.sh
+ln -sr homedir/git-create-repo.sh ~/.local/bin/github
 
 sudo rm -rf /etc/inputrc
 sudo ln -sr bash/inputrc /etc/inputrc
@@ -84,7 +84,7 @@ You might need to logout and login to session after this.
 sudo apt-get install xdotool wmctrl -y
 
 mkdir -p ~/.local/bin
-ln -sr cinnamon/opacify_windows.sh ~/.local/bin/
+ln -sr cinnamon/opacify_windows.sh ~/.local/bin/opacify-windows
 
 # Create startup entry
 mkdir -p ~/.config/autostart
@@ -131,8 +131,8 @@ sudo ln -sr cinnamon/wallpaper-blur.png /usr/share/backgrounds/wallpaper-blur.pn
 # Apply blur
 sudo apt-get install wmctrl graphicsmagick feh -y   # blur wallpaper when busy
 feh --bg-fill "/usr/share/backgrounds/wallpaper.jpg"
-ln -sr cinnamon/blur-wallpaper/feh-blur ~/.feh-blur
-~/.feh-blur --blur 10 --darken 10 -d
+ln -sr cinnamon/feh-blur-wallpaper/feh-blur ~/.local/bin/
+feh-blur --blur 10 --darken 10 -d
 ```
 
 ### Devilspie
@@ -222,6 +222,10 @@ I use ```AltGr``` + ```H```,```J```,```K```,```L``` as arrow keys and ```U```,``
 ```zsh 
 sudo apt-get install xcape -y
 ln -sr keymappings/customkeys-config.lst ~/.customkeys-config.lst
+ln -sr keymappings/apply-keymappings.sh ~/.local/bin/apply-keymappings
+
+# Startup entry
+ln -sr config/autostart/keymappings.desktop ~/.config/autostart/keymappings.desktop
 ```
 
 ### Battery Managment

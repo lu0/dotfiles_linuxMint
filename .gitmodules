@@ -7,9 +7,6 @@
 [submodule "fonts/source-code-pro"]
 	path = fonts/source-code-pro
 	url = https://github.com/adobe-fonts/source-code-pro
-[submodule "cinnamon/blur-wallpaper"]
-	path = cinnamon/blur-wallpaper
-	url = https://github.com/ngynLk/feh-blur-wallpaper
 [submodule "cinnamon/sddm-themes/sddm-chili"]
 	path = cinnamon/sddm-themes/sddm-chili
 	url = https://github.com/lu0/sddm-chili
@@ -19,3 +16,6 @@
 [submodule "cinnamon/spices-applets"]
 	path = cinnamon/spices-applets
 	url = https://github.com/lu0/cinnamon-spices-applets
+[submodule "cinnamon/feh-blur-wallpaper"]
+	path = cinnamon/feh-blur-wallpaper
+	url = https://github.com/ngynLk/feh-blur-wallpaper

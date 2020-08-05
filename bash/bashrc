@@ -88,7 +88,6 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -125,10 +124,14 @@ export NVM_DIR="$HOME/.nvm"
 
 # Aliases, functions and commands I defined ------------------------------------------------------------
 
-alias cp="cp -iv"                       # verbose
+alias cp="cp -riv"                                           # verbose
+alias mkdir="mkdir -pv"                                      # parent, verbose
+alias rm="rm -I"
+alias ll="ls -alF --color=auto --group-directories-first"    
+
 alias battery="sudo tlp-stat -b"
-alias github="~/.git-create-repo.sh"
 alias status="git status"
+alias bstatus="git submodule foreach 'git status'"
 alias clean="git clean -i"
 alias apatch="git add --patch $*"
 alias copatch="git checkout --patch $*"

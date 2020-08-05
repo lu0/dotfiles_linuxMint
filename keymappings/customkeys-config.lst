@@ -15,15 +15,28 @@
 ! --------------------------------------------------------------------------------
 
 ! Media keys ---------------------------------------------------------------------
-keysym Up = XF86AudioPlay XF86AudioPause XF86AudioPlay XF86AudioPause
-keysym Prior = XF86AudioPrev XF86AudioPrev XF86AudioPrev XF86AudioPrev
-keysym Next = XF86AudioNext XF86AudioNext XF86AudioNext XF86AudioNext
+
+! Music
+keysym Up = XF86AudioPlay uparrow
+keysym Prior = XF86AudioPrev Prior
+keysym Next = XF86AudioNext Next
+
+! Screenshots
+! PrintScr as context menu, Use Super to activate PrintScr (in desktop-keybindings.conf)
+keysym Print = Menu NoSymbol Menu
 
 ! Vim keys -----------------------------------------------------------------------
 
 ! Use AltGr as the modifier key  
 ! Use AltGr + Caps_Lock as regular AltGr
 keycode 108 = Mode_switch NoSymbol ISO_Level3_Shift ISO_Level3_Shift
+
+! Fix level3 characters I use (altGr + key)
+keysym q = q Q at Greek_OMEGA at Greek_OMEGA at
+keysym braceright = braceright bracketright dead_grave braceright dead_grave braceright dead_grave
+keysym braceleft = braceleft bracketleft dead_circumflex braceleft dead_circumflex braceleft dead_circumflex
+keysym plus = plus asterisk asciitilde dead_macron asciitilde
+keysym apostrophe = apostrophe question backslash questiondown backslash questiondown backslash
 
 ! Caps lock as Mode_switch (later mapped to escape)
 ! Shift + Caps lock as Caps lock
@@ -35,10 +48,10 @@ keysym k = k K Up Up Up
 keysym j = j J Down Down Down 
 keysym i = i I Home Home Home
 keysym o = o O End End End
-! keysym u = u U Prior Prior Prior
-! keysym p = p P Next Next Next
+keysym u = u U Prior Prior Prior
+keysym p = p P Next Next Next
 
 ! Disable other arrow keys
-keycode 113 = Mode_switch NoSymbol
-keycode 114 = Mode_switch NoSymbol
-keycode 116 = Mode_switch NoSymbol
+keysym Left = Mode_switch leftarrow
+keysym Right = Mode_switch rightarrow
+keysym Down = Mode_switch downarrow
