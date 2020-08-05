@@ -222,6 +222,10 @@ I use ```AltGr``` + ```H```,```J```,```K```,```L``` as arrow keys and ```U```,``
 ```zsh 
 sudo apt-get install xcape -y
 ln -sr keymappings/customkeys-config.lst ~/.customkeys-config.lst
+ln -sr keymappings/apply-keymappings.sh ~/.local/bin/apply-keymappings
+
+# Startup entry
+ln -sr config/autostart/keymappings.desktop ~/.config/autostart/keymappings.desktop
 ```
 
 ### Battery Managment
