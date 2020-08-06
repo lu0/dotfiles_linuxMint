@@ -22,8 +22,7 @@ Load keybindings I use.
 dconf load / < ~/.dotfiles_linuxMint/dconf-files/desktop-keybindings.conf
 
 # Nemo file manager
-rm -rf ~/.gnome2
-ln -sr homedir/gnome2 ~/.gnome2
+ln -srf homedir/gnome2 ~/.gnome2
 dconf load / < dconf-files/nemo-fileman.conf    # Additional config for nemo
 pkill nemo
 ```
@@ -35,20 +34,18 @@ Bash theme and profile.
 ```zsh
 # Theme and fonts
 sudo cp -r fonts/source-code-pro/OTF /usr/share/fonts/opentype/source-code-pro
-ln -sr bash/fancy-bash.sh ~/.fancy-bash.sh
+ln -srf bash/fancy-bash.sh ~/.fancy-bash.sh
 
 # Profiles and settings
 dconf load /org/gnome/terminal/ < dconf-files/gnome-terminal.conf
 
 # Aliases
-rm -rf ~/.bashrc
-ln -sr bash/bashrc ~/.bashrc
+ln -srf bash/bashrc ~/.bashrc
 
 # Script to create new Github repo and push from current directory
-ln -sr homedir/git-create-repo.sh ~/.local/bin/github
+ln -srf homedir/git-create-repo.sh ~/.local/bin/github
 
-sudo rm -rf /etc/inputrc
-sudo ln -sr bash/inputrc /etc/inputrc
+sudo ln -srf bash/inputrc /etc/inputrc
 ```
 Restart the terminal.
 
@@ -60,8 +57,8 @@ Use SDDM (plasma-like login-screen) instead of lightDM (default).
 ./scripts/install-sddm.sh
 
 # Background and user images
-sudo ln -sr cinnamon/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
-sudo ln -sr cinnamon/mintLogo_alt.png ~/.face.icon
+sudo ln -srf cinnamon/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
+sudo ln -srf cinnamon/mintLogo_alt.png ~/.face.icon
 ```
 Reboot to apply.
 
@@ -73,8 +70,7 @@ Themes and tweaks I use for the Cinnamon DE. Reboot after configuration.
 
 ### Disable shadows in window borders
 ```zsh
-sudo rm /etc/environment
-sudo ln -sr config/environment /etc/environment
+sudo ln -srf config/environment /etc/environment
 ```
 You might need to logout and login to session after this.
 
@@ -84,11 +80,11 @@ You might need to logout and login to session after this.
 sudo apt-get install xdotool wmctrl -y
 
 mkdir -p ~/.local/bin
-ln -sr cinnamon/opacify_windows.sh ~/.local/bin/opacify-windows
+ln -srf cinnamon/opacify_windows.sh ~/.local/bin/opacify-windows
 
 # Create startup entry
 mkdir -p ~/.config/autostart
-ln -sr config/autostart/opacify_windows.desktop ~/.config/autostart/opacify_windows.desktop
+ln -srf config/autostart/opacify_windows.desktop ~/.config/autostart/opacify_windows.desktop
 ```
 Restart the user's session.
 
@@ -101,12 +97,9 @@ Restart the user's session.
 # Custom theme
 cd cinnamon/appearance/
 sudo unzip themes/Minimal_RedAccents/Minimal_RedAccents.zip -d /usr/share/themes
-sudo rm /usr/share/themes/Minimal_RedAccents/cinnamon/cinnamon.css
-sudo rm /usr/share/themes/Minimal_RedAccents/gtk-3.0/gtk.css
-sudo rm /usr/share/themes/Minimal_RedAccents/metacity-1/metacity-theme-3.xml
-sudo ln -sr themes/Minimal_RedAccents/cinnamon.css /usr/share/themes/Minimal_RedAccents/cinnamon/cinnamon.css
-sudo ln -sr themes/Minimal_RedAccents/gtk.css /usr/share/themes/Minimal_RedAccents/gtk-3.0/gtk.css
-sudo ln -sr themes/Minimal_RedAccents/metacity-theme-3.xml /usr/share/themes/Minimal_RedAccents/metacity-1/metacity-theme-3.xml
+sudo ln -srf themes/Minimal_RedAccents/cinnamon.css /usr/share/themes/Minimal_RedAccents/cinnamon/cinnamon.css
+sudo ln -srf themes/Minimal_RedAccents/gtk.css /usr/share/themes/Minimal_RedAccents/gtk-3.0/gtk.css
+sudo ln -srf themes/Minimal_RedAccents/metacity-theme-3.xml /usr/share/themes/Minimal_RedAccents/metacity-1/metacity-theme-3.xml
 cd ../../
 
 # Fonts
@@ -125,13 +118,13 @@ dconf load /org/cinnamon/ < dconf-files/system-sounds.conf    # sound theme
 ### Blur wallpaper when desktop is "busy"
 ```zsh
 # Wallpaper I use
-sudo ln -sr cinnamon/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
-sudo ln -sr cinnamon/wallpaper-blur.png /usr/share/backgrounds/wallpaper-blur.png
+sudo ln -srf cinnamon/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
+sudo ln -srf cinnamon/wallpaper-blur.png /usr/share/backgrounds/wallpaper-blur.png
 
 # Apply blur
 sudo apt-get install wmctrl graphicsmagick feh -y   # blur wallpaper when busy
 feh --bg-fill "/usr/share/backgrounds/wallpaper.jpg"
-ln -sr cinnamon/feh-blur-wallpaper/feh-blur ~/.local/bin/
+ln -srf cinnamon/feh-blur-wallpaper/feh-blur ~/.local/bin/
 feh-blur --blur 10 --darken 10 -d
 ```
 
@@ -142,11 +135,11 @@ Maximize newly opened windows.
 sudo apt-get install devilspie2 -y
 
 # Link configuration 
-ln -sr cinnamon/appearance/devilspie2 ~/.config/devilspie2
+ln -srf cinnamon/appearance/devilspie2 ~/.config/devilspie2
 
 # Create startup entry
 mkdir -p ~/.config/autostart
-ln -sr config/autostart/Devilspie.desktop ~/.config/autostart/Devilspie.desktop
+ln -srf config/autostart/Devilspie.desktop ~/.config/autostart/Devilspie.desktop
 ```
 
 ### Custom Spices
@@ -168,8 +161,8 @@ sudo apt-get install rofi scrot imagemagick -y
 
 # Create and copy neccesary files and links
 mkdir -p ~/.config/rofi
-ln -sr rofi-blurry-powermenu/powermenu.sh ~/.config/rofi
-ln -sr rofi-blurry-powermenu/powermenu_theme.rasi ~/.config/rofi
+ln -srf rofi-blurry-powermenu/powermenu.sh ~/.config/rofi
+ln -srf rofi-blurry-powermenu/powermenu_theme.rasi ~/.config/rofi
 sudo cp -r rofi-blurry-powermenu/fonts/* /usr/share/fonts/
 ```
 
@@ -206,10 +199,10 @@ cd scripts
 source install-programs.sh
 
 # Disable some startup apps
-ln -sf $HOME/.dotfiles_linuxMint/config/autostart/* $HOME/.config/autostart/
+ln -srf $HOME/.dotfiles_linuxMint/config/autostart/* $HOME/.config/autostart/
 
 # Enable custom startup apps
-ln -sr homedir/startup_session.sh ~/.startup_session.sh
+ln -srf homedir/startup_session.sh ~/.startup_session.sh
 ```
 ### Additional settings
 Additional settings for some programs.
@@ -229,11 +222,11 @@ dconf load / < dconf-files/miscellaneous.conf
 I use ```AltGr``` + ```H```,```J```,```K```,```L``` as arrow keys and ```U```,```I``` as Prior and Next keys; ```CapsLock``` is mapped to ```Escape``` and ```Shift```+```CapsLock``` to ```CapsLock```. Additionally, the Thinkpad X1Y3 does not have media keys, so I map ```Prior```, ```Next``` and ```↑``` to Previous track, Next track and Play/Pause.
 ```zsh 
 sudo apt-get install xcape -y
-ln -sr keymappings/customkeys-config.lst ~/.customkeys-config.lst
-ln -sr keymappings/apply-keymappings.sh ~/.local/bin/apply-keymappings
+ln -srf keymappings/customkeys-config.lst ~/.customkeys-config.lst
+ln -srf keymappings/apply-keymappings.sh ~/.local/bin/apply-keymappings
 
 # Startup entry
-ln -sr config/autostart/keymappings.desktop ~/.config/autostart/keymappings.desktop
+ln -srf config/autostart/keymappings.desktop ~/.config/autostart/keymappings.desktop
 ```
 
 ### Battery Managment
@@ -247,8 +240,7 @@ sudo apt-get install acpi-call-dkms -y
 
 # I keep charge between 50%-60%
 sudo tlp start
-sudo rm /etc/tlp.conf
-sudo ln -sr config/tlp-battery.conf /etc/tlp.conf
+sudo ln -srf config/tlp-battery.conf /etc/tlp.conf
 sudo tlp start
 
 # Check status

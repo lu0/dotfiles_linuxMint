@@ -7,7 +7,7 @@
 ! See current keycodes with xev
 !
 ! Usage: 
-!  ln -sr homedir/customkeys-config.lst ~/.customkeys-config.lst
+!  ln -srf homedir/customkeys-config.lst ~/.customkeys-config.lst
 !   xmodmap ~/.customkeys-config.lst
 !
 ! Restore default config with:
