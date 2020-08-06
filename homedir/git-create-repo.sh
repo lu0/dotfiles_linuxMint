@@ -7,6 +7,15 @@
 # Credits to bennedich:
 # https://stackoverflow.com/a/10325316
 
+if [ "$( git log --oneline -5 2>/dev/null | wc -l )" -eq 0 ]; then 
+  # No commits yet
+  # Prepare initial commit
+  git init $PWD
+  touch $PWD/README.md
+  git -C $PWD add .
+  git -C $PWD commit -a -m "Initial commit (from script)"
+fi; 
+
 REPONAME=${PWD##*/}
 GITUSER=$(git config user.name)
 
