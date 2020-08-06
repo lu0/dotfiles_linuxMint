@@ -39,8 +39,9 @@ ln -srf bash/fancy-bash.sh ~/.fancy-bash.sh
 # Profiles and settings
 dconf load /org/gnome/terminal/ < dconf-files/gnome-terminal.conf
 
-# Aliases
+# Aliases and profile
 ln -srf bash/bashrc ~/.bashrc
+ln -srf bash/profile ~/.profile
 
 # Script to create new Github repo and push from current directory
 ln -srf homedir/git-create-repo.sh ~/.local/bin/github
