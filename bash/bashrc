@@ -124,40 +124,48 @@ export NVM_DIR="$HOME/.nvm"
 
 # Aliases, functions and commands I defined ------------------------------------------------------------
 
+alias battery="sudo tlp-stat -b"
+
 alias cp="cp -riv"                                           # verbose
 alias mkdir="mkdir -pv"                                      # parent, verbose
 alias rm="rm -I"
 alias ll="ls -alF --color=auto --group-directories-first"    
 
-alias battery="sudo tlp-stat -b"
-alias status="git status"
-alias bstatus="git submodule foreach 'git status'"
-alias clean="git clean -i"
-alias apatch="git add --patch $*"
-alias copatch="git checkout --patch $*"
+# find symlinks in current pointing to given directory
+function fnln() {
+  find . -type l -exec readlink -nf {} ';' -exec echo " -> {}" ';' | grep "$*"
+}
 
-function gitlog() {
+# find broken symlinks in current directory
+function fnbnln() {
+  find . -type l -exec test ! -e {} \; -print
+}
+
+alias gstatus="git status"
+alias gbranches="git submodule foreach 'git status'"
+alias gclean="git clean -i"
+alias gadd="git add --patch $*"
+alias gcheckout="git checkout --patch $*"
+alias gamend="git commit --amend --no-edit"
+
+function glog() {
   git log --graph --decorate --oneline -$*
 }
 
-function gitfollow() {
+function gfollow() {
   git log --follow --graph --decorate --oneline -5 -- $*
 }
 
-function commit() {
+function gcommit() {
   git commit -m "$*"
-}
-
-function amend() {
-  git commit --amend --no-edit
 }
 
 # Ignore and revert ignorance of changed files (temporary)
 # https://stackoverflow.com/a/23259612
-function gitignore(){
+function gignore(){
   git update-index --assume-unchanged $*
 }
-function gittrack(){
+function gtrack(){
   git update-index --no-assume-unchanged $*
 }
 
