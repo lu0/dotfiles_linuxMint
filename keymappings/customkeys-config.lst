@@ -2,7 +2,7 @@
 !  Xmodmap config I use for media and vim keys on the Thinkpad X1Y3
 !
 ! Save default config for reference:
-!   xmodmap -pke > ~/dotfiles_linuxMint/keymappings/xmodmap_current_X1Y3.lst
+!   xmodmap -pke > ~/.dotfiles_linuxMint/keymappings/xmodmap_current_X1Y3.lst
 !
 ! See current keycodes with xev
 !

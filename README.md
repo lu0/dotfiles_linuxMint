@@ -5,8 +5,8 @@ NOT READY YET! D:
 ## Clone repo
 ```zsh
 # Clone with submodules
-git clone --recursive https://github.com/lu0/dotfiles_linuxMint
-cd dotfiles_linuxMint
+git clone --recursive https://github.com/lu0/.dotfiles_linuxMint ~/.dotfiles_linuxMint
+cd ~/.dotfiles_linuxMint
 ```
 
 ## Install DCONF
@@ -19,7 +19,7 @@ sudo apt-get install dconf-editor -y    # System configuration tool
 Load keybindings I use.
 ```zsh
 # Cinnamon
-dconf load / < ~/dotfiles_linuxMint/dconf-files/desktop-keybindings.conf
+dconf load / < ~/.dotfiles_linuxMint/dconf-files/desktop-keybindings.conf
 
 # Nemo file manager
 rm -rf ~/.gnome2
@@ -206,7 +206,7 @@ cd scripts
 source install-programs.sh
 
 # Disable some startup apps
-ln -sf $HOME/dotfiles_linuxMint/config/autostart/* $HOME/.config/autostart/
+ln -sf $HOME/.dotfiles_linuxMint/config/autostart/* $HOME/.config/autostart/
 
 # Enable custom startup apps
 ln -sr homedir/startup_session.sh ~/.startup_session.sh

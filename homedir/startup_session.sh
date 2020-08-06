@@ -4,7 +4,7 @@
 #
 # Run at startup with Mint's "Startup apps" or
 # map it to a shortcut (ex. ctrl-super-alt-home) from:
-#     ~/dotfiles_linuxMint/scripts/startup_session.sh
+#     ~/.dotfiles_linuxMint/scripts/startup_session.sh
 # 
 # Author: Lucero Alvarado
 # Repository: https://github.com/lu0/dotfiles_linuxMint

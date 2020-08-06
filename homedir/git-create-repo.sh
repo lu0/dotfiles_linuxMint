@@ -2,7 +2,7 @@
 
 # Create new Github repo and push from current directory
 #
-# github.com/lu0/dotfiles_linuxMint/scripts
+# github.com/lu0/.dotfiles_linuxMint/scripts
 #
 # Credits to bennedich:
 # https://stackoverflow.com/a/10325316
