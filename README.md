@@ -210,8 +210,16 @@ ln -sf $HOME/dotfiles_linuxMint/config/autostart/* $HOME/.config/autostart/
 
 # Enable custom startup apps
 ln -sr homedir/startup_session.sh ~/.startup_session.sh
-
-# Additional settings
+```
+### Additional settings
+Additional settings for some programs.
+* Gnome screenshot: auto-save folder on ```~/Pictures/Screenshots```
+* Cheese (webcam): Change default resolution to 720p
+* Hide bluetooth (blueberry) from panel
+* Disable sleep/hibernation
+* Touchpad with edge scrolling 
+* Lock touchscreen orientation
+```zsh
 dconf load / < dconf-files/miscellaneous.conf
 ```
 
