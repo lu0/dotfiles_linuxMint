@@ -34,7 +34,7 @@ Bash theme and profile.
 ```zsh
 # Theme and fonts
 sudo cp -r fonts/source-code-pro/OTF /usr/share/fonts/opentype/source-code-pro
-ln -srf bash/fancy-bash.sh ~/.fancy-bash.sh
+ln -srf bash/fancy-bash.sh ~/.myscripts/
 
 # Profiles and settings
 dconf load /org/gnome/terminal/ < dconf-files/gnome-terminal.conf
@@ -44,7 +44,7 @@ ln -srf bash/bashrc ~/.bashrc
 ln -srf bash/profile ~/.profile
 
 # Script to create new Github repo and push from current directory
-ln -srf homedir/git-create-repo.sh ~/.local/bin/github
+ln -srf homedir/git-create-repo.sh ~/.myscripts/github
 
 sudo ln -srf bash/inputrc /etc/inputrc
 ```
@@ -80,12 +80,13 @@ You might need to logout and login to session after this.
 # Install dependencies
 sudo apt-get install xdotool wmctrl -y
 
-mkdir -p ~/.local/bin
-ln -srf cinnamon/opacify_windows.sh ~/.local/bin/opacify-windows
+# Link script to a directory in HOME
+mkdir -p ~/.myscripts
+ln -srf cinnamon/opacify_windows.sh ~/.myscripts/opacify-windows.sh
 
 # Create startup entry
 mkdir -p ~/.config/autostart
-ln -srf config/autostart/opacify_windows.desktop ~/.config/autostart/opacify_windows.desktop
+ln -srf config/autostart/opacify_windows.desktop ~/.config/autostart/
 ```
 Restart the user's session.
 
@@ -122,11 +123,17 @@ dconf load /org/cinnamon/ < dconf-files/system-sounds.conf    # sound theme
 sudo ln -srf cinnamon/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
 sudo ln -srf cinnamon/wallpaper-blur.png /usr/share/backgrounds/wallpaper-blur.png
 
-# Apply blur
+# Dependencies and wallpaper
 sudo apt-get install wmctrl graphicsmagick feh -y   # blur wallpaper when busy
 feh --bg-fill "/usr/share/backgrounds/wallpaper.jpg"
-ln -srf cinnamon/feh-blur-wallpaper/feh-blur ~/.local/bin/
-feh-blur --blur 10 --darken 10 -d
+
+# Link script to a directory in HOME
+mkdir -p ~/.myscripts
+ln -srf cinnamon/feh-blur-wallpaper/feh-blur ~/.myscripts/feh-blur.sh
+
+# Create startup entry
+mkdir -p ~/.config/autostart
+ln -srf config/autostart/blur-wallpaper.desktop ~/.config/autostart/
 ```
 
 ### Devilspie
@@ -140,7 +147,7 @@ ln -srf cinnamon/appearance/devilspie2 ~/.config/devilspie2
 
 # Create startup entry
 mkdir -p ~/.config/autostart
-ln -srf config/autostart/Devilspie.desktop ~/.config/autostart/Devilspie.desktop
+ln -srf config/autostart/Devilspie.desktop ~/.config/autostart/
 ```
 
 ### Custom Spices
@@ -199,12 +206,17 @@ Programs, apps and packages I use:
 cd scripts
 source install-programs.sh
 
-# Disable some startup apps
-ln -srf $HOME/.dotfiles_linuxMint/config/autostart/* $HOME/.config/autostart/
-
 # Enable custom startup apps
-ln -srf homedir/startup_session.sh ~/.startup_session.sh
+ln -srf homedir/startup_session.sh ~/.myscripts/
+
+# Create startup entry
+mkdir -p ~/.config/autostart
+ln -srf config/autostart/mystartup-apps.desktop ~/.config/autostart/
+
+# Disable some default startup apps
+ln -srf $HOME/.dotfiles_linuxMint/config/autostart/* $HOME/.config/autostart/
 ```
+
 ### Additional settings
 Additional settings for some programs.
 * Gnome screenshot: auto-save folder on ```~/Pictures/Screenshots```
@@ -222,12 +234,19 @@ dconf load / < dconf-files/miscellaneous.conf
 ### Vim and media keys
 I use ```AltGr``` + ```H```,```J```,```K```,```L``` as arrow keys and ```U```,```I``` as Prior and Next keys; ```CapsLock``` is mapped to ```Escape``` and ```Shift```+```CapsLock``` to ```CapsLock```. Additionally, the Thinkpad X1Y3 does not have media keys, so I map ```Prior```, ```Next``` and ```↑``` to Previous track, Next track and Play/Pause.
 ```zsh 
+# Dependencies
 sudo apt-get install xcape -y
-ln -srf keymappings/customkeys-config.lst ~/.customkeys-config.lst
-ln -srf keymappings/apply-keymappings.sh ~/.local/bin/apply-keymappings
 
-# Startup entry
-ln -srf config/autostart/keymappings.desktop ~/.config/autostart/keymappings.desktop
+# Config file
+ln -srf keymappings/customkeys-config.lst ~/.myscripts/.customkeys-config.lst
+
+# Link script to a directory in HOME
+mkdir -p ~/.myscripts
+ln -srf keymappings/apply-keymappings.sh ~/.myscripts/
+
+# Create startup entry
+mkdir -p ~/.config/autostart
+ln -srf config/autostart/keymappings.desktop ~/.config/autostart/
 ```
 
 ### Battery Managment

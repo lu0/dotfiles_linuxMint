@@ -10,7 +10,7 @@ setxkbmap latam
 # setxkbmap us set-keymap us  # english(us)
 
 # Media and vim keys
-xmodmap ~/.customkeys-config.lst
+xmodmap ~/.myscripts/.customkeys-config.lst
 
 # Modifier as escape
 xcape -e 'Mode_switch=Escape'

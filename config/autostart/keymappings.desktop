@@ -1,9 +1,9 @@
 [Desktop Entry]
+Name[en_US]=Custom Keymappings
+Comment[en_US]=Defined on ~/.myscripts/apply-keymappings.sh
+Exec=apply-keymappings.sh
 Type=Application
-Exec=/bin/sh -c '$HOME/.apply-keymappings.sh'
 X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Delay=1
 NoDisplay=false
 Hidden=false
-Name[en_US]=Key Mappings and Layout
-Comment[en_US]=No description
-X-GNOME-Autostart-Delay=1

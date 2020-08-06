@@ -1,9 +1,9 @@
 [Desktop Entry]
+Name[en_US]=Feh Blur
+Comment[en_US]=Blur wallpaper when desktop is busy
+Exec=feh-blur.sh --blur 10 --darken 10 -d
 Type=Application
-Exec=feh-blur --blur 10 --darken 10 -d
 X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Delay=3
 NoDisplay=false
 Hidden=false
-Name[en_US]=Blur Wallpaper
-Comment[en_US]=No description
-X-GNOME-Autostart-Delay=3
