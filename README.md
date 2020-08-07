@@ -1,6 +1,5 @@
-# dotfiles_linuxMint
+# Dotfiles for Linux Mint
 My Linux Mint (cinnamon) post-installation setup.
-NOT READY YET! D:
 
 ## Clone repo
 ```zsh
