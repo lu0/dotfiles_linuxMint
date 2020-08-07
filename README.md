@@ -4,7 +4,7 @@ My Linux Mint (cinnamon) post-installation setup.
 ## Clone repo
 ```zsh
 # Clone with submodules
-git clone --recursive https://github.com/lu0/.dotfiles_linuxMint ~/.dotfiles_linuxMint
+git clone --recursive https://github.com/lu0/dotfiles_linuxMint ~/.dotfiles_linuxMint
 cd ~/.dotfiles_linuxMint
 ```
 
