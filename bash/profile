@@ -26,4 +26,5 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Add my scripts to PATH
 export PATH="$PATH:$HOME/.myscripts"
