@@ -87,10 +87,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -129,7 +125,14 @@ alias battery="sudo tlp-stat -b"
 alias cp="cp -riv"                                           # verbose
 alias mkdir="mkdir -pv"                                      # parent, verbose
 alias rm="rm -I"
-alias ll="ls -alF --color=auto --group-directories-first"    
+
+# -A almost all, -o list without group ingo, -F classify, 
+# -h human readable
+alias ll="ls -AoFh --group-directories-first --color=auto"
+alias l="ls -oFh --group-directories-first --color=auto"
+
+alias LL="ls -AoFLh --group-directories-first --color=auto"
+alias L="ls -oFLh --group-directories-first --color=auto"
 
 # find symlinks in current pointing to given directory
 function fnln() {
@@ -144,9 +147,14 @@ function fnbnln() {
 alias gstatus="git status"
 alias gbranches="git submodule foreach 'git status'"
 alias gclean="git clean -i"
-alias gadd="git add --patch $*"
-alias gcheckout="git checkout --patch $*"
-alias gamend="git commit --amend --no-edit"
+
+alias gadd="git add $*"
+alias gapatch="git add --patch $*"
+alias gcheckout="git checkout $*"
+alias gcopatch="git checkout --patch $*"
+
+alias gdiff="git diff"
+alias gstaged="git diff --no-ext-diff --staged"
 
 function glog() {
   git log --graph --decorate --oneline -$*
@@ -159,12 +167,18 @@ function gfollow() {
 function gcommit() {
   git commit -m "$*"
 }
+alias gamend="git commit --amend --no-edit"
 
 # Ignore and revert ignorance of changed files (temporary)
 # https://stackoverflow.com/a/23259612
+
+alias gignoreall="git ls-files --others --exclude-standard >> .gitignore"
+alias glist="git ls-tree -r master --name-only"
+
 function gignore(){
   git update-index --assume-unchanged $*
 }
+
 function gtrack(){
   git update-index --no-assume-unchanged $*
 }
