@@ -43,7 +43,8 @@ spotify & sleep 3
 wmctrl -r "Start Page" -e 0,46,10,1864,1060 && wmctrl -r Home -e 0,46,10,1864,1060 & sleep 0.5
 
 wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert && wmctrl -r "(home)" -e 0,46,10,1127,1060 & sleep 0.5
-wmctrl -r "Syncthing" -b remove,maximized_horz,maximized_vert && wmctrl -r "Syncthing" -e 0,1183,10,727,1060 & sleep 0.5
+
+wmctrl -r "| Syncthing" -b remove,maximized_horz,maximized_vert && wmctrl -r "| Syncthing" -e 0,1183,10,727,1060 & sleep 0.5
 
 wmctrl -r "Visual Studio Code" -b remove,maximized_horz,maximized_vert && wmctrl -r "Visual Studio Code" -e 0,46,10,1127,1060 & sleep 1
 
@@ -59,7 +60,7 @@ wmctrl -r "Visual Studio Code" -t 2
 wmctrl -r "localhost" -t 2                # App dev Web Browser
 wmctrl -r Home -t 3                       # Nemo file browser
 wmctrl -r "(home)" -t 4                   # General purpose terminal
-wmctrl -r "Syncthing" -t 4     
+wmctrl -r "| Syncthing" -t 4     
 wmctrl -r "messenger" -t 5                # Social Media Web Browser
 wmctrl -r Spotify Premium -t 7 
 
