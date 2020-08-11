@@ -14,4 +14,4 @@ gy="$(xdotool getwindowfocus getwindowgeometry | egrep -i 'geometry:' | cut -d '
 
 res=$(($px + $py))
 
-wmctrl -r :ACTIVE: -e 0,$((px - 12 + 10)),$((py - 12)),$((gx - 10)),$((gy))
+sleep 0.15 && wmctrl -r :ACTIVE: -e 0,$((px - 12 + 10)),$((py - 12)),$((gx - 10)),$((gy))
