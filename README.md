@@ -21,7 +21,8 @@ Load keybindings I use.
 dconf load / < ~/.dotfiles_linuxMint/dconf-files/desktop-keybindings.conf
 
 # Nemo file manager
-ln -srf homedir/gnome2 ~/.gnome2
+mkdir -p ~/.gnome2/accels/
+ln -srf config/nemo-keybindings ~/.gnome2/accels/nemo
 dconf load / < dconf-files/nemo-fileman.conf    # Additional config for nemo
 pkill nemo
 ```
@@ -43,7 +44,7 @@ ln -srf bash/bashrc ~/.bashrc
 ln -srf bash/profile ~/.profile
 
 # Script to create new Github repo and push from current directory
-ln -srf homedir/git-create-repo.sh ~/.myscripts/github
+ln -srf scripts/git-create-repo.sh ~/.myscripts/github
 
 sudo ln -srf bash/inputrc /etc/inputrc
 ```
@@ -206,7 +207,7 @@ cd scripts
 source install-programs.sh
 
 # Enable custom startup apps
-ln -srf homedir/startup_session.sh ~/.myscripts/
+ln -srf scripts/startup_session.sh ~/.myscripts/
 
 # Create startup entry
 mkdir -p ~/.config/autostart
@@ -237,11 +238,11 @@ I use ```AltGr``` + ```H```,```J```,```K```,```L``` as arrow keys and ```U```,``
 sudo apt-get install xcape -y
 
 # Config file
-ln -srf keymappings/customkeys-config.lst ~/.myscripts/.customkeys-config.lst
+ln -srf scripts/customkeys-config.lst ~/.myscripts/.customkeys-config.lst
 
 # Link script to a directory in HOME
 mkdir -p ~/.myscripts
-ln -srf keymappings/apply-keymappings.sh ~/.myscripts/
+ln -srf scripts/apply-keymappings.sh ~/.myscripts/
 
 # Create startup entry
 mkdir -p ~/.config/autostart
