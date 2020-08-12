@@ -13,7 +13,6 @@ py="$(xwininfo -id $(xdotool getactivewindow) | egrep -i "Absolute upper-left Y"
 
 # Get relative positions
 rx="$(xwininfo -id $(xdotool getactivewindow) | egrep "Relative upper-left X" | cut -d ':' -f 2)"
-ry="$(xwininfo -id $(xdotool getactivewindow) | egrep "Relative upper-left Y" | cut -d ':' -f 2)"
 
 # Gnome apps have identical absolute and relative positions,
 # other windows need a 2px correction when setting their position

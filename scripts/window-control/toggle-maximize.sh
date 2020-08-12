@@ -4,15 +4,23 @@
 # Resolution: 1920 x 1080
 #
 # Map this script to your preferred keybinding
+#
 
-id=$(xdotool getactivewindow)
-dimensions=$(wmctrl -lpG | while read -a a; do w=${a[0]}; if (($((16#${w:2}))==id)) ; then echo -n "${a[5]} ${a[6]}"; break; fi; done)
+# Get absolute positions
+px="$(xwininfo -id $(xdotool getactivewindow) | egrep -i "Absolute upper-left X" | cut -d ':' -f 2)"
+rx="$(xwininfo -id $(xdotool getactivewindow) | egrep "Relative upper-left X" | cut -d ':' -f 2)"
 
-set -- $dimensions  ## $1=X $1=Y
-if [[ "$1" -lt 1850 || "$2" -lt 1050 ]]; then
+# Gnome apps have identical absolute and relative positions,
+# other windows need a 2px correction when setting their position
+[[ $px -eq $rx ]] && fix=0 || fix=2
+
+gx="$(xwininfo -id $(xdotool getactivewindow) | egrep "Width" | cut -d ':' -f 2)"
+gy="$(xwininfo -id $(xdotool getactivewindow) | egrep "Height" | cut -d ':' -f 2)"
+
+if [[ "$gx" -lt 1864 || "$gy" -lt 1060 ]]; then
     wmctrl -r :ACTIVE: -b remove,maximized_horz,maximized_vert
-    wmctrl -r :ACTIVE: -e 0,500,500,500,500    # dummy dimensions to avoid bugs
-    wmctrl -r :ACTIVE: -e 0,44,8,1864,1060
+    wmctrl -r :ACTIVE: -e 0,43,7,1863,1059    # dummy dimensions to avoid bugs
+    wmctrl -r :ACTIVE: -e 0,$((46 - fix)),$((10 - fix)),1864,1060
 else
-    wmctrl -r :ACTIVE: -e 0,459,183,1004,716
+    wmctrl -r :ACTIVE: -e 0,$((458 - fix)),$((182 - fix)),1004,716
 fi
