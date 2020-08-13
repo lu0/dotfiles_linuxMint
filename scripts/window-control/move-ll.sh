@@ -7,12 +7,9 @@
 # author: github.com/lu0
 #
 
-if ps ax | grep $0 | grep -v $$ | grep bash | grep -v grep
-then
-    echo "This script is already running"
-    exit 1
-else
-    # px="$(xwininfo -id $(xdotool getactivewindow) | egrep -i "Absolute upper-left X" | cut -d ':' -f 2)" && py="$(xwininfo -id $(xdotool getactivewindow) | egrep -i "Absolute upper-left Y" | cut -d ':' -f 2)" && rx="$(xwininfo -id $(xdotool getactivewindow) | egrep "Relative upper-left X" | cut -d ':' -f 2)" && ry="$(xwininfo -id $(xdotool getactivewindow) | egrep "Relative upper-left Y" | cut -d ':' -f 2)" && [[ $px -eq $rx ]] && fix=0 || fix=2 && gx="$(xwininfo -id $(xdotool getactivewindow) | egrep "Width" | cut -d ':' -f 2)" && gy="$(xwininfo -id $(xdotool getactivewindow) | egrep "Height" | cut -d ':' -f 2)" && sleep 0.05 && wmctrl -r :ACTIVE: -e 0,$((px - fix - 10)),$((py - fix)),$((gx + 10)),$((gy))
+(
+    # Lock file (from the manual)
+    flock -n 9 || exit 1
 
     # Get absolute positions
     px="$(xwininfo -id $(xdotool getactivewindow) | egrep -i "Absolute upper-left X" | cut -d ':' -f 2)"
@@ -30,6 +27,6 @@ else
     gy="$(xwininfo -id $(xdotool getactivewindow) | egrep "Height" | cut -d ':' -f 2)"
 
     # Set new position and geometryThe script is already running
-    sleep 0.05 && wmctrl -r :ACTIVE: -e 0,$((px - fix - 10)),$((py - fix)),$((gx + 10)),$((gy))
+    wmctrl -r :ACTIVE: -e 0,$((px - fix - 10)),$((py - fix)),$((gx + 10)),$((gy))
 
-fi
+) 9>/var/lock/mylockfile
