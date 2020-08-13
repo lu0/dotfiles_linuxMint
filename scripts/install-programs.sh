@@ -75,6 +75,7 @@ sudo apt-get install neovim -y
 
 sudo apt-get install audacity -y
 sudo apt-get install soundconverter -y
+sudo apt-get install pavucontrol -y
 
 # Spotify 
 # (https://www.spotify.com/mx/download/linux/)
