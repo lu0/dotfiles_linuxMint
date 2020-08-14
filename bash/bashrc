@@ -121,6 +121,7 @@ export NVM_DIR="$HOME/.nvm"
 # Aliases, functions and commands I defined ------------------------------------------------------------
 
 alias battery="sudo tlp-stat -b"
+alias fullcharge="sudo tlp fullcharge"
 
 alias cp="cp -riv"                                           # verbose
 alias mkdir="mkdir -pv"                                      # parent, verbose
