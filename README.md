@@ -137,13 +137,13 @@ ln -srf config/autostart/blur-wallpaper.desktop ~/.config/autostart/
 ```
 
 ### Devilspie
-Maximize newly opened windows.
+Control newly opened windows
 ```zsh
 # Install devilspie
 sudo apt-get install devilspie2 -y
 
 # Link configuration 
-ln -srf cinnamon/appearance/devilspie2 ~/.config/devilspie2
+ln -srf config/devilspie2 ~/.config/devilspie2
 
 # Create startup entry
 mkdir -p ~/.config/autostart
