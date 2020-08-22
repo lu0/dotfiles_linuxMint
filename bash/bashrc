@@ -118,7 +118,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-# Aliases, functions and commands I defined ------------------------------------------------------------
+# Aliases, functions and commands I use ------------------------------------------------------------
 
 alias battery="sudo tlp-stat -b"
 alias fullcharge="sudo tlp fullcharge"
@@ -136,14 +136,12 @@ alias LL="ls -AoFLh --group-directories-first --color=auto"
 alias L="ls -oFLh --group-directories-first --color=auto"
 
 # find symlinks in current pointing to given directory
-function fnln() {
+function findln() {
   find . -type l -exec readlink -nf {} ';' -exec echo " -> {}" ';' | grep "$*"
 }
 
 # find broken symlinks in current directory
-function fnbnln() {
-  find . -type l -exec test ! -e {} \; -print
-}
+alias brokenln="find . -type l -exec test ! -e {} \; -print"
 
 alias gstatus="git status"
 alias gbranches="git submodule foreach 'git status'"
@@ -157,32 +155,19 @@ alias gcopatch="git checkout --patch $*"
 alias gdiff="git diff"
 alias gstaged="git diff --no-ext-diff --staged"
 
-function glog() {
-  git log --graph --decorate --oneline -$*
-}
+alias glog="git log --graph --decorate --oneline"
+alias gfollow="git log --follow --graph --decorate --oneline -10 -- "
 
-function gfollow() {
-  git log --follow --graph --decorate --oneline -5 -- $*
-}
-
-function gcommit() {
-  git commit -m "$*"
-}
+alias gcommit="git commit -m"
 alias gamend="git commit --amend --no-edit"
+
+alias glist="git ls-tree -r master --name-only"
+alias gignoreall="git ls-files --others --exclude-standard >> .gitignore"
 
 # Ignore and revert ignorance of changed files (temporary)
 # https://stackoverflow.com/a/23259612
-
-alias gignoreall="git ls-files --others --exclude-standard >> .gitignore"
-alias glist="git ls-tree -r master --name-only"
-
-function gignore(){
-  git update-index --assume-unchanged $*
-}
-
-function gtrack(){
-  git update-index --no-assume-unchanged $*
-}
+alias gignore="git update-index --assume-unchanged"
+alias gtrack="git update-index --no-assume-unchanged"
 
 # Set title to new terminals (windows/tabs)
 # https://askubuntu.com/a/886695
