@@ -26,31 +26,31 @@ code & sleep 1                       # Visual Studio Code (add -n if empty windo
 # General purpose terminal and Syncthing window (For Workspace 3)
 gnome-terminal & sleep 1
 syncthing -no-browser & sleep 1                                 # Start syncthing, don't use current vivaldi window.
-vivaldi --new-window "http://127.0.0.1:8384" & sleep 1          # Open syncthing on new window
+vivaldi --new-window "http://127.0.0.1:8384" & sleep 2          # Open syncthing on new window
 
 # Web window for App under development (https://github.com/orlando26/cubing-mty-app)
-vivaldi --new-window "http://localhost:8100" "https:/localhost:8080/swagger-ui.html" "github.com/orlando26/cubing-mty-app" "github.com/orlando26/cubing-mty-app" & sleep 1
+vivaldi --new-window "http://localhost:8100" "https:/localhost:8080/swagger-ui.html" "github.com/orlando26/cubing-mty-app" "github.com/orlando26/cubing-mty-app" & sleep 2
 
 # Web window for Social media and Mail
-vivaldi --new-window "www.messenger.com/t/lu0ear" "web.whatsapp.com" "app.slack.com/client/T011D2D3RQF/C011D2D3SBZ" "mail.google.com/mail/u/0/#inbox" "outlook.office.com/mail/inbox" "mail.google.com/mail/u/1/#inbox" "trello.com/lu0ear/boards" & sleep 1
+vivaldi --new-window "www.messenger.com/t/lu0ear" "web.whatsapp.com" "app.slack.com/client/T011D2D3RQF/C011D2D3SBZ" "mail.google.com/mail/u/0/#inbox" "outlook.office.com/mail/inbox" "mail.google.com/mail/u/1/#inbox" "trello.com/lu0ear/boards" & sleep 3
 
 # Spotify (for Workspace 5)
-spotify & sleep 3
+spotify & sleep 10
 
 
 # ----------- Resize windows -----------------------------------------------
 
-wmctrl -r "Start Page" -e 0,33,6,1323,753 && wmctrl -r Home -e 0,33,6,1323,753 & sleep 0.5
+wmctrl -r "Start Page" -e 0,33,6,1323,753 && wmctrl -r Home -e 0,33,6,1323,753 & sleep 1
 
-wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert && wmctrl -r "(home)" -e 0,33,6,1323,753 & sleep 0.5
-wmctrl -r "Syncthing" -b remove,maximized_horz,maximized_vert && wmctrl -r "Syncthing" -e 0,769,10,588,753 & sleep 0.5
+wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert && wmctrl -r "(home)" -e 0,33,6,728,753 & sleep 1
+wmctrl -r "Syncthing" -b remove,maximized_horz,maximized_vert && wmctrl -r "Syncthing" -e 0,769,10,588,753 & sleep 1
 
 wmctrl -r "Visual Studio Code" -b remove,maximized_horz,maximized_vert && wmctrl -r "Visual Studio Code" -e 0,33,6,728,753 & sleep 1
 
 # Vivaldi window for App dev.
-wmctrl -r "localhost" -b remove,maximized_horz,maximized_vert && wmctrl -r "localhost" -e 0,769,10,588,753 & sleep 0.5
+wmctrl -r "localhost" -b remove,maximized_horz,maximized_vert && wmctrl -r "localhost" -e 0,769,10,588,753 & sleep 1
 
-wmctrl -r "messenger" -e 0,33,6,1323,753 && wmctrl -r Spotify Premium -e 0,33,6,1323,753 & sleep 0.5
+wmctrl -r "messenger" -e 0,33,6,1323,753 && wmctrl -r Spotify Premium -e 0,33,6,1323,753 & sleep 1
 
 
 # ----------- Move windows to desired workspaces ---------------------------
@@ -65,11 +65,11 @@ wmctrl -r Spotify Premium -t 7
 
 
 # ------ Focus on 2nd workspace (production) -------------------------------
-sleep 0.5 & wmctrl -s 2
+sleep 1 & wmctrl -s 2
 
 
 # ------- Enable networking (faster loading on web windows) ----------------
-sleep 0.5 & nmcli networking on
+sleep 1 & nmcli networking on
 
 
 # ------- Play sound when ready --------------------------------------------
@@ -79,4 +79,4 @@ play /usr/share/sounds/freedesktop/stereo/service-login.oga
 
 
 # ------- Enable notifications ---------------------------------------------
-sleep 10 && gsettings set org.cinnamon.desktop.notifications display-notifications true
+sleep 5 && gsettings set org.cinnamon.desktop.notifications display-notifications true
