@@ -269,3 +269,17 @@ sudo tlp start
 # Check status
 battery         # If using the custom bash profile.
 ```
+
+### Undervolting
+Undervolt Intel CPU to decrease CPU temperatures.
+```zsh
+# Install dependencies
+sudo apt-get install python3-pip
+sudo pip3 install undervolt
+
+# I Undervolt by 120mV
+sudo undervolt --core -120 --cache -120
+
+# Or set a temperature target of 75°C
+sudo undervolt --temp 75
+```

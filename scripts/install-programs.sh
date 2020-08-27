@@ -101,6 +101,8 @@ sudo gdebi --non-interactive ~/Downloads/virtual-box_u19.deb
 
 # System profiler and benchmark
 sudo apt-get install hardinfo -y
+sudo apt-get install python3-pip
+sudo pip3 install s-tui
 
 # bluetooth manager
 mkdir -p ~/Downloads/Bluetooth

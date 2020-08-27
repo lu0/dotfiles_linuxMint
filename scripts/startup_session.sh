@@ -66,18 +66,20 @@ wmctrl -r Spotify Premium -t 7
 
 
 # ------ Focus on 2nd workspace (production) -------------------------------
-sleep 0.5 & wmctrl -s 2
+sleep 0.5 && wmctrl -s 2
 
 
 # ------- Enable networking (faster loading on web windows) ----------------
-sleep 0.5 & nmcli networking on
-
+sleep 0.5 && nmcli networking on
 
 # ------- Play sound when ready --------------------------------------------
 # cpuLoad=`mpstat 2 1 | awk 'END{print 100-$NF}'`
 sleep 1
 play /usr/share/sounds/freedesktop/stereo/service-login.oga
 
+# ------- Undervolting -----------------------------------------------------
+sleep 5 && sudo undervolt --temp 75
+sleep 3 && sudo undervolt --core -60 --cache -60
 
 # ------- Enable notifications ---------------------------------------------
 sleep 10 && gsettings set org.cinnamon.desktop.notifications display-notifications true
