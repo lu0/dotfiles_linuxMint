@@ -27,6 +27,6 @@
     gy="$(xwininfo -id $(xdotool getactivewindow) | egrep "Height" | cut -d ':' -f 2)"
 
     # Set new position and geometry
-    wmctrl -r :ACTIVE: -e 0,$((px - fix)),$((py - fix - 10)),$((gx)),$((gy + 10))
+    wmctrl -r :ACTIVE: -e 0,$((px - fix)),$((py - fix - 20)),$((gx)),$((gy + 20))
 
 ) 9>/var/lock/mylockfile

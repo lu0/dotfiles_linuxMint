@@ -1,30 +1,32 @@
-----------------------------------------------------------------
+------------------------------------------------------------------
 -- My Devilspie2 configuration for 1920x1080 resolutions
 -- github.com/lu0
 --
 -- Use "devilspie2 --debug" to print to stdout
-----------------------------------------------------------------
+------------------------------------------------------------------
+
 debug_print("Window type: " .. get_window_type())
 debug_print("Window Name: " .. get_window_name());
 debug_print("Application name: " .. get_application_name())
 debug_print("Class: " .. get_class_instance_name())
 
+-- Maximize with gaps
 if (get_window_type() == "WINDOW_TYPE_NORMAL") then
     set_on_top();
     focus();
-    -- Maximize with gaps
-    set_window_geometry(44, 8, 1864, 1060);
+    set_window_geometry2(46-2, 10-2, 1864, 1060);
 end
 
 if (get_window_type() == "WINDOW_TYPE_DIALOG") then
     set_on_top();
     focus();
-    if (not string.match(get_class_instance_name(), "gnome")) then
-        debug_print("Not a Gnome dialog");
-        -- Set default dimensions of dialogs
-        -- Except for gnome apps (they act weird..)
-        set_window_geometry2(265-12, 90-12, 1454, 925);
-    end
+    center();
+--     if (not string.match(get_class_instance_name(), "gnome")) then
+--         debug_print("Not a Gnome dialog");
+--         -- Set default dimensions of dialogs
+--         -- Except for gnome apps (they act weird..)
+--         set_window_geometry2(265-12, 90-12, 1454, 925);
+--     end
 end
 
 -- Workspace 2. I use it for graphic design
