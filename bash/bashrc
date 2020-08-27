@@ -87,10 +87,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -122,44 +118,56 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-# Aliases, functions and commands I defined ------------------------------------------------------------
+# Aliases, functions and commands I use ------------------------------------------------------------
+
+alias battery="sudo tlp-stat -b"
+alias fullcharge="sudo tlp fullcharge"
 
 alias cp="cp -riv"                                           # verbose
 alias mkdir="mkdir -pv"                                      # parent, verbose
 alias rm="rm -I"
-alias ll="ls -alF --color=auto --group-directories-first"    
 
-alias battery="sudo tlp-stat -b"
-alias status="git status"
-alias bstatus="git submodule foreach 'git status'"
-alias clean="git clean -i"
-alias apatch="git add --patch $*"
-alias copatch="git checkout --patch $*"
+# -A almost all, -o list without group ingo, -F classify, 
+# -h human readable
+alias ll="ls -AoFh --group-directories-first --color=auto"
+alias l="ls -oFh --group-directories-first --color=auto"
 
-function gitlog() {
-  git log --graph --decorate --oneline -$*
+alias LL="ls -AoFLh --group-directories-first --color=auto"
+alias L="ls -oFLh --group-directories-first --color=auto"
+
+# find symlinks in current pointing to given directory
+function findln() {
+  find . -type l -exec readlink -nf {} ';' -exec echo " -> {}" ';' | grep "$*"
 }
 
-function gitfollow() {
-  git log --follow --graph --decorate --oneline -5 -- $*
-}
+# find broken symlinks in current directory
+alias brokenln="find . -type l -exec test ! -e {} \; -print"
 
-function commit() {
-  git commit -m "$*"
-}
+alias gstatus="git status"
+alias gbranches="git submodule foreach 'git status'"
+alias gclean="git clean -i"
 
-function amend() {
-  git commit --amend --no-edit
-}
+alias gadd="git add $*"
+alias gapatch="git add --patch $*"
+alias gcheckout="git checkout $*"
+alias gcopatch="git checkout --patch $*"
+
+alias gdiff="git diff"
+alias gstaged="git diff --no-ext-diff --staged"
+
+alias glog="git log --graph --decorate --oneline"
+alias gfollow="git log --follow --graph --decorate --oneline -10 -- "
+
+alias gcommit="git commit -m"
+alias gamend="git commit --amend --no-edit"
+
+alias glist="git ls-tree -r master --name-only"
+alias gignoreall="git ls-files --others --exclude-standard >> .gitignore"
 
 # Ignore and revert ignorance of changed files (temporary)
 # https://stackoverflow.com/a/23259612
-function gitignore(){
-  git update-index --assume-unchanged $*
-}
-function gittrack(){
-  git update-index --no-assume-unchanged $*
-}
+alias gignore="git update-index --assume-unchanged"
+alias gtrack="git update-index --no-assume-unchanged"
 
 # Set title to new terminals (windows/tabs)
 # https://askubuntu.com/a/886695
@@ -172,3 +180,6 @@ function set-title(){
 }
 # Title: '(FirstFolderInPath) LastFolderInPath
 set-title $(echo "(")$(echo "$PWD" | cut -d/ -f 2-2)$(echo ") ${PWD##*/}")
+
+# Disable "alt + numkeys" bindings
+for i in "-" {0..9}; do bind -r "\e$i"; done
