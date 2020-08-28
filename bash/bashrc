@@ -169,6 +169,9 @@ alias gignoreall="git ls-files --others --exclude-standard >> .gitignore"
 alias gignore="git update-index --assume-unchanged"
 alias gtrack="git update-index --no-assume-unchanged"
 
+# Track (true) or ignore (false) file mode changes
+alias gmode="git config core.fileMode"
+
 # Set title to new terminals (windows/tabs)
 # https://askubuntu.com/a/886695
 function set-title(){
