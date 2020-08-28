@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#
+# Print pdf files from Nemo context-menu
+# Copy or link it to ~/.local/share/nemo/scritps
+#
+# Credits to:
+# https://gist.github.com/henningjensen/0f87e8144ee4c1b1bf69177f8094de78
+#
+# Changes:
+# Nemo variable for file paths
+#
+
+# Print to default printer
+echo "$NEMO_SCRIPT_SELECTED_FILE_PATHS" | while read file
+    do
+        lpr "$file"
+done
+exit 0

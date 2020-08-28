@@ -19,12 +19,6 @@ Load keybindings I use.
 ```zsh
 # Cinnamon
 dconf load / < ~/.dotfiles_linuxMint/dconf-files/desktop-keybindings.conf
-
-# Nemo file manager
-mkdir -p ~/.gnome2/accels/
-ln -srf config/nemo-keybindings ~/.gnome2/accels/nemo
-dconf load / < dconf-files/nemo-fileman.conf    # Additional config for nemo
-pkill nemo
 ```
 
 ## Terminal
@@ -228,8 +222,20 @@ Additional settings for some programs.
 * Disable sleep/hibernation
 * Touchpad with edge scrolling 
 * Lock touchscreen orientation
+* Nemo
+  - Keybindings
+  - Compact view
+  - Hide desktop icons
+  - Print from context menu
 ```zsh
 dconf load / < dconf-files/miscellaneous.conf
+
+# Nemo file manager
+mkdir -p ~/.gnome2/accels/
+ln -srf config/nemo-keybindings ~/.gnome2/accels/nemo
+dconf load / < dconf-files/nemo-fileman.conf
+ln -srf scripts/nemo/print ~/.local/share/nemo/scripts/
+pkill nemo
 ```
 
 ## Additional setup for Thinkpad X1Y3
