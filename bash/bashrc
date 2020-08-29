@@ -150,30 +150,33 @@ alias gstatus="git status"
 alias gsubmodules="git submodule foreach 'git status'"
 alias grepos="~/code/dotfiles_linuxMint/scripts/git-check-repos/git-status"
 
-alias gadd="git add $*"
-alias gapatch="git add --patch $*"
-alias gcheckout="git checkout $*"
-alias gcopatch="git checkout --patch $*"
+alias gadd="git add"
+alias gapatch="git add --patch"
+alias gcheckout="git checkout"
+alias gcopatch="git checkout --patch"
 
 alias gdiff="git diff"
 alias gstaged="git diff --no-ext-diff --staged"
 
-alias glog="git log --graph --decorate --oneline"
-alias gfollow="git log --follow --graph --decorate --oneline -10 -- "
+alias glog="git log --graph --decorate --oneline"                       # glog -N, N=number of lines
+alias gfollow="git log --follow --graph --decorate --oneline -10 -- "   # gfollow file
 
-alias gcommit="git commit -m"
+alias gcommit="git commit -m"                                           # gcommit "message"
 alias gamend="git commit --amend --no-edit"
 
-alias glist="git ls-tree -r master --name-only"
-alias gignoreall="git ls-files --others --exclude-standard >> .gitignore"
+alias glist="git ls-tree -r master --name-only"                           # list tracked files
+alias gignoreall="git ls-files --others --exclude-standard >> .gitignore" # ignore files currently untracked
+alias gclean="git clean -i"                                               # delete files currently untracked
 
 # Ignore and revert ignorance of changed files (temporary)
 # https://stackoverflow.com/a/23259612
-alias gignore="git update-index --assume-unchanged"
-alias gtrack="git update-index --no-assume-unchanged"
+alias gignore="git update-index --assume-unchanged"                       # gignore filename
+alias gignored="git ls-files -v | grep ^[a-z]"                            # list temporarily ignored files
+alias gtrack="git update-index --no-assume-unchanged"                     # gtrack filename
 
-# Track (true) or ignore (false) file mode changes
-alias gmode="git config core.fileMode"
+alias gmode="git config core.fileMode"                    # Track (true) or ignore (false) file mode changes
+
+# -----------------------------------------------------------------------------------------------------------
 
 # Set title to new terminals (windows/tabs)
 # https://askubuntu.com/a/886695
