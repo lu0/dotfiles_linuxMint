@@ -19,3 +19,6 @@
 [submodule "cinnamon/feh-blur-wallpaper"]
 	path = cinnamon/feh-blur-wallpaper
 	url = https://github.com/ngynLk/feh-blur-wallpaper
+[submodule "scripts/git-check-repos"]
+	path = scripts/git-check-repos
+	url = https://gist.github.com/mzabriskie/6631607

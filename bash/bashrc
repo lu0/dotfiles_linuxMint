@@ -143,9 +143,12 @@ function findln() {
 # find broken symlinks in current directory
 alias brokenln="find . -type l -exec test ! -e {} \; -print"
 
+# ----------- GIT ALIASES -----------------------------------------------------------------------------
+
+# Git status of current repo, submodules and tree.
 alias gstatus="git status"
-alias gbranches="git submodule foreach 'git status'"
-alias gclean="git clean -i"
+alias gsubmodules="git submodule foreach 'git status'"
+alias grepos="~/code/dotfiles_linuxMint/scripts/git-check-repos/git-status"
 
 alias gadd="git add $*"
 alias gapatch="git add --patch $*"
