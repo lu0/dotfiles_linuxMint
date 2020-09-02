@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # "Tile" (with gaps) active window down
-# Resolution: 1920 x 1080
+# Resolution: 1366 x 768
 #
 # Map this script to your preferred keybinding
 #
@@ -17,10 +17,10 @@ rx="$(xwininfo -id $(xdotool getactivewindow) | egrep "Relative upper-left X" | 
 gx="$(xwininfo -id $(xdotool getactivewindow) | egrep "Width" | cut -d ':' -f 2)"
 gy="$(xwininfo -id $(xdotool getactivewindow) | egrep "Height" | cut -d ':' -f 2)"
 
-if [[ "$gx" -lt 1864 || "$gy" -lt 1060 ]]; then
+if [[ "$gx" -lt 1323 || "$gy" -lt 753 ]]; then
     wmctrl -r :ACTIVE: -b remove,maximized_horz,maximized_vert
-    wmctrl -r :ACTIVE: -e 0,43,7,1863,1059    # dummy dimensions to avoid bugs
-    wmctrl -r :ACTIVE: -e 0,$((46 - fix)),$((10 - fix)),1864,1060
+    wmctrl -r :ACTIVE: -e 0,40,3,1324,754    # dummy dimensions to avoid bugs
+    wmctrl -r :ACTIVE: -e 0,$((35 - fix)),$((8 - fix)),1323,753
 else
-    wmctrl -r :ACTIVE: -e 0,$((458 - fix)),$((182 - fix)),1004,716
+    wmctrl -r :ACTIVE: -e 0,$((282 - fix)),$((132 - fix)),800,500
 fi
