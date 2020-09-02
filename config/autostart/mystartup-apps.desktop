@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=Opacify Windows
-Comment=Set transparency for unfocused windows
-Exec=opacify-windows.sh
+Name[en_US]=Startup Apps
+Comment[en_US]=Defined on ~/.myscripts/startup_session.sh
+Exec=startup_session.sh
 Type=Application
 X-GNOME-Autostart-enabled=true
 X-GNOME-Autostart-Delay=1

@@ -1,9 +1,9 @@
 [Desktop Entry]
-Type=Application
+Name[en_US]=Devilspie2
+Comment[en_US]=Maximize windows and add gaps
 Exec=devilspie2
+Type=Application
 X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Delay=1
 NoDisplay=false
 Hidden=false
-Name[en_US]=Devilspie
-Comment[en_US]=Window Customization
-X-GNOME-Autostart-Delay=1

@@ -47,8 +47,12 @@ sudo gdebi --non-interactive ~/Downloads/team-viewer.deb
 
 # Open source office suite compatible with msoffice
 sudo apt purge --autoremove libreoffice-common -y           # bye
-wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb -O ~/Downloads/onlyOffice.deb
-sudo gdebi --non-interactive ~/Downloads/onlyOffice.deb
+# wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb -O ~/Downloads/onlyOffice.deb
+# sudo gdebi --non-interactive ~/Downloads/onlyOffice.deb
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
+sudo sh -c "echo 'deb https://download.onlyoffice.com/repo/debian squeeze main' >> /etc/apt/sources.list"
+sudo apt-get update
+sudo apt-get install onlyoffice-desktopeditors
 
 # DEV TOOLS //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -71,6 +75,7 @@ sudo apt-get install neovim -y
 
 sudo apt-get install audacity -y
 sudo apt-get install soundconverter -y
+sudo apt-get install pavucontrol -y
 
 # Spotify 
 # (https://www.spotify.com/mx/download/linux/)
@@ -96,6 +101,8 @@ sudo gdebi --non-interactive ~/Downloads/virtual-box_u19.deb
 
 # System profiler and benchmark
 sudo apt-get install hardinfo -y
+sudo apt-get install python3-pip
+sudo pip3 install s-tui
 
 # bluetooth manager
 mkdir -p ~/Downloads/Bluetooth
