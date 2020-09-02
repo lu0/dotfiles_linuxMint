@@ -146,7 +146,7 @@ alias brokenln="find . -type l -exec test ! -e {} \; -print"
 # ----------- GIT ALIASES -----------------------------------------------------------------------------
 
 # Git status of current repo, submodules and tree.
-alias gstatus="git status"
+alias gstatus="git fetch && git status"
 alias gsubmodules="git submodule foreach 'git status'"
 alias grepos="~/code/dotfiles_linuxMint/scripts/git-check-repos/git-status"
 
