@@ -28,7 +28,7 @@ Bash theme and profile.
 ```zsh
 # Theme and fonts
 sudo cp -r fonts/source-code-pro/OTF /usr/share/fonts/opentype/source-code-pro
-ln -srf bash/fancy-bash.sh ~/.myscripts/
+mkdir ~/.myscripts && ln -srf bash/fancy-bash.sh ~/.myscripts/
 
 # Profiles and settings
 dconf load /org/gnome/terminal/ < dconf-files/gnome-terminal.conf
