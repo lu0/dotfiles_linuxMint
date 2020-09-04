@@ -14,7 +14,7 @@ debug_print("Class: " .. get_class_instance_name())
 if (get_window_type() == "WINDOW_TYPE_NORMAL") then
     set_on_top();
     focus();
-    set_window_geometry2(46-2, 10-2, 1864, 1060);
+    set_window_geometry2(35-2, 8-2, 1323, 753);
 end
 
 if (get_window_type() == "WINDOW_TYPE_DIALOG") then
@@ -70,6 +70,7 @@ end
 -- Workspace 8. Media
 if (get_application_name()=="Spotify" or 
     get_application_name()=="pavucontrol" or
+    get_class_instance_name()=="cinnamon-settings sound" or
     get_application_name()=="blueman-manager" or
     get_class_instance_name()=="audacity" or
     get_class_instance_name()=="kdenlive") then
