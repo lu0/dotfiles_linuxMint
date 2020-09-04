@@ -83,9 +83,5 @@ sleep 1 & nmcli networking on
 sleep 1
 play /usr/share/sounds/freedesktop/stereo/service-login.oga
 
-# ------- Undervolting -----------------------------------------------------
-sleep 5 && sudo undervolt --temp 75
-sleep 3 && sudo undervolt --core -60 --cache -60
-
 # ------- Enable notifications ---------------------------------------------
 sleep 5 && gsettings set org.cinnamon.desktop.notifications display-notifications true
