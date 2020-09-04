@@ -238,10 +238,10 @@ ln -srf scripts/nemo/print ~/.local/share/nemo/scripts/
 pkill nemo
 ```
 
-## Additional setup for Thinkpad X1Y3
+## Additional setup for Dell 5437
 
 ### Vim and media keys
-I use ```AltGr``` + ```H```,```J```,```K```,```L``` as arrow keys and ```U```,```I``` as Prior and Next keys; ```CapsLock``` is mapped to ```Escape``` and ```Shift```+```CapsLock``` to ```CapsLock```. Additionally, the Thinkpad X1Y3 does not have media keys, so I map ```Prior```, ```Next``` and ```↑``` to Previous track, Next track and Play/Pause.
+I use ```AltGr``` + ```H```,```J```,```K```,```L``` as arrow keys and ```U```,```I``` as Prior and Next keys; ```CapsLock``` is mapped to ```Escape``` and ```Shift```+```CapsLock``` to ```CapsLock```.
 ```zsh 
 # Dependencies
 sudo apt-get install xcape -y
@@ -258,7 +258,7 @@ mkdir -p ~/.config/autostart
 ln -srf config/autostart/keymappings.desktop ~/.config/autostart/
 ```
 
-### Battery Managment
+<!-- ### Battery Managment
 Change battery thresholds.
 ```zsh
 # Install TLP managment and dependencies
@@ -274,9 +274,9 @@ sudo tlp start
 
 # Check status
 battery         # If using the custom bash profile.
-```
+``` -->
 
-### Undervolting
+<!-- ### Undervolting
 Undervolt Intel CPU to decrease CPU temperatures.
 ```zsh
 # Install dependencies
@@ -288,4 +288,4 @@ sudo undervolt --core -120 --cache -120
 
 # Or set a temperature target of 75°C
 sudo undervolt --temp 75
-```
+``` -->
