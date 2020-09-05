@@ -25,9 +25,6 @@ code & sleep 1                       # Visual Studio Code (add -n if empty windo
 
 # General purpose terminal and Syncthing window (For Workspace 3)
 gnome-terminal & sleep 1
-sudo killall synergyc                                                  # kill synergy started from ~/.profile
-gnome-terminal -e "synergyc -f 192.168.100.23" & sleep 1
-
 syncthing -no-browser & sleep 1                                 # Start syncthing, don't use current vivaldi window.
 vivaldi --new-window "http://127.0.0.1:8384" & sleep 2          # Open syncthing on new window
 
@@ -45,8 +42,7 @@ spotify & sleep 10
 
 wmctrl -r "Start Page" -e 0,33,6,1323,753 && wmctrl -r Home -e 0,33,6,1323,753 & sleep 1
 
-wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert && wmctrl -r "(home)" -e 0,33,6,726,470 & sleep 1
-wmctrl -r "Terminal" -b remove,maximized_horz,maximized_vert && wmctrl -r "Terminal" -e 0,33,483,726,272 & sleep 1
+wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert && wmctrl -r "(home)" -e 0,33,6,726,753 & sleep 1
 
 wmctrl -r "| Syncthing" -b remove,maximized_horz,maximized_vert && wmctrl -r "| Syncthing" -e 0,769,10,588,753 & sleep 1
 
