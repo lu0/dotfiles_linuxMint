@@ -129,11 +129,11 @@ alias rm="rm -I"
 
 # -A almost all, -o list without group ingo, -F classify, 
 # -h human readable
-alias ll="ls -AoFh --group-directories-first --color=auto"
-alias l="ls -oFh --group-directories-first --color=auto"
+alias ll="ls -AoFh --group-directories-first --color=always"
+alias l="ls -oFh --group-directories-first --color=always"
 
-alias LL="ls -AoFLh --group-directories-first --color=auto"
-alias L="ls -oFLh --group-directories-first --color=auto"
+alias LL="ls -AoFLh --group-directories-first --color=always"
+alias L="ls -oFLh --group-directories-first --color=always"
 
 # find symlinks in current pointing to given directory
 function findln() {
@@ -146,7 +146,7 @@ alias brokenln="find . -type l -exec test ! -e {} \; -print"
 # ----------- GIT ALIASES -----------------------------------------------------------------------------
 
 # Git status of current repo, submodules and tree.
-alias gstatus="git status"
+alias gstatus="git fetch && git status"
 alias gsubmodules="git submodule foreach 'git status'"
 alias grepos="~/code/dotfiles_linuxMint/scripts/git-check-repos/git-status"
 
