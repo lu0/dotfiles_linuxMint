@@ -204,7 +204,8 @@ cd scripts
 source install-programs.sh
 
 # Enable custom startup apps
-ln -srf scripts/startup_session.sh ~/.myscripts/
+ln -srf startup_session.sh ~/.myscripts/
+cd ../
 
 # Create startup entry
 mkdir -p ~/.config/autostart
