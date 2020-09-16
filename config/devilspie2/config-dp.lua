@@ -70,6 +70,7 @@ end
 -- Workspace 8. Media
 if (get_application_name()=="Spotify" or 
     get_application_name()=="pavucontrol" or
+    get_class_instance_name()=="cinnamon-settings sound" or
     get_application_name()=="blueman-manager" or
     get_class_instance_name()=="audacity" or
     get_class_instance_name()=="kdenlive") then
