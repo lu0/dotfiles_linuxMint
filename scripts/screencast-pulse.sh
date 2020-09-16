@@ -28,6 +28,7 @@ else
         -i :0.0 \
         -f alsa \
         -i pulse \
+        -filter:a "volume=4.0" \
         -c:v h264 -vf scale=out_color_matrix=bt709 -pix_fmt yuv420p \
         -movflags faststart \
         -r 30 \
