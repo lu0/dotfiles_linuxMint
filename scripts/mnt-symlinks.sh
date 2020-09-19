@@ -23,10 +23,13 @@ rm -rf ~/Public && ln -sf /mnt/Data/HomeDir/public ~/public
 rm -rf /mnt/Data/HomeDir/code/ && ln -sf ~/code /mnt/Data/HomeDir/code
 rm -rf ~/artwork && ln -sf /mnt/Data/HomeDir/artwork ~/artwork
 rm -rf ~/mobile && ln -sf /mnt/Data/HomeDir/mobile ~/mobile
+rm -rf ~/momi && ln -sf /mnt/Data/HomeDir/momi ~/momi
 rm -rf ~/.dotfiles_linuxMint && ln -sf ~/code/dotfiles_linuxMint ~/.dotfiles_linuxMint
 
 # Icons for my folders
 gio set code/ -t string metadata::custom-icon-name folder-code
 gio set artwork/ -t string metadata::custom-icon-name folder-applications
 gio set mobile/ -t string metadata::custom-icon-name folder-android
+gio set momi/ -t string metadata::custom-icon-name folder-image-people
+gio set public/ -t string metadata::custom-icon-name folder-network
 gio set .dotfiles_linuxMint/ -t string metadata::custom-icon-name folder-activities
