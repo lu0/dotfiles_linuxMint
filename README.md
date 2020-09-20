@@ -278,15 +278,24 @@ battery         # If using the custom bash profile.
 ```
 
 ### Undervolting
-Undervolt Intel CPU to decrease CPU temperatures.
+[Undervolt](https://github.com/georgewhewell/undervolt) Intel CPU to decrease CPU temperatures.
 ```zsh
 # Install dependencies
 sudo apt-get install python3-pip
 sudo pip3 install undervolt
 
 # I Undervolt by 120mV
-sudo undervolt --core -120 --cache -120
+sudo undervolt --core -100 --cache -10
 
-# Or set a temperature target of 75°C
-sudo undervolt --temp 75
+# Or set a temperature target of 70°C
+sudo undervolt --temp 70
+```
+Run at startup
+```zsh
+sudo ln -srf config/undervolt.service /etc/systemd/system/
+```
+Check if script works, then enable it:
+```zsh
+systemctl start undervolt
+systemctl enable undervolt
 ```

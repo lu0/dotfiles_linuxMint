@@ -1,0 +1,16 @@
+[Unit]
+Description=undervolt
+After=suspend.target
+After=hibernate.target
+After=hybrid-sleep.target
+
+[Service]
+Type=oneshot
+# If you have installed undervolt globally (via sudo pip install):
+ExecStart=/usr/local/bin/undervolt -v --core -100 --cache -100 --temp 70
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=suspend.target
+WantedBy=hibernate.target
+WantedBy=hybrid-sleep.target
