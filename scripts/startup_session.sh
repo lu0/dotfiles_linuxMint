@@ -33,11 +33,11 @@ vivaldi --new-window "http://127.0.0.1:8384" & sleep 1          # Open syncthing
 # Web window for App under development (https://github.com/orlando26/cubing-mty-app)
 vivaldi --new-window "http://localhost:8100" "https:/localhost:8080/swagger-ui.html" "github.com/orlando26/cubing-mty-app" "github.com/orlando26/cubing-mty-app" & sleep 1
 
-# Web window for Social media and Mail
-vivaldi --new-window "www.messenger.com/t/lu0ear" "web.whatsapp.com" "app.slack.com/client/T011D2D3RQF/C011D2D3SBZ" "mail.google.com/mail/u/0/#inbox" "outlook.office.com/mail/inbox" "mail.google.com/mail/u/1/#inbox" "trello.com/lu0ear/boards" & sleep 1
+# Web window for Social media, Mail and Calendar
+vivaldi --new-window "calendar.google.com/calendar/u/0/r/agenda" "web.whatsapp.com" "www.messenger.com/t/lu0ear" "mail.google.com/mail/u/0/#inbox" "outlook.office.com/mail/inbox" "mail.google.com/mail/u/1/#inbox" "trello.com/lu0ear/boards" "app.slack.com/client/T011D2D3RQF/C011D2D3SBZ" & sleep 1
 
 # Spotify (for Workspace 5)
-spotify & sleep 3
+spotify & sleep 5
 
 
 # ----------- Resize windows -----------------------------------------------
@@ -54,7 +54,7 @@ wmctrl -r "Visual Studio Code" -b remove,maximized_horz,maximized_vert && wmctrl
 # Vivaldi window for App dev.
 wmctrl -r "localhost" -b remove,maximized_horz,maximized_vert && wmctrl -r "localhost" -e 0,1183,10,727,1060 & sleep 0.5
 
-wmctrl -r "messenger" -e 0,46,10,1864,1060 && wmctrl -r Spotify Premium -e 0,46,10,1864,1060 & sleep 0.5
+wmctrl -r "messenger" -e 0,46,10,1864,1060 && wmctrl -r Spotify Premium -e 0,46,10,1864,1060 & sleep 1
 
 
 # ----------- Move windows to desired workspaces ---------------------------
@@ -70,7 +70,7 @@ wmctrl -r Spotify Premium -t 7
 
 
 # ------ Focus on 2nd workspace (production) -------------------------------
-sleep 0.5 && wmctrl -s 2
+sleep 1 && wmctrl -s 2
 
 
 # ------- Enable networking (faster loading on web windows) ----------------
@@ -78,12 +78,7 @@ sleep 0.5 && nmcli networking on
 
 # ------- Play sound when ready --------------------------------------------
 # cpuLoad=`mpstat 2 1 | awk 'END{print 100-$NF}'`
-sleep 1
-play /usr/share/sounds/freedesktop/stereo/service-login.oga
-
-# ------- Undervolting -----------------------------------------------------
-sleep 5 && sudo undervolt --temp 75
-sleep 3 && sudo undervolt --core -60 --cache -60
+sleep 1 && play /usr/share/sounds/freedesktop/stereo/service-login.oga
 
 # ------- Enable notifications ---------------------------------------------
-sleep 10 && gsettings set org.cinnamon.desktop.notifications display-notifications true
+sleep 5 && gsettings set org.cinnamon.desktop.notifications display-notifications true
