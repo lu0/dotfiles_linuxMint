@@ -2,6 +2,10 @@
 
 # Create new Github repo and push from current directory
 #
+# You'll need to create a token, as password authentication is deprecated.
+#   https://github.com/settings/tokens
+# Save your token in a file named ".git-token" in your home directory
+# 
 # github.com/lu0/.dotfiles_linuxMint/scripts
 #
 # Credits to bennedich:
@@ -39,9 +43,9 @@ if [ "$CONTINUE" != "y" ]; then
   exit
 fi
 
-curl -u $GITUSER https://api.github.com/user/repos -d "{\"name\": \"$REPONAME\", \"description\": \"${DESCRIPTION}\", \"private\": $IS_PRIVATE}"
+TOKEN=$(cat ~/.git-token)
+
+curl -u $GITUSER:$TOKEN https://api.github.com/user/repos -d "{\"name\": \"$REPONAME\", \"description\": \"${DESCRIPTION}\", \"private\": $IS_PRIVATE}"
 
 git remote add origin https://github.com/$GITUSER/$REPONAME.git
 git push origin master
-
-echo -e "\nDONE: { $REPONAME } has been push to Github"
