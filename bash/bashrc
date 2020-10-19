@@ -120,6 +120,11 @@ export NVM_DIR="$HOME/.nvm"
 
 # Aliases, functions and commands I use ------------------------------------------------------------
 
+alias dusingle="sudo du -sh"              # size of directory
+alias duall="sudo du -hd 1 . | sort -h"   # size of subdirectories (1st level)
+
+alias calculator="gcalccmd"
+
 alias battery="sudo tlp-stat -b"
 alias fullcharge="sudo tlp fullcharge"
 
