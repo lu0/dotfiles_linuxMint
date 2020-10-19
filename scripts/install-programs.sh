@@ -23,8 +23,8 @@ sudo apt-get install gimp -y
 # GAMES //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 # Steam (ipv4) 
-wget -4 https://repo.steampowered.com/steam/archive/precise/steam_latest.deb -O ~/Downloads/steam.deb
-sudo gdebi --non-interactive ~/Downloads/steam.deb
+wget -4 https://repo.steampowered.com/steam/archive/precise/steam_latest.deb -O ~/loads/steam.deb
+sudo gdebi --non-interactive ~/loads/steam.deb
 
 
 # INTERNET ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -40,15 +40,15 @@ cp -r Default ~/.config/vivaldi
 cd ..
 
 # Team viewer
-wget -4 https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O ~/Downloads/team-viewer.deb
-sudo gdebi --non-interactive ~/Downloads/team-viewer.deb
+wget -4 https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O ~/loads/team-viewer.deb
+sudo gdebi --non-interactive ~/loads/team-viewer.deb
 
 # OFFICE /////////////////////////////////////////////////////////////////////////////////////////////////
 
 # Open source office suite compatible with msoffice
 sudo apt purge --autoremove libreoffice-common -y           # bye
-# wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb -O ~/Downloads/onlyOffice.deb
-# sudo gdebi --non-interactive ~/Downloads/onlyOffice.deb
+# wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb -O ~/loads/onlyOffice.deb
+# sudo gdebi --non-interactive ~/loads/onlyOffice.deb
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
 sudo sh -c "echo 'deb https://download.onlyoffice.com/repo/debian squeeze main' >> /etc/apt/sources.list"
 sudo apt-get update
@@ -96,8 +96,8 @@ sudo apt-get install gparted -y
 # sudo apt-get install dconf-editor -y # System configuration tool
 
 # Virtual box (ubuntu > 19.04)
-wget https://download.virtualbox.org/virtualbox/6.1.10/virtualbox-6.1_6.1.10-138449~Ubuntu~eoan_amd64.deb -O ~/Downloads/virtual-box_u19.deb
-sudo gdebi --non-interactive ~/Downloads/virtual-box_u19.deb
+wget https://download.virtualbox.org/virtualbox/6.1.10/virtualbox-6.1_6.1.10-138449~Ubuntu~eoan_amd64.deb -O ~/loads/virtual-box_u19.deb
+sudo gdebi --non-interactive ~/loads/virtual-box_u19.deb
 
 # System profiler and benchmark
 sudo apt-get install hardinfo -y
@@ -105,6 +105,6 @@ sudo apt-get install python3-pip
 sudo pip3 install s-tui
 
 # bluetooth manager
-mkdir -p ~/Downloads/Bluetooth
+mkdir -p ~/loads/Bluetooth
 sudo apt-get install blueman -y
 
