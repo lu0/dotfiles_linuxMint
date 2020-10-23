@@ -86,6 +86,17 @@ sudo apt-get update && sudo apt-get install spotify-client -y
 # Camera
 sudo apt-get install cheese -y
 
+# Droidcam
+# https://randomblog.hu/using-your-android-phone-as-a-webcam-for-ubuntu-20-04-with-droidcam/
+sudo apt-get install adb -y         
+sudo apt-get install gcc make -y
+mkdir tmp/ && cd tmp/
+wget https://www.dev47apps.com/files/linux/droidcam_latest.zip
+unzip droidcam_latest.zip -d droidcam && cd droidcam
+sudo ./install
+cd ../../
+rm -rf tmp/
+
 # Video editor
 sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
 sudo apt-get update && sudo apt-get install kdenlive -y

@@ -193,6 +193,7 @@ Programs, apps and packages I use:
   - Sound converter
   - Spotify
   - Cheese (webcam)
+  - Droidcam (webcam)
   - KDEnLive (video editor)
 * Administration
   - GParted
@@ -210,6 +211,7 @@ cd ../
 # Create startup entry
 mkdir -p ~/.config/autostart
 ln -srf config/autostart/mystartup-apps.desktop ~/.config/autostart/
+sudo ln -srf config/autostart/droidcam.desktop /usr/share/applications/
 
 # Disable some default startup apps
 ln -srf $HOME/.dotfiles_linuxMint/config/autostart/* $HOME/.config/autostart/

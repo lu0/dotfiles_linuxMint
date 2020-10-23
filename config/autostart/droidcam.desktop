@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Droidcam
+Comment=Use your android phone as a webcam
+Icon=/usr/share/icons/Papirus/48x48@2x/apps/distributor-logo-android.svg
+Exec=droidcam
+Terminal=false
+Type=Application
+Categories=
+X-GNOME-Autostart-enabled=false
