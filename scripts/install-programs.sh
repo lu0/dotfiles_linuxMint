@@ -6,7 +6,7 @@
 # github.com/lu0/dotfiles_linuxMint
 # 
 
-# GRAPHICS ///////////////////////////////////////////////////////////////////////////////////////////////////
+# GRAPHICS ///////////////////////////////////////////////////////////
 
 # Krita (scketch w/stylus)
 add-apt-repository ppa:kritalime/ppa -y
@@ -20,21 +20,21 @@ sudo apt-get install inkscape -y
 sudo apt-get install gimp -y
 
 
-# GAMES //////////////////////////////////////////////////////////////////////////////////////////////////////
+# GAMES //////////////////////////////////////////////////////////////
 
 # Steam (ipv4) 
 wget -4 https://repo.steampowered.com/steam/archive/precise/steam_latest.deb -O ~/loads/steam.deb
 sudo gdebi --non-interactive ~/loads/steam.deb
 
-
-# INTERNET ////////////////////////////////////////////////////////////////////////////////////////////////
+# INTERNET /////////////////////////////////////////////////////////////////////
 
 # Vivaldi Browser 
 # (help.vivaldi.com/article/obtaining-official-builds/)
 wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository 'deb https://repo.vivaldi.com/archive/deb/ stable main'
 sudo apt update && sudo apt install vivaldi-stable -y
-cd ../vivaldi-setup                                        # Setup from submodule: github.com/lu0/vivaldi-setup
+cd ../vivaldi-setup                                            # Setup
+from submodule: github.com/lu0/vivaldi-setup
 mkdir -p ~/.config/vivaldi
 cp -r Default ~/.config/vivaldi
 cd ..
@@ -43,7 +43,7 @@ cd ..
 wget -4 https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O ~/loads/team-viewer.deb
 sudo gdebi --non-interactive ~/loads/team-viewer.deb
 
-# OFFICE /////////////////////////////////////////////////////////////////////////////////////////////////
+# OFFICE /////////////////////////////////////////////////////////////
 
 # Open source office suite compatible with msoffice
 sudo apt purge --autoremove libreoffice-common -y           # bye
@@ -54,7 +54,7 @@ sudo sh -c "echo 'deb https://download.onlyoffice.com/repo/debian squeeze main' 
 sudo apt-get update
 sudo apt-get install onlyoffice-desktopeditors
 
-# DEV TOOLS //////////////////////////////////////////////////////////////////////////////////////////////
+# DEV TOOLS //////////////////////////////////////////////////////////
 
 # VSCode
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -63,7 +63,7 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microso
 sudo apt-get install apt-transport-https -y
 sudo apt-get update && sudo apt-get install code -y
 
-# Setup vscode:
+#   Setup vscode:
 cd vscode-settings
 ./setup-symlinks.sh                 # Symlinks to config files
 ./install_extensions.sh             # Extension list
@@ -71,7 +71,11 @@ cd ..
 
 sudo apt-get install neovim -y
 
-# SOUND & VIDEO /////////////////////////////////////////////////////////////////////////////////////////
+# Anaconda
+sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+
+
+# SOUND & VIDEO //////////////////////////////////////////////////////
 
 sudo apt-get install audacity -y
 sudo apt-get install soundconverter -y
