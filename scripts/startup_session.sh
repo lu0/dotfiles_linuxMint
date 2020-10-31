@@ -16,6 +16,7 @@
 # --------- Start applications -----------------------------------------------
 
 # Web browser, file explorer and VSCode
+sleep 1
 vivaldi & sleep 1
 nemo & sleep 1
 code & sleep 1
@@ -30,7 +31,7 @@ vivaldi --new-window "http://localhost:8100" "https:/localhost:8080/swagger-ui.h
 syncthing -no-browser & vivaldi --new-window "http://127.0.0.1:8384" & sleep 1
 
 # Calendar, Mail and Social media
-vivaldi --new-window "calendar.google.com/calendar/u/0/r/customday" "web.whatsapp.com" "www.messenger.com/t/lu0ear" "app.slack.com/client/T011D2D3RQF/C011D2D3SBZ" "trello.com/lu0ear/boards" "mail.google.com/mail/u/1/#inbox" "outlook.office.com/mail/inbox" "mail.google.com/mail/u/0/#inbox" & sleep 3
+vivaldi --new-window "calendar.google.com/calendar/u/0/r/customday" "web.whatsapp.com" "www.messenger.com/t/lu0alv" "app.slack.com/client/T011D2D3RQF/C011D2D3SBZ" "trello.com/lu0ear/boards" "mail.google.com/mail/u/1/#inbox" "outlook.office.com/mail/inbox" "mail.google.com/mail/u/0/#inbox" & sleep 3
 
 # Spotify (for Workspace 5)
 spotify & sleep 8
