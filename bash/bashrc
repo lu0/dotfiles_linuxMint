@@ -119,6 +119,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # Aliases, functions and commands I use ------------------------------------------------------------
+alias open="xdg-open 2>/dev/null"         # open any file
 
 alias dusingle="sudo du -sh"              # size of directory
 alias duall="sudo du -hd 1 . | sort -h"   # size of subdirectories (1st level)
@@ -134,11 +135,26 @@ alias rm="rm -I"
 
 # -A almost all, -o list without group ingo, -F classify, 
 # -h human readable
-alias ll="ls -AoFh --group-directories-first --color=always"
-alias l="ls -oFh --group-directories-first --color=always"
+# https://unix.stackexchange.com/questions/205158/how-to-show-only-the-last-k-columns-in-ls-l
 
-alias LL="ls -AoFLh --group-directories-first --color=always"
-alias L="ls -oFLh --group-directories-first --color=always"
+# WITHOUT SYMLINKS
+# list unhidden and hidden
+alias l="ls -lgoLFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
+alias ll="ls -AlgoLFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
+
+# list unhidden and hidden, kby size
+alias sl="ls -SlgoLFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
+alias sll="ls -SAlgoLFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
+
+# WITH SYMLINKS
+# list unhidden and hidden
+alias L="ls -lgoFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
+alias LL="ls -AlgoFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
+
+# list unhidden and hidden, by size
+alias sL="ls -lgoFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
+alias sLL="ls -AlgoFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
+
 
 # find symlinks in current pointing to given directory
 function findln() {
