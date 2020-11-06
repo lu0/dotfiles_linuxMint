@@ -55,3 +55,16 @@ keysym p = p P Next Next Next
 keysym Left = Mode_switch leftarrow
 keysym Right = Mode_switch rightarrow
 keysym Down = Mode_switch downarrow
+
+! Numbers 
+!----------------------------------------------------------
+keysym c = c C 1 1
+keysym v = v V 2 2
+keysym b = b B 3 3
+keysym d = d D 4 4
+keysym f = f F 5 5
+keysym g = g G 6 6
+keysym e = e E 7 7
+keysym r = r R 8 8
+keysym t = t T 9 9
+keysym space = space space 0 0 space
