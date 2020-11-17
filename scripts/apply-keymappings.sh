@@ -9,8 +9,8 @@ setxkbmap -option
 setxkbmap latam
 # setxkbmap us set-keymap us  # english(us)
 
+# Swap caps and escape keys
+setxkbmap -option caps:swapescape
+
 # Media and vim keys
 xmodmap ~/.myscripts/.customkeys-config.lst
-
-# Modifier as escape
-xcape -e 'Mode_switch=Escape'

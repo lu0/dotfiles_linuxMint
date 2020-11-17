@@ -38,9 +38,10 @@ keysym braceleft = braceleft bracketleft dead_circumflex braceleft dead_circumfl
 keysym plus = plus asterisk asciitilde dead_macron asciitilde
 keysym apostrophe = apostrophe question backslash questiondown backslash questiondown backslash
 
-! Caps lock as Mode_switch (later mapped to escape)
-! Shift + Caps lock as Caps lock
-keysym Caps_Lock = Mode_switch Caps_Lock Mode_switch
+# Remap parenthesis and disable them in the normal position
+keysym less = less greater parenleft parenright
+keysym 8 = 8 NoSymbol 8 NoSymbol bracketleft trademark bracketleft trademark 8 NoSymbol bracketleft trademark
+keysym 9 = 9 NoSymbol 9 NoSymbol bracketright plusminus bracketright plusminus 9 NoSymbol bracketright plusminus
 
 keysym h = h H Left Left Left
 keysym l = l L Right Right Right
@@ -58,13 +59,13 @@ keysym Down = Mode_switch downarrow
 
 ! Numbers 
 !----------------------------------------------------------
-keysym c = c C 1 1
-keysym v = v V 2 2
-keysym b = b B 3 3
-keysym d = d D 4 4
-keysym f = f F 5 5
-keysym g = g G 6 6
-keysym e = e E 7 7
-keysym r = r R 8 8
-keysym t = t T 9 9
-keysym space = space space 0 0 space
+keysym x = x X 1 1
+keysym c = c C 2 2
+keysym v = v V 3 3
+keysym s = s S 4 4
+keysym d = d D 5 5
+keysym f = f F 6 6
+keysym w = w W 7 7
+keysym e = e E 8 8
+keysym r = r R 9 9
+keysym z = z Z 0 0
