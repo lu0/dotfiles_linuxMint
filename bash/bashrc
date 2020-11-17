@@ -137,24 +137,32 @@ alias rm="rm -I"
 # -h human readable
 # https://unix.stackexchange.com/questions/205158/how-to-show-only-the-last-k-columns-in-ls-l
 
-# WITHOUT SYMLINKS
-# list unhidden and hidden
-alias l="ls -lgoLFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
-alias ll="ls -AlgoLFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
+list_message() {
+  GREEN='\033[0;32m'                                    # ANSI code
+  NC='\033[0m'                                          # ANSI No Color
+  MESSAGE=$1
+  printf "${GREEN}${MESSAGE}${NC}\n"
+}
 
-# list unhidden and hidden, kby size
-alias sl="ls -SlgoLFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
-alias sll="ls -SAlgoLFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
+l () {  # arg1: path, arg2: s (sort by size)
+  list_message "LISTING NO HIDDEN, NO SYMLINKS"
+  ls -lgoLFh${2^^} --group-directories-first --color=always "${1:-.}" | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'
+}
 
-# WITH SYMLINKS
-# list unhidden and hidden
-alias L="ls -lgoFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
-alias LL="ls -AlgoFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
+ll () {
+  list_message "LISTING HIDDEN, NO SYMLINKS"
+  ls -AlgoLFh${2^^} --group-directories-first --color=always "${1:-.}" | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'
+}
 
-# list unhidden and hidden, by size
-alias sL="ls -lgoFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
-alias sLL="ls -AlgoFh --group-directories-first --color=always | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'"
+L () {
+  list_message "LISTING NO HIDDEN, SYMLINKS"
+  ls -lgoFh${2^^} --group-directories-first --color=always "${1:-.}" | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'
+}
 
+LL () {
+  list_message "LISTING HIDDEN, SYMLINKS"
+  ls -AlgoFh${2^^} --group-directories-first --color=always "${1:-.}" | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'
+}
 
 # find symlinks in current pointing to given directory
 function findln() {
@@ -214,7 +222,7 @@ alias gapatch="git add --patch"
 alias gcheckout="git checkout"
 alias gcopatch="git checkout --patch"
 
-alias gdiff="git diff"
+alias gdiff="git diff --color"
 alias gstaged="git diff --no-ext-diff --staged"
 
 alias glog="git log --graph --decorate --oneline"                       # glog -N, N=number of lines
