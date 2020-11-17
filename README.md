@@ -301,3 +301,50 @@ Check if script works, then enable it:
 systemctl start undervolt
 systemctl enable undervolt
 ```
+
+### Fingerprint login
+The Thinkpad X1Y3 uses the 06cb:009a fingerprint reader, according to:
+```zsh
+lsusb | grep "Synaptics"
+```
+This device is not supported by the widely used [fprint](https://fprint.freedesktop.org/supported-devices.html), however, it supported by the new [python-validity](https://github.com/uunicorn/python-validity). 
+
+These are the steps to setup the fingerprint reader for the terminal and the Lock Screen. 
+```zsh
+# Install python-validity
+sudo add-apt-repository ppa:uunicorn/open-fprintd
+sudo apt-get update
+sudo apt install open-fprintd fprintd-clients python3-validity
+
+# The above will reset my keymappings :C
+apply-keymappings.sh    # reapply my keymappings
+
+# Scan fingerprints
+fprintd-enroll          # scan finger ~10 times
+fprintd-verify          # scan finger once
+
+# Enable the fingerprint for authentication
+# Select "Fingerprint authentication" with space bar
+sudo pam-auth-update    
+```
+
+**NOTE**: The Login Screen does not unlock the Keyring using biometrics (read [this](https://github.com/uunicorn/python-validity/issues/32) issue), it would ask for the sudo password anyway, so I disabled the fingerprint reader there ([SDDM](##-Display-manager) in my case). Open `/etc/pam.d/sddm` and paste the following after '`@include common-auth`':
+
+```zsh
+# @include common-auth  # comment to disable the fingerprint reader
+auth [success=1 default=ignore]	pam_unix.so nullok_secure try_first_pass
+auth requisite pam_deny.so
+auth required  pam_permit.so
+auth optional  pam_ecryptfs.so unwrap
+auth optional  pam_cap.so
+# end of pam-auth-update config
+```
+
+Force a factory reset ONLY if you need to re-scan your fingerprints:
+```zsh
+sudo systemctl stop python3-validity
+sudo python3 /usr/share/python-validity/playground/factory-reset.py
+sudo systemctl start python3-validity
+fprintd-enroll
+fprintd-verify
+```
