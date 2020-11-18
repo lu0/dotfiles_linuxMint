@@ -38,7 +38,7 @@ keysym braceleft = braceleft bracketleft dead_circumflex braceleft dead_circumfl
 keysym plus = plus asterisk asciitilde dead_macron asciitilde
 keysym apostrophe = apostrophe question backslash questiondown backslash questiondown backslash
 
-# Remap parenthesis and disable them in the normal position
+! Remap parenthesis and disable them in the normal position
 keysym less = less greater parenleft parenright
 keysym 8 = 8 NoSymbol 8 NoSymbol bracketleft trademark bracketleft trademark 8 NoSymbol bracketleft trademark
 keysym 9 = 9 NoSymbol 9 NoSymbol bracketright plusminus bracketright plusminus 9 NoSymbol bracketright plusminus
