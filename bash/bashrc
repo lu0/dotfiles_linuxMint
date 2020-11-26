@@ -228,7 +228,15 @@ alias gdiff="git diff --color"
 alias gtree="git diff-tree -p"    # diff of commit, gtree COMMITHASH
 alias gstaged="git diff --no-ext-diff --staged"
 
-alias glog="git log --graph --decorate --oneline"                       # glog -N, N=number of lines
+# From https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-log.html
+# Formats section
+# glog -N   N=number of lines
+# %h        commit hash, abbreviated
+# %ar       author date, relative
+# %an       author name
+# %d        ref names
+# %s        subject, message
+alias glog="git log --graph --pretty=format:'%C(yellow)%h %C(red)%ar %C(cyan)%an%C(green)%d %Creset%s'"
 alias gfollow="git log --follow --graph --decorate --oneline -10 -- "   # gfollow file
 
 alias gcommit="git commit -m"                                           # gcommit "message"
