@@ -69,7 +69,7 @@ sudo ln -srf config/environment /etc/environment
 ```
 You might need to logout and login to session after this.
 
-### Set transparency for unfocused windows
+<!-- ### Set transparency for unfocused windows
 ```zsh
 # Install dependencies
 sudo apt-get install xdotool wmctrl -y
@@ -82,7 +82,7 @@ ln -srf cinnamon/opacify_windows.sh ~/.myscripts/opacify-windows.sh
 mkdir -p ~/.config/autostart
 ln -srf config/autostart/opacify_windows.desktop ~/.config/autostart/
 ```
-Restart the user's session.
+Restart the user's session. -->
 
 ### Icons and Themes
 ```zsh
