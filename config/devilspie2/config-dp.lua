@@ -55,11 +55,11 @@ if (get_application_name()=="nemo") then
 end
 
 -- Workspace 5. System workspace
-if (get_application_name()=="cinnamon-settings.py") then
-    set_window_geometry(44, 8, 1864, 1060);
-    set_window_workspace(5);
-    change_workspace(5);
-end
+-- if (get_application_name()=="cinnamon-settings.py") then
+--     set_window_geometry(44, 8, 1864, 1060);
+--     set_window_workspace(5);
+--     change_workspace(5);
+-- end
 
 -- Workspace 7. Gaming workspace
 if (get_class_instance_name()=="Steam") then
@@ -69,9 +69,9 @@ end
 
 -- Workspace 8. Media
 if (get_application_name()=="Spotify" or 
-    get_application_name()=="pavucontrol" or
-    get_class_instance_name()=="cinnamon-settings sound" or
-    get_application_name()=="blueman-manager" or
+    -- get_application_name()=="pavucontrol" or
+    -- get_class_instance_name()=="cinnamon-settings sound" or
+    -- get_application_name()=="blueman-manager" or
     get_class_instance_name()=="audacity" or
     get_class_instance_name()=="kdenlive") then
     set_window_workspace(8);
