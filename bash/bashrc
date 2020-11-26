@@ -238,6 +238,7 @@ alias gstaged="git diff --no-ext-diff --staged"
 # %s        subject, message
 alias glog="git log --graph --pretty=format:'%C(yellow)%h %C(red)%ar %C(cyan)%an%C(green)%d %Creset%s'"
 alias gfollow="git log --follow --graph --decorate --oneline -10 -- "   # gfollow file
+alias guser="git config user.name; git config user.email"               # user on current dir
 
 alias gcommit="git commit -m"                                           # gcommit "message"
 alias gamend="git commit --amend --no-edit"
