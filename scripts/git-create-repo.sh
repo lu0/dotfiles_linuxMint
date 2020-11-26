@@ -35,7 +35,7 @@ else
   IS_PRIVATE=false
 fi
 
-echo -e "\nAfter this operation, { $REPONAME } will be pushed to Github as a { $PRIVACY } repository"
+echo -e "\nAfter this operation, { $REPONAME } will be pushed to Github as a { $PRIVACY } repository for { $GITUSER }"
 read -p "Do you want to continue? [y/n] " CONTINUE
 
 if [ "$CONTINUE" != "y" ]; then
