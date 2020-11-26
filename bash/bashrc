@@ -222,10 +222,10 @@ alias grepos="~/code/dotfiles_linuxMint/scripts/git-check-repos/git-status"
 
 alias gadd="git add"
 alias gapatch="git add --patch"
-alias gcheckout="git checkout"
 alias gcopatch="git checkout --patch"
 
 alias gdiff="git diff --color"
+alias gtree="git diff-tree -p"    # diff of commit, gtree COMMITHASH
 alias gstaged="git diff --no-ext-diff --staged"
 
 alias glog="git log --graph --decorate --oneline"                       # glog -N, N=number of lines
