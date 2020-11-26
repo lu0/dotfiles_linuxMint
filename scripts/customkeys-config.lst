@@ -49,8 +49,8 @@ keysym k = k K Up Up Up
 keysym j = j J Down Down Down 
 keysym i = i I Home Home Home
 keysym o = o O End End End
-keysym u = u U Prior Prior Prior
-keysym p = p P Next Next Next
+! keysym u = u U Prior Prior Prior
+! keysym p = p P Next Next Next
 
 ! Disable other arrow keys
 keysym Left = Mode_switch leftarrow
