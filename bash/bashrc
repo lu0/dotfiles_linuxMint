@@ -129,6 +129,9 @@ alias calculator="gcalccmd"
 alias battery="sudo tlp-stat -b"
 alias fullcharge="sudo tlp fullcharge"
 
+alias mic2speaker-on="pactl load-module module-loopback latency_msec=1"
+alias mic2speaker-off="pactl unload-module module-loopback"
+
 alias cp="cp -riv"                                           # verbose
 alias mkdir="mkdir -pv"                                      # parent, verbose
 alias rm="rm -I"
