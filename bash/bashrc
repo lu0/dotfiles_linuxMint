@@ -230,6 +230,7 @@ alias gcopatch="git checkout --patch"
 alias gdiff="git diff --color"
 alias gtree="git diff-tree -p"    # diff of commit, gtree COMMITHASH
 alias gstaged="git diff --no-ext-diff --staged"
+alias gmerge="git merge --no-commit --no-ff"    # gmerge BRANCH_NAME
 
 # From https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-log.html
 alias glog="git log --graph --pretty=format:'%C(yellow)%h %C(red)%ar %C(cyan)%an%C(green)%d %Creset%s'"
