@@ -17,10 +17,21 @@ rx="$(xwininfo -id $(xdotool getactivewindow) | egrep "Relative upper-left X" | 
 gx="$(xwininfo -id $(xdotool getactivewindow) | egrep "Width" | cut -d ':' -f 2)"
 gy="$(xwininfo -id $(xdotool getactivewindow) | egrep "Height" | cut -d ':' -f 2)"
 
+# Get X, Y, SCREEN and WINDOW
+eval $(xdotool getmouselocation --shell)
 if [[ "$gx" -lt 1864 || "$gy" -lt 1060 ]]; then
     wmctrl -r :ACTIVE: -b remove,maximized_horz,maximized_vert
     wmctrl -r :ACTIVE: -e 0,43,7,1863,1059    # dummy dimensions to avoid bugs
-    wmctrl -r :ACTIVE: -e 0,$((46 - fix)),$((10 - fix)),1864,1060
+    if [ $Y -le 1080 ]; then
+        wmctrl -r :ACTIVE: -e 0,$((46 - fix)),$((10 - fix)),1864,1060
+    else
+        wmctrl -r :ACTIVE: -e 0,$((46 + 16 - fix)),$((10 + 1080 - fix)),1864,1060
+    fi
 else
-    wmctrl -r :ACTIVE: -e 0,$((458 - fix)),$((182 - fix)),1004,716
+    if [ $Y -le 1080 ]; then
+        wmctrl -r :ACTIVE: -e 0,$((458 - fix)),$((182 - fix)),1004,716
+    else
+        wmctrl -r :ACTIVE: -e 0,$((458 + 16 - fix)),$((182 + 1080 - fix)),1004,716
+    fi
 fi
+
