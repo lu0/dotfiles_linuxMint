@@ -7,7 +7,7 @@
 
 cd dconf-files
 dconf load / < cinnamon-theme.conf
-dconf load / < desktop-keybindings.conf
+dconf load /org/cinnamon/desktop/keybindings/ < cinnamon-shortcuts.conf
 dconf load /org/gnome/terminal/ < gnome-terminal.conf
 dconf load / < miscellaneous.conf
 dconf load / < nemo-fileman.conf

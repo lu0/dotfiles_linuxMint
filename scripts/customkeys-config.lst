@@ -22,7 +22,7 @@ keysym Prior = XF86AudioPrev Prior
 keysym Next = XF86AudioNext Next
 
 ! Screenshots
-! PrintScr as context menu, Use Super to activate PrintScr (in desktop-keybindings.conf)
+! PrintScr as context menu, Use Super to activate PrintScr (set in cinnamon-shortcuts.conf)
 keysym Print = Menu NoSymbol Menu
 
 ! Vim keys -----------------------------------------------------------------------

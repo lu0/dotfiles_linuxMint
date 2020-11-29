@@ -18,7 +18,7 @@ sudo apt-get install dconf-editor -y    # System configuration tool
 Load keybindings I use.
 ```zsh
 # Cinnamon
-dconf load / < ~/.dotfiles_linuxMint/dconf-files/desktop-keybindings.conf
+dconf load /org/cinnamon/desktop/keybindings/ < dconf-files/cinnamon-shortcuts.conf
 ```
 
 ## Terminal
