@@ -24,14 +24,19 @@ if [[ "$gx" -lt 1864 || "$gy" -lt 1060 ]]; then
     wmctrl -r :ACTIVE: -e 0,43,7,1863,1059    # dummy dimensions to avoid bugs
     if [ $Y -le 1080 ]; then
         wmctrl -r :ACTIVE: -e 0,$((46 - fix)),$((10 - fix)),1864,1060
+        xdotool mousemove 970 540
     else
-        wmctrl -r :ACTIVE: -e 0,$((46 + 16 - fix)),$((10 + 1080 - fix)),1864,1060
+        wmctrl -r :ACTIVE: -e 0,$((46 + 5 - fix)),$((10 + 1080 - fix)),1864,1060
+        xdotool mousemove 970 $((540 + 1080))
     fi
 else
     if [ $Y -le 1080 ]; then
         wmctrl -r :ACTIVE: -e 0,$((458 - fix)),$((182 - fix)),1004,716
+        xdotool mousemove 970 540
     else
-        wmctrl -r :ACTIVE: -e 0,$((458 + 16 - fix)),$((182 + 1080 - fix)),1004,716
+        wmctrl -r :ACTIVE: -e 0,$((458 + 5 - fix)),$((182 + 1080 - fix)),1004,716
+        xdotool mousemove 970 $((540 + 1080))
     fi
 fi
+
 

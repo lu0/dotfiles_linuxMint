@@ -4,23 +4,33 @@
 --
 -- Use "devilspie2 --debug" to print to stdout
 ------------------------------------------------------------------
-
 debug_print("Window type: " .. get_window_type())
 debug_print("Window Name: " .. get_window_name());
 debug_print("Application name: " .. get_application_name())
 debug_print("Class: " .. get_class_instance_name())
 
+-- Need something to retrieve position of cursor
+-- or the position of the window before setting its new position
+-- but this is not working :/
+-- x, y = xy()
+-- if (y < 1080) then
+--     fix_y = 0
+-- else
+--     fix_y = 1080
+-- end
+
 -- Maximize with gaps
 if (get_window_type() == "WINDOW_TYPE_NORMAL") then
     set_on_top();
     focus();
+    -- set_window_geometry2(46-2, 10-2+fix_y, 1864, 1060);
     set_window_geometry2(46-2, 10-2, 1864, 1060);
 end
 
 if (get_window_type() == "WINDOW_TYPE_DIALOG") then
     set_on_top();
     focus();
-    center();
+    -- center();
 --     if (not string.match(get_class_instance_name(), "gnome")) then
 --         debug_print("Not a Gnome dialog");
 --         -- Set default dimensions of dialogs
@@ -31,6 +41,7 @@ end
 
 -- Workspace 2. I use it for graphic design
 if (get_class_instance_name()=="inkscape" or get_class_instance_name()=="krita") then
+    pin_window()
     set_window_workspace(2);
     change_workspace(2);
     -- Inkscape dialog windows are of type "NORMAL", but aren't name as "Inkscape"

@@ -56,8 +56,8 @@ wmctrl -i -r $SOCIALMEDIA -b remove,maximized_horz,maximized_vert && wmctrl -i -
 wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert && wmctrl -r "(home)" -e 0,44,8,1124,646 && \
 wmctrl -r "Terminal" -b remove,maximized_horz,maximized_vert && wmctrl -r "Terminal" -e 0,43,676,1124,393 && \
 wmctrl -r "Visual Studio Code" -b remove,maximized_horz,maximized_vert && wmctrl -r "Visual Studio Code" -e 0,46,10,1127,1060 && \
-wmctrl -r "Thunderbird" -b remove,maximized_horz,maximized_vert && wmctrl -r "Thunderbird" -e 0,46,10,927,1060 && sleep 1 \
-wmctrl -r "Spotify" -b remove,maximized_horz,maximized_vert && wmctrl -r "Spotify" -e 0,46,10,1864,1060 & sleep 2
+wmctrl -r "Thunderbird" -b remove,maximized_horz,maximized_vert && wmctrl -r "Thunderbird" -e 0,46,10,927,1060 && sleep 2 \
+wmctrl -r "Spotify" -b remove,maximized_horz,maximized_vert && wmctrl -r "Spotify" -e 0,46,10,1864,1060 & sleep 3
 
 # ----------- Move windows to desired workspaces ---------------------------
 wmctrl -i -r $STARTPAGE -t 0 && \
