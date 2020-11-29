@@ -119,6 +119,9 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # Aliases, functions and commands I use ------------------------------------------------------------
+alias dotfiles="cd ~/code/dotfiles_linuxMint/"
+alias ssy="cd ~/code/tecnoap/projects-ssy/ssy"
+
 alias open="xdg-open 2>/dev/null"         # open any file
 
 alias dusingle="sudo du -sh"              # size of directory
