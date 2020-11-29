@@ -216,7 +216,7 @@ function wakeup() {
   unset ALARM HOUR DAY_DELAY DATE WAKETIME
 }
 
-# ----------- GIT ALIASES -----------------------------------------------------------------------------
+# ----------- GIT ALIASES AND FUNCTIONS ----------------------------------------------------------------------
 
 # Git status of current repo, submodules and tree.
 alias gstatus="git fetch && git status"
@@ -232,13 +232,6 @@ alias gtree="git diff-tree -p"    # diff of commit, gtree COMMITHASH
 alias gstaged="git diff --no-ext-diff --staged"
 
 # From https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-log.html
-# Formats section
-# glog -N   N=number of lines
-# %h        commit hash, abbreviated
-# %ar       author date, relative
-# %an       author name
-# %d        ref names
-# %s        subject, message
 alias glog="git log --graph --pretty=format:'%C(yellow)%h %C(red)%ar %C(cyan)%an%C(green)%d %Creset%s'"
 alias gfollow="git log --follow --graph --decorate --oneline -10 -- "   # gfollow file
 alias guser="git config user.name; git config user.email"               # user on current dir
@@ -257,6 +250,14 @@ alias gignored="git ls-files -v | grep ^[a-z]"                            # list
 alias gtrack="git update-index --no-assume-unchanged"                     # gtrack filename
 
 alias gmode="git config core.fileMode"                    # Track (true) or ignore (false) file mode changes
+
+function gsave() {
+  git stash push -m "$*"        # $* name of stash
+}
+
+function gpop() {
+  git stash apply stash^{/$*}   # $* name of stash
+}
 
 # -----------------------------------------------------------------------------------------------------------
 
