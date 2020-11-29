@@ -287,7 +287,7 @@ sudo apt-get install python3-pip
 sudo pip3 install undervolt
 
 # I Undervolt by 120mV
-sudo undervolt --core -100 --cache -10
+sudo undervolt --core -120 --cache -120
 
 # Or set a temperature target of 70°C
 sudo undervolt --temp 70
