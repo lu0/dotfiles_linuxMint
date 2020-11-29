@@ -31,7 +31,8 @@ vivaldi --new-window "http://localhost:8100" "https:/localhost:8080/swagger-ui.h
 syncthing -no-browser & vivaldi --new-window "http://127.0.0.1:8384" & sleep 1
 
 # Calendar, Mail and Social media
-vivaldi --new-window "calendar.google.com/calendar/u/0/r/week" "web.whatsapp.com" "www.messenger.com/t/lu0alv" "app.slack.com/client/T011D2D3RQF/C011D2D3SBZ" "trello.com/lu0ear/boards" "mail.google.com/mail/u/1/#inbox" "outlook.office.com/mail/inbox" "mail.google.com/mail/u/0/#inbox" & sleep 3
+vivaldi --new-window "calendar.google.com/calendar/u/0/r/customday" "web.whatsapp.com" "www.messenger.com/t/lu0alv" "app.slack.com/client/T011D2D3RQF/C011D2D3SBZ" "trello.com/lu0ear/boards" "mail.tecnoap.com" & sleep 3
+thunderbird & sleep 1
 
 # Spotify (for Workspace 5)
 spotify & sleep 8
@@ -48,11 +49,12 @@ SOCIALMEDIA=$(echo $VIVALDIWIN | cut -d ' ' -f 4)
 wmctrl -i -r $STARTPAGE -b remove,maximized_horz,maximized_vert && wmctrl -i -r $STARTPAGE -e 0,46,10,1864,1060 && \
 wmctrl -i -r $DEVBROWSER -b remove,maximized_horz,maximized_vert && wmctrl -i -r $DEVBROWSER -e 0,1183,10,727,1060 && \
 wmctrl -i -r $SYNCTHING -b remove,maximized_horz,maximized_vert && wmctrl -i -r $SYNCTHING -e 0,1183,10,727,1060 && \
-wmctrl -i -r $SOCIALMEDIA -b remove,maximized_horz,maximized_vert && wmctrl -i -r $SOCIALMEDIA -e 0,46,10,1864,1060 & sleep 1
+wmctrl -i -r $SOCIALMEDIA -b remove,maximized_horz,maximized_vert && wmctrl -i -r $SOCIALMEDIA -e 0,983,10,927,1060 & sleep 1
 
 wmctrl -r "(home)" -b remove,maximized_horz,maximized_vert && wmctrl -r "(home)" -e 0,44,8,1124,646 && \
 wmctrl -r "Terminal" -b remove,maximized_horz,maximized_vert && wmctrl -r "Terminal" -e 0,43,676,1124,393 && \
 wmctrl -r "Visual Studio Code" -b remove,maximized_horz,maximized_vert && wmctrl -r "Visual Studio Code" -e 0,46,10,1127,1060 && \
+wmctrl -r "Thunderbird" -b remove,maximized_horz,maximized_vert && wmctrl -r "Thunderbird" -e 0,46,10,927,1060 && sleep 1 \
 wmctrl -r "Spotify" -b remove,maximized_horz,maximized_vert && wmctrl -r "Spotify" -e 0,46,10,1864,1060 & sleep 2
 
 # ----------- Move windows to desired workspaces ---------------------------
@@ -64,6 +66,7 @@ wmctrl -r "(home)" -t 4 && \
 wmctrl -r "Terminal" -t 4 && \
 wmctrl -i -r $SYNCTHING -t 4 && \
 wmctrl -i -r $SOCIALMEDIA -t 5 && \
+wmctrl -r "Thunderbird" -t 5 && \
 wmctrl -r Spotify Premium -t 7
 
 # ------ Focus on 2nd workspace (production) -------------------------------
