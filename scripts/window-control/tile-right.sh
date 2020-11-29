@@ -10,7 +10,7 @@ if [ $Y -le 1080 ]; then
     fix_x=0
     fix_y=0
 else
-    fix_x=5
+    fix_x=15
     fix_y=1080
 fi
 
