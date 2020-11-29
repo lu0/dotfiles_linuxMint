@@ -6,11 +6,11 @@
 # 
 
 cd dconf-files
-dconf load / < cinnamon-theme.conf
+dconf load / < theme.conf
 dconf load /org/cinnamon/desktop/keybindings/ < cinnamon-shortcuts.conf
 dconf load /org/gnome/terminal/ < gnome-terminal.conf
 dconf load / < miscellaneous.conf
-dconf load / < nemo-fileman.conf
-dconf load / < panel.conf
+dconf load /org/nemo/ < nemo-fileman.conf
+dconf load /org/cinnamon/ < panel.conf
 dconf load /org/cinnamon/ < system-sounds.conf
 cd ..

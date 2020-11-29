@@ -104,7 +104,7 @@ sudo cp -r fonts/karla /usr/share/fonts/opentype/karla
 sudo cp -r fonts/webly-sleek /usr/share/fonts/truetype/webly-sleek-ui
 
 # Apply changes
-dconf load / < dconf-files/cinnamon-theme.conf
+dconf load / < dconf-files/theme.conf
 
 # Sound theme
 sudo apt-get install sox -y
@@ -154,7 +154,7 @@ I use some applets I modified to fit into vertical panels.
 ./cinnamon/install-spices.sh
 
 # Left panel with the applets and workspaces I use
-dconf load / < dconf-files/panel.conf
+dconf load /org/cinnamon/ < dconf-files/panel.conf
 ```
 
 ### Custom Powermenu
@@ -236,7 +236,7 @@ dconf load / < dconf-files/miscellaneous.conf
 # Nemo file manager
 mkdir -p ~/.gnome2/accels/
 ln -srf config/nemo-keybindings ~/.gnome2/accels/nemo
-dconf load / < dconf-files/nemo-fileman.conf
+dconf load /org/nemo/ < dconf-files/nemo-fileman.conf
 ln -srf scripts/nemo/print ~/.local/share/nemo/scripts/
 pkill nemo
 ```
