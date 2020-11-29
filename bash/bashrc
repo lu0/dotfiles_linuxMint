@@ -259,6 +259,15 @@ function gpop() {
   git stash apply stash^{/$*}   # $* name of stash
 }
 
+function gdiff-reorder() {
+  # git diff ignoring order of lines.
+  trap '' INT     # catch ctrl+c to successfully delete temp files
+  sort $1 > tmp-a
+  sort $2 > tmp-b
+  gdiff --no-index tmp-a tmp-b
+  rm tmp-a tmp-b
+}
+
 # -----------------------------------------------------------------------------------------------------------
 
 # Set title to new terminals (windows/tabs)
