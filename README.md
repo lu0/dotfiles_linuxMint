@@ -221,7 +221,9 @@ ln -srf $HOME/.dotfiles_linuxMint/config/autostart/* $HOME/.config/autostart/
 Additional settings for some programs.
 * Gnome screenshot: auto-save folder on ```~/Pictures/Screenshots```
 * Cheese (webcam): Change default resolution to 720p
+* Celluloid (video player): Hide playlist bar
 * Hide bluetooth (blueberry) from panel
+* Keep bluetooth on
 * Disable sleep/hibernation
 * Touchpad with edge scrolling 
 * Lock touchscreen orientation
