@@ -15,7 +15,7 @@ else
 
         # Set name according to date and time
         mkdir -p $HOME/videos/screencast/
-        NAME=("$HOME/videos/screencast/screencast-$(date +%y%m%d)-$(date +%H%M%S).mp4")
+        NAME=("$HOME/videos/screencast/sc-$(date +%y%m%d)-$(date +%H%M%S).mp4")
 
         # Get display resolution
         RES=$(xdpyinfo | grep dimensions | awk '{print $2}')
