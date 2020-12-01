@@ -15,4 +15,6 @@ ln -srf $RUN_DIR/spices-applets/ ~/.local/share/cinnamon/applets
 ln -srf $RUN_DIR/spices-extensions ~/.local/share/cinnamon/extensions
 ln -srf $RUN_DIR/spices-configs ~/.cinnamon/configs
 
+# Variation of the cinnamon app switcher
+# to show only windows of the current monitor
 sudo ln -srf appSwitcher.js /usr/share/cinnamon/js/ui/appSwitcher/

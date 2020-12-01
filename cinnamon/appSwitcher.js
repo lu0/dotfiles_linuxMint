@@ -64,6 +64,7 @@ function getWindowsForBinding(binding) {
         windows.push(windowActors[i].get_meta_window());
 
     windows = windows.filter( Main.isInteresting );
+    windows = windows.filter(w => w.get_monitor() === global.screen.get_current_monitor());
 
     switch(binding.get_name()) {
         case 'switch-panels':
