@@ -350,3 +350,16 @@ sudo systemctl start python3-validity
 fprintd-enroll
 fprintd-verify
 ```
+
+### Prevent screen from locking when lid is closed
+The settings-daemon for `lid-close` actions in [`miscellaneous.conf`](dconf-files/miscellaneous.conf) don't work in my machine... Here's a [workaround](https://forums.linuxmint.com/viewtopic.php?t=273378) to prevent hibernation and locking when lid is closed, this is specially useful when using multi-monitor setups.
+
+Open `/etc/UPower/UPower.conf` and change `IgnoreLid=false` to `IgnoreLid=true`.
+```sh
+sudo nano /etc/UPower/UPower.conf
+```
+Open `/etc/systemd/logind.conf`, uncomment `HandleLidSwitch=hibernate` and change it to `HandleLidSwitch=ignore`
+```sh
+sudo nano /etc/systemd/logind.conf
+```
+Then reboot
