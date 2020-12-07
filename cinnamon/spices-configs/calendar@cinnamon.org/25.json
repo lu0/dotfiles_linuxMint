@@ -24,7 +24,7 @@
         "indent": true,
         "dependency": "use-custom-format",
         "tooltip": "Set your custom format here.",
-        "value": "%H%n%M"
+        "value": "%d%n%b"
     },
     "format-button": {
         "type": "button",
@@ -43,7 +43,7 @@
         "description": "Show calendar",
         "default": "<Super>c",
         "tooltip": "Set keybinding(s) to show the calendar.",
-        "value": "<>"
+        "value": "<Super>c"
     },
     "__md5__": "630b424730fcba4718d867a7442c6b3b"
 }
