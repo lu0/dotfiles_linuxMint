@@ -32,7 +32,9 @@
             "OpenWeatherMap": "OpenWeatherMap",
             "DarkSky (key needed)": "DarkSky",
             "MET Norway": "MetNorway",
-            "Weatherbit (key needed)": "Weatherbit"
+            "Weatherbit (key needed)": "Weatherbit",
+            "Yahoo": "Yahoo",
+            "Climacell (key needed)": "Climacell"
         },
         "value": "OpenWeatherMap"
     },
@@ -48,7 +50,7 @@
         "default": false,
         "description": "Manual Location",
         "tooltip": "Enable this if your location is not accurate",
-        "value": true
+        "value": false
     },
     "location": {
         "type": "entry",
@@ -56,7 +58,7 @@
         "dependency": "manualLocation",
         "description": "Location - Coordinates",
         "tooltip": "Acceptable inputs is Latitude,Longtitude",
-        "value": "25.67, -100.32"
+        "value": "25.7087,-100.378"
     },
     "getLocation": {
         "type": "button",
