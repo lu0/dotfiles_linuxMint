@@ -254,12 +254,18 @@ alias gtrack="git update-index --no-assume-unchanged"                     # gtra
 
 alias gmode="git config core.fileMode"                    # Track (true) or ignore (false) file mode changes
 
-function gsave() {
-  git stash push -m "$*"        # $* name of stash
+alias gslist="git stash list"
+
+function gspush() {
+  git stash push -m "$*" -p       # $* name of stash
 }
 
-function gpop() {
-  git stash apply stash^{/$*}   # $* name of stash
+function gsapply() {
+  git stash apply $(git stash list | grep "$*" | cut -d: -f1)   # $* name of stash
+}
+
+function gsshow() {
+  git stash show -p $(git stash list | grep "$*" | cut -d: -f1)   # $* name of stash
 }
 
 function gdiff-reorder() {
