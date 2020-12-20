@@ -53,9 +53,11 @@ keysym o = o O End End End
 ! keysym p = p P Next Next Next
 
 ! Disable other arrow keys
-keysym Left = Mode_switch leftarrow
-keysym Right = Mode_switch rightarrow
-keysym Down = Mode_switch downarrow
+! keysym Left = Mode_switch leftarrow
+! keysym Right = Mode_switch rightarrow
+! keysym Down = Mode_switch downarrow
+keysym Left = Prior
+keysym Right = Next
 
 ! Numbers 
 !----------------------------------------------------------
