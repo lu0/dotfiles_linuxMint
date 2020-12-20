@@ -1,90 +1,111 @@
 ------------------------------------------------------------------
 -- My Devilspie2 configuration for 1920x1080 resolutions
+-- My setup consists of two monitors, top and bottom
+-- I only use workspaces on active (top) screen
+--
 -- github.com/lu0
 --
 -- Use "devilspie2 --debug" to print to stdout
 ------------------------------------------------------------------
+
+local socket = require 'socket'
+socket.sleep(0.25)                 -- wait for the window to open
+
+local sh = require('sh')        -- module developed by https://github.com/zserge/luash
+local get_mouse_loc = sh.command('xdotool getmouselocation --shell')
+-- local mousemove = sh.command('xdotool mousemove')
+-- mousemove(500, 100)
+
+-- pipe using sh
+x = get_mouse_loc():grep("X"):cut('-d', "=", '-f', 2)
+y = get_mouse_loc():grep("Y"):cut('-d', "=", '-f', 2)
+x = tonumber(tostring(x))
+y = tonumber(tostring(y))
+
 debug_print("Window type: " .. get_window_type())
-debug_print("Window Name: " .. get_window_name());
+debug_print("Window Name: " .. get_window_name())
 debug_print("Application name: " .. get_application_name())
 debug_print("Class: " .. get_class_instance_name())
+debug_print("Mouse position: x=" .. x .. " y=" .. y)
 
--- Need something to retrieve position of cursor
--- or the position of the window before setting its new position
--- but this is not working :/
--- x, y = xy()
--- if (y < 1080) then
---     fix_y = 0
--- else
---     fix_y = 1080
--- end
+top_screen_height = 1080                    -- FHD
+if (y > top_screen_height) then
+    fix_y = top_screen_height
+    screen = "BOTTOM"
+else
+    fix_y = 0
+    screen = "TOP"
+end
+debug_print("Active screen: " .. screen)
 
 -- Maximize with gaps
-if (get_window_type() == "WINDOW_TYPE_NORMAL") then
+if (string.match(get_window_type(), "NORMAL")) then
     set_on_top();
     focus();
-    -- set_window_geometry2(46-2, 10-2+fix_y, 1864, 1060);
-    set_window_geometry2(46-2, 10-2, 1864, 1060);
-end
 
-if (get_window_type() == "WINDOW_TYPE_DIALOG") then
-    set_on_top();
-    focus();
-    -- center();
---     if (not string.match(get_class_instance_name(), "gnome")) then
---         debug_print("Not a Gnome dialog");
---         -- Set default dimensions of dialogs
---         -- Except for gnome apps (they act weird..)
---         set_window_geometry2(265-12, 90-12, 1454, 925);
---     end
-end
-
--- Workspace 2. I use it for graphic design
-if (get_class_instance_name()=="inkscape" or get_class_instance_name()=="krita") then
-    pin_window()
-    set_window_workspace(2);
-    change_workspace(2);
-    -- Inkscape dialog windows are of type "NORMAL", but aren't name as "Inkscape"
-    if (get_class_instance_name()~="krita" and 
-        not string.match(get_window_name(), "- Inkscape")) then
-        -- Move floating inkscape dialogs to the right 
-        set_window_geometry2(1453, 121, 361, 866);
+    -- Screenshot app does not resize correctly
+    if (get_application_name() ~= "Screenshot") then
+        set_window_geometry2(46-2, 10-2+fix_y, 1864, 1060);
     end
+else
+    x, y, w, h = get_window_geometry()
+    set_window_geometry2(x, y+fix_y, w, h);
 end
 
--- Workspace 3. Productivity programs I use
-if (get_class_instance_name()=="Visual Studio Code" or
-    get_application_name()=="DesktopEditors") then
-    set_window_workspace(3);
-    change_workspace(3);
-end
-
--- Workspace 4. File explorer
-if (get_application_name()=="nemo") then
-    set_window_workspace(4);
-    change_workspace(4);
-end
-
--- Workspace 5. System workspace
--- if (get_application_name()=="cinnamon-settings.py") then
---     set_window_geometry(44, 8, 1864, 1060);
---     set_window_workspace(5);
---     change_workspace(5);
+-- if (get_window_type() == "WINDOW_TYPE_DIALOG") then
+--     set_on_top();
+--     focus();
+--     -- center();
+-- --     if (not string.match(get_class_instance_name(), "gnome")) then
+-- --         debug_print("Not a Gnome dialog");
+-- --         -- Set default dimensions of dialogs
+-- --         -- Except for gnome apps (they act weird..)
+-- --         set_window_geometry2(265-12, 90-12, 1454, 925);
+-- --     end
 -- end
 
--- Workspace 7. Gaming workspace
-if (get_class_instance_name()=="Steam") then
-    set_window_workspace(7);
-    change_workspace(7);
+-- Resize Inkscape dialogs
+if (string.match(get_application_name(), "inkscape") and
+    get_window_type() == "WINDOW_TYPE_DIALOG") then
+    -- Move to the bottom
+    set_window_geometry2(1453, 121+fix_y, 361, 866)
 end
 
--- Workspace 8. Media
-if (get_application_name()=="Spotify" or 
-    -- get_application_name()=="pavucontrol" or
-    -- get_class_instance_name()=="cinnamon-settings sound" or
-    -- get_application_name()=="blueman-manager" or
-    get_class_instance_name()=="audacity" or
-    get_class_instance_name()=="kdenlive") then
-    set_window_workspace(8);
-    change_workspace(8);
+if (screen=="TOP") then
+
+    -- Workspace 2. I use it for graphic design
+    if (string.match(get_application_name(), "inkscape") or 
+        string.match(get_application_name(), "Krita")) then
+
+        pin_window()
+        set_window_workspace(2)
+        change_workspace(2)
+    end
+
+    -- Workspace 3. Productivity programs I use
+    if (get_class_instance_name()=="Visual Studio Code" or
+        get_application_name()=="DesktopEditors") then
+        set_window_workspace(3);
+        change_workspace(3);
+    end
+
+    -- Workspace 4. File explorer
+    if (get_application_name()=="nemo") then
+        set_window_workspace(4);
+        change_workspace(4);
+    end
+
+    -- Workspace 7. Gaming workspace
+    if (get_class_instance_name()=="Steam") then
+        set_window_workspace(7);
+        change_workspace(7);
+    end
+
+    -- Workspace 8. Media
+    if (get_application_name()=="Spotify" or 
+        get_class_instance_name()=="audacity" or
+        get_class_instance_name()=="kdenlive") then
+        set_window_workspace(8);
+        change_workspace(8);
+    end
 end

@@ -143,6 +143,8 @@ Control newly opened windows, modify ```config/devilspie2/config-dp.lua``` to su
 ```zsh
 # Install devilspie
 sudo apt-get install devilspie2 -y
+sudo apt-get install luarocks -y
+sudo luarocks install --server=http://luarocks.org/dev luash 
 
 # Link configuration 
 ln -srf config/devilspie2 ~/.config/devilspie2
