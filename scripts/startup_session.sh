@@ -76,4 +76,5 @@ wmctrl -s 2
 
 # ------- Play sound when ready --------------------------------------------
 # cpuLoad=`mpstat 2 1 | awk 'END{print 100-$NF}'`
+~/code/dotfiles_linuxMint/scripts/hdmi-sound.sh
 sleep 10 && play /usr/share/sounds/freedesktop/stereo/service-login.oga
