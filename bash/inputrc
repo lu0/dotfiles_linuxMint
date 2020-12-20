@@ -1,6 +1,9 @@
 # /etc/inputrc - global inputrc for libreadline
 # See readline(3readline) and `info rluserman' for more information.
 
+# See current kb: stty -a
+# Monitor keybindings: sed -n l
+
 # Be 8 bit clean.
 set input-meta on
 set output-meta on
@@ -30,12 +33,12 @@ $if mode=emacs
 
 # allow the use of the Delete/Insert keys
 "\e[3~": delete-char
-"\e[2~": quoted-insert
+"\e[2~": overwrite-mode
 
 # mappings for "page up" and "page down" to step to the beginning/end
 # of the history
-# "\e[5~": beginning-of-history
-# "\e[6~": end-of-history
+"\e[5~": beginning-of-history
+"\e[6~": end-of-history
 
 # alternate mappings for "page up" and "page down" to search the history
 # "\e[5~": history-search-backward
@@ -73,10 +76,28 @@ $endif
 "\eOB": history-search-forward
 
 # Ctrl-Delete to delete next word
-# "\e[3;5~": kill-word
+"\e[3;5~": kill-word
 
-# Ctrl-Delete to delete whole line
-"\e[3;5~": kill-whole-line
+# Shift-Delete to delete whole line
+# "\e[3;2~": kill-whole-line
+
+# Shift-Tab to delete whole line
+# "\e[Z": kill-whole-line
+
+# Ctrl+k to delete whole line
+"\C-K": kill-whole-line
+"\C-D": kill-whole-line
+
+# Ctrl-down and Ctrl-up to down/uppercase the next word
+"\e[1;5A": upcase-word --
+"\e[1;5B": downcase-word
 
 # Ctrl+Backspace to delete previous word
-"\C-H": backward-kill-word
+# "\C-H": backward-kill-word
+
+# Incremental undo
+"\C-z": undo
+
+# Ctrl-shift-down and Ctrl-shift-up to scroll on terminal
+
+

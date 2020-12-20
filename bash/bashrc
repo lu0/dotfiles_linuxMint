@@ -293,3 +293,6 @@ set-title $(echo "(")$(echo "$PWD" | cut -d/ -f 2-2)$(echo ") ${PWD##*/}")
 
 # Disable "alt + numkeys" bindings
 for i in "-" {0..9}; do bind -r "\e$i"; done
+
+# Disable default command of ctrl+z
+stty susp ^-
