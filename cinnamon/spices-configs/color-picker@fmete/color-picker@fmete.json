@@ -41,7 +41,7 @@
         "type": "keybinding",
         "description": "Keybinding, which activates the color picker",
         "default": "<Primary><Alt>p",
-        "value": "<Primary><Alt>p::"
+        "value": "<Super>s::"
     },
     "__md5__": "45992efe29f2a20420a72c97f6364e01"
 }
