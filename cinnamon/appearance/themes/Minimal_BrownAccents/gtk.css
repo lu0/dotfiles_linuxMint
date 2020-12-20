@@ -348,8 +348,7 @@ treeview entry {
 }
 
 treeview entry.flat:focus,
-treeview entry:focus {
-}
+treeview entry:focus {}
 
 @keyframes needs_attention {
     from {
@@ -2622,8 +2621,7 @@ popover.background {
 .csd popover,
 popover,
 .csd popover.background,
-popover.background {
-}
+popover.background {}
 
 popover separator,
 popover.background separator {
@@ -2663,8 +2661,7 @@ notebook {
     padding: 0;
 }
 
-notebook.frame {
-}
+notebook.frame {}
 
 notebook.frame>header {
     margin: -1px;
@@ -3667,6 +3664,7 @@ scrolledwindow viewport.frame {
     border-style: none;
 }
 
+
 /* scrolledwindow overshoot.top {
   background-image: -gtk-gradient(radial, center top, 0, center top, 0.6, from(rgba(179, 90, 87, 0.2)), to(rgba(179, 90, 87, 0)));
   background-size: 100% 60%;
@@ -4465,18 +4463,15 @@ colorswatch.dark overlay {
     color: rgba(255, 255, 255, 0.7);
 }
 
-colorswatch.dark overlay:hover {
-}
+colorswatch.dark overlay:hover {}
 
 colorswatch.light overlay {
     color: rgba(0, 0, 0, 0.7);
 }
 
-colorswatch.light overlay:hover {
-}
+colorswatch.light overlay:hover {}
 
-colorswatch overlay {
-}
+colorswatch overlay {}
 
 colorswatch overlay:hover {
     background-color: rgba(255, 255, 255, 0.2);
@@ -4809,7 +4804,6 @@ filechooser placessidebar.sidebar list row.sidebar-row:active:hover,
 .caja-navigation-window iconview .cell:selected:focus {
     background-color: #505050;
 }
-
 
 .nemo-window .nemo-inactive-pane .view:selected:focus,
 .nemo-window .nemo-inactive-pane iconview:selected:focus,
@@ -5548,8 +5542,7 @@ dockbin {
     -PnlDockBin-handle-size: 1;
 }
 
-dockpaned {
-}
+dockpaned {}
 
 dockoverlayedge {
     background-color: @content_picked;
@@ -5610,8 +5603,7 @@ preferences stacksidebar.sidebar list separator {
 }
 
 devhelppanel entry:focus,
-symboltreepanel entry:focus {
-}
+symboltreepanel entry:focus {}
 
 button.run-arrow-button {
     min-width: 12px;
@@ -6082,11 +6074,13 @@ filechooser placessidebar.sidebar list scrollbar trough,
     color: #AAAAAA;
 }
 
-.nemo-window .nemo-inactive-pane .view, .nemo-window .nemo-inactive-pane .view:selected {
+.nemo-window .nemo-inactive-pane .view,
+.nemo-window .nemo-inactive-pane .view:selected {
     color: #686868;
 }
 
-.nemo-window .view:selected, .nemo-window .view:hover {
+.nemo-window .view:selected,
+.nemo-window .view:hover {
     /* lu0 */
     color: #ffffff;
     background-color: @outline_button_picked;
@@ -6367,7 +6361,8 @@ window.background.lightdm .lightdm-combo {
 @define-color selected_bg_color @my_accent2;
 @define-color selected_fg_color #ffffff;
 @define-color insensitive_bg_color #3d3d3d;
-@define-color insensitive_fg_color alpha(#dadada, 0.5);
+@define-color insensitive_fg_color alpha(#dadada,
+0.5);
 @define-color insensitive_base_color @bg_picked;
 @define-color theme_unfocused_fg_color #DADADA;
 @define-color theme_unfocused_text_color #DADADA;
@@ -6382,12 +6377,14 @@ window.background.lightdm .lightdm-combo {
 @define-color placeholder_text_color #A8A8A8;
 @define-color content_view_bg @bg_picked;
 @define-color wm_title #DADADA;
-@define-color wm_unfocused_title alpha(#ded6d6, 0.5);
+@define-color wm_unfocused_title alpha(#ded6d6,
+0.5);
 @define-color wm_bg #2f2f2f;
 @define-color wm_bg_unfocused #333333;
 @define-color wm_highlight #373737;
-@define-color wm_shadow alpha(black, 0.35);
-@define-color wm_button_close_bg #cc575d;
+@define-color wm_shadow alpha(black,
+0.35);
+@define-color wm_button_close_bg #FD5A54;
 @define-color wm_button_close_hover_bg #d7787d;
 @define-color wm_button_close_active_bg #be3841;
 @define-color wm_icon_close_bg #2f343f;
@@ -6412,5 +6409,13 @@ window.background.lightdm .lightdm-combo {
 @define-color disabled_text #888888;
 @define-color destructive_bg #F04A50;
 @define-color destructive_label @my_accent;
-@define-color my_accent #FD5A56;
+@define-color my_accent #957552;
 @define-color my_accent2 @my_accent;
+
+/* @define-color my_accent #957552; brown */
+
+
+/* @define-color my_accent #5-6A7FD; azul */
+
+
+/* @define-color my_accent #F-D5A56; rojo */

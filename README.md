@@ -88,10 +88,15 @@ Restart the user's session. -->
 ```zsh
 # Papirus icons
  ./cinnamon/appearance/icons/install-papirus.sh 
- papirus-folders --color yaru --theme Papirus-Dark
+ papirus-folders --color brown --theme Papirus-Dark
  
 # Custom theme
 cd cinnamon/appearance/
+sudo unzip themes/Minimal_BrownAccents/Minimal_BrownAccents.zip -d /usr/share/themes
+sudo ln -srf themes/Minimal_BrownAccents/cinnamon.css /usr/share/themes/Minimal_BrownAccents/cinnamon/cinnamon.css
+sudo ln -srf themes/Minimal_BrownAccents/gtk.css /usr/share/themes/Minimal_BrownAccents/gtk-3.0/gtk.css
+sudo ln -srf themes/Minimal_BrownAccents/metacity-theme-3.xml /usr/share/themes/Minimal_BrownAccents/metacity-1/metacity-theme-3.xml
+
 sudo unzip themes/Minimal_RedAccents/Minimal_RedAccents.zip -d /usr/share/themes
 sudo ln -srf themes/Minimal_RedAccents/cinnamon.css /usr/share/themes/Minimal_RedAccents/cinnamon/cinnamon.css
 sudo ln -srf themes/Minimal_RedAccents/gtk.css /usr/share/themes/Minimal_RedAccents/gtk-3.0/gtk.css
