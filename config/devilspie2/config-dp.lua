@@ -9,7 +9,7 @@
 ------------------------------------------------------------------
 
 local socket = require 'socket'
-socket.sleep(0.25)                 -- wait for the window to open
+socket.sleep(0.2)                 -- wait for the window to open
 
 local sh = require('sh')        -- module developed by https://github.com/zserge/luash
 local get_mouse_loc = sh.command('xdotool getmouselocation --shell')
@@ -47,9 +47,17 @@ if (string.match(get_window_type(), "NORMAL")) then
     if (get_application_name() ~= "Screenshot") then
         set_window_geometry2(46-2, 10-2+fix_y, 1864, 1060);
     end
-else
+    debug_print("NOT DIALOG")
+
+elseif (string.match(get_window_type(), "SPLASH")) then
     x, y, w, h = get_window_geometry()
     set_window_geometry2(x, y+fix_y, w, h);
+    debug_print("DIALOG")
+    debug_print(fix_y)
+    debug_print(x)
+    debug_print(y)
+    debug_print(w)
+    debug_print(h)
 end
 
 -- if (get_window_type() == "WINDOW_TYPE_DIALOG") then

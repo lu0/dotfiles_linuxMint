@@ -44,7 +44,7 @@ else
         -f pulse -i $INT_MICROPHONE \
         -f pulse -i $ACTIVE_OUTPUT_MONITOR \
         -filter_complex \
-        "[1:a]volume=0.3[mic]; [2:a]volume=60.0[output]; \
+        "[1:a]volume=0.3[mic]; [2:a]volume=70.0[output]; \
         [mic][output]amix=inputs=2[a]" \
          -c:v h264 -vf scale=out_color_matrix=bt709 -pix_fmt yuv420p \
          -movflags faststart \
