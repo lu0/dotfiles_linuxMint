@@ -254,8 +254,8 @@ ln -srf scripts/screenshot-watcher.sh ~/.myscripts/
 sudo ln -srf scripts/screenshot-rename.service /etc/systemd/system/
 sudo ln -srf scripts/screenshot-rename.timer /etc/systemd/system/
 
-systemctl daemon-reload
-systemctl enable screenshot-rename.timer
+sudo systemctl daemon-reload
+sudo systemctl enable --now screenshot-rename.timer
 
 ```
 
