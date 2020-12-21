@@ -226,7 +226,7 @@ ln -srf $HOME/.dotfiles_linuxMint/config/autostart/* $HOME/.config/autostart/
 
 ### Additional settings
 Additional settings for some programs.
-* Gnome screenshot: auto-save folder on ```~/Pictures/Screenshots```
+* Gnome screenshot: auto-save folder on `~/pictures/screenshots/`
 * Cheese (webcam): Change default resolution to 720p
 * Celluloid (video player): Hide playlist bar
 * Hide bluetooth (blueberry) from panel
@@ -248,6 +248,15 @@ ln -srf config/nemo-keybindings ~/.gnome2/accels/nemo
 dconf load /org/nemo/ < dconf-files/nemo-fileman.conf
 ln -srf scripts/nemo/print ~/.local/share/nemo/scripts/
 pkill nemo
+
+# Rename gnome-screenshots periodically
+ln -srf scripts/screenshot-watcher.sh ~/.myscripts/
+sudo ln -srf scripts/screenshot-rename.service /etc/systemd/system/
+sudo ln -srf scripts/screenshot-rename.timer /etc/systemd/system/
+
+systemctl daemon-reload
+systemctl enable screenshot-rename.timer
+
 ```
 
 ## Additional setup for Thinkpad X1Y3
@@ -303,7 +312,7 @@ sudo undervolt --temp 70
 ```
 Run at startup
 ```zsh
-sudo ln -srf config/undervolt.service /etc/systemd/system/
+sudo ln -srf scripts/undervolt.service /etc/systemd/system/
 ```
 Check if script works, then enable it:
 ```zsh

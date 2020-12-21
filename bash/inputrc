@@ -93,7 +93,7 @@ $endif
 "\e[1;5B": downcase-word
 
 # Ctrl+Backspace to delete previous word
-# "\C-H": backward-kill-word
+"\C-H": backward-kill-word
 
 # Incremental undo
 "\C-z": undo

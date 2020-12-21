@@ -1,0 +1,9 @@
+[Unit]
+Description=Rename gnome-screenshots
+
+[Timer]
+OnUnitActiveSec=3s
+OnBootSec=60s
+
+[Install]
+WantedBy=timer.target
