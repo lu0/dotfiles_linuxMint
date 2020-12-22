@@ -32,7 +32,7 @@ else
         SC_INPUT=$(echo $SC_INPUT | xargs | tr ' ' '-')
 
         if [ -n "$SC_INPUT" ]; then
-            SC_NAME=("$HOME/videos/screencast/sc-$(date +%y%m%d)-$(date +%H%M%S)_${SC_INPUT}.mp4")
+            SC_NAME=("$HOME/videos/screencast/sc-$(date +%y%m%d)-$(date +%H%M%S)-${SC_INPUT}.mp4")
         else
             SC_NAME=("$HOME/videos/screencast/sc-$(date +%y%m%d)-$(date +%H%M%S).mp4")
         fi
