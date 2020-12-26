@@ -39,14 +39,17 @@ end
 debug_print("Active screen: " .. screen)
 
 -- Maximize with gaps
-if (string.match(get_window_type(), "NORMAL")) then
+-- Screenshot and zenity apps don't resize correctly
+if (string.match(get_window_type(), "NORMAL") and 
+    get_application_name() ~= "Screenshot" and
+    get_application_name() ~= "zenity") then
+
     set_on_top();
     focus();
-
-    -- Screenshot app does not resize correctly
-    if (get_application_name() ~= "Screenshot") then
-        set_window_geometry2(46-2, 10-2+fix_y, 1864, 1060);
-    end
+    
+    -- if (get_application_name() ~= "Screenshot") then
+    set_window_geometry2(46-2, 10-2+fix_y, 1864, 1060);
+    -- end
     debug_print("NOT DIALOG")
 
 elseif (string.match(get_window_type(), "SPLASH")) then

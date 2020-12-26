@@ -279,6 +279,23 @@ mkdir -p ~/.config/autostart
 ln -srf config/autostart/keymappings.desktop ~/.config/autostart/
 ```
 
+### Logitech M570
+Change DPI easily.
+```zsh 
+# Link dpi script to the PATH folder
+mkdir -p ~/.myscripts && ln -srf scripts/dpi.sh ~/.myscripts/
+
+# Use easystroke to bind the script to your preferred mouse button
+sudo apt-get install easystroke
+
+# Copy (my) saved configuration
+rm ~/.easystroke && ln -srf config/easystroke/ ~/.easystroke
+
+# Change config
+easystroke
+```
+
+
 ### Battery Managment
 Change battery thresholds.
 ```zsh
