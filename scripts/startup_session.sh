@@ -95,7 +95,11 @@ then
 fi
 
 # Default dpi
-dpi.sh      
+dpi.sh
+
+# Touchpad config
+xinput --set-prop 'SynPS/2 Synaptics TouchPad' 'Synaptics Noise Cancellation' 0, 0
+xinput --set-prop 'SynPS/2 Synaptics TouchPad' 'Device Accel Constant Deceleration' 2
 
 # ------- Play sound when ready --------------------------------------------
 # cpuLoad=`mpstat 2 1 | awk 'END{print 100-$NF}'`

@@ -279,11 +279,27 @@ mkdir -p ~/.config/autostart
 ln -srf config/autostart/keymappings.desktop ~/.config/autostart/
 ```
 
-### Logitech M570
-Change DPI easily.
+### Touchpad drivers
+Linux Mint 20 uses `libinput` instead of `Synaptics` by default, but `Synaptics` provides lots of config options for the touchpad, with Kinetic Scrolling being my favorite. Check the drivers you're using with:
+```zsh
+grep -i "Using input driver" /var/log/Xorg.0.log
+```
+`Synaptics` and `libinput` can coexist (`libinput` for keyboard+mouse and `synaptics` for the touchpad) by simply installing the package and restarting:
+```zsh
+sudo apt-get install xserver-xorg-input-synaptics
+```
+
+<!-- ### Trackpoint drivers
+```zsh
+sudo apt install xserver-xorg-input-evdev
+``` -->
+
+### TrackPoint and Logitech M570
+Change DPI easily (using `libinput`).
 ```zsh 
 # Link dpi script to the PATH folder
 mkdir -p ~/.myscripts && ln -srf scripts/dpi.sh ~/.myscripts/
+ln -srf scripts/trackpoint.sh ~/.myscripts/
 
 # Use easystroke to bind the script to your preferred mouse button
 sudo apt-get install easystroke
