@@ -254,9 +254,10 @@ ln -srf scripts/screenshot-watcher.sh ~/.myscripts/
 sudo ln -srf scripts/screenshot-rename.service /etc/systemd/system/
 sudo ln -srf scripts/screenshot-rename.timer /etc/systemd/system/
 
-sudo systemctl daemon-reload
-sudo systemctl enable --now screenshot-rename.timer
-
+systemctl daemon-reload
+systemctl enable screenshot-rename.timer
+systemctl start screenshot-rename.timer
+systemctl status screenshot-rename.timer screenshot-rename.service
 ```
 
 ## Additional setup for Thinkpad X1Y3
