@@ -70,6 +70,8 @@ cd vscode-settings
 cd ..
 
 sudo apt-get install neovim -y
+sudo apt-get install mycli -y       # mysql alt cli
+sudo apt-get install pspg -y        # pager
 
 # Anaconda
 sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6

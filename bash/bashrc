@@ -235,7 +235,7 @@ alias gmerge="git merge --no-commit --no-ff"    # gmerge BRANCH_NAME
 # From https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-log.html
 alias glog="git log --graph --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s'"
 alias glogr="git log --graph --pretty=format:'%C(yellow)%h %C(red)%ar %C(cyan)%an%C(green)%d %Creset%s'"
-alias glogi="git log --graph --all --author=lalvarad0 --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s'"
+alias gloga="git log --graph --all --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s'"
 alias gfollow="git log --graph --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s' -- "   # gfollow file
 alias guser="git config user.name; git config user.email"               # user on current dir
 

@@ -24,13 +24,14 @@ then
     nemo & sleep 1
     code ~/code/dotfiles_linuxMint & sleep 1
     code ~/code/tecnoap & sleep 1
-    code ~/code/tecnoap/projects-ssy/ssy/codigo/SensorVolumen & sleep 1
+    # code ~/code/tecnoap/projects-ssy/ssy/codigo/SensorVolumen & sleep 1
+    code ~/code/tecnoap/projects-ssy/ssy/codigo/ngx-admin & sleep 1
 
     # General purpose terminal and Synergy logs
     gnome-terminal & gnome-terminal -e "synergys -f"
 
     # Web Browser for WebDev
-    CURRENT_HOUR=$(date | cut -d ' ' -f 5 | cut -d ':' -f 1)
+    CURRENT_HOUR=$(date +%R | cut -d ':' -f 1)
     if [ "$CURRENT_HOUR" -gt 6 ] &&  [ "$CURRENT_HOUR" -lt 10 ]; then
         vivaldi --new-window "https://meet.google.com/vnv-cxck-udp" "http://localhost:4200" "http://localhost:8100" "https:/localhost:8080/swagger-ui.html" "sharepoint.tecnoap.com" "jira.tecnoap.com" & sleep 1
     else
@@ -68,7 +69,7 @@ then
     wmctrl -r "Terminal" -b remove,maximized_horz,maximized_vert && wmctrl -r "Terminal" -e 0,43,676,1124,393 && \
     wmctrl -r "dotfiles_linuxMint" -b remove,maximized_horz,maximized_vert && wmctrl -r "dotfiles_linuxMint" -e 0,46,10,1864,1060 && \
     wmctrl -r "tecnoap" -b remove,maximized_horz,maximized_vert && wmctrl -r "tecnoap" -e 0,46,10,1864,1060 && \
-    wmctrl -r "SensorVolume" -b remove,maximized_horz,maximized_vert && wmctrl -r "SensorVolume" -e 0,46,10,1864,1060 && \
+    wmctrl -r "ngx-admin" -b remove,maximized_horz,maximized_vert && wmctrl -r "ngx-admin" -e 0,46,10,1864,1060 && \
     wmctrl -r "Thunderbird" -b remove,maximized_horz,maximized_vert && wmctrl -r "Thunderbird" -e 0,46,10,927,1060 && sleep 2 \
     wmctrl -r "Spotify" -b remove,maximized_horz,maximized_vert && wmctrl -r "Spotify" -e 0,46,10,1864,1060 & sleep 3
 
@@ -76,7 +77,7 @@ then
     wmctrl -i -r $STARTPAGE -t 0 && \
     wmctrl -r "dotfiles_linuxMint" -t 2 && \
     wmctrl -r "tecnoap" -t 2 && \
-    wmctrl -r "SensorVolume" -t 2 && \
+    wmctrl -r "ngx-admin" -t 2 && \
     wmctrl -i -r $DEVBROWSER -t 2 && \
     wmctrl -r Home -t 3 && \
     wmctrl -r "(home)" -t 4 && \
