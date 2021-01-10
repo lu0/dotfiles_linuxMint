@@ -33,9 +33,11 @@ then
     # Web Browser for WebDev
     CURRENT_HOUR=$(date +%R | cut -d ':' -f 1)
     if [ "$CURRENT_HOUR" -gt 6 ] &&  [ "$CURRENT_HOUR" -lt 10 ]; then
-        vivaldi --new-window "https://meet.google.com/vnv-cxck-udp" "http://localhost:4200" "http://localhost:8100" "https:/localhost:8080/swagger-ui.html" "sharepoint.tecnoap.com" "jira.tecnoap.com" & sleep 1
+        # vivaldi --new-window "https://meet.google.com/vnv-cxck-udp" "http://localhost:4200" "http://localhost:8100" "https:/localhost:8080/swagger-ui.html" "sharepoint.tecnoap.com" "jira.tecnoap.com" & sleep 1
+        vivaldi --new-window "https://meet.google.com/vnv-cxck-udp" "http://localhost:4200" "localhost:8082/scrap-entry-service/swagger-ui.html" "localhost:5555/swagger/" & sleep 1
     else
-        vivaldi --new-window "http://localhost:4200" "http://localhost:8100" "https:/localhost:8080/swagger-ui.html" "sharepoint.tecnoap.com" "jira.tecnoap.com" & sleep 1
+        # vivaldi --new-window "http://localhost:4200" "http://localhost:8100" "https:/localhost:8080/swagger-ui.html" "sharepoint.tecnoap.com" "jira.tecnoap.com" & sleep 1
+        vivaldi --new-window "http://localhost:4200" "localhost:8082/scrap-entry-service/swagger-ui.html" "localhost:5555/swagger/" & sleep 1
     fi
     # "github.com/orlando26/cubing-mty-app" "github.com/orlando26/cubing-mty-app"
 
@@ -46,7 +48,8 @@ then
     syncthing -no-browser & vivaldi --new-window "http://127.0.0.1:8384" & sleep 1
 
     # Calendar, mail and social media
-    vivaldi --new-window "calendar.google.com/calendar/u/0/r/customday" "app.slack.com/client/T011D2D3RQF/C011D2D3SBZ" "trello.com/lu0ear/boards" "mail.tecnoap.com" & sleep 3
+    # vivaldi --new-window "calendar.google.com/calendar/u/0/r/customday" "app.slack.com/client/T011D2D3RQF/C011D2D3SBZ" "trello.com/lu0ear/boards" "mail.tecnoap.com" & sleep 3
+    vivaldi --new-window "calendar.google.com/calendar/u/0/r/customday" "web.whatsapp.com" "mail.tecnoap.com" & sleep 3
 
     # Spotify (for Workspace 5)
     spotify & sleep 8

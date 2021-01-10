@@ -138,8 +138,8 @@ ln -srf config/autostart/blur-wallpaper.desktop ~/.config/autostart/
 ### Devilspie
 Control newly opened windows, modify ```config/devilspie2/config-dp.lua``` to suit your needs, I use it to:
 - Maximize windows
-- Open applications to specific workspaces
-- Set default geometry of some windows
+- Open applications on specific workspaces
+- Set default geometry for some windows
 ```zsh
 # Install devilspie
 sudo apt-get install devilspie2 -y
