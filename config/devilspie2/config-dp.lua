@@ -1,42 +1,50 @@
 ------------------------------------------------------------------
--- My Devilspie2 configuration for 1920x1080 resolutions
+-- My Devilspie2 configuration for (almos) any resolution
 -- My setup consists of two monitors, top and bottom
--- I only use workspaces on active (top) screen
+-- I only use workspaces on primary (top) screen
 --
 -- github.com/lu0
 --
 -- Use "devilspie2 --debug" to print to stdout
-------------------------------------------------------------------
+-- link/copy dotfiles_linuxMint/scripts/devilspie_screen.sh 
+-- to PATH as devilspie_screen
+---------------------------------------------------------------------
 
 local socket = require 'socket'
-socket.sleep(0.2)                 -- wait for the window to open
+-- socket.sleep(0.2)                 -- wait for the window to open
 
 local sh = require('sh')        -- module developed by https://github.com/zserge/luash
-local get_mouse_loc = sh.command('xdotool getmouselocation --shell')
 -- local mousemove = sh.command('xdotool mousemove')
 -- mousemove(500, 100)
 
--- pipe using sh
-x = get_mouse_loc():grep("X"):cut('-d', "=", '-f', 2)
-y = get_mouse_loc():grep("Y"):cut('-d', "=", '-f', 2)
-x = tonumber(tostring(x))
-y = tonumber(tostring(y))
-
-debug_print("Window type: " .. get_window_type())
-debug_print("Window Name: " .. get_window_name())
-debug_print("Application name: " .. get_application_name())
-debug_print("Class: " .. get_class_instance_name())
-debug_print("Mouse position: x=" .. x .. " y=" .. y)
-
-top_screen_height = 1080                    -- FHD
-if (y > top_screen_height) then
-    fix_y = top_screen_height
-    screen = "BOTTOM"
-else
-    fix_y = 0
-    screen = "TOP"
+-- Unpack variables from luatest.sh
+i = 0
+local screen_variables = tostring(devilspie_screen()) -- calls `ls /tmp`
+for var in string.gmatch(screen_variables, "[^\n]+") do
+    if     i == 1 then MONITOR    = var;   -- print('MONITOR: ',    MONITOR)        -- str
+    elseif i == 2 then RESOLUTION = var;   -- print('RESOLUTION: ', RESOLUTION)     -- str 
+    elseif i == 3 then X_OFFSET   = var+0; -- print('X_OFFSET: ',   X_OFFSET)       -- num
+    elseif i == 4 then Y_OFFSET   = var+0; -- print('Y_OFFSET: ',   Y_OFFSET)       -- num
+    elseif i == 5 then WIDTH      = var+0; -- print('WIDTH: ',      WIDTH)          -- num
+    elseif i == 6 then HEIGHT     = var+0; -- print('HEIGHT: ',     HEIGHT)         -- num
+    end
+    i = i + 1
 end
-debug_print("Active screen: " .. screen)
+
+if (Y_OFFSET > 0) then screen = "BOTTOM"
+else                   screen = "TOP"
+end
+
+panel_width = 36    -- vertical panel
+gap = math.floor(WIDTH/192 * 10) / 10
+x_gap = gap; y_gap = gap
+gnome_fix = WIDTH/960
+
+debug_print("Active screen: ", MONITOR .. ',', screen)
+debug_print("\nWindow type: ", get_window_type())
+debug_print("Window Name: ", get_window_name())
+debug_print("App name: ", get_application_name())
+debug_print("Class name: ", get_class_instance_name())
 
 -- Maximize with gaps
 -- Screenshot and zenity apps don't resize correctly
@@ -48,19 +56,21 @@ if (string.match(get_window_type(), "NORMAL") and
     focus();
     
     -- if (get_application_name() ~= "Screenshot") then
-    set_window_geometry2(46-2, 10-2+fix_y, 1864, 1060);
+    set_window_geometry2(x_gap + panel_width - gnome_fix + X_OFFSET,    y_gap - gnome_fix + Y_OFFSET, 
+                         WIDTH - panel_width - x_gap*gnome_fix,         HEIGHT-y_gap*gnome_fix);
     -- end
     debug_print("NOT DIALOG")
 
 elseif (string.match(get_window_type(), "SPLASH")) then
     x, y, w, h = get_window_geometry()
-    set_window_geometry2(x, y+fix_y, w, h);
+    set_window_geometry2(x+X_OFFSET, y+Y_OFFSET, w, h);
     debug_print("DIALOG")
-    debug_print(fix_y)
-    debug_print(x)
-    debug_print(y)
-    debug_print(w)
-    debug_print(h)
+    -- debug_print(X_OFFSET)
+    -- debug_print(Y_OFFSET)
+    -- debug_print(x)
+    -- debug_print(y)
+    -- debug_print(w)
+    -- debug_print(h)
 end
 
 -- if (get_window_type() == "WINDOW_TYPE_DIALOG") then
@@ -78,8 +88,11 @@ end
 -- Resize Inkscape dialogs
 if (string.match(get_application_name(), "inkscape") and
     get_window_type() == "WINDOW_TYPE_DIALOG") then
-    -- Move to the bottom
-    set_window_geometry2(1453, 121+fix_y, 361, 866)
+    
+    ink_w = WIDTH/5.5;  ink_h = HEIGHT/1.25
+    ink_x = WIDTH/1.32; ink_y = HEIGHT/8.9
+
+    set_window_geometry2(ink_x+X_OFFSET, ink_y+Y_OFFSET, ink_w, ink_h)
 end
 
 if (screen=="TOP") then
