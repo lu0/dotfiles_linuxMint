@@ -242,9 +242,10 @@ alias guser="git config user.name; git config user.email"               # user o
 alias gcommit="git commit -m"                                           # gcommit "message"
 alias gamend="git commit --amend --no-edit"
 
-alias glist="git ls-tree -r --abbrev=8 --name-only $(git branch --show-current)"        # list tracked files
-alias gignoreall="git ls-files --others --exclude-standard >> .gitignore" # ignore files currently untracked
-alias gclean="git clean -i"                                               # delete files currently untracked
+alias glist="git ls-tree -r --abbrev=8 --name-only $(git branch --show-current)"    # list tracked files
+alias gignoreall="git ls-files --others --exclude-standard >> .gitignore"           # ignore files currently untracked
+alias gclean-untracked="git clean -i"                       # delete files currently untracked
+alias gclean-ignored="git clean --exclude=.gitignore -xdi"  # -x files in .gitignore, -d recursive, -i interactive
 
 # Ignore and revert ignorance of changed files (temporary)
 # https://stackoverflow.com/a/23259612
