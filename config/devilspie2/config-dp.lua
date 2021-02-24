@@ -133,3 +133,8 @@ if (screen=="TOP") then
         change_workspace(8);
     end
 end
+
+-- Keep 'picture in picture' on top.
+if (string.match(get_application_name(), "Picture in picture")) then
+    make_always_on_top()
+end
