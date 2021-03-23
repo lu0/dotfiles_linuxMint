@@ -236,13 +236,14 @@ alias gmerge="git merge --no-commit --no-ff"    # gmerge BRANCH_NAME
 alias glog="git log --graph --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s'"
 alias glogr="git log --graph --pretty=format:'%C(yellow)%h %C(red)%ar %C(cyan)%an%C(green)%d %Creset%s'"
 alias gloga="git log --graph --all --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s'"
-alias gfollow="git log --graph --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s' -- "   # gfollow file
+alias gfollow="git log --follow --graph --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s' -- "   # gfollow file
 alias guser="git config user.name; git config user.email"               # user on current dir
 
 alias gcommit="git commit -m"                                           # gcommit "message"
 alias gamend="git commit --amend --no-edit"
 
-alias glist="git ls-tree -r --abbrev=8 --name-only $(git branch --show-current)"    # list tracked files
+alias glist-tracked="git ls-tree -r --abbrev=8 --name-only $(git branch --show-current)"    # list tracked files
+alias glist-untracked="git ls-files --others --exclude-standard"    # list untracked files
 alias gignoreall="git ls-files --others --exclude-standard >> .gitignore"           # ignore files currently untracked
 alias gclean-untracked="git clean -i"                       # delete files currently untracked
 alias gclean-ignored="git clean --exclude=.gitignore -xdi"  # -x files in .gitignore, -d recursive, -i interactive
