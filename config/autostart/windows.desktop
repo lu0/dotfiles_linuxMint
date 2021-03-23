@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Windows 10
+Comment=Windows 10 Virtual Machine
+Icon=/usr/share/icons/Papirus/48x48@2x/apps/windows95.svg
+Exec=vm-windows10.sh
+Terminal=false
+Type=Application
+Categories=
+X-GNOME-Autostart-enabled=false

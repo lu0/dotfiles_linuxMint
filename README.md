@@ -207,6 +207,7 @@ Programs, apps and packages I use:
   - GParted
   - System profiler
   - Bluetooth Manager
+  - VirtualBox
   
 ```zsh
 cd scripts
@@ -216,10 +217,12 @@ source install-programs.sh
 ln -srf startup_session.sh ~/.myscripts/
 cd ../
 
-# Create startup entry
+# Create startup and dekstop entries
 mkdir -p ~/.config/autostart
 ln -srf config/autostart/mystartup-apps.desktop ~/.config/autostart/
 sudo ln -srf config/autostart/droidcam.desktop /usr/share/applications/
+sudo ln -srf config/autostart/windows.desktop /usr/share/applications/  # after 'installing' the w10 VM
+ln -srf scripts/vm-windows.sh ~/.myscripts/
 
 # Disable some default startup apps
 ln -srf $HOME/.dotfiles_linuxMint/config/autostart/* $HOME/.config/autostart/
