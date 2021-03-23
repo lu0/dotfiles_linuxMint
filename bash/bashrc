@@ -137,7 +137,7 @@ alias mic2speaker-off="pactl unload-module module-loopback"
 
 alias cp="cp -riv"                                           # verbose
 alias mkdir="mkdir -pv"                                      # parent, verbose
-alias rm="rm -I"
+alias rm="rm -i"
 
 # -A almost all, -o list without group ingo, -F classify, 
 # -h human readable
