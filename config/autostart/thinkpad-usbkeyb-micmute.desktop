@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name[en_US]=Thinkpad USB Keyboard micmute button
+Comment[en_US]=Defined on ~/.myscripts/thinkpad-usbkeyb-micmute.sh
+Exec=thinkpad-usbkeyb-micmute.sh
+Type=Application
+X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Delay=1
+NoDisplay=false
+Hidden=false

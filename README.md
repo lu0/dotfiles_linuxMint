@@ -316,6 +316,86 @@ rm ~/.easystroke && ln -srf config/easystroke/ ~/.easystroke
 easystroke
 ```
 
+### ThinkPad Compact USB Keyboard with TrackPoint
+*Temporal rant/thought process, I might put this in a blog/gitrepo later*
+
+So I bought a Thinkpad USB wired Keyboard (the first version that has the new "chiclet" keys layout).
+
+The mic-mute key (`Fn+F4`) of this keyboard does not toggle the internal microphone, but the same key on the internal keyboard (Thinkpad X1Y3) does.
+
+I ran `xev` to test if the X server detects the key, it detects all the other function keys, but not this.
+
+Then I ran `acpi_listen`, it returns the following:
+```sh
+button/micmute MICMUTE 00000080 00000000 K
+```
+So the key is working at the BIOS level at least...
+
+Okay, `xev` ignores the key, so I checked with `evtest` and found these keyboard devices:
+```sh
+No device specified, trying to scan all of /dev/input/event*
+Available devices:
+/dev/input/event3:	AT Translated Set 2 keyboard
+/dev/input/event7:	Lenovo ThinkPad Compact USB Keyboard with TrackPoint
+/dev/input/event8:	Lenovo ThinkPad Compact USB Keyboard with TrackPoint
+/dev/input/event12:	ThinkPad Extra Buttons
+Select the device event number [0-20]: 
+```
+
+I selected `event12`, it seems to include all the hot keys of my internal keyboard, as the output when pressing the mic-mute key on my Thinkpad is:
+```sh
+Testing ... (interrupt to exit)
+Event: time 1623859038.822635, type 4 (EV_MSC), code 4 (MSC_SCAN), value 1a
+Event: time 1623859038.822635, type 1 (EV_KEY), code 190 (KEY_F20), value 1
+```
+
+Okay, so now I wanted to test this key but on my new external keyboard. Events `event7` and `event8` have the same name. When I select `event7`, I see the keycodes of "normal" keys (alphabet, tab, alt, etc) when pressing them, but the function keys are ignored.
+
+Then I selected `event8` and it seems to show the trackpoint AND the function keys of the USB keyboard! The output when pressing the mic-mute key is:
+```sh
+Testing ... (interrupt to exit)
+Event: time 1623860131.478684, type 4 (EV_MSC), code 4 (MSC_SCAN), value ffa000f1
+Event: time 1623860131.478684, type 1 (EV_KEY), code 248 (KEY_MICMUTE), value 0
+```
+
+So the keycodes are different for the mic-mute key (they are the same on other function keys), what's most important, the keycode of the mic-mute key of the external keyboard is `248`. According to what I (barely) found on my research, this keycode is ignored by the X server.
+
+The next step is to try to remap the key of the external keyboard to the keycode that my internal keyboard uses (`KEY_F20`), or to catch the acpi event and create a custom script to toogle the microphone on and off.
+
+Most of the workarounds I found didn't work, I was about to give up, then I figured out the key (lol) was to connect to the acpid socket to catch the event.
+
+This is the script I made, it simulates the keypress of the micmute button for the X server.
+```zsh
+#!/bin/bash
+coproc acpi_listen
+trap 'kill $COPROC_PID' EXIT
+
+while read -u "${COPROC[0]}" -a event; do
+    [ "${event[0]}" = 'button/micmute' ] \
+        && xdotool key XF86AudioMicMute
+done
+```
+I gave it permissions (`chmod +x thinkpad-extkeyb-micmute.sh`), executed it:
+```zsh
+./thinkpad-extkeyb-micmute.sh
+```
+... tested the combination `Fn+F4` and .... It works! 
+
+Then I just created a [startup entry](./config/autostart/thinkpad-usbkeyb-micmute.desktop).
+```zsh
+# Link script
+ln -srf scripts/thinkpad-usbkeyb-micmute.sh \
+    ~/.myscripts/thinkpad-usbkeyb-micmute.sh
+
+# Create startup entry
+mkdir -p ~/.config/autostart
+ln -srf config/autostart/thinkpad-usbkeyb-micmute.desktop ~/.config/autostart/
+```
+
+**The advantage of my solution over all of the workarounds is that we let the X server handle this action, which means we don't need to toggle the mic with alsa/pulseaudio, nor do we need to implement a hacky workaround to toggle the LED of the button.**
+
+Most useful resources/discussions I found: [This](https://forum.manjaro.org/t/mic-mute-button-not-detected-in-asus-tuf-series/23618/7Forum) and [this](https://forums.fedoraforum.org/showthread.php?272870-Fedora-16-xev-ignores-mic-mute-key) and [THIS (rtfm)](http://www.thinkwiki.org/wiki/Microphone_Mute_Button).
+
 
 ### Battery Managment
 Change battery thresholds.
