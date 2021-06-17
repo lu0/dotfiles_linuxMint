@@ -394,7 +394,7 @@ ln -srf config/autostart/thinkpad-usbkeyb-micmute.desktop ~/.config/autostart/
 
 **The advantage of my solution over all of the workarounds is that we let the X server handle this action, which means we don't need to toggle the mic with alsa/pulseaudio, nor do we need to implement a hacky workaround to toggle the LED of the button.**
 
-Most useful resources/discussions I found: [This](https://forum.manjaro.org/t/mic-mute-button-not-detected-in-asus-tuf-series/23618/7Forum) and [this](https://forums.fedoraforum.org/showthread.php?272870-Fedora-16-xev-ignores-mic-mute-key) and [THIS (rtfm)](http://www.thinkwiki.org/wiki/Microphone_Mute_Button).
+Most useful resources/discussions I found: [This](https://forum.manjaro.org/t/mic-mute-button-not-detected-in-asus-tuf-series/23618/7Forum) and [this](https://forums.fedoraforum.org/showthread.php?272870-Fedora-16-xev-ignores-mic-mute-key) and [THIS (rtfm)](https://wiki.archlinux.org/title/Acpid#Connect_to_acpid_socket).
 
 
 ### Battery Managment
