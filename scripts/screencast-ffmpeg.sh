@@ -91,7 +91,7 @@ else
         [mic][output]amix=inputs=2[a]" \
         -c:v h264 -vf scale=out_color_matrix=bt709 -pix_fmt yuv420p \
         -movflags faststart \
-        -r 30 \
+        -r 5 \
         -map 0:v -map "[a]" -c:a aac $SC_NAME || 
         notify-send -i "emblem-videos-symbolic" "Screencast" "Saving..."
         

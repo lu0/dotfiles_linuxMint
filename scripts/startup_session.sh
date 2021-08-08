@@ -98,8 +98,14 @@ then
     # watch -n 2 screenshot-watcher.sh
 fi
 
+# Start available hotspot
+nmcli connection up $(nmcli connection show | grep -i hotspot | cut -d ' ' -f1)
+
 # Default dpi
 dpi.sh
+
+# Trackpoint config
+trackpoint.sh
 
 # Touchpad config
 xinput --set-prop 'SynPS/2 Synaptics TouchPad' 'Synaptics Noise Cancellation' 0, 0

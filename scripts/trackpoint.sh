@@ -20,7 +20,7 @@ function main() {
     toggle-trackpoint-speed "${BUILT_IN_TRACKPOINT}" -1 -0.6
     
     EXTERNAL_TRACKPOINT='pointer:Lenovo ThinkPad Compact USB Keyboard with TrackPoint'
-    toggle-trackpoint-speed "${EXTERNAL_TRACKPOINT}" -0.8 -0.5
+    toggle-trackpoint-speed "${EXTERNAL_TRACKPOINT}" -0.8 -0.4
 }
 
 function toggle-trackpoint-speed() {

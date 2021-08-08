@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=HotSpot
+Comment=Start HotSpot (there must be only one hotspot created).
+Exec=nmcli connection up $(nmcli connection show | grep -i hotspot | cut -d ' ' -f1)
+Type=Application
+X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Delay=1
+NoDisplay=false
+Hidden=false

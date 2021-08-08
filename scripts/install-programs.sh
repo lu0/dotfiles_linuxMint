@@ -71,8 +71,9 @@ cd ..
 
 sudo apt-get install neovim -y
 sudo apt-get install mycli -y       # mysql alt cli
-sudo apt-get install pspg -y        # pager
+sudo apt-get install pspg -y        # best pager in the world
 
+sudo apt install virtualenv         # I use it for Python
 # Anaconda
 sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
 

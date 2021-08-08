@@ -122,10 +122,17 @@ export NVM_DIR="$HOME/.nvm"
 alias dotfiles="cd ~/code/dotfiles_linuxMint/"
 alias ssy="cd ~/code/tecnoap/projects-ssy/ssy"
 
-alias open="xdg-open 2>/dev/null"         # open any file
+alias lowercase="tr '[:upper:]' '[:lower:]'"
+alias uppercase="tr '[:lower:]' '[:upper:]'"
 
-alias dusingle="sudo du -sh"              # size of directory
-alias duall="sudo du -hd 1 . | sort -h"   # size of subdirectories (1st level)
+# export PAGER=pspg
+# export LESS="-SRXF"   # wrapping disabled
+export LESS="-RFX"
+
+alias open="xdg-open 2>/dev/null" # open any file
+
+alias dusingle="sudo du -sh"            # size of directory
+alias duall="sudo du -hd 1 . | sort -h" # size of subdirectories (1st level)
 
 alias calculator="gcalccmd"
 
@@ -135,37 +142,37 @@ alias fullcharge="sudo tlp fullcharge"
 alias mic2speaker-on="pactl load-module module-loopback latency_msec=1"
 alias mic2speaker-off="pactl unload-module module-loopback"
 
-alias cp="cp -riv"                                           # verbose
-alias mkdir="mkdir -pv"                                      # parent, verbose
+alias cp="cp -riv"      # verbose
+alias mkdir="mkdir -pv" # parent, verbose
 alias rm="rm -i"
 
-# -A almost all, -o list without group ingo, -F classify, 
+# -A almost all, -o list without group ingo, -F classify,
 # -h human readable
 # https://unix.stackexchange.com/questions/205158/how-to-show-only-the-last-k-columns-in-ls-l
 
 list_message() {
-  GREEN='\033[0;32m'                                    # ANSI code
-  NC='\033[0m'                                          # ANSI No Color
+  GREEN='\033[0;32m' # ANSI code
+  NC='\033[0m'       # ANSI No Color
   MESSAGE=$1
   printf "${GREEN}${MESSAGE}${NC}\n"
 }
 
-l () {  # arg1: path, arg2: s (sort by size)
+l() { # arg1: path, arg2: s (sort by size)
   list_message "LISTING NO HIDDEN, NO SYMLINKS"
   ls -lgoLFh${2^^} --group-directories-first --color=always "${1:-.}" | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'
 }
 
-ll () {
+ll() {
   list_message "LISTING HIDDEN, NO SYMLINKS"
   ls -AlgoLFh${2^^} --group-directories-first --color=always "${1:-.}" | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'
 }
 
-L () {
+L() {
   list_message "LISTING NO HIDDEN, SYMLINKS"
   ls -lgoFh${2^^} --group-directories-first --color=always "${1:-.}" | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'
 }
 
-LL () {
+LL() {
   list_message "LISTING HIDDEN, SYMLINKS"
   ls -AlgoFh${2^^} --group-directories-first --color=always "${1:-.}" | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'
 }
@@ -181,8 +188,8 @@ alias brokenln="find . -type l -exec test ! -e {} \; -print"
 # Check shutdown status
 function shutdown-show() {
   if [ -f /run/systemd/shutdown/scheduled ]; then
-      SHUTTIME=$(cat /run/systemd/shutdown/scheduled | grep "USEC" | cut -d '=' -f 2 | cut -c -10)
-      echo "Shutdown scheduled for $(date -d @$SHUTTIME), use 'shutdown -c' to cancel."
+    SHUTTIME=$(cat /run/systemd/shutdown/scheduled | grep "USEC" | cut -d '=' -f 2 | cut -c -10)
+    echo "Shutdown scheduled for $(date -d @$SHUTTIME), use 'shutdown -c' to cancel."
   fi
 }
 
@@ -218,9 +225,13 @@ function wakeup() {
 
 # ----------- GIT ALIASES AND FUNCTIONS ----------------------------------------------------------------------
 
+is_git_repo() {
+    git rev-parse --is-inside-work-tree > /dev/null 2>&1
+}
+
 # Git status of current repo, submodules and tree.
 alias gstatus="git fetch && git status"
-alias gsubmodules="git submodule foreach 'git status'"
+alias gstatus-sub="git submodule foreach 'git status'"
 alias grepos="~/code/dotfiles_linuxMint/scripts/git-check-repos/git-status"
 
 alias gadd="git add"
@@ -228,38 +239,42 @@ alias gapatch="git add --patch"
 alias gcopatch="git checkout --patch"
 
 alias gdiff="git diff --color"
-alias gtree="git diff-tree -p"    # diff of commit, gtree COMMITHASH
+alias gtree="git diff-tree -p" # diff of commit, gtree COMMITHASH
 alias gstaged="git diff --no-ext-diff --staged"
-alias gmerge="git merge --no-commit --no-ff"    # gmerge BRANCH_NAME
+alias gmerge="git merge --no-commit --no-ff" # gmerge BRANCH_NAME
 
 # From https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-log.html
 alias glog="git log --graph --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s'"
 alias glogr="git log --graph --pretty=format:'%C(yellow)%h %C(red)%ar %C(cyan)%an%C(green)%d %Creset%s'"
 alias gloga="git log --graph --all --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s'"
-alias gfollow="git log --follow --graph --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s' -- "   # gfollow file
-alias guser="git config user.name; git config user.email"               # user on current dir
+alias gfollow="git log --follow --graph --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s' -- " # gfollow file
+alias guser="git config user.name; git config user.email"                                                               # user on current dir
+function glog-find() {
+  git log --pickaxe-regex -p --color-words -S"$*" # $* regex or string to find
+}
 
-alias gcommit="git commit -m"                                           # gcommit "message"
+alias gcommit="git commit -m" # gcommit "message"
 alias gamend="git commit --amend --no-edit"
 
-alias glist-tracked="git ls-tree -r --abbrev=8 --name-only $(git branch --show-current)"    # list tracked files
-alias glist-untracked="git ls-files --others --exclude-standard"    # list untracked files
-alias gignoreall="git ls-files --others --exclude-standard >> .gitignore"           # ignore files currently untracked
-alias gclean-untracked="git clean -i"                       # delete files currently untracked
-alias gclean-ignored="git clean --exclude=.gitignore -xdi"  # -x files in .gitignore, -d recursive, -i interactive
+alias glist-tracked="git ls-tree -r --abbrev=8 --name-only $(is_git_repo && git branch --show-current)" # list tracked files
+alias glist-untracked="git ls-files --others --exclude-standard"                         # list untracked files
+alias gignoreall="git ls-files --others --exclude-standard >> .gitignore"                # ignore files currently untracked
+alias gclean-untracked="git clean -i"                                                    # delete files currently untracked
+alias gclean-ignored="git clean --exclude=.gitignore -xdi"                               # -x files in .gitignore, -d recursive, -i interactive
 
 # Ignore and revert ignorance of changed files (temporary)
 # https://stackoverflow.com/a/23259612
-alias gignore="git update-index --assume-unchanged"                       # gignore filename
-alias gignored="git ls-files -v | grep ^[a-z]"                            # list temporarily ignored files
-alias gtrack="git update-index --no-assume-unchanged"                     # gtrack filename
+alias gignore="git update-index --assume-unchanged"   # gignore filename
+alias gignored="git ls-files -v | grep ^[a-z]"        # list temporarily ignored files
+alias gtrack="git update-index --no-assume-unchanged" # gtrack filename
+alias guntrack="git rm -r --cached"
 
-alias gmode="git config core.fileMode"                    # Track (true) or ignore (false) file mode changes
+alias gmode="git config core.fileMode" # Track (true) or ignore (false) file mode changes
 
 alias gslist="git stash list"
 
 function gspush() {
-  git stash push -m "$*" -p       # $* name of stash
+  git stash push -m "$*" -p # $* name of stash
 }
 
 function gsapply() {

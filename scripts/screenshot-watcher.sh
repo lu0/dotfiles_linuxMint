@@ -2,37 +2,40 @@
 # Rename screenshots created by gnome-screenshot
 #
 # gnome-screenshot doesn't provide an easier way to do this...
+# sudo apt install inotify-tools
 # 
 # 
 # systemctl status screenshot-rename.timer
 
-echo " --- Screenshot Watcher Running --- "
+# echo " --- Screenshot Watcher Running --- "
 
-dir_name='/home/lucero/pictures/screenshots/'
+dir_name='${HOME}/pictures/screenshots/'
 
-# 'Screenshot from 2020-12-21 19-19-35 one two.png'    # ORIGINAL
-rename -v 's/Screenshot\ from\ 20/ss /' $dir_name*.png     # 'ss 20-12-21 19-19-35 one two.png'
+inotifywait -m ${dir_name} -e create -e moved_to |
+    while read dir action file; do
+        echo "New file {'$file'} in directory '$dir'"
 
-for file in $dir_name* ; do
-    base_name="${file##*/}"      # Remove everything before last slash (/)
-    pattern=${base_name:3:17}    # '20-12-21 19-19-35'
+        # 'Screenshot from 2020-12-21 19-19-35 one two.png'    # ORIGINAL
+        rename -v 's/Screenshot\ from\ 20/ss /' $dir*.png     # 'ss 20-12-21 19-19-35 one two.png'
 
-    date_regexp='(2[0-9])-(0[1-9]|1[0-2])-([0-2][0-9]|3[0-1])'
-    #        year 20..29 | month 01..09  |      day 01..29
-    #                    |  or 10,11,12  |        or 30,31
-    #                  dash             dash
-    #
-    hour_regexp='([0-1][0-9]|2[0-3])'   # 00..19 or 20..23
-    min_regexp='([0-5][0-9])'           # 00..59
-    sec_regexp='([0-5][0-9])'           # 00..59
-    if [[ $pattern =~ ^$date_regexp[\ ]$hour_regexp-$min_regexp-$sec_regexp$ ]]; then
+        base_name="${file##*/}"      # Remove everything before last slash (/)
+        pattern=${base_name:3:17}    # '20-12-21 19-19-35'
 
-        # delete all dashes, then replace every space with a dash
-        new_name=`echo $file | sed 's/-//g' | sed 's/ /-/g'`
+        date_regexp='(2[0-9])-(0[1-9]|1[0-2])-([0-2][0-9]|3[0-1])'
+        #        year 20..29 | month 01..09  |      day 01..29
+        #                    |  or 10,11,12  |        or 30,31
+        #                  dash             dash
+        #
+        hour_regexp='([0-1][0-9]|2[0-3])'   # 00..19 or 20..23
+        min_regexp='([0-5][0-9])'           # 00..59
+        sec_regexp='([0-5][0-9])'           # 00..59
 
-        mv "$file" "$new_name"       # 'ss-201221-191935-one-two.png' # NEW NAME
+        if [[ $pattern =~ ^$date_regexp[\ ]$hour_regexp-$min_regexp-$sec_regexp$ ]]; then
+            # delete all dashes, then replace every space with a dash
+            new_name=`echo $file | sed 's/-//g' | sed 's/ /-/g'`
 
-    fi
-done
-
-echo " --- Screenshot Watcher Finished --- "
+            mv "${dir}$file" "${dir}$new_name"       # 'ss-201221-191935-one-two.png' # NEW NAME
+	        echo "Renamed from ${file} to ${new_name}"
+        fi
+        
+    done

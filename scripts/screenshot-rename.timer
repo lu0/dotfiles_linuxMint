@@ -3,8 +3,8 @@ Description=Rename gnome-screenshots
 
 [Timer]
 Unit=screenshot-rename.service
-OnUnitActiveSec=3s
-OnBootSec=60s
+# OnUnitActiveSec=3s
+OnBootSec=10s
 
 [Install]
 WantedBy=multi-user.target

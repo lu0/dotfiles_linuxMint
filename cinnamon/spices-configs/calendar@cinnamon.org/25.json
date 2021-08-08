@@ -24,7 +24,7 @@
         "indent": true,
         "dependency": "use-custom-format",
         "tooltip": "Set your custom format here.",
-        "value": "%d%n%b"
+        "value": "%b%n%d"
     },
     "format-button": {
         "type": "button",
