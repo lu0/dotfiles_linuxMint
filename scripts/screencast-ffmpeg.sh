@@ -1,22 +1,27 @@
 #!/bin/bash
 
-# Record screen and audio with ffmpeg
-# lu0
-
-# list recording devices:
-# pacmd list-sources | awk '/index:/ {print $0}; /name:/ {print $0}; /device\.description/ {print $0}'
-# pacmd list-sources | awk '/index:/ {print $0}; /name:/ {print $0}; /device\.description/ {print $0}' | awk -F"[<>]" '{print $2}'
+# Record screen and audio with ffmpeg (DRAFT)
+# github.com/lu0
 #
-# list active output devices:
-# pacmd list-sink-inputs | awk '/index:/ {print $0}; /state:/ {print $0}; /sink:/ {print $0}'
-# pacmd list-sink-inputs | awk '/index:/ {print $0}; /state:/ {print $0}; /sink:/ {print $0}' | awk -F"[<>]" '{print $2}'
+
+## list recording devices:
+## pacmd list-sources | awk '/index:/ {print $0}; /name:/ {print $0}; /device\.description/ {print $0}'
+## pacmd list-sources | awk '/index:/ {print $0}; /name:/ {print $0}; /device\.description/ {print $0}' | awk -F"[<>]" '{print $2}'
+##
+## list active output devices:
+## pacmd list-sink-inputs | awk '/index:/ {print $0}; /state:/ {print $0}; /sink:/ {print $0}'
+## pacmd list-sink-inputs | awk '/index:/ {print $0}; /state:/ {print $0}; /sink:/ {print $0}' | awk -F"[<>]" '{print $2}'
 
 
+# Detect if ffmpeg is already running
 if pgrep ffmpeg
 then
+    # Ask the user for confirmation to stop the current screencast
     if zenity --question --text "Stop screencast?" --ok-label="Stop" --cancel-label="Cancel"
     then
         notify-send -i "emblem-videos-symbolic" "Screencast" "SAVED!!!" 
+
+        # Wait 3 seconds to avoid early cut of the video
         sleep 3 && pkill ffmpeg
     fi
 
@@ -43,16 +48,16 @@ else
                 sed -r "s/^([^ ]*).*\b([-0-9]+)x([-0-9]+)$OFFSET_REGEX.*$/\1 \2 \3 \4 \5/" | 
                 sort -nk4,5)
 
-    # Active audio output -------------------------------------------------------------------
+    # Active audio output 
     ACTIVE_OUTPUT=($(pacmd list-sink-inputs | awk '/index:/ {print $0}; /state:/ {print $0}; /sink:/ {print $0}' | awk -F"[<>]" '{print $2}'))
     ACTIVE_AUDIO_MONITOR="${ACTIVE_OUTPUT}.monitor"     # record what i listen
 
-    # Microphone ----------------------------------------------------------------------------
+    # Microphone
     INT_MICROPHONE='alsa_input.pci-0000_00_1f.3.analog-stereo'
     # BT_HEADSET_SONY='bluez_sink.00_18_09_2E_74_B5.a2dp_sink.monitor'
     # BT_HEADSET_TT='bluez_sink.E8_07_BF_31_54_2C.a2dp_sink.monitor'
 
-    # Message to be displayed on the zenity window ------------------------------------------
+    # Message to be displayed on the zenity window 
     INFO_MSG="Monitor:\t\t\t$MONITOR
               \t\t\tResolution:\t$RESOLUTION
               \t\t\tX, Y offset:\t$X_OFFSET, $Y_OFFSET
@@ -81,13 +86,13 @@ else
 
         # START RECORDING
         # Codecs chosen to be compatible with android devices
-        # The time taken to display the notification "Attempting" gives an idea of whether ffmpeg ran successfully or not.
+        # The time taken to display the "Saving..." message gives an idea of whether ffmpeg ran successfully or not.
         ffmpeg -y \
         -f x11grab -video_size $RESOLUTION -grab_x $X_OFFSET -grab_y $Y_OFFSET -i :0.0 \
         -f pulse -i $INT_MICROPHONE \
         -f pulse -i $ACTIVE_AUDIO_MONITOR \
         -filter_complex \
-        "[1:a]volume=0.3[mic]; [2:a]volume=150.0[output]; \
+        "[1:a]volume=0.4[mic]; [2:a]volume=150.0[output]; \
         [mic][output]amix=inputs=2[a]" \
         -c:v h264 -vf scale=out_color_matrix=bt709 -pix_fmt yuv420p \
         -movflags faststart \
