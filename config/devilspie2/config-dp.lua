@@ -17,7 +17,7 @@ local sh = require('sh')        -- module developed by https://github.com/zserge
 -- local mousemove = sh.command('xdotool mousemove')
 -- mousemove(500, 100)
 
--- Unpack variables from luatest.sh
+-- Unpack variables from devilspie_screen.sh
 i = 0
 local screen_variables = tostring(devilspie_screen()) -- calls `ls /tmp`
 for var in string.gmatch(screen_variables, "[^\n]+") do
