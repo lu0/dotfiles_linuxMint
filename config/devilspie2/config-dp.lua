@@ -21,12 +21,13 @@ local sh = require('sh')        -- module developed by https://github.com/zserge
 i = 0
 local screen_variables = tostring(devilspie_screen()) -- calls `ls /tmp`
 for var in string.gmatch(screen_variables, "[^\n]+") do
-    if     i == 1 then MONITOR    = var;   -- print('MONITOR: ',    MONITOR)        -- str
-    elseif i == 2 then RESOLUTION = var;   -- print('RESOLUTION: ', RESOLUTION)     -- str 
-    elseif i == 3 then X_OFFSET   = var+0; -- print('X_OFFSET: ',   X_OFFSET)       -- num
-    elseif i == 4 then Y_OFFSET   = var+0; -- print('Y_OFFSET: ',   Y_OFFSET)       -- num
-    elseif i == 5 then WIDTH      = var+0; -- print('WIDTH: ',      WIDTH)          -- num
-    elseif i == 6 then HEIGHT     = var+0; -- print('HEIGHT: ',     HEIGHT)         -- num
+    if     i == 0 then MONITOR    = var;   print('MONITOR: ',    MONITOR)        -- str
+    elseif i == 1 then RESOLUTION = var;   -- print('RESOLUTION: ', RESOLUTION)     -- str 
+    elseif i == 2 then X_OFFSET   = var+0; -- print('X_OFFSET: ',   X_OFFSET)       -- num
+    elseif i == 3 then Y_OFFSET   = var+0; -- print('Y_OFFSET: ',   Y_OFFSET)       -- num
+    elseif i == 4 then WIDTH      = var+0; -- print('WIDTH: ',      WIDTH)          -- num
+    elseif i == 5 then HEIGHT     = var+0; -- print('HEIGHT: ',     HEIGHT)         -- num
+    elseif i == 6 then WINDOW_ID  = var+0; -- print('WINDOW_ID: ',  WINDOW_ID)      -- num
     end
     i = i + 1
 end
@@ -41,7 +42,8 @@ x_gap = gap; y_gap = gap
 gnome_fix = WIDTH/960
 
 debug_print("Active screen: ", MONITOR .. ',', screen)
-debug_print("\nWindow type: ", get_window_type())
+debug_print("\nWindow ID: ", WINDOW_ID)
+debug_print("Window type: ", get_window_type())
 debug_print("Window Name: ", get_window_name())
 debug_print("App name: ", get_application_name())
 debug_print("Class name: ", get_class_instance_name())

@@ -44,10 +44,11 @@ for dim in ${dimension_rows}; do
     (( monitor_index++ ))
 done
 
-echo -e "Sending variables to lua..."
-echo -e "$monitor_name"
-echo -e "$resolution"
-echo -e "$off_x"
-echo -e "$off_y"
-echo -e "$res_x"
-echo -e "$res_y"
+echo "Sending variables to lua..." >&2
+echo "$monitor_name"
+echo "$resolution"
+echo "$off_x"
+echo "$off_y"
+echo "$res_x"
+echo "$res_y"
+echo "$WINDOW"
