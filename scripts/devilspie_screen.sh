@@ -9,10 +9,10 @@ nums_re="[0-9]+"
 
 # Regex to match lines [xres]x[yres]+[xoffset]+[yoffset]
 complete_re="^${nums_re}x${nums_re}\+${nums_re}\+${nums_re}$"
-                    # │          │           │   match end of line ─┘
-                    # │          │           └ + scaped (offset separator)
-                    # │          └─ x (resolution separator)
-                    # └─ match start of line
+#            │          │           │   match end of line ─┘
+#            │          │           └ + scaped (offset separator)
+#            │          └─ x (resolution separator)
+#            └─ match start of line
 
 # Evaluates to variables X, Y, SCREEN, WINDOW
 eval "$(xdotool getmouselocation --shell)"
