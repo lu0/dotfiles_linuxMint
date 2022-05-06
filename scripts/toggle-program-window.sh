@@ -23,16 +23,27 @@ declare -A PROGRAM=(
 
 # Valid with options -lGx
 declare -A WMCTRL_COLS=(
-    ["window_id"]=1
+    ["hex_window_id"]=1
     ["workspace"]=2
-    ["dim_x0"]=3
-    ["dim_x1"]=4
-    ["dim_y0"]=5
-    ["dim_y1"]=6
+    ["x"]=3
+    ["y"]=4
+    ["width"]=5
+    ["height"]=6
     ["class"]=7
     ["host"]=8
     ["title"]=9-
 )
+
+# Parses property of a window using wmctrl
+# - Args:
+#   - $1  property key from hashmap WMCTRL_COLS.
+#   - $2  hexadecimal window ID in format 0x00000000.
+wmctrl::get_prop_of_window_id() {
+    local prop="${1}"
+    local hex_window_id="${2}"
+    wmctrl -lGx | tr -s ' ' \
+        | grep -w "${hex_window_id}" | cut -d' ' -f"${WMCTRL_COLS[${prop}]}"
+}
 
 # Converts a decimal number to its hexadecimal representation.
 # - Arguments:
@@ -96,10 +107,18 @@ window::open() {
 }
 
 # Activates a window given its ID.
+# This also centers the mouse in it.
 # - Arguments:
-#   - $1  hexadecimal number in format 0x00000000 .
+#   - $1  hexadecimal Window ID in format 0x00000000 .
+# shellcheck disable=SC2155 # enable oneliner local assignments
 window::raise() {
-    xdotool windowactivate "$(utils::hex_to_dec "${1}")"
+    local hex_window_id="${1}"
+    local x=$(wmctrl::get_prop_of_window_id "x" "${hex_window_id}")
+    local y=$(wmctrl::get_prop_of_window_id "y" "${hex_window_id}")
+    local width=$(wmctrl::get_prop_of_window_id "width" "${hex_window_id}")
+    local height=$(wmctrl::get_prop_of_window_id "height" "${hex_window_id}")
+    xdotool windowactivate "$(utils::hex_to_dec "${hex_window_id}")"
+    xdotool mousemove $(( width/2 + x )) $(( height/2 + y ))
 }
 
 # Minimizes a window given its ID.
@@ -119,7 +138,7 @@ window::get_target_id() {
     wmctrl -lGx \
         | grep -w "${class_wmctrl_format}" \
         | head -1 \
-        | cut -d ' ' -f "${WMCTRL_COLS[window_id]}"
+        | cut -d' ' -f"${WMCTRL_COLS[hex_window_id]}"
 }
 
 # Decides whether to raise (if hidden) or hide (if activated) a window.
@@ -127,11 +146,11 @@ window::get_target_id() {
 #   - $PROGRAM  Hashmap with properties of the program to open a window for.
 window::toggle() {
     if window::exists ; then
-        window_id=$(window::get_target_id)
+        hex_window_id=$(window::get_target_id)
         if window::is_active ; then
-            window::hide "${window_id}"
+            window::hide "${hex_window_id}"
         else
-            window::raise "${window_id}"
+            window::raise "${hex_window_id}"
         fi
     else
         window::open "${PROGRAM[command]}"
