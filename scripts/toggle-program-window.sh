@@ -5,12 +5,22 @@
 # opens a new one if not present.
 # 
 # - Arguments:
-#   Properties of the program to open (defaults to Gnome Terminal):
+#   Properties of the program to open, defaults to Gnome Terminal:
 #   - $1  Class the window of the program to toggle/open generates,
 #       (1st element of the output of `xprop WM_CLASS`).
 #   - $2  Class name the window of the program to toggle/open generates,
 #       (2nd element of the output of `xprop WM_CLASS`).
 #   - $3  Command of the program to toggle/open.
+#   Configuration of gaps, useful when taskbars are present,
+#   defaults to left taskbar of 36px width and shared gaps of 10px.
+#   - $4 Width of left taskbar (px).
+#   - $5 Width of right taskbar (px).
+#   - $6 Height of top taskbar (px).
+#   - $7 Height of bottom taskbar (px).
+#   - $8 Size of shared gaps (px).
+# - Libraries:
+#   - display_info (from this same repo/folders)
+#       Used to get the information of the current display
 # 
 # https://github.com/lu0
 #
@@ -19,6 +29,14 @@ declare -A PROGRAM=(
     ["class"]="${1:-"gnome-terminal-server"}"
     ["class_name"]="${2:-"Gnome-terminal"}"
     ["command"]="${3:-"gnome-terminal"}"
+)
+
+declare -A GAPS=(
+    ["left"]="${4:-36}"
+    ["right"]="${5:-0}"
+    ["top"]="${6:-0}"
+    ["bottom"]="${7:-0}"
+    ["shared"]="${8:-10}"
 )
 
 # Valid with options -lGx
@@ -70,6 +88,17 @@ mouse::center_in_window() {
     local y=$(wmctrl::get_prop_of_win_id "y" "${hex_win_id}")
     local width=$(wmctrl::get_prop_of_win_id "width" "${hex_win_id}")
     local height=$(wmctrl::get_prop_of_win_id "height" "${hex_win_id}")
+    xdotool mousemove $(( width/2 + x )) $(( height/2 + y ))
+}
+
+# Centers the mouse in a display given the display's info
+# - Globals:
+#   - $DISPLAY_INFO  hashmap from library `display_info`
+mouse::center_in_display() {
+    local x="${DISPLAY_INFO[x]}"
+    local y="${DISPLAY_INFO[y]}"
+    local width="${DISPLAY_INFO[width]}"
+    local height="${DISPLAY_INFO[height]}"
     xdotool mousemove $(( width/2 + x )) $(( height/2 + y ))
 }
 
@@ -140,6 +169,23 @@ window::open() {
     $command_to_open
 }
 
+# Moves a window to the active display given the window id
+# - Args:
+#   - $1                hexadecimal window ID in format 0x00000000.
+# - Globals:
+#   - $GAPS             Hashmap with configuration of gaps.
+#   - $DISPLAY_INFO     hashmap from library `display_info`
+window::move_to_active_display() {
+    local hex_win_id="${1}"
+    local x=$(( DISPLAY_INFO[x] + GAPS[left] + GAPS[shared] ))
+    local y=$(( DISPLAY_INFO[y] + GAPS[top] + GAPS[shared] ))
+    local width=$(( DISPLAY_INFO[width] - GAPS[left] - GAPS[right] - GAPS[shared]*2 ))
+    local height=$(( DISPLAY_INFO[height] - GAPS[top] - GAPS[bottom] - GAPS[shared]*2 ))
+    
+    wmctrl -i -r "${hex_win_id}" -b remove,maximized_horz,maximized_vert && \
+    wmctrl -i -r "${hex_win_id}" -e 0,${x},${y},${width},${height}
+}
+
 # Moves a window to the active workspace given the window id
 # - Args:
 #   - $1  hexadecimal window ID in format 0x00000000.
@@ -159,9 +205,14 @@ window::move_to_active_workspace() {
 #   - $1  hexadecimal Window ID in format 0x00000000 .
 window::raise() {
     local hex_win_id="${1}"
+
+    # Returns DISPLAY_INFO
+    display_info::store
+
+    mouse::center_in_display
+    window::move_to_active_display "${hex_win_id}"
     window::move_to_active_workspace "${hex_win_id}"
     xdotool windowactivate "$(utils::hex_to_dec "${hex_win_id}")"
-    mouse::center_in_window "${hex_win_id}"
 }
 
 # Minimizes a window given its ID.
@@ -184,7 +235,16 @@ window::toggle() {
         fi
     else
         window::open "${PROGRAM[command]}"
+        hex_win_id=$(wmctrl::get_window_id)
+        window::raise "${hex_win_id}"
     fi
 }
 
+# import_libs
+script_abs_file_path=$(readlink -f "$(which "${BASH_SOURCE[0]}")")
+script_abs_dir_path=$(dirname ${script_abs_file_path})
+
+source "${script_abs_dir_path}/display_info.sh"
+
+# Run main
 window::toggle

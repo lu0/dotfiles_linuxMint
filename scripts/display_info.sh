@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
 # 
-# This script gets information of the current monitor
+# This script gets information of the current display,
+# the one the mouse is located in.
+# 
+# Can be used as a library by sourcing it from another script.
+# 
+# https://github.com/lu0
 # 
 
 declare -A DISPLAY_INFO;                declare -a INFO_SORTING
