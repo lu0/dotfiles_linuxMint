@@ -23,7 +23,7 @@ declare -A PROGRAM=(
 
 # Valid with options -lGx
 declare -A WMCTRL_COLS=(
-    ["hex_window_id"]=1
+    ["hex_win_id"]=1
     ["workspace"]=2
     ["x"]=3
     ["y"]=4
@@ -45,32 +45,34 @@ wmctrl::get_window_id() {
     wmctrl -lGx \
         | grep -w "${class_wmctrl_format}" \
         | head -1 \
-        | cut -d' ' -f"${WMCTRL_COLS[hex_window_id]}"
+        | cut -d' ' -f"${WMCTRL_COLS[hex_win_id]}"
 }
 
 # Parses property of a window using wmctrl
 # - Args:
 #   - $1  property key from hashmap WMCTRL_COLS.
 #   - $2  hexadecimal window ID in format 0x00000000.
-wmctrl::get_prop_of_window_id() {
+wmctrl::get_prop_of_win_id() {
     local prop="${1}"
-    local hex_window_id="${2}"
+    local hex_win_id="${2}"
     wmctrl -lGx | tr -s ' ' \
-        | grep -w "${hex_window_id}" | cut -d' ' -f"${WMCTRL_COLS[${prop}]}"
+        | grep -w "${hex_win_id}" | cut -d' ' -f"${WMCTRL_COLS[${prop}]}"
 }
+
 
 # Centers the mouse in a window given the window's ID
 # - Args:
 #   - $1  hexadecimal window ID in format 0x00000000.
 # shellcheck disable=SC2155 # enable oneliner assignments and declarations
 mouse::center_in_window() {
-    local hex_window_id="${1}"
-    local x=$(wmctrl::get_prop_of_window_id "x" "${hex_window_id}")
-    local y=$(wmctrl::get_prop_of_window_id "y" "${hex_window_id}")
-    local width=$(wmctrl::get_prop_of_window_id "width" "${hex_window_id}")
-    local height=$(wmctrl::get_prop_of_window_id "height" "${hex_window_id}")
+    local hex_win_id="${1}"
+    local x=$(wmctrl::get_prop_of_win_id "x" "${hex_win_id}")
+    local y=$(wmctrl::get_prop_of_win_id "y" "${hex_win_id}")
+    local width=$(wmctrl::get_prop_of_win_id "width" "${hex_win_id}")
+    local height=$(wmctrl::get_prop_of_win_id "height" "${hex_win_id}")
     xdotool mousemove $(( width/2 + x )) $(( height/2 + y ))
 }
+
 
 # Converts a decimal number to its hexadecimal representation.
 # - Arguments:
@@ -94,6 +96,11 @@ utils::hex_to_dec() {
 # Gets class property of the currently active window.
 window::get_active_xprop_class() {
     xprop -id "$(xdotool getactivewindow)" WM_CLASS
+}
+
+# Gets the window id of the active window in hexadecimal format
+window::get_active_id() {
+    utils::dec_to_hex "$(xdotool getactivewindow)"
 }
 
 # Checks if a window exists by looking for its class property
@@ -133,14 +140,28 @@ window::open() {
     $command_to_open
 }
 
-# Activates a window given its ID.
-# This also centers the mouse in it.
+# Moves a window to the active workspace given the window id
+# - Args:
+#   - $1  hexadecimal window ID in format 0x00000000.
+# shellcheck disable=SC2155 # enable oneliner assignments and declarations
+window::move_to_active_workspace() {
+    local target_hex_win_id="${1}"
+    local active_hex_win_id="$(window::get_active_id)"
+    local active_workspace="$(
+        wmctrl::get_prop_of_win_id "workspace" "${active_hex_win_id}"
+    )"
+    wmctrl -i -r "${target_hex_win_id}" -t "${active_workspace}"
+}
+
+# Raises a window given its ID by moving it to the current workspace,
+# activating it and then centering the mouse in it.
 # - Arguments:
 #   - $1  hexadecimal Window ID in format 0x00000000 .
 window::raise() {
-    local hex_window_id="${1}"
-    xdotool windowactivate "$(utils::hex_to_dec "${hex_window_id}")"
-    mouse::center_in_window "${hex_window_id}"
+    local hex_win_id="${1}"
+    window::move_to_active_workspace "${hex_win_id}"
+    xdotool windowactivate "$(utils::hex_to_dec "${hex_win_id}")"
+    mouse::center_in_window "${hex_win_id}"
 }
 
 # Minimizes a window given its ID.
@@ -155,11 +176,11 @@ window::hide() {
 #   - $PROGRAM  Hashmap with properties of the program to open a window for.
 window::toggle() {
     if window::exists ; then
-        hex_window_id=$(wmctrl::get_window_id)
+        hex_win_id=$(wmctrl::get_window_id)
         if window::is_active ; then
-            window::hide "${hex_window_id}"
+            window::hide "${hex_win_id}"
         else
-            window::raise "${hex_window_id}"
+            window::raise "${hex_win_id}"
         fi
     else
         window::open "${PROGRAM[command]}"
