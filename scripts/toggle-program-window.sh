@@ -34,6 +34,20 @@ declare -A WMCTRL_COLS=(
     ["title"]=9-
 )
 
+# Gets the ID of the first window whose Class matches the target one.
+# - Globals:
+#   - $PROGRAM      Hashmap with properties of the program to open.
+#   - $WMCTRL_COLS  Hashmap with properties returned by `wmctrl -lGx`.
+# - Returns:
+#   - ID of the window in hex format 0x00000000 if exists, blank if it doesn't.
+wmctrl::get_window_id() {
+    local class_wmctrl_format="${PROGRAM[class]}.${PROGRAM[class_name]}"
+    wmctrl -lGx \
+        | grep -w "${class_wmctrl_format}" \
+        | head -1 \
+        | cut -d' ' -f"${WMCTRL_COLS[hex_window_id]}"
+}
+
 # Parses property of a window using wmctrl
 # - Args:
 #   - $1  property key from hashmap WMCTRL_COLS.
@@ -43,6 +57,19 @@ wmctrl::get_prop_of_window_id() {
     local hex_window_id="${2}"
     wmctrl -lGx | tr -s ' ' \
         | grep -w "${hex_window_id}" | cut -d' ' -f"${WMCTRL_COLS[${prop}]}"
+}
+
+# Centers the mouse in a window given the window's ID
+# - Args:
+#   - $1  hexadecimal window ID in format 0x00000000.
+# shellcheck disable=SC2155 # enable oneliner assignments and declarations
+mouse::center_in_window() {
+    local hex_window_id="${1}"
+    local x=$(wmctrl::get_prop_of_window_id "x" "${hex_window_id}")
+    local y=$(wmctrl::get_prop_of_window_id "y" "${hex_window_id}")
+    local width=$(wmctrl::get_prop_of_window_id "width" "${hex_window_id}")
+    local height=$(wmctrl::get_prop_of_window_id "height" "${hex_window_id}")
+    xdotool mousemove $(( width/2 + x )) $(( height/2 + y ))
 }
 
 # Converts a decimal number to its hexadecimal representation.
@@ -110,15 +137,10 @@ window::open() {
 # This also centers the mouse in it.
 # - Arguments:
 #   - $1  hexadecimal Window ID in format 0x00000000 .
-# shellcheck disable=SC2155 # enable oneliner local assignments
 window::raise() {
     local hex_window_id="${1}"
-    local x=$(wmctrl::get_prop_of_window_id "x" "${hex_window_id}")
-    local y=$(wmctrl::get_prop_of_window_id "y" "${hex_window_id}")
-    local width=$(wmctrl::get_prop_of_window_id "width" "${hex_window_id}")
-    local height=$(wmctrl::get_prop_of_window_id "height" "${hex_window_id}")
     xdotool windowactivate "$(utils::hex_to_dec "${hex_window_id}")"
-    xdotool mousemove $(( width/2 + x )) $(( height/2 + y ))
+    mouse::center_in_window "${hex_window_id}"
 }
 
 # Minimizes a window given its ID.
@@ -128,25 +150,12 @@ window::hide() {
     xdotool windowminimize "$(utils::hex_to_dec "${1}")"
 }
 
-# Gets the ID of the first window whose Class matches the target one.
-# - Globals:
-#   - $PROGRAM  Hashmap with properties of the program to open.
-# - Returns:
-#   - ID of the window in hex format 0x00000000 if exists, blank if it doesn't.
-window::get_target_id() {
-    local class_wmctrl_format="${PROGRAM[class]}.${PROGRAM[class_name]}"
-    wmctrl -lGx \
-        | grep -w "${class_wmctrl_format}" \
-        | head -1 \
-        | cut -d' ' -f"${WMCTRL_COLS[hex_window_id]}"
-}
-
 # Decides whether to raise (if hidden) or hide (if activated) a window.
 # - Globals:
 #   - $PROGRAM  Hashmap with properties of the program to open a window for.
 window::toggle() {
     if window::exists ; then
-        hex_window_id=$(window::get_target_id)
+        hex_window_id=$(wmctrl::get_window_id)
         if window::is_active ; then
             window::hide "${hex_window_id}"
         else
