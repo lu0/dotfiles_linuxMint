@@ -24,6 +24,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
  - OS: [e.g. Linux Mint 20]
+ - Desktop environment: [e.g. Cinnamon 4.6.7]
  - Shell [e.g. Bash 5.0.16]
  - Repository version [commit hash and branch]
 
