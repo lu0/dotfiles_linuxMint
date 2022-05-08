@@ -240,9 +240,11 @@ window::toggle() {
 }
 
 # import_libs
+# shellcheck disable=SC2230
 script_abs_file_path=$(readlink -f "$(which "${BASH_SOURCE[0]}")")
-script_abs_dir_path=$(dirname ${script_abs_file_path})
+script_abs_dir_path=$(dirname "${script_abs_file_path}")
 
+# shellcheck source=scripts/window-control/display_info.sh
 source "${script_abs_dir_path}/display_info.sh"
 
 # Run main
