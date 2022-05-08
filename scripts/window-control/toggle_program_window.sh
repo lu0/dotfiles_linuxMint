@@ -176,8 +176,8 @@ window::open() {
 #   - $DISPLAY_INFO     hashmap from library `display_info`
 window::move_to_active_display() {
     local hex_win_id="${1}"
-    local x=$(( DISPLAY_INFO[x] + GAPS[left] + GAPS[shared] ))
-    local y=$(( DISPLAY_INFO[y] + GAPS[top] + GAPS[shared] ))
+    local x=$(( DISPLAY_INFO[x] + GAPS[left] + GAPS[shared]*1 ))
+    local y=$(( DISPLAY_INFO[y] + GAPS[top] + GAPS[shared]*1 ))
     local width=$(( DISPLAY_INFO[width] - GAPS[left] - GAPS[right] - GAPS[shared]*2 ))
     local height=$(( DISPLAY_INFO[height] - GAPS[top] - GAPS[bottom] - GAPS[shared]*2 ))
 
