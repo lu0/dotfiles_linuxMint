@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 
-# 
+#
 # This script gets information of the current display,
 # the one the mouse is located in.
-# 
+#
 # Can be used as a library by sourcing it from another script.
-# 
+#
 # https://github.com/lu0
-# 
+#
 
 declare -A DISPLAY_INFO;                declare -a INFO_SORTING
-DISPLAY_INFO["monitor_name"]="";        INFO_SORTING+=("monitor_name")            
-DISPLAY_INFO["resolution"]="";          INFO_SORTING+=("resolution")        
+DISPLAY_INFO["monitor_name"]="";        INFO_SORTING+=("monitor_name")
+DISPLAY_INFO["resolution"]="";          INFO_SORTING+=("resolution")
 DISPLAY_INFO["x"]="";                   INFO_SORTING+=("x")
 DISPLAY_INFO["y"]="";                   INFO_SORTING+=("y")
-DISPLAY_INFO["width"]="";               INFO_SORTING+=("width")    
-DISPLAY_INFO["height"]="";              INFO_SORTING+=("height")    
-DISPLAY_INFO["window_id"]="";           INFO_SORTING+=("window_id")        
+DISPLAY_INFO["width"]="";               INFO_SORTING+=("width")
+DISPLAY_INFO["height"]="";              INFO_SORTING+=("height")
+DISPLAY_INFO["window_id"]="";           INFO_SORTING+=("window_id")
 
 # Show hashmap DISPLAY_INFO in the order specified by array INFO_SORTING
 display_info::show() {

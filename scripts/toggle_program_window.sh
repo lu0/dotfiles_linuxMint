@@ -3,7 +3,7 @@
 #
 # This script toggles between states raised and minimized of a window,
 # opens a new one if not present.
-# 
+#
 # - Arguments:
 #   Properties of the program to open, defaults to Gnome Terminal:
 #   - $1  Class the window of the program to toggle/open generates,
@@ -21,7 +21,7 @@
 # - Libraries:
 #   - display_info (from this same repo/folders)
 #       Used to get the information of the current display
-# 
+#
 # https://github.com/lu0
 #
 
@@ -102,7 +102,6 @@ mouse::center_in_display() {
     xdotool mousemove $(( width/2 + x )) $(( height/2 + y ))
 }
 
-
 # Converts a decimal number to its hexadecimal representation.
 # - Arguments:
 #   - $1  decimal number.
@@ -181,7 +180,7 @@ window::move_to_active_display() {
     local y=$(( DISPLAY_INFO[y] + GAPS[top] + GAPS[shared] ))
     local width=$(( DISPLAY_INFO[width] - GAPS[left] - GAPS[right] - GAPS[shared]*2 ))
     local height=$(( DISPLAY_INFO[height] - GAPS[top] - GAPS[bottom] - GAPS[shared]*2 ))
-    
+
     wmctrl -i -r "${hex_win_id}" -b remove,maximized_horz,maximized_vert && \
     wmctrl -i -r "${hex_win_id}" -e 0,${x},${y},${width},${height}
 }
