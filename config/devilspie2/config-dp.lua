@@ -6,7 +6,7 @@
 -- github.com/lu0
 --
 -- Use "devilspie2 --debug" to print to stdout
--- link/copy dotfiles_linuxMint/scripts/display_info.sh 
+-- link/copy dotfiles_linuxMint/scripts/window-control/display_info.sh
 -- to PATH as display_info
 ---------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ i = 0
 local screen_variables = tostring(display_info()) -- calls `ls /tmp`
 for var in string.gmatch(screen_variables, "[^\n]+") do
     if     i == 0 then MONITOR    = var;   print('MONITOR: ',    MONITOR)        -- str
-    elseif i == 1 then RESOLUTION = var;   -- print('RESOLUTION: ', RESOLUTION)     -- str 
+    elseif i == 1 then RESOLUTION = var;   -- print('RESOLUTION: ', RESOLUTION)     -- str
     elseif i == 2 then X_OFFSET   = var+0; -- print('X_OFFSET: ',   X_OFFSET)       -- num
     elseif i == 3 then Y_OFFSET   = var+0; -- print('Y_OFFSET: ',   Y_OFFSET)       -- num
     elseif i == 4 then WIDTH      = var+0; -- print('WIDTH: ',      WIDTH)          -- num
@@ -50,15 +50,15 @@ debug_print("Class name: ", get_class_instance_name())
 
 -- Maximize with gaps
 -- Screenshot and zenity apps don't resize correctly
-if (string.match(get_window_type(), "NORMAL") and 
+if (string.match(get_window_type(), "NORMAL") and
     get_application_name() ~= "Screenshot" and
     get_application_name() ~= "zenity") then
 
     set_on_top();
     focus();
-    
+
     -- if (get_application_name() ~= "Screenshot") then
-    set_window_geometry2(x_gap + panel_width - gnome_fix + X_OFFSET,    y_gap - gnome_fix + Y_OFFSET, 
+    set_window_geometry2(x_gap + panel_width - gnome_fix + X_OFFSET,    y_gap - gnome_fix + Y_OFFSET,
                          WIDTH - panel_width - x_gap*gnome_fix,         HEIGHT-y_gap*gnome_fix);
     -- end
     debug_print("NOT DIALOG")
@@ -90,7 +90,7 @@ end
 -- Resize Inkscape dialogs
 if (string.match(get_application_name(), "inkscape") and
     get_window_type() == "WINDOW_TYPE_DIALOG") then
-    
+
     ink_w = WIDTH/5.5;  ink_h = HEIGHT/1.25
     ink_x = WIDTH/1.32; ink_y = HEIGHT/8.9
 
@@ -100,7 +100,7 @@ end
 if (screen=="TOP") then
 
     -- Workspace 2. I use it for graphic design
-    if (string.match(get_application_name(), "inkscape") or 
+    if (string.match(get_application_name(), "inkscape") or
         string.match(get_application_name(), "Krita")) then
 
         pin_window()
@@ -128,7 +128,7 @@ if (screen=="TOP") then
     end
 
     -- Workspace 8. Media
-    if (get_application_name()=="Spotify" or 
+    if (get_application_name()=="Spotify" or
         get_class_instance_name()=="audacity" or
         get_class_instance_name()=="kdenlive") then
         set_window_workspace(8);

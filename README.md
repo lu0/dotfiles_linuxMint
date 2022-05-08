@@ -87,9 +87,9 @@ Restart the user's session. -->
 ### Icons and Themes
 ```zsh
 # Papirus icons
- ./cinnamon/appearance/icons/install-papirus.sh 
+ ./cinnamon/appearance/icons/install-papirus.sh
  papirus-folders --color brown --theme Papirus-Dark
- 
+
 # Custom theme
 cd cinnamon/appearance/
 sudo unzip themes/Minimal_BrownAccents/Minimal_BrownAccents.zip -d /usr/share/themes
@@ -144,11 +144,11 @@ Control newly opened windows, modify ```config/devilspie2/config-dp.lua``` to su
 # Install devilspie
 sudo apt-get install devilspie2 -y
 sudo apt-get install luarocks -y
-sudo luarocks install --server=http://luarocks.org/dev luash 
+sudo luarocks install --server=http://luarocks.org/dev luash
 
-# Link configuration 
+# Link configuration
 ln -srf config/devilspie2 ~/.config/devilspie2
-ln -srf scripts/display_info.sh ~/.myscripts/display_info
+ln -srf scripts/window-control/display_info.sh ~/.myscripts/display_info
 
 # Create startup entry
 mkdir -p ~/.config/autostart
@@ -208,7 +208,7 @@ Programs, apps and packages I use:
   - System profiler
   - Bluetooth Manager
   - VirtualBox
-  
+
 ```zsh
 cd scripts
 source install-programs.sh
@@ -236,7 +236,7 @@ Additional settings for some programs.
 * Hide bluetooth (blueberry) from panel
 * Keep bluetooth on
 * Disable sleep/hibernation
-* Touchpad with edge scrolling 
+* Touchpad with edge scrolling
 * Lock touchscreen orientation
 * Nemo
   - Keybindings
@@ -268,7 +268,7 @@ systemctl status screenshot-rename.timer screenshot-rename.service
 
 ### Vim and media keys
 I use ```AltGr``` + ```H```,```J```,```K```,```L``` as arrow keys and ```U```,```I``` as Prior and Next keys; ```CapsLock``` is mapped to ```Escape``` and ```Shift```+```CapsLock``` to ```CapsLock```. Additionally, the Thinkpad X1Y3 does not have media keys, so I map ```Prior```, ```Next``` and ```↑``` to Previous track, Next track and Play/Pause.
-```zsh 
+```zsh
 # Dependencies
 sudo apt-get install xcape -y
 
@@ -301,7 +301,7 @@ sudo apt install xserver-xorg-input-evdev
 
 ### TrackPoint and Logitech M570
 Change DPI easily (using `libinput`).
-```zsh 
+```zsh
 # Link dpi script to the PATH folder
 mkdir -p ~/.myscripts && ln -srf scripts/dpi.sh ~/.myscripts/
 ln -srf scripts/trackpoint.sh ~/.myscripts/
@@ -339,7 +339,7 @@ Available devices:
 /dev/input/event7:	Lenovo ThinkPad Compact USB Keyboard with TrackPoint
 /dev/input/event8:	Lenovo ThinkPad Compact USB Keyboard with TrackPoint
 /dev/input/event12:	ThinkPad Extra Buttons
-Select the device event number [0-20]: 
+Select the device event number [0-20]:
 ```
 
 I selected `event12`, it seems to include all the hot keys of my internal keyboard, as the output when pressing the mic-mute key on my Thinkpad is:
@@ -379,7 +379,7 @@ I gave it permissions (`chmod +x thinkpad-extkeyb-micmute.sh`), executed it:
 ```zsh
 ./thinkpad-extkeyb-micmute.sh
 ```
-... tested the combination `Fn+F4` and .... It works! 
+... tested the combination `Fn+F4` and .... It works!
 
 Then I just created a [startup entry](./config/autostart/thinkpad-usbkeyb-micmute.desktop).
 ```zsh
@@ -443,9 +443,9 @@ The Thinkpad X1Y3 uses the 06cb:009a fingerprint reader, according to:
 ```zsh
 lsusb | grep "Synaptics"
 ```
-This device is not supported by the widely used [fprint](https://fprint.freedesktop.org/supported-devices.html), however, it supported by the new [python-validity](https://github.com/uunicorn/python-validity). 
+This device is not supported by the widely used [fprint](https://fprint.freedesktop.org/supported-devices.html), however, it supported by the new [python-validity](https://github.com/uunicorn/python-validity).
 
-These are the steps to setup the fingerprint reader for the terminal and the Lock Screen. 
+These are the steps to setup the fingerprint reader for the terminal and the Lock Screen.
 ```zsh
 # Install python-validity
 sudo add-apt-repository ppa:uunicorn/open-fprintd
@@ -461,7 +461,7 @@ fprintd-verify          # scan finger once
 
 # Enable the fingerprint for authentication
 # Select "Fingerprint authentication" with space bar
-sudo pam-auth-update    
+sudo pam-auth-update
 ```
 
 **NOTE**: The Login Screen does not unlock the Keyring using biometrics (read [this](https://github.com/uunicorn/python-validity/issues/32) issue), it would ask for the sudo password anyway, so I disabled the fingerprint reader there ([SDDM](##-Display-manager) in my case). Open `/etc/pam.d/sddm` and paste the following after '`@include common-auth`':
