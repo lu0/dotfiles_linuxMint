@@ -10,4 +10,4 @@ repos:
     rev: v0.8.0
     hooks:
       - id: shellcheck
-        args: ["--severity=warning"] # show errors and warnings
+        args: ["--severity=style", "--external-sources", "--check-sourced"]
