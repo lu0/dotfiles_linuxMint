@@ -21,6 +21,6 @@ current_x=$(xdotool getmouselocation | cut -d ' ' -f1 | cut -d':' -f2)
 
 if [[ $current_x -le ${left_x_max} ]]; then
     xdotool mousemove $(( left_x_max + 1000 )) $new_y
-else 
+else
     xdotool mousemove $(( left_x_max - 1000 )) $new_y
 fi
