@@ -190,8 +190,7 @@ window::move_to_active_workspace() {
 window::raise() {
     local hex_win_id="${1}"
     gaps::load
-    display_info::store
-
+    display_info::load
     mouse::center_in_display
     window::move_to_active_display "${hex_win_id}"
     window::move_to_active_workspace "${hex_win_id}"

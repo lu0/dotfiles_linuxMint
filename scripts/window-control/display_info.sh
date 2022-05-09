@@ -18,15 +18,16 @@ DISPLAY_INFO["width"]="";               INFO_SORTING+=("width")
 DISPLAY_INFO["height"]="";              INFO_SORTING+=("height")
 DISPLAY_INFO["window_id"]="";           INFO_SORTING+=("window_id")
 
-# Show hashmap DISPLAY_INFO in the order specified by array INFO_SORTING
+# Shows hashmap DISPLAY_INFO in the order specified by array INFO_SORTING
 display_info::show() {
+    echo >&2 -e "DISPLAY_INFO (values only):\n"
     for i in "${INFO_SORTING[@]}"; do
         echo "${DISPLAY_INFO[${i}]}"
     done
 }
 
-# Fill hashmap DISPLAY_INFO
-display_info::store() {
+# Fills hashmap DISPLAY_INFO
+display_info::load() {
     # Regex to match all contiguous numbers
     nums_re="[0-9]+"
 
@@ -76,6 +77,6 @@ display_info::store() {
 
 
 if [[ "${#BASH_SOURCE[@]}" -eq 1 ]]; then
-    display_info::store
+    display_info::load
     display_info::show
 fi
