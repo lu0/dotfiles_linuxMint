@@ -131,14 +131,16 @@ window::open() {
 }
 
 # Moves a window to the active display given the window id
+# by maximizing it. The maximization function positions the window
+# in the current display and then sets its dimensions.
 # - Args:
 #   - $1                hexadecimal window ID in format 0x00000000.
-# - Globals:
+# - Globals required by the maximization function:
 #   - $GAPS             hashmap from library `gaps`
 #   - $DISPLAY_INFO     hashmap from library `display_info`
-window::move_to_active_display() {
+window::maximize_in_active_display() {
     local hex_win_id="${1}"
-    maximize::by_id_assume_loaded_info "${hex_win_id}"
+    tile::maximize "${hex_win_id}"
 }
 
 # Moves a window to the active workspace given the window id
@@ -163,7 +165,7 @@ window::raise() {
     gaps::load
     display_info::load
     mouse::center_in_display
-    window::move_to_active_display "${hex_win_id}"
+    window::maximize_in_active_display "${hex_win_id}"
     window::move_to_active_workspace "${hex_win_id}"
     xdotool windowactivate "$(utils::hex_to_dec "${hex_win_id}")"
 }
@@ -201,8 +203,8 @@ script_abs_dir_path=$(dirname "${script_abs_file_path}")
 # shellcheck source=scripts/window-control/_load_common_libs.sh
 source "${script_abs_dir_path}/_load_common_libs.sh"
 
-# shellcheck source=scripts/window-control/maximize.sh
-source "${script_abs_dir_path}/maximize.sh"
+# shellcheck source=scripts/window-control/tile.sh
+source "${script_abs_dir_path}/tile.sh"
 
 # Run main ====================================================================
 window::toggle
