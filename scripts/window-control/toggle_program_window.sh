@@ -11,13 +11,6 @@
 #   - $2  Class name the window of the program to toggle/open generates,
 #       (2nd element of the output of `xprop WM_CLASS`).
 #   - $3  Command of the program to toggle/open.
-#   Configuration of gaps, useful when taskbars are present,
-#   defaults to left taskbar of 36px width and shared gaps of 10px.
-#   - $4 Width of left taskbar (px).
-#   - $5 Width of right taskbar (px).
-#   - $6 Height of top taskbar (px).
-#   - $7 Height of bottom taskbar (px).
-#   - $8 Size of shared gaps (px).
 # - Libraries:
 #   - display_info (from this same repo/folders)
 #       Used to get the information of the current display
@@ -29,14 +22,6 @@ declare -A PROGRAM=(
     ["class"]="${1:-"gnome-terminal-server"}"
     ["class_name"]="${2:-"Gnome-terminal"}"
     ["command"]="${3:-"gnome-terminal"}"
-)
-
-declare -A GAPS=(
-    ["left"]="${4:-36}"
-    ["right"]="${5:-0}"
-    ["top"]="${6:-0}"
-    ["bottom"]="${7:-0}"
-    ["shared"]="${8:-10}"
 )
 
 # Valid with options -lGx
@@ -172,7 +157,7 @@ window::open() {
 # - Args:
 #   - $1                hexadecimal window ID in format 0x00000000.
 # - Globals:
-#   - $GAPS             Hashmap with configuration of gaps.
+#   - $GAPS             hashmap from library `gaps`
 #   - $DISPLAY_INFO     hashmap from library `display_info`
 window::move_to_active_display() {
     local hex_win_id="${1}"
@@ -204,8 +189,7 @@ window::move_to_active_workspace() {
 #   - $1  hexadecimal Window ID in format 0x00000000 .
 window::raise() {
     local hex_win_id="${1}"
-
-    # Returns DISPLAY_INFO
+    gaps::load
     display_info::store
 
     mouse::center_in_display
@@ -239,7 +223,7 @@ window::toggle() {
     fi
 }
 
-# import_libs
+# Import libs =================================================================
 # shellcheck disable=SC2230
 script_abs_file_path=$(readlink -f "$(which "${BASH_SOURCE[0]}")")
 script_abs_dir_path=$(dirname "${script_abs_file_path}")
@@ -247,5 +231,8 @@ script_abs_dir_path=$(dirname "${script_abs_file_path}")
 # shellcheck source=scripts/window-control/display_info.sh
 source "${script_abs_dir_path}/display_info.sh"
 
-# Run main
+# shellcheck source=scripts/window-control/gaps.sh
+source "${script_abs_dir_path}/gaps.sh"
+
+# Run main ====================================================================
 window::toggle
