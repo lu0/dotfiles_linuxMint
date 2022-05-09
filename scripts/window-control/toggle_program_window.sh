@@ -87,33 +87,10 @@ mouse::center_in_display() {
     xdotool mousemove $(( width/2 + x )) $(( height/2 + y ))
 }
 
-# Converts a decimal number to its hexadecimal representation.
-# - Arguments:
-#   - $1  decimal number.
-# - Returns:
-#   - hexadecimal representation with 8 leading 0s: 0x00000000 .
-utils::dec_to_hex() {
-    printf '0x%08x\n' "${1}"
-}
-
-# Converts an hexadecimal number to its decimal representation.
-# - Arguments:
-#   - $1  hexadecimal number.
-# - Returns:
-#   - decimal representation of the number.
-utils::hex_to_dec() {
-    printf "%d\n" "${1}"
-}
-
 
 # Gets class property of the currently active window.
 window::get_active_xprop_class() {
     xprop -id "$(xdotool getactivewindow)" WM_CLASS
-}
-
-# Gets the window id of the active window in hexadecimal format
-window::get_active_id() {
-    utils::dec_to_hex "$(xdotool getactivewindow)"
 }
 
 # Checks if a window exists by looking for its class property
@@ -176,11 +153,11 @@ window::move_to_active_display() {
 # shellcheck disable=SC2155 # enable oneliner assignments and declarations
 window::move_to_active_workspace() {
     local target_hex_win_id="${1}"
-    local active_hex_win_id="$(window::get_active_id)"
+    local active_hex_win_id="$(utils::get_active_hex_window_id)"
     local active_workspace="$(
         wmctrl::get_prop_of_win_id "workspace" "${active_hex_win_id}"
     )"
-    wmctrl -i -r "${target_hex_win_id}" -t "${active_workspace}"
+    wmctrl -ir "${target_hex_win_id}" -t "${active_workspace}"
 }
 
 # Raises a window given its ID by moving it to the current workspace,
@@ -227,11 +204,8 @@ window::toggle() {
 script_abs_file_path=$(readlink -f "$(which "${BASH_SOURCE[0]}")")
 script_abs_dir_path=$(dirname "${script_abs_file_path}")
 
-# shellcheck source=scripts/window-control/display_info.sh
-source "${script_abs_dir_path}/display_info.sh"
-
-# shellcheck source=scripts/window-control/gaps.sh
-source "${script_abs_dir_path}/gaps.sh"
+# shellcheck source=scripts/window-control/_load_common_libs.sh
+source "${script_abs_dir_path}/_load_common_libs.sh"
 
 # Run main ====================================================================
 window::toggle
