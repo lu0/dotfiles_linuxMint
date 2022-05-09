@@ -138,13 +138,7 @@ window::open() {
 #   - $DISPLAY_INFO     hashmap from library `display_info`
 window::move_to_active_display() {
     local hex_win_id="${1}"
-    local x=$(( DISPLAY_INFO[x] + GAPS[left] + GAPS[shared]*1 ))
-    local y=$(( DISPLAY_INFO[y] + GAPS[top] + GAPS[shared]*1 ))
-    local width=$(( DISPLAY_INFO[width] - GAPS[left] - GAPS[right] - GAPS[shared]*2 ))
-    local height=$(( DISPLAY_INFO[height] - GAPS[top] - GAPS[bottom] - GAPS[shared]*2 ))
-
-    wmctrl -i -r "${hex_win_id}" -b remove,maximized_horz,maximized_vert && \
-    wmctrl -i -r "${hex_win_id}" -e 0,${x},${y},${width},${height}
+    maximize::by_id_assume_loaded_info "${hex_win_id}"
 }
 
 # Moves a window to the active workspace given the window id
@@ -206,6 +200,9 @@ script_abs_dir_path=$(dirname "${script_abs_file_path}")
 
 # shellcheck source=scripts/window-control/_load_common_libs.sh
 source "${script_abs_dir_path}/_load_common_libs.sh"
+
+# shellcheck source=scripts/window-control/maximize.sh
+source "${script_abs_dir_path}/maximize.sh"
 
 # Run main ====================================================================
 window::toggle

@@ -1,42 +1,53 @@
 #!/bin/bash
 
-# Toggle window maximization
-# Resolution: 1920 x 1080
 #
-# Map this script to your preferred keybinding
+# Maximizes a window (with gaps)
+#
+# - Libraries:
+#   - gaps (from this same repo/folders)
+#       Loads configuration of gaps from `gaps.conf`.
+#   - display_info (from this same repo/folders)
+#       Gets the information of the current display.
 #
 
-# Get absolute positions
-px="$(xwininfo -id $(xdotool getactivewindow) | egrep -i "Absolute upper-left X" | cut -d ':' -f 2)"
-rx="$(xwininfo -id $(xdotool getactivewindow) | egrep "Relative upper-left X" | cut -d ':' -f 2)"
+# Maximizes a window (with gaps) in the active display given the window id
+# - Args:
+#   - $1                hexadecimal window ID in format 0x00000000.
+# - Assumes loaded variables:
+#   - $GAPS             hashmap from library `gaps`
+#   - $DISPLAY_INFO     hashmap from library `display_info`
+# shellcheck disable=SC2155 # enable oneliner assignments and declarations
+maximize::by_id_assume_loaded_info() {
+    local hex_win_id="${1}"
+    local x=$(( DISPLAY_INFO[x] + GAPS[left] + GAPS[shared]*1 ))
+    local y=$(( DISPLAY_INFO[y] + GAPS[top] + GAPS[shared]*1 ))
+    local width=$(( DISPLAY_INFO[width] - GAPS[left] - GAPS[right] - GAPS[shared]*2 ))
+    local height=$(( DISPLAY_INFO[height] - GAPS[top] - GAPS[bottom] - GAPS[shared]*2 ))
 
-# Gnome apps have identical absolute and relative positions,
-# other windows need a 2px correction when setting their position
-[[ $px -eq $rx ]] && fix=0 || fix=2
+    # Windows tiled or snapped by built-in window managers cannot be
+    # resized or moved, hence we remove those properties.
+    wmctrl -ir "${hex_win_id}" -b remove,fullscreen
+    wmctrl -ir "${hex_win_id}" -b remove,maximized_horz,maximized_vert
 
-gx="$(xwininfo -id $(xdotool getactivewindow) | egrep "Width" | cut -d ':' -f 2)"
-gy="$(xwininfo -id $(xdotool getactivewindow) | egrep "Height" | cut -d ':' -f 2)"
+    wmctrl -ir "${hex_win_id}" -e 0,${x},${y},${width},${height}
+}
 
-# Get X, Y, SCREEN and WINDOW
-eval $(xdotool getmouselocation --shell)
-if [[ "$gx" -lt 1864 || "$gy" -lt 1060 ]]; then
-    wmctrl -r :ACTIVE: -b remove,maximized_horz,maximized_vert
-    wmctrl -r :ACTIVE: -e 0,43,7,1863,1059 # dummy dimensions to avoid bugs
-    if [ $Y -le 1080 ]; then
-        wmctrl -r :ACTIVE: -e 0,$((46 - fix)),$((10 - fix)),1864,1060
-        xdotool mousemove 970 540
-    else
-        fixd=0
-        wmctrl -r :ACTIVE: -e 0,$((46 + fixd - fix)),$((10 + 1080 - fix)),1864,1060
-        xdotool mousemove 970 $((540 + 1080))
-    fi
-else
-    if [ $Y -le 1080 ]; then
-        wmctrl -r :ACTIVE: -e 0,$((478 - fix)),$((184 - fix)),1004,716
-        xdotool mousemove 970 540
-    else
-        fixd=0
-        wmctrl -r :ACTIVE: -e 0,$((478 + fixd - fix)),$((184 + 1080 - fix)),1004,716
-        xdotool mousemove 970 $((540 + 1080))
-    fi
+maximize::standalone() {
+    gaps::load
+    display_info::load
+    active_hex_win_id="$(utils::get_active_hex_window_id)"
+    maximize::by_id_assume_loaded_info "${active_hex_win_id}"
+}
+
+if [[ "${#BASH_SOURCE[@]}" -eq 1 ]]; then
+    # Import libs =============================================================
+    # shellcheck disable=SC2230
+    script_abs_file_path=$(readlink -f "$(which "${BASH_SOURCE[0]}")")
+    script_abs_dir_path=$(dirname "${script_abs_file_path}")
+
+    # shellcheck source=scripts/window-control/_load_common_libs.sh
+    source "${script_abs_dir_path}/_load_common_libs.sh"
+
+    # Run main ================================================================
+    maximize::standalone
 fi
