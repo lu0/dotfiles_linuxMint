@@ -273,6 +273,8 @@ alias gmode="git config core.fileMode" # Track (true) or ignore (false) file mod
 
 alias gslist="git stash list"
 
+alias datef="date +%y%m%d-%H%M%S"
+
 function gspush() {
   git stash push -m "$*" -p # $* name of stash
 }
