@@ -31,7 +31,7 @@ sudo cp -r fonts/source-code-pro/OTF /usr/share/fonts/opentype/source-code-pro
 mkdir ~/.myscripts && ln -srf bash/fancy-bash.sh ~/.myscripts/
 
 # Profiles and settings
-dconf load /org/gnome/terminal/ < dconf-files/gnome-terminal.conf
+dconf load /com/gexperts/Tilix/ < dconf-files/tilix-terminal.conf
 
 # Aliases and profile
 ln -srf bash/bashrc ~/.bashrc

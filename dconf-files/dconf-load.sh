@@ -11,7 +11,7 @@ script_dir=$(dirname "${script_abs_file_path}")
 cd "$script_dir"
 
 # dconf load / < theme.conf
-# dconf load /org/gnome/terminal/ < gnome-terminal.conf
+dconf load /com/gexperts/Tilix/ < tilix-terminal.conf
 # dconf load / < miscellaneous.conf
 # dconf load /org/nemo/ < nemo-fileman.conf
 # dconf load /org/cinnamon/ < panel.conf

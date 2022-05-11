@@ -126,3 +126,5 @@ sudo pip3 install s-tui
 mkdir -p ~/loads/Bluetooth
 sudo apt-get install blueman -y
 
+# Terminal
+sudo apt install tilix

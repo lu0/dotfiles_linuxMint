@@ -28,7 +28,7 @@ then
     code ~/code/tecnoap/projects-ssy/ssy/codigo/ngx-admin & sleep 1
 
     # General purpose terminal and Synergy logs
-    gnome-terminal & gnome-terminal -e "synergy-core --server -f -a 192.168.100.122 -c ~/.synergy.conf"
+    tilix & tilix -e "synergy-core --server -f -a 192.168.100.122 -c ~/.synergy.conf"
 
     # Web Browser for WebDev
     CURRENT_HOUR=$(date +%R | cut -d ':' -f 1)
