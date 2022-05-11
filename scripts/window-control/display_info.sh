@@ -46,7 +46,7 @@ display_info::load() {
     monitor_names_array=( $(xrandr | grep -w connected | cut -d' ' -f1) )
 
     # Assumes sorting of `xrandr | grep -w connected` to be consistent (alphabetic)
-    props_split_to_lines="$(xrandr | grep -w connected | awk '{OFS="\n"; $1=$1}1')"
+    props_split_to_lines="$(xrandr | grep -w connected | tr -s ' ' '\n')"
     dimension_rows=$(echo -e "${props_split_to_lines}" | grep -Po "${complete_re}")
 
     monitor_index=0
