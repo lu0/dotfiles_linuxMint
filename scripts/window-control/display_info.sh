@@ -32,7 +32,7 @@ display_info::load() {
     nums_re="[0-9]+"
 
     # Regex to match lines [xres]x[yres]+[xoffset]+[yoffset]
-    complete_re="^${nums_re}x${nums_re}\+${nums_re}\+${nums_re}$"
+    dimensions_re="^${nums_re}x${nums_re}\+${nums_re}\+${nums_re}$"
     #            │          │           │   match end of line ─┘
     #            │          │           └ + scaped (offset separator)
     #            │          └─ x (resolution separator)
@@ -42,17 +42,21 @@ display_info::load() {
     eval "$(xdotool getmouselocation --shell)"
     DISPLAY_INFO[window_id]="${WINDOW}"
 
-    # shellcheck disable=2207 # Command unquoted to enable splitting
-    monitor_names_array=( $(xrandr | grep -w connected | cut -d' ' -f1) )
+    # `xrandr --current` is faster than plain `xrandr` since
+    # it doesn't re-evaluate for hardware changes
+    connected_displays=$(xrandr --current | grep -w connected)
 
-    # Assumes sorting of `xrandr | grep -w connected` to be consistent (alphabetic)
-    props_split_to_lines="$(xrandr | grep -w connected | tr -s ' ' '\n')"
-    dimension_rows=$(echo -e "${props_split_to_lines}" | grep -Po "${complete_re}")
+    # shellcheck disable=2207 # Command unquoted to enable array splitting
+    monitor_names_array=( $(echo "${connected_displays}" | cut -d' ' -f1) )
+
+    props_split_as_lines="$(echo "${connected_displays}" | tr -s ' ' '\n')"
+    dimension_rows=$(echo -e "${props_split_as_lines}" | grep -Po "${dimensions_re}")
 
     monitor_index=0
     for dim in ${dimension_rows}; do
         # shellcheck disable=2207 # Command unquoted to enable splitting
         dimension_cols_array=( $(echo "${dim}" | grep -Po "${nums_re}") )
+
         res_x="${dimension_cols_array[0]}"
         res_y="${dimension_cols_array[1]}"
         off_x="${dimension_cols_array[2]}"
