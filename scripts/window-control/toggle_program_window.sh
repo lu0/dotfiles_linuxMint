@@ -24,23 +24,16 @@ declare -A PROGRAM=(
     ["command"]="${3:-"gnome-terminal"}"
 )
 
-# Valid with options -lGx
-declare -A WMCTRL_COLS=(
-    ["hex_win_id"]=1
-    ["workspace"]=2
-    ["x"]=3
-    ["y"]=4
-    ["width"]=5
-    ["height"]=6
-    ["class"]=7
-    ["host"]=8
-    ["title"]=9-
+declare -A XWININFO=(
+    ["x"]="Absolute upper-left X"
+    ["y"]="Absolute upper-left Y"
+    ["width"]="Width"
+    ["height"]="Height"
 )
 
 # Gets the ID of the first window whose Class matches the target one.
 # - Globals:
 #   - $PROGRAM      Hashmap with properties of the program to open.
-#   - $WMCTRL_COLS  Hashmap with properties returned by `wmctrl -lGx`.
 # - Returns:
 #   - ID of the window in hex format 0x00000000 if exists, blank if it doesn't.
 wmctrl::get_window_id() {
@@ -48,18 +41,19 @@ wmctrl::get_window_id() {
     wmctrl -lGx \
         | grep -w "${class_wmctrl_format}" \
         | head -1 \
-        | cut -d' ' -f"${WMCTRL_COLS[hex_win_id]}"
+        | cut -d' ' -f1
 }
 
-# Parses property of a window using wmctrl
+# Parses numerical property of a window using `xwininfo`
 # - Args:
-#   - $1  property key from hashmap WMCTRL_COLS.
+#   - $1  property key from hashmap XWININFO.
 #   - $2  hexadecimal window ID in format 0x00000000.
+# shellcheck disable=SC2155 # enable oneliner assignments and declarations
 wmctrl::get_prop_of_win_id() {
     local prop="${1}"
     local hex_win_id="${2}"
-    wmctrl -lGx | tr -s ' ' \
-        | grep -w "${hex_win_id}" | cut -d' ' -f"${WMCTRL_COLS[${prop}]}"
+    local dec_win_id=$(utils::hex_to_dec "${hex_win_id}")
+    xwininfo -id "${dec_win_id}" | grep "${XWININFO[${prop}]}" | grep -Po "[0-9]+"
 }
 
 
