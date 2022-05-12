@@ -150,9 +150,7 @@ window::maximize_in_active_display() {
 window::move_to_active_workspace() {
     local target_hex_win_id="${1}"
     local active_hex_win_id="$(utils::get_active_hex_window_id)"
-    local active_workspace="$(
-        wmctrl::get_prop_of_win_id "workspace" "${active_hex_win_id}"
-    )"
+    local active_workspace=$(xdotool get_desktop)
     wmctrl -ir "${target_hex_win_id}" -t "${active_workspace}"
 }
 
