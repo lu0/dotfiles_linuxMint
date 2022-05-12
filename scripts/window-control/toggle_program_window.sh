@@ -24,13 +24,6 @@ declare -A PROGRAM=(
     ["command"]="${3:-"gnome-terminal"}"
 )
 
-declare -A XWININFO=(
-    ["x"]="Absolute upper-left X"
-    ["y"]="Absolute upper-left Y"
-    ["width"]="Width"
-    ["height"]="Height"
-)
-
 # Gets the ID of the first window whose Class matches the target one.
 # - Globals:
 #   - $PROGRAM      Hashmap with properties of the program to open.
@@ -44,29 +37,16 @@ wmctrl::get_window_id() {
         | cut -d' ' -f1
 }
 
-# Parses numerical property of a window using `xwininfo`
-# - Args:
-#   - $1  property key from hashmap XWININFO.
-#   - $2  hexadecimal window ID in format 0x00000000.
-# shellcheck disable=SC2155 # enable oneliner assignments and declarations
-wmctrl::get_prop_of_win_id() {
-    local prop="${1}"
-    local hex_win_id="${2}"
-    local dec_win_id=$(utils::hex_to_dec "${hex_win_id}")
-    xwininfo -id "${dec_win_id}" | grep "${XWININFO[${prop}]}" | grep -Po "[0-9]+"
-}
-
-
 # Centers the mouse in a window given the window's ID
 # - Args:
 #   - $1  hexadecimal window ID in format 0x00000000.
 # shellcheck disable=SC2155 # enable oneliner assignments and declarations
 mouse::center_in_window() {
     local hex_win_id="${1}"
-    local x=$(wmctrl::get_prop_of_win_id "x" "${hex_win_id}")
-    local y=$(wmctrl::get_prop_of_win_id "y" "${hex_win_id}")
-    local width=$(wmctrl::get_prop_of_win_id "width" "${hex_win_id}")
-    local height=$(wmctrl::get_prop_of_win_id "height" "${hex_win_id}")
+    local x=$(utils::get_window_property "x" "${hex_win_id}")
+    local y=$(utils::get_window_property "y" "${hex_win_id}")
+    local width=$(utils::get_window_property "width" "${hex_win_id}")
+    local height=$(utils::get_window_property "height" "${hex_win_id}")
     xdotool mousemove $(( width/2 + x )) $(( height/2 + y ))
 }
 
@@ -135,10 +115,10 @@ window::open() {
 window::move_to_and_maximize_in_active_display() {
     local hex_win_id="${1}"
 
-    local win_xi=$(wmctrl::get_prop_of_win_id "x" "${hex_win_id}")
-    local win_yi=$(wmctrl::get_prop_of_win_id "y" "${hex_win_id}")
-    local win_width=$(wmctrl::get_prop_of_win_id "width" "${hex_win_id}")
-    local win_height=$(wmctrl::get_prop_of_win_id "height" "${hex_win_id}")
+    local win_xi=$(utils::get_window_property "x" "${hex_win_id}")
+    local win_yi=$(utils::get_window_property "y" "${hex_win_id}")
+    local win_width=$(utils::get_window_property "width" "${hex_win_id}")
+    local win_height=$(utils::get_window_property "height" "${hex_win_id}")
     local win_xf=$(( win_xi + win_width ))
     local win_yf=$(( win_yi + win_height ))
 
