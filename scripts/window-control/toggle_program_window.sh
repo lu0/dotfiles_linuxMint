@@ -124,17 +124,39 @@ window::open() {
     $command_to_open
 }
 
-# Moves a window to the active display given the window id
-# by maximizing it. The maximization function positions the window
-# in the current display and then sets its dimensions.
+# Moves a window to the active display by maximizing it
+# if the display in which the window is located is not the active one.
 # - Args:
 #   - $1                hexadecimal window ID in format 0x00000000.
-# - Globals required by the maximization function:
+# - Globals required:
 #   - $GAPS             hashmap from library `gaps`
 #   - $DISPLAY_INFO     hashmap from library `display_info`
-window::maximize_in_active_display() {
+# shellcheck disable=SC2155 # enable oneliner assignments and declarations
+window::move_to_and_maximize_in_active_display() {
     local hex_win_id="${1}"
-    tile::maximize "${hex_win_id}"
+
+    local win_xi=$(wmctrl::get_prop_of_win_id "x" "${hex_win_id}")
+    local win_yi=$(wmctrl::get_prop_of_win_id "y" "${hex_win_id}")
+    local win_width=$(wmctrl::get_prop_of_win_id "width" "${hex_win_id}")
+    local win_height=$(wmctrl::get_prop_of_win_id "height" "${hex_win_id}")
+    local win_xf=$(( win_xi + win_width ))
+    local win_yf=$(( win_yi + win_height ))
+
+    local display_xi="${DISPLAY_INFO[x]}"
+    local display_yi="${DISPLAY_INFO[y]}"
+    local display_width="${DISPLAY_INFO[width]}"
+    local display_height="${DISPLAY_INFO[height]}"
+    local display_xf=$(( display_xi + display_width ))
+    local display_yf=$(( display_yi + display_height ))
+
+    if ! { \
+        [ "${win_xi}" -ge "${display_xi}" ] && \
+        [ "${win_yi}" -ge "${display_yi}" ] && \
+        [ "${win_xf}" -le "${display_xf}" ] && \
+        [ "${win_yf}" -le "${display_yf}" ] ; \
+    }; then
+        tile::maximize "${hex_win_id}"
+    fi
 }
 
 # Moves a window to the active workspace given the window id
@@ -157,7 +179,7 @@ window::raise() {
     gaps::load
     display_info::load
     mouse::center_in_display
-    window::maximize_in_active_display "${hex_win_id}"
+    window::move_to_and_maximize_in_active_display "${hex_win_id}"
     window::move_to_active_workspace "${hex_win_id}"
     xdotool windowactivate "$(utils::hex_to_dec "${hex_win_id}")"
 }
