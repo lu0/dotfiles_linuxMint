@@ -47,6 +47,22 @@ utils::get_active_dec_window_id() {
     xdotool getactivewindow
 }
 
+# Centers the mouse in a window given the window's ID,
+# waits for a small interval before getting the dimensions of
+# the window to give them a chance to stabilize.
+# - Args:
+#   - $1  hexadecimal window ID in format 0x00000000.
+# shellcheck disable=SC2155 # enable oneliner assignments and declarations
+utils::center_mouse_in_window() {
+    local hex_win_id="${1}"
+    sleep 0.05
+    local x=$(utils::get_window_property "x" "${hex_win_id}")
+    local y=$(utils::get_window_property "y" "${hex_win_id}")
+    local width=$(utils::get_window_property "width" "${hex_win_id}")
+    local height=$(utils::get_window_property "height" "${hex_win_id}")
+    xdotool mousemove $(( width/2 + x )) $(( height/2 + y ))
+}
+
 
 if [[ "${#BASH_SOURCE[@]}" -eq 1 ]]; then
     active_hex_win_id=$(utils::get_active_hex_window_id)
@@ -60,4 +76,7 @@ if [[ "${#BASH_SOURCE[@]}" -eq 1 ]]; then
     win_h=$(utils::get_window_property "height" "${active_hex_win_id}")
     echo "Window ${active_hex_win_id} is located at (x: ${win_x}, y: ${win_y})"
     echo "Window ${active_hex_win_id} has width ${win_w} and height ${win_h})"
+
+    utils::center_mouse_in_window "${active_hex_win_id}"
+    echo "Mouse has been centered in window ${active_hex_win_id}"
 fi
