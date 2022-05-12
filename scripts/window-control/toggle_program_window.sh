@@ -37,31 +37,6 @@ wmctrl::get_window_id() {
         | cut -d' ' -f1
 }
 
-# Centers the mouse in a window given the window's ID
-# - Args:
-#   - $1  hexadecimal window ID in format 0x00000000.
-# shellcheck disable=SC2155 # enable oneliner assignments and declarations
-mouse::center_in_window() {
-    local hex_win_id="${1}"
-    local x=$(utils::get_window_property "x" "${hex_win_id}")
-    local y=$(utils::get_window_property "y" "${hex_win_id}")
-    local width=$(utils::get_window_property "width" "${hex_win_id}")
-    local height=$(utils::get_window_property "height" "${hex_win_id}")
-    xdotool mousemove $(( width/2 + x )) $(( height/2 + y ))
-}
-
-# Centers the mouse in a display given the display's info
-# - Globals:
-#   - $DISPLAY_INFO  hashmap from library `display_info`
-mouse::center_in_display() {
-    local x="${DISPLAY_INFO[x]}"
-    local y="${DISPLAY_INFO[y]}"
-    local width="${DISPLAY_INFO[width]}"
-    local height="${DISPLAY_INFO[height]}"
-    xdotool mousemove $(( width/2 + x )) $(( height/2 + y ))
-}
-
-
 # Gets class property of the currently active window.
 window::get_active_xprop_class() {
     xprop -id "$(xdotool getactivewindow)" WM_CLASS
@@ -158,10 +133,10 @@ window::raise() {
     local hex_win_id="${1}"
     gaps::load
     display_info::load
-    mouse::center_in_display
     window::move_to_and_maximize_in_active_display "${hex_win_id}"
     window::move_to_active_workspace "${hex_win_id}"
     xdotool windowactivate "$(utils::hex_to_dec "${hex_win_id}")"
+    utils::center_mouse_in_window "${hex_win_id}"
 }
 
 # Minimizes a window given its ID.
