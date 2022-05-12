@@ -66,38 +66,47 @@ y::bottom() {
 
 tile::bottom() {
     wmctrl -ir "${1}" -e 0,"$(x::left),$(y::bottom),$(width::fill),$(height::half)"
+    utils::center_mouse_in_window "${1}"
 }
 
 tile::bottom_left() {
     wmctrl -ir "${1}" -e 0,"$(x::left),$(y::bottom),$(width::half),$(height::half)"
+    utils::center_mouse_in_window "${1}"
 }
 
 tile::bottom_right() {
     wmctrl -ir "${1}" -e 0,"$(x::right),$(y::bottom),$(width::half),$(height::half)"
+    utils::center_mouse_in_window "${1}"
 }
 
 tile::left() {
     wmctrl -ir "${1}" -e 0,"$(x::left),$(y::top),$(width::half),$(height::fill)"
+    utils::center_mouse_in_window "${1}"
 }
 
 tile::right() {
     wmctrl -ir "${1}" -e 0,"$(x::right),$(y::top),$(width::half),$(height::fill)"
+    utils::center_mouse_in_window "${1}"
 }
 
 tile::top() {
     wmctrl -ir "${1}" -e 0,"$(x::left),$(y::top),$(width::fill),$(height::half)"
+    utils::center_mouse_in_window "${1}"
 }
 
 tile::top_left() {
     wmctrl -ir "${1}" -e 0,"$(x::left),$(y::top),$(width::half),$(height::half)"
+    utils::center_mouse_in_window "${1}"
 }
 
 tile::top_right() {
     wmctrl -ir "${1}" -e 0,"$(x::right),$(y::top),$(width::half),$(height::half)"
+    utils::center_mouse_in_window "${1}"
 }
 
 tile::maximize() {
     wmctrl -ir "${1}" -e 0,"$(x::left),$(y::top),$(width::fill),$(height::fill)"
+    utils::center_mouse_in_window "${1}"
 }
 
 snap::remove() {
