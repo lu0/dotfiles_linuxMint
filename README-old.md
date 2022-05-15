@@ -148,7 +148,7 @@ sudo luarocks install --server=http://luarocks.org/dev luash
 
 # Link configuration
 ln -srf config/devilspie2 ~/.config/devilspie2
-ln -srf scripts/window-control/display_info.sh ~/.myscripts/display_info
+ln -srf scripts/window-control/current-x-display-info/display_info.sh ~/.local/bin/display_info
 
 # Create startup entry
 mkdir -p ~/.config/autostart

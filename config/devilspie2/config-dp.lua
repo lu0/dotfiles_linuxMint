@@ -6,7 +6,8 @@
 -- github.com/lu0
 --
 -- Use "devilspie2 --debug" to print to stdout
--- link/copy dotfiles_linuxMint/scripts/window-control/display_info.sh
+-- link/copy:
+-- dotfiles_linuxMint/scripts/window-control/current-x-display-info/display_info.sh
 -- to PATH as display_info
 ---------------------------------------------------------------------
 
