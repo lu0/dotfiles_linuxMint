@@ -168,15 +168,15 @@ dconf load /org/cinnamon/ < dconf-files/panel.conf
 ### Custom Powermenu
 ![Preview while on desktop](https://github.com/lu0/rofi-blurry-powermenu/blob/master/preview.png)
 Run custom powermenu with ```Super``` + ```Home```.
-```zsh
+```bash
 # Install dependencies
-sudo apt-get install rofi scrot imagemagick -y
+sudo apt update && sudo apt install -y rofi scrot imagemagick
 
-# Create and copy neccesary files and links
-mkdir -p ~/.config/rofi
-ln -srf rofi-blurry-powermenu/powermenu.sh ~/.config/rofi
-ln -srf rofi-blurry-powermenu/powermenu_theme.rasi ~/.config/rofi
-sudo cp -r rofi-blurry-powermenu/fonts/* /usr/share/fonts/
+# Install fonts
+sudo cp rofi-blurry-powermenu/fonts/* /usr/share/fonts/ && fc-cache -f
+
+# Link necessary files
+sudo ln -srf rofi-blurry-powermenu/powermenu.sh /usr/bin/blurry-powermenu
 ```
 
 ## Install programs
