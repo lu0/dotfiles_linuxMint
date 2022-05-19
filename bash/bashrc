@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -43,7 +45,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -111,202 +113,40 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Additions to bashrc ---------------------------------------------------------
+
+# Prompt
 source ~/.myscripts/fancy-bash.sh
 
-# Aliases, functions and commands I use ------------------------------------------------------------
-alias dotfiles="cd ~/code/dotfiles_linuxMint/"
-alias ssy="cd ~/code/tecnoap/projects-ssy/ssy"
-
-alias lowercase="tr '[:upper:]' '[:lower:]'"
-alias uppercase="tr '[:lower:]' '[:upper:]'"
-
-# export PAGER=pspg
-# export LESS="-SRXF"   # wrapping disabled
-export LESS="-RFX"
-
-alias open="xdg-open 2>/dev/null" # open any file
-
-alias dusingle="sudo du -sh"            # size of directory
-alias duall="sudo du -hd 1 . | sort -h" # size of subdirectories (1st level)
-
-alias calculator="gcalccmd"
-
-alias battery="sudo tlp-stat -b"
-alias fullcharge="sudo tlp fullcharge"
-
-alias mic2speaker-on="pactl load-module module-loopback latency_msec=1"
-alias mic2speaker-off="pactl unload-module module-loopback"
-
-alias cp="cp -riv"      # verbose
-alias mkdir="mkdir -pv" # parent, verbose
-alias rm="rm -i"
-
-# -A almost all, -o list without group ingo, -F classify,
-# -h human readable
-# https://unix.stackexchange.com/questions/205158/how-to-show-only-the-last-k-columns-in-ls-l
-
-list_message() {
-  GREEN='\033[0;32m' # ANSI code
-  NC='\033[0m'       # ANSI No Color
-  MESSAGE=$1
-  printf "${GREEN}${MESSAGE}${NC}\n"
-}
-
-l() { # arg1: path, arg2: s (sort by size)
-  list_message "LISTING NO HIDDEN, NO SYMLINKS"
-  ls -lgoLFh${2^^} --group-directories-first --color=always "${1:-.}" | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'
-}
-
-ll() {
-  list_message "LISTING HIDDEN, NO SYMLINKS"
-  ls -AlgoLFh${2^^} --group-directories-first --color=always "${1:-.}" | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'
-}
-
-L() {
-  list_message "LISTING NO HIDDEN, SYMLINKS"
-  ls -lgoFh${2^^} --group-directories-first --color=always "${1:-.}" | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'
-}
-
-LL() {
-  list_message "LISTING HIDDEN, SYMLINKS"
-  ls -AlgoFh${2^^} --group-directories-first --color=always "${1:-.}" | sed 's/^[^ ][^ ]*  *[^ ][^ ]* //'
-}
-
-# find symlinks in current pointing to given directory
-function findln() {
-  find . -type l -exec readlink -nf {} ';' -exec echo " -> {}" ';' | grep "$*"
-}
-
-# find broken symlinks in current directory
-alias brokenln="find . -type l -exec test ! -e {} \; -print"
-
-# Check shutdown status
-function shutdown-show() {
-  if [ -f /run/systemd/shutdown/scheduled ]; then
-    SHUTTIME=$(cat /run/systemd/shutdown/scheduled | grep "USEC" | cut -d '=' -f 2 | cut -c -10)
-    echo "Shutdown scheduled for $(date -d @$SHUTTIME), use 'shutdown -c' to cancel."
-  fi
-}
-
-function wakeup() {
-  OPTIND=1                                  # Reset getops
-  while getopts "acsd" opt; do
-    case $opt in
-        a) 
-            ALARM=`cat /sys/class/rtc/rtc0/wakealarm`
-            if [ $ALARM ]; then
-                echo "Wakeup scheduled for $(date -d @$ALARM), use 'wakeup -c' to cancel."
-            fi
-            ;;
-        c) 
-            sudo sh -c "echo 0 > /sys/class/rtc/rtc0/wakealarm"            # Clear alarm
-            echo -e "Wakeup canceled"
-            ;;
-        s)  
-            HOUR=$2                                       # HHMM
-            DAY_DELAY=$3                                  
-            
-            # Set date and time for wakeup alarm
-            DATE=$(date -d "+$DAY_DELAY day" +"%Y%m%d")   # Tomorrow, YYYMMDD
-            WAKETIME=$(date -d "$DATE $HOUR" +%s)         # Convert to epoch
-
-            sudo sh -c "echo 0 > /sys/class/rtc/rtc0/wakealarm"            # Clear alarm
-            sudo sh -c "echo $WAKETIME > /sys/class/rtc/rtc0/wakealarm"    # Set alarm 
-            ;;
-    esac
-  done
-  unset ALARM HOUR DAY_DELAY DATE WAKETIME
-}
-
-# ----------- GIT ALIASES AND FUNCTIONS ----------------------------------------------------------------------
-
-is_git_repo() {
-    git rev-parse --is-inside-work-tree > /dev/null 2>&1
-}
-
-# Git status of current repo, submodules and tree.
-alias gstatus="git fetch && git status"
-alias gstatus-sub="git submodule foreach 'git status'"
-alias grepos="~/code/dotfiles_linuxMint/scripts/git-check-repos/git-status"
-
-alias gadd="git add"
-alias gapatch="git add --patch"
-alias gcopatch="git checkout --patch"
-
-alias gdiff="git diff --color"
-alias gtree="git diff-tree -p" # diff of commit, gtree COMMITHASH
-alias gstaged="git diff --no-ext-diff --staged"
-alias gmerge="git merge --no-commit --no-ff" # gmerge BRANCH_NAME
-
-# From https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-log.html
-alias glog="git log --graph --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s'"
-alias glogr="git log --graph --pretty=format:'%C(yellow)%h %C(red)%ar %C(cyan)%an%C(green)%d %Creset%s'"
-alias gloga="git log --graph --all --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s'"
-alias gfollow="git log --follow --graph --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s' -- " # gfollow file
-alias guser="git config user.name; git config user.email"                                                               # user on current dir
-function glog-find() {
-  git log --pickaxe-regex -p --color-words -S"$*" # $* regex or string to find
-}
-
-alias gcommit="git commit -m" # gcommit "message"
-alias gamend="git commit --amend --no-edit"
-
-alias glist-tracked="git ls-tree -r --abbrev=8 --name-only $(is_git_repo && git branch --show-current)" # list tracked files
-alias glist-untracked="git ls-files --others --exclude-standard"                         # list untracked files
-alias gignoreall="git ls-files --others --exclude-standard >> .gitignore"                # ignore files currently untracked
-alias gclean-untracked="git clean -i"                                                    # delete files currently untracked
-alias gclean-ignored="git clean --exclude=.gitignore -xdi"                               # -x files in .gitignore, -d recursive, -i interactive
-
-# Ignore and revert ignorance of changed files (temporary)
-# https://stackoverflow.com/a/23259612
-alias gignore="git update-index --assume-unchanged"   # gignore filename
-alias gignored="git ls-files -v | grep ^[a-z]"        # list temporarily ignored files
-alias gtrack="git update-index --no-assume-unchanged" # gtrack filename
-alias guntrack="git rm -r --cached"
-
-alias gmode="git config core.fileMode" # Track (true) or ignore (false) file mode changes
-
-alias gslist="git stash list"
-
-alias datef="date +%y%m%d-%H%M%S"
-
-function gspush() {
-  git stash push -m "$*" -p # $* name of stash
-}
-
-function gsapply() {
-  git stash apply $(git stash list | grep "$*" | cut -d: -f1)   # $* name of stash
-}
-
-function gsshow() {
-  git stash show -p $(git stash list | grep "$*" | cut -d: -f1)   # $* name of stash
-}
-
-function gdiff-reorder() {
-  # git diff ignoring order of lines.
-  trap '' INT     # catch ctrl+c to successfully delete temp files
-  sort $1 > tmp-a
-  sort $2 > tmp-b
-  gdiff --no-index tmp-a tmp-b
-  rm tmp-a tmp-b
-}
-
-# -----------------------------------------------------------------------------------------------------------
-
-# Set title to new terminals (windows/tabs)
-# https://askubuntu.com/a/886695
-function set-title(){
-  if [[ -z "$ORIG" ]]; then
-    ORIG="$PS1"
-  fi
-  TITLE="\[\e]2;$*\a\]"
-  PS1="${ORIG}${TITLE}"
-}
-# Title: '(FirstFolderInPath) LastFolderInPath
-set-title $(echo "(")$(echo "$PWD" | cut -d/ -f 2-2)$(echo ") ${PWD##*/}")
-
-# Disable "alt + numkeys" bindings
+# Disable "alt + numkeys" in-terminal keybindings
 for i in "-" {0..9}; do bind -r "\e$i"; done
 
 # Disable default command of ctrl+z
 stty susp ^-
+
+# Force each new terminal to open
+# in the directory we last cd'ed
+lastcd_filename="/tmp/.lastcd"
+function cd() {
+	builtin cd "$@"
+	echo ${PWD} > $lastcd_filename
+}
+[ -r "$lastcd_filename" ] && cd $(cat $lastcd_filename)
+
+# Sets title to new terminals (windows/tabs)
+# https://askubuntu.com/a/886695
+set-title() {
+    if [[ -z "$ORIG" ]]; then
+        ORIG="$PS1"
+    fi
+    TITLE="\[\e]2;$*\a\]"
+    PS1="${ORIG}${TITLE}"
+}
+# Title I want: '(FirstFolderInPath) LastFolderInPath'
+set-title "($(pwd | cut -d/ -f2)) ${PWD##*/}"
+
+### added by git-partial-clone
+PATH="/home/lucero/.local/bin:$PATH"
+### added by git-partial-clone
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
