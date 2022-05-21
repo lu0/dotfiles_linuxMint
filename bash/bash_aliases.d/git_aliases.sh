@@ -97,6 +97,14 @@ gsshow() {
     git stash show -p "$(git stash list | grep -P " ${1}\$" | cut -d: -f1)"
 }
 
+# Completes stash aliases with the list of stash names
+_gstash_completion () {
+    local cur stashes
+    _init_completion -s || return
+    stashes=$(git stash list --format='%s' | cut -d: -f2- | tr -d ' ')
+    mapfile -t COMPREPLY < <(compgen -W "${stashes}" -- "${cur}")
+}
+complete -F _gstash_completion gspush gsapply gsdelete gsshow
 # Shows diff between files after sorting their lines
 gdiff-reorder() {
     trap '' INT # catch ctrl+c to successfully delete temp files
