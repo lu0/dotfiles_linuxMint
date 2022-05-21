@@ -76,12 +76,12 @@ gspush() {
 
 # Applies a stash given its name
 gsapply() {
-    git stash apply "$(git stash list | grep "$*" | cut -d: -f1)"
+    git stash apply "$(git stash list | grep -P " ${1}\$" | cut -d: -f1)"
 }
 
 # Shows the diff of a stash, given its name
 gsshow() {
-    git stash show -p "$(git stash list | grep "$*" | cut -d: -f1)"
+    git stash show -p "$(git stash list | grep -P " ${1}\$" | cut -d: -f1)"
 }
 
 # Shows diff between files after sorting their lines
