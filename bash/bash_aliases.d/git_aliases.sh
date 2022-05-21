@@ -79,6 +79,19 @@ gsapply() {
     git stash apply "$(git stash list | grep -P " ${1}\$" | cut -d: -f1)"
 }
 
+# Delete a stash given its name
+gsdelete() {
+    local stash_id stash_line delete
+    stash_id=$(git stash list | grep -P " ${1}\$" | cut -d: -f1)
+    [ "${stash_id}" ] || { echo "No stash selected" && return 1 ;}
+    stash_line=$(git stash list | grep -w "${stash_id}")
+    read -rp "Delete '${stash_line}' [y/n]? " delete
+    case ${delete:0:1} in
+        y|Y) git stash drop "${stash_id}" ;;
+        *) echo "Aborted" ;;
+    esac
+}
+
 # Shows the diff of a stash, given its name
 gsshow() {
     git stash show -p "$(git stash list | grep -P " ${1}\$" | cut -d: -f1)"
