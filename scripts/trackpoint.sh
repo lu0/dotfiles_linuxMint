@@ -13,13 +13,14 @@
 # List properties:
 #   xinput list-props 'TPPS/2 Elan TrackPoint'
 #   xinput list-props 'pointer:Lenovo ThinkPad Compact USB Keyboard with TrackPoint'
+#   xinput list-props 'ppointer:Lenovo TrackPoint Keyboard II'
 #
 
 function main() {
     BUILT_IN_TRACKPOINT='TPPS/2 Elan TrackPoint'
     toggle-trackpoint-speed "${BUILT_IN_TRACKPOINT}" -1 -0.6
     
-    EXTERNAL_TRACKPOINT='pointer:Lenovo ThinkPad Compact USB Keyboard with TrackPoint'
+    EXTERNAL_TRACKPOINT='pointer:Lenovo TrackPoint Keyboard II'
     toggle-trackpoint-speed "${EXTERNAL_TRACKPOINT}" -0.8 -0.4
 }
 
