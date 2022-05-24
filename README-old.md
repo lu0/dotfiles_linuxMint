@@ -254,6 +254,7 @@ ln -srf scripts/nemo/print ~/.local/share/nemo/scripts/
 pkill nemo
 
 # Rename gnome-screenshots periodically
+sudo apt install inotify-tools
 ln -srf scripts/screenshot-watcher.sh ~/.myscripts/
 sudo ln -srf scripts/screenshot-rename.service /etc/systemd/system/
 sudo ln -srf scripts/screenshot-rename.timer /etc/systemd/system/

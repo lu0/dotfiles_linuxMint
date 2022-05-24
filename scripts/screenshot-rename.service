@@ -3,4 +3,5 @@ Description=Rename gnome-screenshots
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash /home/lucero/.myscripts/screenshot-watcher.sh
+User=lucero
+ExecStart=/usr/bin/env bash -c ~/.myscripts/screenshot-watcher.sh
