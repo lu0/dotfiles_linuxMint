@@ -145,8 +145,4 @@ set-title() {
 # Title I want: '(FirstFolderInPath) LastFolderInPath'
 set-title "($(pwd | cut -d/ -f2)) ${PWD##*/}"
 
-### added by git-partial-clone
-PATH="/home/lucero/.local/bin:$PATH"
-### added by git-partial-clone
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
