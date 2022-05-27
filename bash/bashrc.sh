@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck disable=1091,1090
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -76,10 +77,14 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    if [ -r ~/.dircolors ]; then
+        eval "$(dircolors -b ~/.dircolors)"
+    else
+        eval "$(dircolors -b)"
+    fi
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    # alias dir='dir --color=auto'
+    # alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -128,10 +133,14 @@ stty susp ^-
 # in the directory we last cd'ed
 lastcd_filename="/tmp/.lastcd"
 function cd() {
-	builtin cd "$@"
-	echo ${PWD} > $lastcd_filename
+    if [ -d "${1}" ]; then
+        builtin cd "${1}" && \
+        echo "${PWD}" > ${lastcd_filename}
+    fi
 }
-[ -r "$lastcd_filename" ] && cd $(cat $lastcd_filename)
+if [ -r "${lastcd_filename}" ]; then
+    cd "$(cat ${lastcd_filename})" || :
+fi
 
 # Sets title to new terminals (windows/tabs)
 # https://askubuntu.com/a/886695
