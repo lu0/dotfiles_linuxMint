@@ -14,6 +14,12 @@ alias gtree="git diff-tree -p" # diff of commit, gtree COMMITHASH
 alias gstaged="git diff --no-ext-diff --staged"
 alias gmerge="git merge --no-commit --no-ff" # gmerge BRANCH_NAME
 
+# Inspect changes of a commit
+ginspect() {
+    local commit="${1}"
+    git diff "${commit}"^ "${commit}"
+}
+
 # From https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-log.html
 alias glog="git log --graph --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s'"
 alias glogr="git log --graph --pretty=format:'%C(yellow)%h %C(red)%ar %C(cyan)%an%C(green)%d %Creset%s'"
@@ -29,20 +35,20 @@ alias gcommit="git commit -m"
 alias gamend="git commit --amend --no-edit"
 
 # Tags HEAD
-#   $1 vX.Y.Z
-#   $2 "message"
 gtag() {
-    [ "${2}" ] && git tag -a ${1} -m "${2}" || git tag -a ${1} -m ""
+    local tag="${1}"
+    local message="${2}"
+    git tag -a "${tag}" -m "${message}"
 }
 
 # Deletes tag from remote
 #   $1 Name of the tag to be deleted
 #   $2 Name of the remote, defaults to origin
 gtag-delete() {
-    local tag_name remote
-    tag_name=${1}
-    [ $2 ] && remote=$2 || remote=origin
-    git push ${remote} :refs/tags/${tag_name}
+    local tag="${1}"
+    local remote="${2}"
+    [ "${remote}" ] || remote=origin
+    git push "${remote}" :refs/tags/"${tag}"
 }
 
 is_git_repo() {
@@ -108,8 +114,8 @@ complete -F _gstash_completion gspush gsapply gsdelete gsshow
 # Shows diff between files after sorting their lines
 gdiff-reorder() {
     trap '' INT # catch ctrl+c to successfully delete temp files
-    sort $1 >tmp-a
-    sort $2 >tmp-b
+    sort "${1}" > tmp-a
+    sort "${2}" > tmp-b
     gdiff --no-index tmp-a tmp-b
     /bin/rm tmp-a tmp-b
 }
@@ -129,5 +135,8 @@ gpull() {
 # https://github.com/lu0/git-worktree-wrapper
 alias git="source git-worktree-wrapper"
 
-export GITLAB_TOKEN=$(cat ~/.gitlab-token)
-export GITHUB_TOKEN=$(cat ~/.github-token)
+GITLAB_TOKEN=$(cat ~/.gitlab-token 2> /dev/null)
+export GITLAB_TOKEN
+
+GITHUB_TOKEN=$(cat ~/.github-token 2> /dev/null)
+export GITHUB_TOKEN
