@@ -135,6 +135,8 @@ gpull() {
 # https://github.com/lu0/git-worktree-wrapper
 alias git="source git-worktree-wrapper"
 
+alias gworktree-fetch="git config --local remote.origin.fetch +refs/heads/*:refs/remotes/origin/* && git fetch"
+
 GITLAB_TOKEN=$(cat ~/.gitlab-token 2> /dev/null)
 export GITLAB_TOKEN
 
