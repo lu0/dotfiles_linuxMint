@@ -2,6 +2,7 @@
 # shellcheck disable=SC1091
 
 alias py="python3"
+alias pydoc="python3 -m pydoc"
 alias pyenvdocs="xdg-open 2>/dev/null https://github.com/pyenv/pyenv#usage"
 
 # For pyenv
