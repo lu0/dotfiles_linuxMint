@@ -132,11 +132,8 @@ stty susp ^-
 # Force each new terminal to open
 # in the directory we last cd'ed
 lastcd_filename="/tmp/.lastcd"
-function cd() {
-    if [ -d "${1}" ]; then
-        builtin cd "${1}" && \
-        echo "${PWD}" > ${lastcd_filename}
-    fi
+cd() {
+    builtin cd "$@" && echo "${PWD}" > ${lastcd_filename}
 }
 if [ -r "${lastcd_filename}" ]; then
     cd "$(cat ${lastcd_filename})" || :
