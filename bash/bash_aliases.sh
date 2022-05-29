@@ -13,11 +13,21 @@ fi
 # (https://github.com/cykerway/complete-alias)
 complete -F _complete_alias "${!BASH_ALIASES[@]}"
 
-# Inherit completion rules of other commands, available in lu0's fork
-# (https://github.com/lu0/complete-alias)
-_complete_alias_overrides() {
-    # Complete alias 'git' defined in 'git_aliases.sh' as
-    #   alias git="source git-worktree-wrapper"
-    # with completion rules of original command 'git'
-    echo git git
+# Inherit completion rules from other commands by overriding
+# complete-alias' internal function `__compal__get_alias_body`
+# (https://github.com/cykerway/complete-alias/pull/34)
+__compal__get_alias_body() {
+    local cmd="$1"
+    local body; body="$(alias "$cmd")"
+
+    # Overrides
+    case "$cmd" in
+        "git")
+            # Complete alias 'git' defined in 'git_aliases.sh' as
+            #   alias git="source git-worktree-wrapper"
+            # with completion rules of original command 'git'
+            body="git"
+    esac
+
+    echo "${body#*=}" | command xargs
 }

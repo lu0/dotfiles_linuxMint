@@ -3,5 +3,5 @@
 
 # Bash completion files and rules
 
-## git clone https://github.com/lu0/complete-alias ${HOME}/.complete-alias
+## git clone https://github.com/cykerway/complete-alias ${HOME}/.complete-alias
 . "${HOME}"/.complete-alias/complete_alias
