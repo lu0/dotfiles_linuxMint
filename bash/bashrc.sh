@@ -127,7 +127,7 @@ stty susp ^-
 
 # Force each new terminal to open
 # in the directory we last cd'ed
-lastcd_filename="/tmp/.lastcd"
+lastcd_filename="$HOME/.lastcd"
 cd() {
     builtin cd "$@" && echo "${PWD}" > ${lastcd_filename}
 }
