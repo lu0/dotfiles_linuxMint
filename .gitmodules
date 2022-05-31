@@ -24,4 +24,4 @@
 	url = https://gist.github.com/mzabriskie/6631607
 [submodule "scripts/window-control/current-x-display-info"]
 	path = scripts/window-control/current-x-display-info
-	url = git@github.com:lu0/current-x-display-info.git
+	url = https://github.com/lu0/current-x-display-info.git
