@@ -189,7 +189,6 @@ Programs, apps and packages I use:
   - Play On Linux
   - Steam
 * Internet
-  - Vivaldi Browser (with setup)
   - Team Viewer
 * Office Suite
   - OnlyOffice

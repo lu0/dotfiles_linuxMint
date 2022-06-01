@@ -33,11 +33,11 @@ sudo gdebi --non-interactive ~/loads/steam.deb
 wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository 'deb https://repo.vivaldi.com/archive/deb/ stable main'
 sudo apt update && sudo apt install vivaldi-stable -y
-cd ../vivaldi-setup                                            # Setup
-from submodule: github.com/lu0/vivaldi-setup
-mkdir -p ~/.config/vivaldi
-cp -r Default ~/.config/vivaldi
-cd ..
+# cd ../vivaldi-setup                                            # Setup
+# from submodule: github.com/lu0/vivaldi-setup
+# mkdir -p ~/.config/vivaldi
+# cp -r Default ~/.config/vivaldi
+# cd ..
 
 # Team viewer
 wget -4 https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O ~/loads/team-viewer.deb

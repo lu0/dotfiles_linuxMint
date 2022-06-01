@@ -1,6 +1,3 @@
-[submodule "vivaldi-setup"]
-	path = vivaldi-setup
-	url = https://github.com/lu0/vivaldi-setup
 [submodule "vscode-settings"]
 	path = vscode-settings
 	url = https://github.com/lu0/vscode-settings
