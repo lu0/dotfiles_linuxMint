@@ -148,3 +148,7 @@ set-title() {
 set-title "($(pwd | cut -d/ -f2)) ${PWD##*/}"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Correct commands using thefuck (https://github.com/nvbn/thefuck)
+# aliased as 'fk' since I can't spell 'fuck' correctly to save my life...
+command thefuck &> /dev/null && eval "$(thefuck --alias fk)"
