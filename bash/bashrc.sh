@@ -129,10 +129,10 @@ stty susp ^-
 # in the directory we last cd'ed
 lastcd_filename="$HOME/.lastcd"
 cd() {
-    builtin cd "$@" && echo "${PWD}" > ${lastcd_filename}
+    builtin cd "$@" && echo "${PWD}" > "${lastcd_filename}"
 }
 if [ -r "${lastcd_filename}" ]; then
-    cd "$(cat ${lastcd_filename})" || :
+    cd "$(cat "${lastcd_filename}")" || :
 fi
 
 # Sets title to new terminals (windows/tabs)
