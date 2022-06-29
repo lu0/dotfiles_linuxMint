@@ -21,7 +21,7 @@ ginspect() {
 }
 
 # From https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-log.html
-alias glog="git log --graph --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s'"
+alias glog="git log --date=local --graph --pretty=format:'%C(yellow)%h %C(red)%cd %C(cyan)%an%C(green)%d %Creset%s'"
 alias glogr="git log --graph --pretty=format:'%C(yellow)%h %C(red)%ar %C(cyan)%an%C(green)%d %Creset%s'"
 alias gloga="git log --graph --all --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s'"
 alias gfollow="git log --follow --graph --pretty=format:'%C(yellow)%h %C(red)%aD %C(cyan)%an%C(green)%d %Creset%s' -- " # gfollow file
