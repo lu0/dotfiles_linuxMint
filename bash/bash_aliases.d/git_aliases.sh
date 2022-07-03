@@ -131,7 +131,7 @@ gpull() {
     fi
 }
 
-alias gworktree-fetch="git config --local remote.origin.fetch +refs/heads/*:refs/remotes/origin/* && git fetch"
+alias gfetch="git config --local remote.origin.fetch +refs/heads/*:refs/remotes/origin/* && git fetch"
 
 GITLAB_TOKEN=$(cat ~/.gitlab-token 2> /dev/null)
 export GITLAB_TOKEN
