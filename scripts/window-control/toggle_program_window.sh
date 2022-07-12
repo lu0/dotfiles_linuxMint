@@ -11,9 +11,6 @@
 #   - $2  Class name the window of the program to toggle/open generates,
 #       (2nd element of the output of `xprop WM_CLASS`).
 #   - $3  Command of the program to toggle/open.
-# - Libraries:
-#   - display_info (from this same repo/folders)
-#       Used to get the information of the current display
 #
 # https://github.com/lu0
 #
@@ -85,7 +82,7 @@ window::open() {
 #   - $1                hexadecimal window ID in format 0x00000000.
 # - Globals required:
 #   - $GAPS             hashmap from library `gaps`
-#   - $DISPLAY_INFO     hashmap from library `display_info`
+#   - $DISPLAY_INFO     hashmap from library `utils::load_display_info`
 # shellcheck disable=SC2155 # enable oneliner assignments and declarations
 window::move_to_and_maximize_in_active_display() {
     local hex_win_id="${1}"
@@ -132,7 +129,7 @@ window::move_to_active_workspace() {
 window::raise() {
     local hex_win_id="${1}"
     gaps::load
-    display_info::load
+    utils::load_display_info
     window::move_to_and_maximize_in_active_display "${hex_win_id}"
     window::move_to_active_workspace "${hex_win_id}"
     xdotool windowactivate "$(utils::hex_to_dec "${hex_win_id}")"

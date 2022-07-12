@@ -15,6 +15,15 @@ sudo apt-get install dconf-editor -y    # System configuration tool
 ```
 
 ## Keybindings
+
+Install dependencies needed by for window-control scripts
+```sh
+sudo apt-get install python3-pip
+python3 -m pip install xdisplayinfo
+```
+
+
+
 Load keybindings I use.
 ```zsh
 # Cinnamon
@@ -146,9 +155,11 @@ sudo apt-get install devilspie2 -y
 sudo apt-get install luarocks -y
 sudo luarocks install --server=http://luarocks.org/dev luash
 
+# Install xdisplayinfo
+pip3 install xdisplayinfo
+
 # Link configuration
 ln -srf config/devilspie2 ~/.config/devilspie2
-ln -srf scripts/window-control/current-x-display-info/display_info.sh ~/.local/bin/display_info
 
 # Create startup entry
 mkdir -p ~/.config/autostart
@@ -419,7 +430,6 @@ battery         # If using the custom bash profile.
 [Undervolt](https://github.com/georgewhewell/undervolt) Intel CPU to decrease CPU temperatures.
 ```zsh
 # Install dependencies
-sudo apt-get install python3-pip
 sudo pip3 install undervolt
 
 # I Undervolt by 120mV

@@ -19,6 +19,3 @@
 [submodule "scripts/git-check-repos"]
 	path = scripts/git-check-repos
 	url = https://gist.github.com/mzabriskie/6631607
-[submodule "scripts/window-control/current-x-display-info"]
-	path = scripts/window-control/current-x-display-info
-	url = https://github.com/lu0/current-x-display-info.git

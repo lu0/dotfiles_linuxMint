@@ -8,8 +8,6 @@
 #   - $1    Desired position, given by the name of the tile function:
 #           bottom, bottom_left, bottom_right, left, right, ..., etc.
 # - Requires globals:
-#   - $DISPLAY_INFO  Hashmap with information of the current display,
-#                    retrieved from custom library `display_info.sh`
 #   - $GAPS          Hashmap with the configuration of gaps,
 #                    retrieved from custom library `gaps.sh`
 #
@@ -125,7 +123,6 @@ main() {
     tile::"${1}" "${hex_win_id}"
 }
 
-
 if [[ "${#BASH_SOURCE[@]}" -eq 1 ]]; then
     # Import libs =============================================================
     # shellcheck disable=SC2230
@@ -136,7 +133,7 @@ if [[ "${#BASH_SOURCE[@]}" -eq 1 ]]; then
     source "${script_abs_dir_path}/_load_common_libs.sh"
 
     gaps::load
-    display_info::load
+    utils::load_display_info
 
     # Tile ====================================================================
     main "${1}"

@@ -63,6 +63,17 @@ utils::center_mouse_in_window() {
     xdotool mousemove $(( width/2 + x )) $(( height/2 + y ))
 }
 
+# Retrieves properties of the current display using pip package `xdisplayinfo`
+# and stores them in global hashmap `DISPLAY_INFO`
+utils::load_display_info() {
+    declare -gA DISPLAY_INFO
+    local props; props=$(xdisplayinfo --all)
+    DISPLAY_INFO["x"]=$(echo "$props" | grep "offset-x" | cut -d" " -f2-)
+    DISPLAY_INFO["y"]=$(echo "$props" | grep "offset-y" | cut -d" " -f2-)
+    DISPLAY_INFO["width"]=$(echo "$props" | grep "width" | cut -d" " -f2-)
+    DISPLAY_INFO["height"]=$(echo "$props" | grep "height" | cut -d" " -f2-)
+}
+
 
 if [[ "${#BASH_SOURCE[@]}" -eq 1 ]]; then
     active_hex_win_id=$(utils::get_active_hex_window_id)
@@ -79,4 +90,10 @@ if [[ "${#BASH_SOURCE[@]}" -eq 1 ]]; then
 
     utils::center_mouse_in_window "${active_hex_win_id}"
     echo "Mouse has been centered in window ${active_hex_win_id}"
+
+    echo -e "\nDisplay properties:"
+    utils::load_display_info
+    for prop in "${!DISPLAY_INFO[@]}"; do
+        echo -e "  $prop: ${DISPLAY_INFO[$prop]}"
+    done
 fi
