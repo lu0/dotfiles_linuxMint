@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+
+#
+# Generate a PDF document from images selected using Nemo's context menu.
+#
+# Requires img2pdf and zenity (`sudo apt install -y img2pdf zenity`).
+# Copy or link this script it to ~/.local/share/nemo/scripts/generate-pdf.
+#
+# Author: https://github.com/lu0
+#
+
+IMAGE_BACKUP_DIRNAME="source-images"
+
+declare -A NOTIFICATION=(
+    ["title"]="Nemo file manager - PDF Generator"
+    ["icon_ok"]="emblem-documents-symbolic"
+    ["icon_error"]="emblem-error"
+)
+
+readarray -t SELECTED_FILE_PATHS_ARRAY < <(
+    # Nemo creates a newline-delimited string of file paths,
+    # but the last line is empty, here I remove it
+    echo "$NEMO_SCRIPT_SELECTED_FILE_PATHS" | head -n -1
+)
+
+notify_success() {
+    local target_dir="$1"
+    notify-send \
+        --icon "${NOTIFICATION[icon_ok]}" \
+        "${NOTIFICATION[title]}" \
+        "PDF and images stored in file:///$target_dir"
+}
+
+notify_error() {
+    local line_number="$1"
+    notify-send \
+        --icon "${NOTIFICATION[icon_error]}" \
+        "${NOTIFICATION[title]}" \
+        "Error generating PDF file (error on line $line_number)."
+    exit 1
+}
+
+get_pdf_file_name_from_dialog() {
+    local pdf_file_name
+    pdf_file_name=$(
+        zenity --entry --title="${NOTIFICATION[title]}}" \
+            --text="Enter a name for your new PDF (with no extension)" \
+            --ok-label="Create PDF" \
+            --cancel-label="Cancel" \
+            | tr -d '[:space:]'
+    )
+    if [[ -n "$pdf_file_name" ]]; then
+        echo "$pdf_file_name"
+    else
+        echo "Target file name cannot be empty." 1>&2
+        return 13
+    fi
+}
+
+backup_source_images() {
+    local target_dir="$1"
+    local backup_image_dir="$target_dir/$IMAGE_BACKUP_DIRNAME"
+    mkdir -p "$backup_image_dir"
+    /usr/bin/env cp "${SELECTED_FILE_PATHS_ARRAY[@]}" -- "$backup_image_dir"/
+}
+
+remove_alpha_channel_from_images() {
+    local target_dir="$1"
+    local backup_image_dir="$target_dir/$IMAGE_BACKUP_DIRNAME"
+    find "$backup_image_dir" -type f -exec convert "{}" -alpha off "{}" \;
+}
+
+generate_pdf() {
+    local pdf_file_name="$1"
+    local target_dir="$2"
+    local backup_image_dir="$target_dir/$IMAGE_BACKUP_DIRNAME"
+    local source_image_paths
+    readarray -t source_image_paths < <( find "$backup_image_dir" -type f | sort )
+    img2pdf "${source_image_paths[@]}" -o "$target_dir/$pdf_file_name".pdf
+}
+
+trap 'notify_error $LINENO' ERR
+
+if pdf_file_name=$(get_pdf_file_name_from_dialog); then
+    source_dir=$(dirname "${SELECTED_FILE_PATHS_ARRAY[0]}")
+    target_dir="$source_dir/$pdf_file_name"
+
+    notify-send "${NOTIFICATION[title]}" "Generating PDF..."
+
+    backup_source_images "$target_dir"
+    remove_alpha_channel_from_images "$target_dir"
+    generate_pdf "$pdf_file_name" "$target_dir"
+    notify_success "$target_dir"
+fi

@@ -252,7 +252,7 @@ Additional settings for some programs.
   - Keybindings
   - Compact view
   - Hide desktop icons
-  - Print from context menu
+  - Convert images to PDF from the context menu
 ```zsh
 dconf load / < dconf-files/miscellaneous.conf
 
@@ -260,7 +260,7 @@ dconf load / < dconf-files/miscellaneous.conf
 mkdir -p ~/.gnome2/accels/
 ln -srf config/nemo-keybindings ~/.gnome2/accels/nemo
 dconf load /org/nemo/ < dconf-files/nemo-fileman.conf
-ln -srf scripts/nemo/print ~/.local/share/nemo/scripts/
+ln -srf scripts/nemo/* ~/.local/share/nemo/scripts/
 pkill nemo
 
 # Rename gnome-screenshots periodically
