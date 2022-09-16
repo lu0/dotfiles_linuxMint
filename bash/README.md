@@ -1,8 +1,14 @@
 Naive instructions so that I remember:
 
+Prompt
+```sh
+mkdir -p ~/.myscripts
+ln -srf fancy-bash.sh ~/.myscripts/
+```
+
 Bashrc
 ```sh
-ln -srf bashrc ~/.bashrc
+ln -srf bashrc.sh ~/.bashrc
 ```
 
 Aliases
