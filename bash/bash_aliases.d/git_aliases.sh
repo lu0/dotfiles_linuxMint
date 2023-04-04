@@ -131,6 +131,11 @@ gpull() {
     fi
 }
 
+# Patch with the contents of a commit
+gpatch() {
+    git diff "$1"^ "$1" | git apply --reject --whitespace=fix
+}
+
 alias gfetch="git config --local remote.origin.fetch +refs/heads/*:refs/remotes/origin/* && git fetch"
 
 GITLAB_TOKEN=$(cat ~/.gitlab-token 2> /dev/null)
