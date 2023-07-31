@@ -1,2 +1,2 @@
 xdisplayinfo==2.0.1
-undervolt==0.3.0
+undervolt==0.4.0
