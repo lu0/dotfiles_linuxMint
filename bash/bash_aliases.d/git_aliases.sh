@@ -20,6 +20,12 @@ ginspect() {
     git diff "${commit}"^ "${commit}"
 }
 
+# Display file-level change statistics for a specific commit sha
+gstat () {
+    local commit="${1}"
+    git diff "${commit}"^ "${commit}" --numstat
+}
+
 # From https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-log.html
 alias glog="git log --date=local --graph --pretty=format:'%C(yellow)%h %C(red)%cd %C(cyan)%an%C(green)%d %Creset%s'"
 alias glogr="git log --graph --pretty=format:'%C(yellow)%h %C(red)%ar %C(cyan)%an%C(green)%d %Creset%s'"
