@@ -9,6 +9,11 @@ alias gadd="git add"
 alias gapatch="git add --patch"
 alias gcopatch="git checkout --patch"
 
+# Generate and apply a patch from a SHA, handling whitespace and conflicts
+gpatch () {
+    git diff "$1"^ "$1" | git apply --reject --whitespace=fix
+}
+
 alias gdiff="git diff --color"
 alias gtree="git diff-tree -p" # diff of commit, gtree COMMITHASH
 alias gstaged="git diff --no-ext-diff --staged"
