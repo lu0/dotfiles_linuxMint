@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+alias tree="\tree --dirsfirst -a" # Show hidden and list dirs. before files
+
 alias cp="cp -riv"      # verbose
 alias mkdir="mkdir -pv" # parent, verbose
 alias rm="rm -i"
