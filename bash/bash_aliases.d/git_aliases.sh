@@ -15,6 +15,8 @@ gpatch () {
 }
 
 alias gdiff="git diff --color"
+alias gdiffmax="git diff --color --no-prefix -U5000"
+alias gdiffmin="git diff --color --no-prefix -U0"
 alias gtree="git diff-tree -p" # diff of commit, gtree COMMITHASH
 alias gstaged="git diff --no-ext-diff --staged"
 alias gmerge="git merge --no-commit --no-ff" # gmerge BRANCH_NAME
