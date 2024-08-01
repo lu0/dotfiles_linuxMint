@@ -3,6 +3,10 @@
 alias dateiso="date +%Y-%m-%dT%H:%M:%S%z"
 alias datefile="date +%y%m%d-%H%M%S"
 
+# usage: setdate "2024-07-31T20:00:00"
+alias setdate="sudo date -s"
+alias resetdate="sudo hwclock --hctosys"
+
 # Converts unix timestamp to human-readable date
 timestamp() {
     local unix_timestamp="${1}"
