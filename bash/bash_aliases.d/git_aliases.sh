@@ -47,6 +47,11 @@ glog-find() {
 alias gcommit="git commit -m"
 alias gamend="git commit --amend --no-edit"
 
+grebase() {
+    local number_of_commits=${1:-10}
+    git rebase -i HEAD~"$number_of_commits"
+}
+
 # Tags HEAD
 gtag() {
     local tag="${1}"
