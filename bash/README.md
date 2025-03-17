@@ -24,7 +24,10 @@ ln -srf bash_completion.sh ~/.bash_completion
 
 Complete aliases
 ```sh
-git clone https://github.com/lu0/complete-alias ${HOME}/.complete-alias
+sudo apt install bash-completion
+git clone https://github.com/cykerway/complete-alias ~/.complete-alias
+cd ~/.complete-alias
+git checkout 3fc67e8
 ```
 
 Profile
