@@ -117,9 +117,17 @@ window::move_to_and_maximize_in_active_display() {
 # shellcheck disable=SC2155 # enable oneliner assignments and declarations
 window::move_to_active_workspace() {
     local target_hex_win_id="${1}"
-    local active_hex_win_id="$(utils::get_active_hex_window_id)"
+    local target_dec_win_id="$(utils::hex_to_dec "${target_hex_win_id}")"
     local active_workspace=$(xdotool get_desktop)
     wmctrl -ir "${target_hex_win_id}" -t "${active_workspace}"
+    
+    for _ in {1..500}; do
+        window_workspace=$(xdotool get_desktop_for_window "${target_dec_win_id}")
+        [[ "${window_workspace}" == "${active_workspace}" ]] && return 0
+        sleep 0.001
+    done
+    logger -t toggle_program_window.sh "Move failed: ${target_hex_win_id} -> ${active_workspace}"
+    exit 1
 }
 
 # Raises a window given its ID by moving it to the current workspace,
